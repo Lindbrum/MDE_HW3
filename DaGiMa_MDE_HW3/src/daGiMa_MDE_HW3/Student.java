@@ -48,15 +48,15 @@ public interface Student extends User {
 	void setMatriculation_number(long value);
 
 	/**
-	 * Returns the value of the '<em><b>Thesis defended</b></em>' reference list.
+	 * Returns the value of the '<em><b>Thesis defended</b></em>' containment reference list.
 	 * The list contents are of type {@link daGiMa_MDE_HW3.Thesis}.
 	 * It is bidirectional and its opposite is '{@link daGiMa_MDE_HW3.Thesis#getStudent <em>Student</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Thesis defended</em>' reference list.
+	 * @return the value of the '<em>Thesis defended</em>' containment reference list.
 	 * @see daGiMa_MDE_HW3.DaGiMa_MDE_HW3Package#getStudent_Thesis_defended()
 	 * @see daGiMa_MDE_HW3.Thesis#getStudent
-	 * @model opposite="student"
+	 * @model opposite="student" containment="true"
 	 * @generated
 	 */
 	EList<Thesis> getThesis_defended();

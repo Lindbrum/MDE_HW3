@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 
 /**
  * <!-- begin-user-doc -->
@@ -75,16 +76,6 @@ public class ThesisImpl extends MinimalEObjectImpl.Container implements Thesis {
 	 * @ordered
 	 */
 	protected ThesisType type = TYPE_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getStudent() <em>Student</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getStudent()
-	 * @generated
-	 * @ordered
-	 */
-	protected Student student;
 
 	/**
 	 * The cached value of the '{@link #getSupervisor() <em>Supervisor</em>}' reference.
@@ -178,24 +169,8 @@ public class ThesisImpl extends MinimalEObjectImpl.Container implements Thesis {
 	 */
 	@Override
 	public Student getStudent() {
-		if (student != null && student.eIsProxy()) {
-			InternalEObject oldStudent = (InternalEObject)student;
-			student = (Student)eResolveProxy(oldStudent);
-			if (student != oldStudent) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DaGiMa_MDE_HW3Package.THESIS__STUDENT, oldStudent, student));
-			}
-		}
-		return student;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Student basicGetStudent() {
-		return student;
+		if (eContainerFeatureID() != DaGiMa_MDE_HW3Package.THESIS__STUDENT) return null;
+		return (Student)eInternalContainer();
 	}
 
 	/**
@@ -204,12 +179,7 @@ public class ThesisImpl extends MinimalEObjectImpl.Container implements Thesis {
 	 * @generated
 	 */
 	public NotificationChain basicSetStudent(Student newStudent, NotificationChain msgs) {
-		Student oldStudent = student;
-		student = newStudent;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DaGiMa_MDE_HW3Package.THESIS__STUDENT, oldStudent, newStudent);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
+		msgs = eBasicSetContainer((InternalEObject)newStudent, DaGiMa_MDE_HW3Package.THESIS__STUDENT, msgs);
 		return msgs;
 	}
 
@@ -220,10 +190,12 @@ public class ThesisImpl extends MinimalEObjectImpl.Container implements Thesis {
 	 */
 	@Override
 	public void setStudent(Student newStudent) {
-		if (newStudent != student) {
+		if (newStudent != eInternalContainer() || (eContainerFeatureID() != DaGiMa_MDE_HW3Package.THESIS__STUDENT && newStudent != null)) {
+			if (EcoreUtil.isAncestor(this, newStudent))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
-			if (student != null)
-				msgs = ((InternalEObject)student).eInverseRemove(this, DaGiMa_MDE_HW3Package.STUDENT__THESIS_DEFENDED, Student.class, msgs);
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
 			if (newStudent != null)
 				msgs = ((InternalEObject)newStudent).eInverseAdd(this, DaGiMa_MDE_HW3Package.STUDENT__THESIS_DEFENDED, Student.class, msgs);
 			msgs = basicSetStudent(newStudent, msgs);
@@ -344,8 +316,8 @@ public class ThesisImpl extends MinimalEObjectImpl.Container implements Thesis {
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case DaGiMa_MDE_HW3Package.THESIS__STUDENT:
-				if (student != null)
-					msgs = ((InternalEObject)student).eInverseRemove(this, DaGiMa_MDE_HW3Package.STUDENT__THESIS_DEFENDED, Student.class, msgs);
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
 				return basicSetStudent((Student)otherEnd, msgs);
 			case DaGiMa_MDE_HW3Package.THESIS__SUPERVISOR:
 				if (supervisor != null)
@@ -377,6 +349,20 @@ public class ThesisImpl extends MinimalEObjectImpl.Container implements Thesis {
 	 * @generated
 	 */
 	@Override
+	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
+		switch (eContainerFeatureID()) {
+			case DaGiMa_MDE_HW3Package.THESIS__STUDENT:
+				return eInternalContainer().eInverseRemove(this, DaGiMa_MDE_HW3Package.STUDENT__THESIS_DEFENDED, Student.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case DaGiMa_MDE_HW3Package.THESIS__TITLE:
@@ -384,8 +370,7 @@ public class ThesisImpl extends MinimalEObjectImpl.Container implements Thesis {
 			case DaGiMa_MDE_HW3Package.THESIS__TYPE:
 				return getType();
 			case DaGiMa_MDE_HW3Package.THESIS__STUDENT:
-				if (resolve) return getStudent();
-				return basicGetStudent();
+				return getStudent();
 			case DaGiMa_MDE_HW3Package.THESIS__SUPERVISOR:
 				if (resolve) return getSupervisor();
 				return basicGetSupervisor();
@@ -463,7 +448,7 @@ public class ThesisImpl extends MinimalEObjectImpl.Container implements Thesis {
 			case DaGiMa_MDE_HW3Package.THESIS__TYPE:
 				return type != TYPE_EDEFAULT;
 			case DaGiMa_MDE_HW3Package.THESIS__STUDENT:
-				return student != null;
+				return getStudent() != null;
 			case DaGiMa_MDE_HW3Package.THESIS__SUPERVISOR:
 				return supervisor != null;
 			case DaGiMa_MDE_HW3Package.THESIS__DEGREE_COURSE:

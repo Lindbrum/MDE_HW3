@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dagima_mde_hw3:Professor xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:dagima_mde_hw3="http://www.example.org/dagima_mde_hw3" name="Alfonso" surname="Pierantonio" email="a.p@uni.it" telephone="121345678910" office_telephone="35265234525" orcid="222222222222">
+  <coordinated_degree_courses href="University.dagima_mde_hw3#//@departments.0/@offered_courses.0"/>
+  <coordinated_degree_courses href="University.dagima_mde_hw3#L-41"/>
+  <taught_courses href="SE_course.dagima_mde_hw3#/"/>
+  <taught_courses href="MDE_course.dagima_mde_hw3#/"/>
+</dagima_mde_hw3:Professor>

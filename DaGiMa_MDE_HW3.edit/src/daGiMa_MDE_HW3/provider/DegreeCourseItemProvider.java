@@ -70,6 +70,7 @@ public class DegreeCourseItemProvider
 			addCoordinatorPropertyDescriptor(object);
 			addEnrolled_studentsPropertyDescriptor(object);
 			addCourse_cataloguePropertyDescriptor(object);
+			addExtra_infoPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -286,6 +287,28 @@ public class DegreeCourseItemProvider
 				 getString("_UI_DegreeCourse_course_catalogue_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_DegreeCourse_course_catalogue_feature", "_UI_DegreeCourse_type"),
 				 DaGiMa_MDE_HW3Package.Literals.DEGREE_COURSE__COURSE_CATALOGUE,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Extra info feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addExtra_infoPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DegreeCourse_extra_info_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DegreeCourse_extra_info_feature", "_UI_DegreeCourse_type"),
+				 DaGiMa_MDE_HW3Package.Literals.DEGREE_COURSE__EXTRA_INFO,
 				 true,
 				 false,
 				 true,

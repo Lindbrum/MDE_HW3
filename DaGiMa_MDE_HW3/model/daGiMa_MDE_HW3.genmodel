@@ -80,6 +80,7 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference daGiMa_MDE_HW3.ecore#//DegreeCourse/coordinator"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference daGiMa_MDE_HW3.ecore#//DegreeCourse/enrolled_students"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference daGiMa_MDE_HW3.ecore#//DegreeCourse/course_catalogue"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference daGiMa_MDE_HW3.ecore#//DegreeCourse/extra_info"/>
     </genClasses>
     <genClasses ecoreClass="daGiMa_MDE_HW3.ecore#//Thesis">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daGiMa_MDE_HW3.ecore#//Thesis/title"/>
@@ -100,6 +101,7 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference daGiMa_MDE_HW3.ecore#//Course/degree_courses"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference daGiMa_MDE_HW3.ecore#//Course/calls"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference daGiMa_MDE_HW3.ecore#//Course/students_grades"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference daGiMa_MDE_HW3.ecore#//Course/extra_info"/>
     </genClasses>
     <genClasses ecoreClass="daGiMa_MDE_HW3.ecore#//ExaminationCall">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daGiMa_MDE_HW3.ecore#//ExaminationCall/date"/>

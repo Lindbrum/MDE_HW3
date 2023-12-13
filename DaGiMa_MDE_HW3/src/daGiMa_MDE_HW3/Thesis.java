@@ -75,24 +75,24 @@ public interface Thesis extends EObject {
 	void setType(ThesisType value);
 
 	/**
-	 * Returns the value of the '<em><b>Student</b></em>' reference.
+	 * Returns the value of the '<em><b>Student</b></em>' container reference.
 	 * It is bidirectional and its opposite is '{@link daGiMa_MDE_HW3.Student#getThesis_defended <em>Thesis defended</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Student</em>' reference.
+	 * @return the value of the '<em>Student</em>' container reference.
 	 * @see #setStudent(Student)
 	 * @see daGiMa_MDE_HW3.DaGiMa_MDE_HW3Package#getThesis_Student()
 	 * @see daGiMa_MDE_HW3.Student#getThesis_defended
-	 * @model opposite="thesis_defended" required="true"
+	 * @model opposite="thesis_defended" required="true" transient="false"
 	 * @generated
 	 */
 	Student getStudent();
 
 	/**
-	 * Sets the value of the '{@link daGiMa_MDE_HW3.Thesis#getStudent <em>Student</em>}' reference.
+	 * Sets the value of the '{@link daGiMa_MDE_HW3.Thesis#getStudent <em>Student</em>}' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Student</em>' reference.
+	 * @param value the new value of the '<em>Student</em>' container reference.
 	 * @see #getStudent()
 	 * @generated
 	 */

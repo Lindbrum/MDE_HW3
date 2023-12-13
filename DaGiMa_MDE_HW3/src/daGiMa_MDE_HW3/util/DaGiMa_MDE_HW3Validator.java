@@ -40,12 +40,28 @@ public class DaGiMa_MDE_HW3Validator extends EObjectValidator {
 	public static final String DIAGNOSTIC_SOURCE = "daGiMa_MDE_HW3";
 
 	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Cfu Between Values' of 'Degree Course'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int DEGREE_COURSE__CFU_BETWEEN_VALUES = 1;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Cfu Course Greater Than' of 'Course'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int COURSE__CFU_COURSE_GREATER_THAN = 2;
+
+	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Must Be Sufficient If Defined' of 'Passing Grade'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PASSING_GRADE__MUST_BE_SUFFICIENT_IF_DEFINED = 1;
+	public static final int PASSING_GRADE__MUST_BE_SUFFICIENT_IF_DEFINED = 3;
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants.
@@ -53,7 +69,7 @@ public class DaGiMa_MDE_HW3Validator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 1;
+	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 3;
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants in a derived class.
@@ -187,7 +203,27 @@ public class DaGiMa_MDE_HW3Validator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateDegreeCourse(DegreeCourse degreeCourse, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(degreeCourse, diagnostics, context);
+		if (!validate_NoCircularContainment(degreeCourse, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(degreeCourse, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(degreeCourse, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(degreeCourse, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(degreeCourse, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(degreeCourse, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(degreeCourse, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(degreeCourse, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(degreeCourse, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDegreeCourse_cfuBetweenValues(degreeCourse, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * Validates the cfuBetweenValues constraint of '<em>Degree Course</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateDegreeCourse_cfuBetweenValues(DegreeCourse degreeCourse, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return degreeCourse.cfuBetweenValues(diagnostics, context);
 	}
 
 	/**
@@ -205,7 +241,27 @@ public class DaGiMa_MDE_HW3Validator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateCourse(Course course, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(course, diagnostics, context);
+		if (!validate_NoCircularContainment(course, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(course, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(course, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(course, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(course, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(course, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(course, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(course, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(course, diagnostics, context);
+		if (result || diagnostics != null) result &= validateCourse_cfuCourseGreaterThan(course, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * Validates the cfuCourseGreaterThan constraint of '<em>Course</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateCourse_cfuCourseGreaterThan(Course course, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return course.cfuCourseGreaterThan(diagnostics, context);
 	}
 
 	/**

@@ -13,6 +13,12 @@ import junit.textui.TestRunner;
  * <!-- begin-user-doc -->
  * A test case for the model object '<em><b>Degree Course</b></em>'.
  * <!-- end-user-doc -->
+ * <p>
+ * The following operations are tested:
+ * <ul>
+ *   <li>{@link daGiMa_MDE_HW3.DegreeCourse#cfuBetweenValues(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Cfu Between Values</em>}</li>
+ * </ul>
+ * </p>
  * @generated
  */
 public class DegreeCourseTest extends TestCase {
@@ -84,6 +90,19 @@ public class DegreeCourseTest extends TestCase {
 	@Override
 	protected void tearDown() throws Exception {
 		setFixture(null);
+	}
+
+	/**
+	 * Tests the '{@link daGiMa_MDE_HW3.DegreeCourse#cfuBetweenValues(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Cfu Between Values</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see daGiMa_MDE_HW3.DegreeCourse#cfuBetweenValues(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	public void testCfuBetweenValues__DiagnosticChain_Map() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
 	}
 
 } //DegreeCourseTest

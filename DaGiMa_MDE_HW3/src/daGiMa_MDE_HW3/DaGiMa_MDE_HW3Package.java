@@ -270,7 +270,7 @@ public interface DaGiMa_MDE_HW3Package extends EPackage {
 	int PROFESSOR__TAUGHT_COURSES = USER_FEATURE_COUNT + 4;
 
 	/**
-	 * The feature id for the '<em><b>News posted</b></em>' reference list.
+	 * The feature id for the '<em><b>News posted</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -352,7 +352,7 @@ public interface DaGiMa_MDE_HW3Package extends EPackage {
 	int STUDENT__MATRICULATION_NUMBER = USER_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Thesis defended</b></em>' reference list.
+	 * The feature id for the '<em><b>Thesis defended</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -588,13 +588,31 @@ public interface DaGiMa_MDE_HW3Package extends EPackage {
 	int DEGREE_COURSE__COURSE_CATALOGUE = 10;
 
 	/**
+	 * The feature id for the '<em><b>Extra info</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEGREE_COURSE__EXTRA_INFO = 11;
+
+	/**
 	 * The number of structural features of the '<em>Degree Course</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DEGREE_COURSE_FEATURE_COUNT = 11;
+	int DEGREE_COURSE_FEATURE_COUNT = 12;
+
+	/**
+	 * The operation id for the '<em>Cfu Between Values</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEGREE_COURSE___CFU_BETWEEN_VALUES__DIAGNOSTICCHAIN_MAP = 0;
 
 	/**
 	 * The number of operations of the '<em>Degree Course</em>' class.
@@ -603,7 +621,7 @@ public interface DaGiMa_MDE_HW3Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DEGREE_COURSE_OPERATION_COUNT = 0;
+	int DEGREE_COURSE_OPERATION_COUNT = 1;
 
 	/**
 	 * The meta object id for the '{@link daGiMa_MDE_HW3.impl.ThesisImpl <em>Thesis</em>}' class.
@@ -634,7 +652,7 @@ public interface DaGiMa_MDE_HW3Package extends EPackage {
 	int THESIS__TYPE = 1;
 
 	/**
-	 * The feature id for the '<em><b>Student</b></em>' reference.
+	 * The feature id for the '<em><b>Student</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -788,13 +806,31 @@ public interface DaGiMa_MDE_HW3Package extends EPackage {
 	int COURSE__STUDENTS_GRADES = 10;
 
 	/**
+	 * The feature id for the '<em><b>Extra info</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COURSE__EXTRA_INFO = 11;
+
+	/**
 	 * The number of structural features of the '<em>Course</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COURSE_FEATURE_COUNT = 11;
+	int COURSE_FEATURE_COUNT = 12;
+
+	/**
+	 * The operation id for the '<em>Cfu Course Greater Than</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COURSE___CFU_COURSE_GREATER_THAN__DIAGNOSTICCHAIN_MAP = 0;
 
 	/**
 	 * The number of operations of the '<em>Course</em>' class.
@@ -803,7 +839,7 @@ public interface DaGiMa_MDE_HW3Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COURSE_OPERATION_COUNT = 0;
+	int COURSE_OPERATION_COUNT = 1;
 
 	/**
 	 * The meta object id for the '{@link daGiMa_MDE_HW3.impl.ExaminationCallImpl <em>Examination Call</em>}' class.
@@ -1053,7 +1089,7 @@ public interface DaGiMa_MDE_HW3Package extends EPackage {
 	int NEWS__DEPARTMENT = 2;
 
 	/**
-	 * The feature id for the '<em><b>Author</b></em>' reference.
+	 * The feature id for the '<em><b>Author</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1359,10 +1395,10 @@ public interface DaGiMa_MDE_HW3Package extends EPackage {
 	EReference getProfessor_Taught_courses();
 
 	/**
-	 * Returns the meta object for the reference list '{@link daGiMa_MDE_HW3.Professor#getNews_posted <em>News posted</em>}'.
+	 * Returns the meta object for the containment reference list '{@link daGiMa_MDE_HW3.Professor#getNews_posted <em>News posted</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>News posted</em>'.
+	 * @return the meta object for the containment reference list '<em>News posted</em>'.
 	 * @see daGiMa_MDE_HW3.Professor#getNews_posted()
 	 * @see #getProfessor()
 	 * @generated
@@ -1391,10 +1427,10 @@ public interface DaGiMa_MDE_HW3Package extends EPackage {
 	EAttribute getStudent_Matriculation_number();
 
 	/**
-	 * Returns the meta object for the reference list '{@link daGiMa_MDE_HW3.Student#getThesis_defended <em>Thesis defended</em>}'.
+	 * Returns the meta object for the containment reference list '{@link daGiMa_MDE_HW3.Student#getThesis_defended <em>Thesis defended</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Thesis defended</em>'.
+	 * @return the meta object for the containment reference list '<em>Thesis defended</em>'.
 	 * @see daGiMa_MDE_HW3.Student#getThesis_defended()
 	 * @see #getStudent()
 	 * @generated
@@ -1685,6 +1721,27 @@ public interface DaGiMa_MDE_HW3Package extends EPackage {
 	EReference getDegreeCourse_Course_catalogue();
 
 	/**
+	 * Returns the meta object for the reference list '{@link daGiMa_MDE_HW3.DegreeCourse#getExtra_info <em>Extra info</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Extra info</em>'.
+	 * @see daGiMa_MDE_HW3.DegreeCourse#getExtra_info()
+	 * @see #getDegreeCourse()
+	 * @generated
+	 */
+	EReference getDegreeCourse_Extra_info();
+
+	/**
+	 * Returns the meta object for the '{@link daGiMa_MDE_HW3.DegreeCourse#cfuBetweenValues(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Cfu Between Values</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Cfu Between Values</em>' operation.
+	 * @see daGiMa_MDE_HW3.DegreeCourse#cfuBetweenValues(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	EOperation getDegreeCourse__CfuBetweenValues__DiagnosticChain_Map();
+
+	/**
 	 * Returns the meta object for class '{@link daGiMa_MDE_HW3.Thesis <em>Thesis</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1717,10 +1774,10 @@ public interface DaGiMa_MDE_HW3Package extends EPackage {
 	EAttribute getThesis_Type();
 
 	/**
-	 * Returns the meta object for the reference '{@link daGiMa_MDE_HW3.Thesis#getStudent <em>Student</em>}'.
+	 * Returns the meta object for the container reference '{@link daGiMa_MDE_HW3.Thesis#getStudent <em>Student</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Student</em>'.
+	 * @return the meta object for the container reference '<em>Student</em>'.
 	 * @see daGiMa_MDE_HW3.Thesis#getStudent()
 	 * @see #getThesis()
 	 * @generated
@@ -1879,6 +1936,27 @@ public interface DaGiMa_MDE_HW3Package extends EPackage {
 	 * @generated
 	 */
 	EReference getCourse_Students_grades();
+
+	/**
+	 * Returns the meta object for the reference list '{@link daGiMa_MDE_HW3.Course#getExtra_info <em>Extra info</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Extra info</em>'.
+	 * @see daGiMa_MDE_HW3.Course#getExtra_info()
+	 * @see #getCourse()
+	 * @generated
+	 */
+	EReference getCourse_Extra_info();
+
+	/**
+	 * Returns the meta object for the '{@link daGiMa_MDE_HW3.Course#cfuCourseGreaterThan(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Cfu Course Greater Than</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Cfu Course Greater Than</em>' operation.
+	 * @see daGiMa_MDE_HW3.Course#cfuCourseGreaterThan(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	EOperation getCourse__CfuCourseGreaterThan__DiagnosticChain_Map();
 
 	/**
 	 * Returns the meta object for class '{@link daGiMa_MDE_HW3.ExaminationCall <em>Examination Call</em>}'.
@@ -2107,10 +2185,10 @@ public interface DaGiMa_MDE_HW3Package extends EPackage {
 	EReference getNews_Department();
 
 	/**
-	 * Returns the meta object for the reference '{@link daGiMa_MDE_HW3.News#getAuthor <em>Author</em>}'.
+	 * Returns the meta object for the container reference '{@link daGiMa_MDE_HW3.News#getAuthor <em>Author</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Author</em>'.
+	 * @return the meta object for the container reference '<em>Author</em>'.
 	 * @see daGiMa_MDE_HW3.News#getAuthor()
 	 * @see #getNews()
 	 * @generated
@@ -2372,7 +2450,7 @@ public interface DaGiMa_MDE_HW3Package extends EPackage {
 		EReference PROFESSOR__TAUGHT_COURSES = eINSTANCE.getProfessor_Taught_courses();
 
 		/**
-		 * The meta object literal for the '<em><b>News posted</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>News posted</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -2398,7 +2476,7 @@ public interface DaGiMa_MDE_HW3Package extends EPackage {
 		EAttribute STUDENT__MATRICULATION_NUMBER = eINSTANCE.getStudent_Matriculation_number();
 
 		/**
-		 * The meta object literal for the '<em><b>Thesis defended</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Thesis defended</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -2620,6 +2698,22 @@ public interface DaGiMa_MDE_HW3Package extends EPackage {
 		EReference DEGREE_COURSE__COURSE_CATALOGUE = eINSTANCE.getDegreeCourse_Course_catalogue();
 
 		/**
+		 * The meta object literal for the '<em><b>Extra info</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DEGREE_COURSE__EXTRA_INFO = eINSTANCE.getDegreeCourse_Extra_info();
+
+		/**
+		 * The meta object literal for the '<em><b>Cfu Between Values</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation DEGREE_COURSE___CFU_BETWEEN_VALUES__DIAGNOSTICCHAIN_MAP = eINSTANCE.getDegreeCourse__CfuBetweenValues__DiagnosticChain_Map();
+
+		/**
 		 * The meta object literal for the '{@link daGiMa_MDE_HW3.impl.ThesisImpl <em>Thesis</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2646,7 +2740,7 @@ public interface DaGiMa_MDE_HW3Package extends EPackage {
 		EAttribute THESIS__TYPE = eINSTANCE.getThesis_Type();
 
 		/**
-		 * The meta object literal for the '<em><b>Student</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Student</b></em>' container reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -2766,6 +2860,22 @@ public interface DaGiMa_MDE_HW3Package extends EPackage {
 		 * @generated
 		 */
 		EReference COURSE__STUDENTS_GRADES = eINSTANCE.getCourse_Students_grades();
+
+		/**
+		 * The meta object literal for the '<em><b>Extra info</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COURSE__EXTRA_INFO = eINSTANCE.getCourse_Extra_info();
+
+		/**
+		 * The meta object literal for the '<em><b>Cfu Course Greater Than</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation COURSE___CFU_COURSE_GREATER_THAN__DIAGNOSTICCHAIN_MAP = eINSTANCE.getCourse__CfuCourseGreaterThan__DiagnosticChain_Map();
 
 		/**
 		 * The meta object literal for the '{@link daGiMa_MDE_HW3.impl.ExaminationCallImpl <em>Examination Call</em>}' class.
@@ -2944,7 +3054,7 @@ public interface DaGiMa_MDE_HW3Package extends EPackage {
 		EReference NEWS__DEPARTMENT = eINSTANCE.getNews_Department();
 
 		/**
-		 * The meta object literal for the '<em><b>Author</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Author</b></em>' container reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

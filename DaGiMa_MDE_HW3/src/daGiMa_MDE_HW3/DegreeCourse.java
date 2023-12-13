@@ -2,6 +2,8 @@
  */
 package daGiMa_MDE_HW3;
 
+import java.util.Map;
+import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;
@@ -26,10 +28,11 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link daGiMa_MDE_HW3.DegreeCourse#getCoordinator <em>Coordinator</em>}</li>
  *   <li>{@link daGiMa_MDE_HW3.DegreeCourse#getEnrolled_students <em>Enrolled students</em>}</li>
  *   <li>{@link daGiMa_MDE_HW3.DegreeCourse#getCourse_catalogue <em>Course catalogue</em>}</li>
+ *   <li>{@link daGiMa_MDE_HW3.DegreeCourse#getExtra_info <em>Extra info</em>}</li>
  * </ul>
  *
  * @see daGiMa_MDE_HW3.DaGiMa_MDE_HW3Package#getDegreeCourse()
- * @model
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='cfuBetweenValues'"
  * @generated
  */
 public interface DegreeCourse extends EObject {
@@ -258,5 +261,25 @@ public interface DegreeCourse extends EObject {
 	 * @generated
 	 */
 	EList<Course> getCourse_catalogue();
+
+	/**
+	 * Returns the value of the '<em><b>Extra info</b></em>' reference list.
+	 * The list contents are of type {@link daGiMa_MDE_HW3.ExtraInfo}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Extra info</em>' reference list.
+	 * @see daGiMa_MDE_HW3.DaGiMa_MDE_HW3Package#getDegreeCourse_Extra_info()
+	 * @model
+	 * @generated
+	 */
+	EList<ExtraInfo> getExtra_info();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot body='\n\t\t\tcfu &gt; 0 and cfu &lt;= 360'"
+	 * @generated
+	 */
+	boolean cfuBetweenValues(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 } // DegreeCourse

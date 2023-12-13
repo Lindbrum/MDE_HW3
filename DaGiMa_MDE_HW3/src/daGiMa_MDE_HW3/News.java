@@ -97,24 +97,24 @@ public interface News extends EObject {
 	void setDepartment(Department value);
 
 	/**
-	 * Returns the value of the '<em><b>Author</b></em>' reference.
+	 * Returns the value of the '<em><b>Author</b></em>' container reference.
 	 * It is bidirectional and its opposite is '{@link daGiMa_MDE_HW3.Professor#getNews_posted <em>News posted</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Author</em>' reference.
+	 * @return the value of the '<em>Author</em>' container reference.
 	 * @see #setAuthor(Professor)
 	 * @see daGiMa_MDE_HW3.DaGiMa_MDE_HW3Package#getNews_Author()
 	 * @see daGiMa_MDE_HW3.Professor#getNews_posted
-	 * @model opposite="news_posted" required="true"
+	 * @model opposite="news_posted" required="true" transient="false"
 	 * @generated
 	 */
 	Professor getAuthor();
 
 	/**
-	 * Sets the value of the '{@link daGiMa_MDE_HW3.News#getAuthor <em>Author</em>}' reference.
+	 * Sets the value of the '{@link daGiMa_MDE_HW3.News#getAuthor <em>Author</em>}' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Author</em>' reference.
+	 * @param value the new value of the '<em>Author</em>' container reference.
 	 * @see #getAuthor()
 	 * @generated
 	 */

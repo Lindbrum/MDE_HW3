@@ -4,16 +4,21 @@ package daGiMa_MDE_HW3.impl;
 
 import daGiMa_MDE_HW3.Course;
 import daGiMa_MDE_HW3.DaGiMa_MDE_HW3Package;
+import daGiMa_MDE_HW3.DaGiMa_MDE_HW3Tables;
 import daGiMa_MDE_HW3.DegreeCourse;
 import daGiMa_MDE_HW3.Department;
+import daGiMa_MDE_HW3.ExtraInfo;
 import daGiMa_MDE_HW3.Professor;
 import daGiMa_MDE_HW3.Student;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
 
+import java.util.Map;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
+import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
@@ -23,9 +28,19 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
+import org.eclipse.ocl.pivot.evaluation.Executor;
+import org.eclipse.ocl.pivot.ids.TypeId;
+import org.eclipse.ocl.pivot.library.oclany.OclComparableGreaterThanOperation;
+import org.eclipse.ocl.pivot.library.oclany.OclComparableLessThanEqualOperation;
+import org.eclipse.ocl.pivot.library.string.CGStringGetSeverityOperation;
+import org.eclipse.ocl.pivot.library.string.CGStringLogDiagnosticOperation;
+import org.eclipse.ocl.pivot.utilities.PivotUtil;
+import org.eclipse.ocl.pivot.utilities.ValueUtil;
+import org.eclipse.ocl.pivot.values.IntegerValue;
 
 /**
  * <!-- begin-user-doc -->
@@ -46,6 +61,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link daGiMa_MDE_HW3.impl.DegreeCourseImpl#getCoordinator <em>Coordinator</em>}</li>
  *   <li>{@link daGiMa_MDE_HW3.impl.DegreeCourseImpl#getEnrolled_students <em>Enrolled students</em>}</li>
  *   <li>{@link daGiMa_MDE_HW3.impl.DegreeCourseImpl#getCourse_catalogue <em>Course catalogue</em>}</li>
+ *   <li>{@link daGiMa_MDE_HW3.impl.DegreeCourseImpl#getExtra_info <em>Extra info</em>}</li>
  * </ul>
  *
  * @generated
@@ -210,6 +226,16 @@ public class DegreeCourseImpl extends MinimalEObjectImpl.Container implements De
 	 * @ordered
 	 */
 	protected EList<Course> course_catalogue;
+
+	/**
+	 * The cached value of the '{@link #getExtra_info() <em>Extra info</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getExtra_info()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<ExtraInfo> extra_info;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -517,6 +543,75 @@ public class DegreeCourseImpl extends MinimalEObjectImpl.Container implements De
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
+	public EList<ExtraInfo> getExtra_info() {
+		if (extra_info == null) {
+			extra_info = new EObjectResolvingEList<ExtraInfo>(ExtraInfo.class, this, DaGiMa_MDE_HW3Package.DEGREE_COURSE__EXTRA_INFO);
+		}
+		return extra_info;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean cfuBetweenValues(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+		final String constraintName = "DegreeCourse::cfuBetweenValues";
+		try {
+			/**
+			 *
+			 * inv cfuBetweenValues:
+			 *   let severity : Integer[1] = constraintName.getSeverity()
+			 *   in
+			 *     if severity <= 0
+			 *     then true
+			 *     else
+			 *       let result : Boolean[?] = cfu > 0 and cfu <= 360
+			 *       in
+			 *         constraintName.logDiagnostic(self, null, diagnostics, context, null, severity, result, 0)
+			 *     endif
+			 */
+			final /*@NonInvalid*/ Executor executor = PivotUtil.getExecutor(this);
+			final /*@NonInvalid*/ IntegerValue severity_0 = CGStringGetSeverityOperation.INSTANCE.evaluate(executor, DaGiMa_MDE_HW3Package.Literals.DEGREE_COURSE___CFU_BETWEEN_VALUES__DIAGNOSTICCHAIN_MAP);
+			final /*@NonInvalid*/ boolean le = OclComparableLessThanEqualOperation.INSTANCE.evaluate(executor, severity_0, DaGiMa_MDE_HW3Tables.INT_0).booleanValue();
+			/*@NonInvalid*/ boolean IF_le;
+			if (le) {
+				IF_le = true;
+			}
+			else {
+				final /*@NonInvalid*/ int cfu_0 = this.getCfu();
+				final /*@NonInvalid*/ IntegerValue BOXED_cfu_0 = ValueUtil.integerValueOf(cfu_0);
+				final /*@NonInvalid*/ boolean gt = OclComparableGreaterThanOperation.INSTANCE.evaluate(executor, BOXED_cfu_0, DaGiMa_MDE_HW3Tables.INT_0).booleanValue();
+				final /*@NonInvalid*/ Boolean result;
+				if (!gt) {
+					result = ValueUtil.FALSE_VALUE;
+				}
+				else {
+					final /*@NonInvalid*/ boolean le_0 = OclComparableLessThanEqualOperation.INSTANCE.evaluate(executor, BOXED_cfu_0, DaGiMa_MDE_HW3Tables.INT_360).booleanValue();
+					if (!le_0) {
+						result = ValueUtil.FALSE_VALUE;
+					}
+					else {
+						result = ValueUtil.TRUE_VALUE;
+					}
+				}
+				final /*@NonInvalid*/ boolean logDiagnostic = CGStringLogDiagnosticOperation.INSTANCE.evaluate(executor, TypeId.BOOLEAN, constraintName, this, (Object)null, diagnostics, context, (Object)null, severity_0, result, DaGiMa_MDE_HW3Tables.INT_0).booleanValue();
+				IF_le = logDiagnostic;
+			}
+			return IF_le;
+		}
+		catch (Throwable e) {
+			return ValueUtil.validationFailedDiagnostic(constraintName, this, diagnostics, context, e);
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -602,6 +697,8 @@ public class DegreeCourseImpl extends MinimalEObjectImpl.Container implements De
 				return getEnrolled_students();
 			case DaGiMa_MDE_HW3Package.DEGREE_COURSE__COURSE_CATALOGUE:
 				return getCourse_catalogue();
+			case DaGiMa_MDE_HW3Package.DEGREE_COURSE__EXTRA_INFO:
+				return getExtra_info();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -651,6 +748,10 @@ public class DegreeCourseImpl extends MinimalEObjectImpl.Container implements De
 				getCourse_catalogue().clear();
 				getCourse_catalogue().addAll((Collection<? extends Course>)newValue);
 				return;
+			case DaGiMa_MDE_HW3Package.DEGREE_COURSE__EXTRA_INFO:
+				getExtra_info().clear();
+				getExtra_info().addAll((Collection<? extends ExtraInfo>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -696,6 +797,9 @@ public class DegreeCourseImpl extends MinimalEObjectImpl.Container implements De
 			case DaGiMa_MDE_HW3Package.DEGREE_COURSE__COURSE_CATALOGUE:
 				getCourse_catalogue().clear();
 				return;
+			case DaGiMa_MDE_HW3Package.DEGREE_COURSE__EXTRA_INFO:
+				getExtra_info().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -730,8 +834,25 @@ public class DegreeCourseImpl extends MinimalEObjectImpl.Container implements De
 				return enrolled_students != null && !enrolled_students.isEmpty();
 			case DaGiMa_MDE_HW3Package.DEGREE_COURSE__COURSE_CATALOGUE:
 				return course_catalogue != null && !course_catalogue.isEmpty();
+			case DaGiMa_MDE_HW3Package.DEGREE_COURSE__EXTRA_INFO:
+				return extra_info != null && !extra_info.isEmpty();
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	@SuppressWarnings("unchecked")
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case DaGiMa_MDE_HW3Package.DEGREE_COURSE___CFU_BETWEEN_VALUES__DIAGNOSTICCHAIN_MAP:
+				return cfuBetweenValues((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

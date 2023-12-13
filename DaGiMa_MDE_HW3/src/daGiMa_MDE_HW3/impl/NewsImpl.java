@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 
 /**
  * <!-- begin-user-doc -->
@@ -86,16 +87,6 @@ public class NewsImpl extends MinimalEObjectImpl.Container implements News {
 	 * @ordered
 	 */
 	protected Department department;
-
-	/**
-	 * The cached value of the '{@link #getAuthor() <em>Author</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAuthor()
-	 * @generated
-	 * @ordered
-	 */
-	protected Professor author;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -231,24 +222,8 @@ public class NewsImpl extends MinimalEObjectImpl.Container implements News {
 	 */
 	@Override
 	public Professor getAuthor() {
-		if (author != null && author.eIsProxy()) {
-			InternalEObject oldAuthor = (InternalEObject)author;
-			author = (Professor)eResolveProxy(oldAuthor);
-			if (author != oldAuthor) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DaGiMa_MDE_HW3Package.NEWS__AUTHOR, oldAuthor, author));
-			}
-		}
-		return author;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Professor basicGetAuthor() {
-		return author;
+		if (eContainerFeatureID() != DaGiMa_MDE_HW3Package.NEWS__AUTHOR) return null;
+		return (Professor)eInternalContainer();
 	}
 
 	/**
@@ -257,12 +232,7 @@ public class NewsImpl extends MinimalEObjectImpl.Container implements News {
 	 * @generated
 	 */
 	public NotificationChain basicSetAuthor(Professor newAuthor, NotificationChain msgs) {
-		Professor oldAuthor = author;
-		author = newAuthor;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DaGiMa_MDE_HW3Package.NEWS__AUTHOR, oldAuthor, newAuthor);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
+		msgs = eBasicSetContainer((InternalEObject)newAuthor, DaGiMa_MDE_HW3Package.NEWS__AUTHOR, msgs);
 		return msgs;
 	}
 
@@ -273,10 +243,12 @@ public class NewsImpl extends MinimalEObjectImpl.Container implements News {
 	 */
 	@Override
 	public void setAuthor(Professor newAuthor) {
-		if (newAuthor != author) {
+		if (newAuthor != eInternalContainer() || (eContainerFeatureID() != DaGiMa_MDE_HW3Package.NEWS__AUTHOR && newAuthor != null)) {
+			if (EcoreUtil.isAncestor(this, newAuthor))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
-			if (author != null)
-				msgs = ((InternalEObject)author).eInverseRemove(this, DaGiMa_MDE_HW3Package.PROFESSOR__NEWS_POSTED, Professor.class, msgs);
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
 			if (newAuthor != null)
 				msgs = ((InternalEObject)newAuthor).eInverseAdd(this, DaGiMa_MDE_HW3Package.PROFESSOR__NEWS_POSTED, Professor.class, msgs);
 			msgs = basicSetAuthor(newAuthor, msgs);
@@ -299,8 +271,8 @@ public class NewsImpl extends MinimalEObjectImpl.Container implements News {
 					msgs = ((InternalEObject)department).eInverseRemove(this, DaGiMa_MDE_HW3Package.DEPARTMENT__RELATED_NEWS, Department.class, msgs);
 				return basicSetDepartment((Department)otherEnd, msgs);
 			case DaGiMa_MDE_HW3Package.NEWS__AUTHOR:
-				if (author != null)
-					msgs = ((InternalEObject)author).eInverseRemove(this, DaGiMa_MDE_HW3Package.PROFESSOR__NEWS_POSTED, Professor.class, msgs);
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
 				return basicSetAuthor((Professor)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
@@ -328,6 +300,20 @@ public class NewsImpl extends MinimalEObjectImpl.Container implements News {
 	 * @generated
 	 */
 	@Override
+	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
+		switch (eContainerFeatureID()) {
+			case DaGiMa_MDE_HW3Package.NEWS__AUTHOR:
+				return eInternalContainer().eInverseRemove(this, DaGiMa_MDE_HW3Package.PROFESSOR__NEWS_POSTED, Professor.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case DaGiMa_MDE_HW3Package.NEWS__TITLE:
@@ -338,8 +324,7 @@ public class NewsImpl extends MinimalEObjectImpl.Container implements News {
 				if (resolve) return getDepartment();
 				return basicGetDepartment();
 			case DaGiMa_MDE_HW3Package.NEWS__AUTHOR:
-				if (resolve) return getAuthor();
-				return basicGetAuthor();
+				return getAuthor();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -407,7 +392,7 @@ public class NewsImpl extends MinimalEObjectImpl.Container implements News {
 			case DaGiMa_MDE_HW3Package.NEWS__DEPARTMENT:
 				return department != null;
 			case DaGiMa_MDE_HW3Package.NEWS__AUTHOR:
-				return author != null;
+				return getAuthor() != null;
 		}
 		return super.eIsSet(featureID);
 	}

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dagima_mde_hw3:Course xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:dagima_mde_hw3="http://www.example.org/dagima_mde_hw3" name="MDE" year="1">
+  <language>english</language>
+  <teachers href="Teacher.dagima_mde_hw3#222222222222"/>
+  <degree_courses href="University.dagima_mde_hw3#L-41"/>
+  <students_grades href="Carreer.dagima_mde_hw3#2023-12-05T00:00:00.000+0100"/>
+</dagima_mde_hw3:Course>

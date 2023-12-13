@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -63,7 +64,7 @@ public class StudentImpl extends UserImpl implements Student {
 	protected long matriculation_number = MATRICULATION_NUMBER_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getThesis_defended() <em>Thesis defended</em>}' reference list.
+	 * The cached value of the '{@link #getThesis_defended() <em>Thesis defended</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getThesis_defended()
@@ -152,7 +153,7 @@ public class StudentImpl extends UserImpl implements Student {
 	@Override
 	public EList<Thesis> getThesis_defended() {
 		if (thesis_defended == null) {
-			thesis_defended = new EObjectWithInverseResolvingEList<Thesis>(Thesis.class, this, DaGiMa_MDE_HW3Package.STUDENT__THESIS_DEFENDED, DaGiMa_MDE_HW3Package.THESIS__STUDENT);
+			thesis_defended = new EObjectContainmentWithInverseEList<Thesis>(Thesis.class, this, DaGiMa_MDE_HW3Package.STUDENT__THESIS_DEFENDED, DaGiMa_MDE_HW3Package.THESIS__STUDENT);
 		}
 		return thesis_defended;
 	}

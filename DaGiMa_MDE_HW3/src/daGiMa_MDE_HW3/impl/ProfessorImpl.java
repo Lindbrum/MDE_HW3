@@ -20,8 +20,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -115,7 +114,7 @@ public class ProfessorImpl extends UserImpl implements Professor {
 	protected EList<Course> taught_courses;
 
 	/**
-	 * The cached value of the '{@link #getNews_posted() <em>News posted</em>}' reference list.
+	 * The cached value of the '{@link #getNews_posted() <em>News posted</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getNews_posted()
@@ -223,7 +222,7 @@ public class ProfessorImpl extends UserImpl implements Professor {
 	@Override
 	public EList<Course> getTaught_courses() {
 		if (taught_courses == null) {
-			taught_courses = new EObjectResolvingEList<Course>(Course.class, this, DaGiMa_MDE_HW3Package.PROFESSOR__TAUGHT_COURSES);
+			taught_courses = new EObjectWithInverseResolvingEList.ManyInverse<Course>(Course.class, this, DaGiMa_MDE_HW3Package.PROFESSOR__TAUGHT_COURSES, DaGiMa_MDE_HW3Package.COURSE__TEACHERS);
 		}
 		return taught_courses;
 	}
@@ -236,7 +235,7 @@ public class ProfessorImpl extends UserImpl implements Professor {
 	@Override
 	public EList<News> getNews_posted() {
 		if (news_posted == null) {
-			news_posted = new EObjectWithInverseResolvingEList<News>(News.class, this, DaGiMa_MDE_HW3Package.PROFESSOR__NEWS_POSTED, DaGiMa_MDE_HW3Package.NEWS__AUTHOR);
+			news_posted = new EObjectContainmentWithInverseEList<News>(News.class, this, DaGiMa_MDE_HW3Package.PROFESSOR__NEWS_POSTED, DaGiMa_MDE_HW3Package.NEWS__AUTHOR);
 		}
 		return news_posted;
 	}
@@ -254,6 +253,8 @@ public class ProfessorImpl extends UserImpl implements Professor {
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getCoordinated_degree_courses()).basicAdd(otherEnd, msgs);
 			case DaGiMa_MDE_HW3Package.PROFESSOR__SUPERVISED_THESIS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getSupervised_thesis()).basicAdd(otherEnd, msgs);
+			case DaGiMa_MDE_HW3Package.PROFESSOR__TAUGHT_COURSES:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getTaught_courses()).basicAdd(otherEnd, msgs);
 			case DaGiMa_MDE_HW3Package.PROFESSOR__NEWS_POSTED:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getNews_posted()).basicAdd(otherEnd, msgs);
 		}
@@ -272,6 +273,8 @@ public class ProfessorImpl extends UserImpl implements Professor {
 				return ((InternalEList<?>)getCoordinated_degree_courses()).basicRemove(otherEnd, msgs);
 			case DaGiMa_MDE_HW3Package.PROFESSOR__SUPERVISED_THESIS:
 				return ((InternalEList<?>)getSupervised_thesis()).basicRemove(otherEnd, msgs);
+			case DaGiMa_MDE_HW3Package.PROFESSOR__TAUGHT_COURSES:
+				return ((InternalEList<?>)getTaught_courses()).basicRemove(otherEnd, msgs);
 			case DaGiMa_MDE_HW3Package.PROFESSOR__NEWS_POSTED:
 				return ((InternalEList<?>)getNews_posted()).basicRemove(otherEnd, msgs);
 		}

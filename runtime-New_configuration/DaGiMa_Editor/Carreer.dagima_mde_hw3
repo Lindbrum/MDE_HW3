@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dagima_mde_hw3:Career xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:dagima_mde_hw3="http://www.example.org/dagima_mde_hw3">
+  <student href="Student.dagima_mde_hw3#/"/>
+  <degree_course href="University.dagima_mde_hw3#//@departments.0/@offered_courses.0"/>
+  <courses grade="30l">
+    <course href="SE_course.dagima_mde_hw3#/"/>
+  </courses>
+  <courses date="2023-12-05T00:00:00.000+0100" grade="30L">
+    <course href="MDE_course.dagima_mde_hw3#/"/>
+  </courses>
+</dagima_mde_hw3:Career>

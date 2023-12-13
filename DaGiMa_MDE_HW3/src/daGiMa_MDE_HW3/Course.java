@@ -2,6 +2,8 @@
  */
 package daGiMa_MDE_HW3;
 
+import java.util.Map;
+import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;
@@ -26,10 +28,11 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link daGiMa_MDE_HW3.Course#getDegree_courses <em>Degree courses</em>}</li>
  *   <li>{@link daGiMa_MDE_HW3.Course#getCalls <em>Calls</em>}</li>
  *   <li>{@link daGiMa_MDE_HW3.Course#getStudents_grades <em>Students grades</em>}</li>
+ *   <li>{@link daGiMa_MDE_HW3.Course#getExtra_info <em>Extra info</em>}</li>
  * </ul>
  *
  * @see daGiMa_MDE_HW3.DaGiMa_MDE_HW3Package#getCourse()
- * @model
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='cfuCourseGreaterThan'"
  * @generated
  */
 public interface Course extends EObject {
@@ -192,11 +195,13 @@ public interface Course extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Teachers</b></em>' reference list.
 	 * The list contents are of type {@link daGiMa_MDE_HW3.Professor}.
+	 * It is bidirectional and its opposite is '{@link daGiMa_MDE_HW3.Professor#getTaught_courses <em>Taught courses</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Teachers</em>' reference list.
 	 * @see daGiMa_MDE_HW3.DaGiMa_MDE_HW3Package#getCourse_Teachers()
-	 * @model required="true"
+	 * @see daGiMa_MDE_HW3.Professor#getTaught_courses
+	 * @model opposite="taught_courses" required="true"
 	 * @generated
 	 */
 	EList<Professor> getTeachers();
@@ -242,5 +247,25 @@ public interface Course extends EObject {
 	 * @generated
 	 */
 	EList<PassingGrade> getStudents_grades();
+
+	/**
+	 * Returns the value of the '<em><b>Extra info</b></em>' reference list.
+	 * The list contents are of type {@link daGiMa_MDE_HW3.ExtraInfo}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Extra info</em>' reference list.
+	 * @see daGiMa_MDE_HW3.DaGiMa_MDE_HW3Package#getCourse_Extra_info()
+	 * @model
+	 * @generated
+	 */
+	EList<ExtraInfo> getExtra_info();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot body='\n\t\t\tcfu &gt; 0'"
+	 * @generated
+	 */
+	boolean cfuCourseGreaterThan(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 } // Course

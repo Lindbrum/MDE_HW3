@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dagima_mde_hw3:Course xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:dagima_mde_hw3="http://www.example.org/dagima_mde_hw3" name="SE">
+  <language>italian</language>
+  <teachers href="Teacher.dagima_mde_hw3#222222222222"/>
+  <degree_courses href="University.dagima_mde_hw3#//@departments.0/@offered_courses.0"/>
+  <calls classroom="A1.6">
+    <booked_students href="Student.dagima_mde_hw3#/"/>
+  </calls>
+  <students_grades href="Carreer.dagima_mde_hw3#//@courses.0"/>
+</dagima_mde_hw3:Course>

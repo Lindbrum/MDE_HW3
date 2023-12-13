@@ -28,15 +28,15 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="supervised_thesis" upperBound="-1"
         eType="#//Thesis" eOpposite="#//Thesis/supervisor"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="taught_courses" lowerBound="1"
-        upperBound="-1" eType="#//Course"/>
+        upperBound="-1" eType="#//Course" eOpposite="#//Course/teachers"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="news_posted" upperBound="-1"
-        eType="#//News" eOpposite="#//News/author"/>
+        eType="#//News" containment="true" eOpposite="#//News/author"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Student" eSuperTypes="#//User">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="matriculation_number" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="thesis_defended" upperBound="-1"
-        eType="#//Thesis" eOpposite="#//Thesis/student"/>
+        eType="#//Thesis" containment="true" eOpposite="#//Thesis/student"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="enrolled_courses" upperBound="-1"
         eType="#//DegreeCourse" eOpposite="#//DegreeCourse/enrolled_students"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="booked_calls" upperBound="-1"
@@ -65,6 +65,12 @@
         eType="#//News" eOpposite="#//News/department"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DegreeCourse">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="cfuBetweenValues"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="cfuBetweenValues" value="&#xA;&#x9;&#x9;&#x9;cfu > 0 and cfu &lt;= 360"/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="code" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         defaultValueLiteral="L-44" iD="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
@@ -88,6 +94,8 @@
         eType="#//Student" eOpposite="#//Student/enrolled_courses"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="course_catalogue" lowerBound="1"
         upperBound="-1" eType="#//Course" eOpposite="#//Course/degree_courses"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="extra_info" upperBound="-1"
+        eType="#//ExtraInfo"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Thesis">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
@@ -107,6 +115,12 @@
     <eLiterals name="PUBLICATION" value="2"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Course">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="cfuCourseGreaterThan"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="cfuCourseGreaterThan" value="&#xA;&#x9;&#x9;&#x9;cfu > 0"/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="code" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         defaultValueLiteral="F-1234" iD="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
@@ -123,13 +137,15 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="period" lowerBound="1"
         eType="#//CoursePeriod" defaultValueLiteral="FIRST_SEMESTER"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="teachers" lowerBound="1"
-        upperBound="-1" eType="#//Professor"/>
+        upperBound="-1" eType="#//Professor" eOpposite="#//Professor/taught_courses"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="degree_courses" lowerBound="1"
         upperBound="-1" eType="#//DegreeCourse" eOpposite="#//DegreeCourse/course_catalogue"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="calls" upperBound="-1"
         eType="#//ExaminationCall" containment="true" eOpposite="#//ExaminationCall/course"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="students_grades" upperBound="-1"
         eType="#//PassingGrade" eOpposite="#//PassingGrade/course"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="extra_info" upperBound="-1"
+        eType="#//ExtraInfo"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="CreditType">
     <eLiterals name="B" value="1"/>

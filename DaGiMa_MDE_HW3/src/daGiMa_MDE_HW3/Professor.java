@@ -101,25 +101,27 @@ public interface Professor extends User {
 	/**
 	 * Returns the value of the '<em><b>Taught courses</b></em>' reference list.
 	 * The list contents are of type {@link daGiMa_MDE_HW3.Course}.
+	 * It is bidirectional and its opposite is '{@link daGiMa_MDE_HW3.Course#getTeachers <em>Teachers</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Taught courses</em>' reference list.
 	 * @see daGiMa_MDE_HW3.DaGiMa_MDE_HW3Package#getProfessor_Taught_courses()
-	 * @model required="true"
+	 * @see daGiMa_MDE_HW3.Course#getTeachers
+	 * @model opposite="teachers" required="true"
 	 * @generated
 	 */
 	EList<Course> getTaught_courses();
 
 	/**
-	 * Returns the value of the '<em><b>News posted</b></em>' reference list.
+	 * Returns the value of the '<em><b>News posted</b></em>' containment reference list.
 	 * The list contents are of type {@link daGiMa_MDE_HW3.News}.
 	 * It is bidirectional and its opposite is '{@link daGiMa_MDE_HW3.News#getAuthor <em>Author</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>News posted</em>' reference list.
+	 * @return the value of the '<em>News posted</em>' containment reference list.
 	 * @see daGiMa_MDE_HW3.DaGiMa_MDE_HW3Package#getProfessor_News_posted()
 	 * @see daGiMa_MDE_HW3.News#getAuthor
-	 * @model opposite="author"
+	 * @model opposite="author" containment="true"
 	 * @generated
 	 */
 	EList<News> getNews_posted();

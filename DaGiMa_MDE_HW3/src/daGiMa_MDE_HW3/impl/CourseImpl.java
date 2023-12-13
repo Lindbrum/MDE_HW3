@@ -6,16 +6,21 @@ import daGiMa_MDE_HW3.Course;
 import daGiMa_MDE_HW3.CoursePeriod;
 import daGiMa_MDE_HW3.CreditType;
 import daGiMa_MDE_HW3.DaGiMa_MDE_HW3Package;
+import daGiMa_MDE_HW3.DaGiMa_MDE_HW3Tables;
 import daGiMa_MDE_HW3.DegreeCourse;
 import daGiMa_MDE_HW3.ExaminationCall;
+import daGiMa_MDE_HW3.ExtraInfo;
 import daGiMa_MDE_HW3.PassingGrade;
 import daGiMa_MDE_HW3.Professor;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
 
+import java.util.Map;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
+import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
@@ -29,6 +34,15 @@ import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+import org.eclipse.ocl.pivot.evaluation.Executor;
+import org.eclipse.ocl.pivot.ids.TypeId;
+import org.eclipse.ocl.pivot.library.oclany.OclComparableGreaterThanOperation;
+import org.eclipse.ocl.pivot.library.oclany.OclComparableLessThanEqualOperation;
+import org.eclipse.ocl.pivot.library.string.CGStringGetSeverityOperation;
+import org.eclipse.ocl.pivot.library.string.CGStringLogDiagnosticOperation;
+import org.eclipse.ocl.pivot.utilities.PivotUtil;
+import org.eclipse.ocl.pivot.utilities.ValueUtil;
+import org.eclipse.ocl.pivot.values.IntegerValue;
 
 /**
  * <!-- begin-user-doc -->
@@ -49,6 +63,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link daGiMa_MDE_HW3.impl.CourseImpl#getDegree_courses <em>Degree courses</em>}</li>
  *   <li>{@link daGiMa_MDE_HW3.impl.CourseImpl#getCalls <em>Calls</em>}</li>
  *   <li>{@link daGiMa_MDE_HW3.impl.CourseImpl#getStudents_grades <em>Students grades</em>}</li>
+ *   <li>{@link daGiMa_MDE_HW3.impl.CourseImpl#getExtra_info <em>Extra info</em>}</li>
  * </ul>
  *
  * @generated
@@ -223,6 +238,16 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course {
 	 * @ordered
 	 */
 	protected EList<PassingGrade> students_grades;
+
+	/**
+	 * The cached value of the '{@link #getExtra_info() <em>Extra info</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getExtra_info()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<ExtraInfo> extra_info;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -402,7 +427,7 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course {
 	@Override
 	public EList<Professor> getTeachers() {
 		if (teachers == null) {
-			teachers = new EObjectResolvingEList<Professor>(Professor.class, this, DaGiMa_MDE_HW3Package.COURSE__TEACHERS);
+			teachers = new EObjectWithInverseResolvingEList.ManyInverse<Professor>(Professor.class, this, DaGiMa_MDE_HW3Package.COURSE__TEACHERS, DaGiMa_MDE_HW3Package.PROFESSOR__TAUGHT_COURSES);
 		}
 		return teachers;
 	}
@@ -451,10 +476,68 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
+	public EList<ExtraInfo> getExtra_info() {
+		if (extra_info == null) {
+			extra_info = new EObjectResolvingEList<ExtraInfo>(ExtraInfo.class, this, DaGiMa_MDE_HW3Package.COURSE__EXTRA_INFO);
+		}
+		return extra_info;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean cfuCourseGreaterThan(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+		final String constraintName = "Course::cfuCourseGreaterThan";
+		try {
+			/**
+			 *
+			 * inv cfuCourseGreaterThan:
+			 *   let severity : Integer[1] = constraintName.getSeverity()
+			 *   in
+			 *     if severity <= 0
+			 *     then true
+			 *     else
+			 *       let result : Boolean[1] = cfu > 0
+			 *       in
+			 *         constraintName.logDiagnostic(self, null, diagnostics, context, null, severity, result, 0)
+			 *     endif
+			 */
+			final /*@NonInvalid*/ Executor executor = PivotUtil.getExecutor(this);
+			final /*@NonInvalid*/ IntegerValue severity_0 = CGStringGetSeverityOperation.INSTANCE.evaluate(executor, DaGiMa_MDE_HW3Package.Literals.COURSE___CFU_COURSE_GREATER_THAN__DIAGNOSTICCHAIN_MAP);
+			final /*@NonInvalid*/ boolean le = OclComparableLessThanEqualOperation.INSTANCE.evaluate(executor, severity_0, DaGiMa_MDE_HW3Tables.INT_0).booleanValue();
+			/*@NonInvalid*/ boolean IF_le;
+			if (le) {
+				IF_le = true;
+			}
+			else {
+				final /*@NonInvalid*/ int cfu = this.getCfu();
+				final /*@NonInvalid*/ IntegerValue BOXED_cfu = ValueUtil.integerValueOf(cfu);
+				final /*@NonInvalid*/ boolean result = OclComparableGreaterThanOperation.INSTANCE.evaluate(executor, BOXED_cfu, DaGiMa_MDE_HW3Tables.INT_0).booleanValue();
+				final /*@NonInvalid*/ boolean logDiagnostic = CGStringLogDiagnosticOperation.INSTANCE.evaluate(executor, TypeId.BOOLEAN, constraintName, this, (Object)null, diagnostics, context, (Object)null, severity_0, result, DaGiMa_MDE_HW3Tables.INT_0).booleanValue();
+				IF_le = logDiagnostic;
+			}
+			return IF_le;
+		}
+		catch (Throwable e) {
+			return ValueUtil.validationFailedDiagnostic(constraintName, this, diagnostics, context, e);
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+			case DaGiMa_MDE_HW3Package.COURSE__TEACHERS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getTeachers()).basicAdd(otherEnd, msgs);
 			case DaGiMa_MDE_HW3Package.COURSE__DEGREE_COURSES:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getDegree_courses()).basicAdd(otherEnd, msgs);
 			case DaGiMa_MDE_HW3Package.COURSE__CALLS:
@@ -473,6 +556,8 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+			case DaGiMa_MDE_HW3Package.COURSE__TEACHERS:
+				return ((InternalEList<?>)getTeachers()).basicRemove(otherEnd, msgs);
 			case DaGiMa_MDE_HW3Package.COURSE__DEGREE_COURSES:
 				return ((InternalEList<?>)getDegree_courses()).basicRemove(otherEnd, msgs);
 			case DaGiMa_MDE_HW3Package.COURSE__CALLS:
@@ -513,6 +598,8 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course {
 				return getCalls();
 			case DaGiMa_MDE_HW3Package.COURSE__STUDENTS_GRADES:
 				return getStudents_grades();
+			case DaGiMa_MDE_HW3Package.COURSE__EXTRA_INFO:
+				return getExtra_info();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -564,6 +651,10 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course {
 				getStudents_grades().clear();
 				getStudents_grades().addAll((Collection<? extends PassingGrade>)newValue);
 				return;
+			case DaGiMa_MDE_HW3Package.COURSE__EXTRA_INFO:
+				getExtra_info().clear();
+				getExtra_info().addAll((Collection<? extends ExtraInfo>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -609,6 +700,9 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course {
 			case DaGiMa_MDE_HW3Package.COURSE__STUDENTS_GRADES:
 				getStudents_grades().clear();
 				return;
+			case DaGiMa_MDE_HW3Package.COURSE__EXTRA_INFO:
+				getExtra_info().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -643,8 +737,25 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course {
 				return calls != null && !calls.isEmpty();
 			case DaGiMa_MDE_HW3Package.COURSE__STUDENTS_GRADES:
 				return students_grades != null && !students_grades.isEmpty();
+			case DaGiMa_MDE_HW3Package.COURSE__EXTRA_INFO:
+				return extra_info != null && !extra_info.isEmpty();
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	@SuppressWarnings("unchecked")
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case DaGiMa_MDE_HW3Package.COURSE___CFU_COURSE_GREATER_THAN__DIAGNOSTICCHAIN_MAP:
+				return cfuCourseGreaterThan((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**
