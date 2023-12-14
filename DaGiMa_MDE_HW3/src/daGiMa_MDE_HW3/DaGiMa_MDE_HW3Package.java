@@ -288,13 +288,31 @@ public interface DaGiMa_MDE_HW3Package extends EPackage {
 	int PROFESSOR_FEATURE_COUNT = USER_FEATURE_COUNT + 6;
 
 	/**
+	 * The operation id for the '<em>Total Cfu Taught</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROFESSOR___TOTAL_CFU_TAUGHT = USER_OPERATION_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Satisfy Minimal Cfu Requirement</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROFESSOR___SATISFY_MINIMAL_CFU_REQUIREMENT__DIAGNOSTICCHAIN_MAP = USER_OPERATION_COUNT + 1;
+
+	/**
 	 * The number of operations of the '<em>Professor</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROFESSOR_OPERATION_COUNT = USER_OPERATION_COUNT + 0;
+	int PROFESSOR_OPERATION_COUNT = USER_OPERATION_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link daGiMa_MDE_HW3.impl.StudentImpl <em>Student</em>}' class.
@@ -688,13 +706,22 @@ public interface DaGiMa_MDE_HW3Package extends EPackage {
 	int THESIS_FEATURE_COUNT = 5;
 
 	/**
+	 * The operation id for the '<em>Check If Enough Credits To Graduate</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int THESIS___CHECK_IF_ENOUGH_CREDITS_TO_GRADUATE__DIAGNOSTICCHAIN_MAP = 0;
+
+	/**
 	 * The number of operations of the '<em>Thesis</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int THESIS_OPERATION_COUNT = 0;
+	int THESIS_OPERATION_COUNT = 1;
 
 	/**
 	 * The meta object id for the '{@link daGiMa_MDE_HW3.impl.CourseImpl <em>Course</em>}' class.
@@ -1043,13 +1070,22 @@ public interface DaGiMa_MDE_HW3Package extends EPackage {
 	int CAREER_FEATURE_COUNT = 3;
 
 	/**
+	 * The operation id for the '<em>Passed All Exams</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CAREER___PASSED_ALL_EXAMS = 0;
+
+	/**
 	 * The number of operations of the '<em>Career</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CAREER_OPERATION_COUNT = 0;
+	int CAREER_OPERATION_COUNT = 1;
 
 	/**
 	 * The meta object id for the '{@link daGiMa_MDE_HW3.impl.NewsImpl <em>News</em>}' class.
@@ -1189,13 +1225,67 @@ public interface DaGiMa_MDE_HW3Package extends EPackage {
 	int EXTRA_INFO_FEATURE_COUNT = 6;
 
 	/**
+	 * The operation id for the '<em>Boolean Value Type Check</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXTRA_INFO___BOOLEAN_VALUE_TYPE_CHECK__DIAGNOSTICCHAIN_MAP = 0;
+
+	/**
+	 * The operation id for the '<em>Float Value Type Check</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXTRA_INFO___FLOAT_VALUE_TYPE_CHECK__DIAGNOSTICCHAIN_MAP = 1;
+
+	/**
+	 * The operation id for the '<em>String Value Type Check</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXTRA_INFO___STRING_VALUE_TYPE_CHECK__DIAGNOSTICCHAIN_MAP = 2;
+
+	/**
+	 * The operation id for the '<em>Enum Value Type Check</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXTRA_INFO___ENUM_VALUE_TYPE_CHECK__DIAGNOSTICCHAIN_MAP = 3;
+
+	/**
+	 * The operation id for the '<em>Integer Value Type Check</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXTRA_INFO___INTEGER_VALUE_TYPE_CHECK__DIAGNOSTICCHAIN_MAP = 4;
+
+	/**
+	 * The operation id for the '<em>Double Value Type Check</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXTRA_INFO___DOUBLE_VALUE_TYPE_CHECK__DIAGNOSTICCHAIN_MAP = 5;
+
+	/**
 	 * The number of operations of the '<em>Extra Info</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EXTRA_INFO_OPERATION_COUNT = 0;
+	int EXTRA_INFO_OPERATION_COUNT = 6;
 
 	/**
 	 * The meta object id for the '{@link daGiMa_MDE_HW3.impl.CustomEnumerationImpl <em>Custom Enumeration</em>}' class.
@@ -1404,6 +1494,26 @@ public interface DaGiMa_MDE_HW3Package extends EPackage {
 	 * @generated
 	 */
 	EReference getProfessor_News_posted();
+
+	/**
+	 * Returns the meta object for the '{@link daGiMa_MDE_HW3.Professor#totalCfuTaught() <em>Total Cfu Taught</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Total Cfu Taught</em>' operation.
+	 * @see daGiMa_MDE_HW3.Professor#totalCfuTaught()
+	 * @generated
+	 */
+	EOperation getProfessor__TotalCfuTaught();
+
+	/**
+	 * Returns the meta object for the '{@link daGiMa_MDE_HW3.Professor#satisfyMinimalCfuRequirement(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Satisfy Minimal Cfu Requirement</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Satisfy Minimal Cfu Requirement</em>' operation.
+	 * @see daGiMa_MDE_HW3.Professor#satisfyMinimalCfuRequirement(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	EOperation getProfessor__SatisfyMinimalCfuRequirement__DiagnosticChain_Map();
 
 	/**
 	 * Returns the meta object for class '{@link daGiMa_MDE_HW3.Student <em>Student</em>}'.
@@ -1807,6 +1917,16 @@ public interface DaGiMa_MDE_HW3Package extends EPackage {
 	EReference getThesis_Degree_course();
 
 	/**
+	 * Returns the meta object for the '{@link daGiMa_MDE_HW3.Thesis#checkIfEnoughCreditsToGraduate(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Check If Enough Credits To Graduate</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Check If Enough Credits To Graduate</em>' operation.
+	 * @see daGiMa_MDE_HW3.Thesis#checkIfEnoughCreditsToGraduate(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	EOperation getThesis__CheckIfEnoughCreditsToGraduate__DiagnosticChain_Map();
+
+	/**
 	 * Returns the meta object for class '{@link daGiMa_MDE_HW3.Course <em>Course</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2142,6 +2262,16 @@ public interface DaGiMa_MDE_HW3Package extends EPackage {
 	EReference getCareer_Courses();
 
 	/**
+	 * Returns the meta object for the '{@link daGiMa_MDE_HW3.Career#passedAllExams() <em>Passed All Exams</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Passed All Exams</em>' operation.
+	 * @see daGiMa_MDE_HW3.Career#passedAllExams()
+	 * @generated
+	 */
+	EOperation getCareer__PassedAllExams();
+
+	/**
 	 * Returns the meta object for class '{@link daGiMa_MDE_HW3.News <em>News</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2270,6 +2400,66 @@ public interface DaGiMa_MDE_HW3Package extends EPackage {
 	 * @generated
 	 */
 	EReference getExtraInfo_Enum();
+
+	/**
+	 * Returns the meta object for the '{@link daGiMa_MDE_HW3.ExtraInfo#BooleanValueTypeCheck(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Boolean Value Type Check</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Boolean Value Type Check</em>' operation.
+	 * @see daGiMa_MDE_HW3.ExtraInfo#BooleanValueTypeCheck(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	EOperation getExtraInfo__BooleanValueTypeCheck__DiagnosticChain_Map();
+
+	/**
+	 * Returns the meta object for the '{@link daGiMa_MDE_HW3.ExtraInfo#FloatValueTypeCheck(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Float Value Type Check</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Float Value Type Check</em>' operation.
+	 * @see daGiMa_MDE_HW3.ExtraInfo#FloatValueTypeCheck(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	EOperation getExtraInfo__FloatValueTypeCheck__DiagnosticChain_Map();
+
+	/**
+	 * Returns the meta object for the '{@link daGiMa_MDE_HW3.ExtraInfo#StringValueTypeCheck(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>String Value Type Check</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>String Value Type Check</em>' operation.
+	 * @see daGiMa_MDE_HW3.ExtraInfo#StringValueTypeCheck(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	EOperation getExtraInfo__StringValueTypeCheck__DiagnosticChain_Map();
+
+	/**
+	 * Returns the meta object for the '{@link daGiMa_MDE_HW3.ExtraInfo#EnumValueTypeCheck(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Enum Value Type Check</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Enum Value Type Check</em>' operation.
+	 * @see daGiMa_MDE_HW3.ExtraInfo#EnumValueTypeCheck(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	EOperation getExtraInfo__EnumValueTypeCheck__DiagnosticChain_Map();
+
+	/**
+	 * Returns the meta object for the '{@link daGiMa_MDE_HW3.ExtraInfo#IntegerValueTypeCheck(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Integer Value Type Check</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Integer Value Type Check</em>' operation.
+	 * @see daGiMa_MDE_HW3.ExtraInfo#IntegerValueTypeCheck(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	EOperation getExtraInfo__IntegerValueTypeCheck__DiagnosticChain_Map();
+
+	/**
+	 * Returns the meta object for the '{@link daGiMa_MDE_HW3.ExtraInfo#DoubleValueTypeCheck(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Double Value Type Check</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Double Value Type Check</em>' operation.
+	 * @see daGiMa_MDE_HW3.ExtraInfo#DoubleValueTypeCheck(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	EOperation getExtraInfo__DoubleValueTypeCheck__DiagnosticChain_Map();
 
 	/**
 	 * Returns the meta object for class '{@link daGiMa_MDE_HW3.CustomEnumeration <em>Custom Enumeration</em>}'.
@@ -2456,6 +2646,22 @@ public interface DaGiMa_MDE_HW3Package extends EPackage {
 		 * @generated
 		 */
 		EReference PROFESSOR__NEWS_POSTED = eINSTANCE.getProfessor_News_posted();
+
+		/**
+		 * The meta object literal for the '<em><b>Total Cfu Taught</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation PROFESSOR___TOTAL_CFU_TAUGHT = eINSTANCE.getProfessor__TotalCfuTaught();
+
+		/**
+		 * The meta object literal for the '<em><b>Satisfy Minimal Cfu Requirement</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation PROFESSOR___SATISFY_MINIMAL_CFU_REQUIREMENT__DIAGNOSTICCHAIN_MAP = eINSTANCE.getProfessor__SatisfyMinimalCfuRequirement__DiagnosticChain_Map();
 
 		/**
 		 * The meta object literal for the '{@link daGiMa_MDE_HW3.impl.StudentImpl <em>Student</em>}' class.
@@ -2764,6 +2970,14 @@ public interface DaGiMa_MDE_HW3Package extends EPackage {
 		EReference THESIS__DEGREE_COURSE = eINSTANCE.getThesis_Degree_course();
 
 		/**
+		 * The meta object literal for the '<em><b>Check If Enough Credits To Graduate</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation THESIS___CHECK_IF_ENOUGH_CREDITS_TO_GRADUATE__DIAGNOSTICCHAIN_MAP = eINSTANCE.getThesis__CheckIfEnoughCreditsToGraduate__DiagnosticChain_Map();
+
+		/**
 		 * The meta object literal for the '{@link daGiMa_MDE_HW3.impl.CourseImpl <em>Course</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3020,6 +3234,14 @@ public interface DaGiMa_MDE_HW3Package extends EPackage {
 		EReference CAREER__COURSES = eINSTANCE.getCareer_Courses();
 
 		/**
+		 * The meta object literal for the '<em><b>Passed All Exams</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation CAREER___PASSED_ALL_EXAMS = eINSTANCE.getCareer__PassedAllExams();
+
+		/**
 		 * The meta object literal for the '{@link daGiMa_MDE_HW3.impl.NewsImpl <em>News</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3118,6 +3340,54 @@ public interface DaGiMa_MDE_HW3Package extends EPackage {
 		 * @generated
 		 */
 		EReference EXTRA_INFO__ENUM = eINSTANCE.getExtraInfo_Enum();
+
+		/**
+		 * The meta object literal for the '<em><b>Boolean Value Type Check</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation EXTRA_INFO___BOOLEAN_VALUE_TYPE_CHECK__DIAGNOSTICCHAIN_MAP = eINSTANCE.getExtraInfo__BooleanValueTypeCheck__DiagnosticChain_Map();
+
+		/**
+		 * The meta object literal for the '<em><b>Float Value Type Check</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation EXTRA_INFO___FLOAT_VALUE_TYPE_CHECK__DIAGNOSTICCHAIN_MAP = eINSTANCE.getExtraInfo__FloatValueTypeCheck__DiagnosticChain_Map();
+
+		/**
+		 * The meta object literal for the '<em><b>String Value Type Check</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation EXTRA_INFO___STRING_VALUE_TYPE_CHECK__DIAGNOSTICCHAIN_MAP = eINSTANCE.getExtraInfo__StringValueTypeCheck__DiagnosticChain_Map();
+
+		/**
+		 * The meta object literal for the '<em><b>Enum Value Type Check</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation EXTRA_INFO___ENUM_VALUE_TYPE_CHECK__DIAGNOSTICCHAIN_MAP = eINSTANCE.getExtraInfo__EnumValueTypeCheck__DiagnosticChain_Map();
+
+		/**
+		 * The meta object literal for the '<em><b>Integer Value Type Check</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation EXTRA_INFO___INTEGER_VALUE_TYPE_CHECK__DIAGNOSTICCHAIN_MAP = eINSTANCE.getExtraInfo__IntegerValueTypeCheck__DiagnosticChain_Map();
+
+		/**
+		 * The meta object literal for the '<em><b>Double Value Type Check</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation EXTRA_INFO___DOUBLE_VALUE_TYPE_CHECK__DIAGNOSTICCHAIN_MAP = eINSTANCE.getExtraInfo__DoubleValueTypeCheck__DiagnosticChain_Map();
 
 		/**
 		 * The meta object literal for the '{@link daGiMa_MDE_HW3.impl.CustomEnumerationImpl <em>Custom Enumeration</em>}' class.

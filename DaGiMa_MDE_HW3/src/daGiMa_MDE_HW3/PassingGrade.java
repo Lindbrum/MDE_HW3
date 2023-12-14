@@ -125,7 +125,7 @@ public interface PassingGrade extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot body='\n\t\t\tgrade.oclIsUndefined() or (grade.matches(\'([Aa][+]{0,1}){1}|[B-Db-d]{1}|(1[8-9]{1}|2[0-9]{1}|30[Ll]{0,1}){1}\'))'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot body='\n\t\t\tgrade.size() = 0 or (grade.matches(\'([Aa][+]{0,1}){1}|[B-Db-d]{1}|(1[8-9]{1}|2[0-9]{1}|30[Ll]{0,1}){1}\'))'"
 	 * @generated
 	 */
 	boolean mustBeSufficientIfDefined(DiagnosticChain diagnostics, Map<Object, Object> context);

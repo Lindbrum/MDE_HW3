@@ -19,6 +19,17 @@
         defaultValueLiteral="A university" iD="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Professor" eSuperTypes="#//User">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="satisfyMinimalCfuRequirement"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="satisfyMinimalCfuRequirement" value="&#xA;&#x9;&#x9;&#x9;totalCfuTaught() >= 15"/>
+    </eAnnotations>
+    <eOperations name="totalCfuTaught" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBigInteger">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+        <details key="body" value="taught_courses->collect(course|course.cfu)->sum()"/>
+      </eAnnotations>
+    </eOperations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="office_telephone" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="orcid" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
@@ -98,6 +109,12 @@
         eType="#//ExtraInfo"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Thesis">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="checkIfEnoughCreditsToGraduate"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="checkIfEnoughCreditsToGraduate" value="&#xA;&#x9;&#x9;&#x9;student.transcripts->select(transcript|transcript.degree_course = self.degree_course)->forAll(e|e.passedAllExams())"/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         defaultValueLiteral="A thesis" iD="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1" eType="#//ThesisType"
@@ -181,7 +198,7 @@
       <details key="constraints" value="mustBeSufficientIfDefined"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
-      <details key="mustBeSufficientIfDefined" value="&#xA;&#x9;&#x9;&#x9;grade.oclIsUndefined() or (grade.matches('([Aa][+]{0,1}){1}|[B-Db-d]{1}|(1[8-9]{1}|2[0-9]{1}|30[Ll]{0,1}){1}'))"/>
+      <details key="mustBeSufficientIfDefined" value="&#xA;&#x9;&#x9;&#x9;grade.size() = 0 or (grade.matches('([Aa][+]{0,1}){1}|[B-Db-d]{1}|(1[8-9]{1}|2[0-9]{1}|30[Ll]{0,1}){1}'))"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="date" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"
         defaultValueLiteral="2024-01-28" iD="true"/>
@@ -193,6 +210,11 @@
         eType="#//Career" eOpposite="#//Career/courses"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Career">
+    <eOperations name="passedAllExams" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+        <details key="body" value="courses->forAll(course|course.grade.size() > 0)"/>
+      </eAnnotations>
+    </eOperations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="student" lowerBound="1"
         eType="#//Student" eOpposite="#//Student/transcripts"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="degree_course" lowerBound="1"
@@ -223,6 +245,9 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="enum" eType="#//CustomEnumeration"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="MetadataType">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation"/>
+    </eAnnotations>
     <eLiterals name="STRING"/>
     <eLiterals name="INTEGER" value="1"/>
     <eLiterals name="BOOLEAN" value="2"/>

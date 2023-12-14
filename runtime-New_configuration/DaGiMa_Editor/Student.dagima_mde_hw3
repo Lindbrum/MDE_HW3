@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dagima_mde_hw3:Student xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:dagima_mde_hw3="http://www.example.org/dagima_mde_hw3" name="Dario" surname="D'Ercole" email="d.d@u.com" telephone="371293712312983" matriculation_number="288643">
+  <thesis_defended>
+    <supervisor href="Teacher.dagima_mde_hw3#222222222222"/>
+    <degree_course href="University.dagima_mde_hw3#//@departments.0/@offered_courses.0"/>
+  </thesis_defended>
   <enrolled_courses href="University.dagima_mde_hw3#//@departments.0/@offered_courses.0"/>
   <booked_calls href="SE_course.dagima_mde_hw3#//@calls.0"/>
   <transcripts href="Carreer.dagima_mde_hw3#/"/>

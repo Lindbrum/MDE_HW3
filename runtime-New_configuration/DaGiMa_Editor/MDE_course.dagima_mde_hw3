@@ -3,5 +3,6 @@
   <language>english</language>
   <teachers href="Teacher.dagima_mde_hw3#222222222222"/>
   <degree_courses href="University.dagima_mde_hw3#L-41"/>
+  <degree_courses href="University.dagima_mde_hw3#//@departments.0/@offered_courses.0"/>
   <students_grades href="Carreer.dagima_mde_hw3#2023-12-05T00:00:00.000+0100"/>
 </dagima_mde_hw3:Course>

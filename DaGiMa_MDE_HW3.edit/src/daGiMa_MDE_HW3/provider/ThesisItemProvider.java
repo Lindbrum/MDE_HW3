@@ -62,7 +62,6 @@ public class ThesisItemProvider
 
 			addTitlePropertyDescriptor(object);
 			addTypePropertyDescriptor(object);
-			addStudentPropertyDescriptor(object);
 			addSupervisorPropertyDescriptor(object);
 			addDegree_coursePropertyDescriptor(object);
 		}
@@ -109,28 +108,6 @@ public class ThesisItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Student feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addStudentPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Thesis_student_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Thesis_student_feature", "_UI_Thesis_type"),
-				 DaGiMa_MDE_HW3Package.Literals.THESIS__STUDENT,
-				 true,
-				 false,
-				 true,
-				 null,
 				 null,
 				 null));
 	}

@@ -2,6 +2,8 @@
  */
 package daGiMa_MDE_HW3;
 
+import java.util.Map;
+import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -21,7 +23,7 @@ import org.eclipse.emf.ecore.EObject;
  * </ul>
  *
  * @see daGiMa_MDE_HW3.DaGiMa_MDE_HW3Package#getThesis()
- * @model
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='checkIfEnoughCreditsToGraduate'"
  * @generated
  */
 public interface Thesis extends EObject {
@@ -143,5 +145,13 @@ public interface Thesis extends EObject {
 	 * @generated
 	 */
 	void setDegree_course(DegreeCourse value);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot body='\n\t\t\tstudent.transcripts-&gt;select(transcript|transcript.degree_course = self.degree_course)-&gt;forAll(e|e.passedAllExams())'"
+	 * @generated
+	 */
+	boolean checkIfEnoughCreditsToGraduate(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 } // Thesis

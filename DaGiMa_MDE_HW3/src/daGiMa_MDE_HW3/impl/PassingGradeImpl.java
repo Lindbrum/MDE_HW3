@@ -32,6 +32,7 @@ import org.eclipse.ocl.pivot.library.oclany.OclComparableLessThanEqualOperation;
 import org.eclipse.ocl.pivot.library.string.CGStringGetSeverityOperation;
 import org.eclipse.ocl.pivot.library.string.CGStringLogDiagnosticOperation;
 import org.eclipse.ocl.pivot.library.string.StringMatchesOperation;
+import org.eclipse.ocl.pivot.library.string.StringSizeOperation;
 import org.eclipse.ocl.pivot.utilities.PivotUtil;
 import org.eclipse.ocl.pivot.utilities.ValueUtil;
 import org.eclipse.ocl.pivot.values.IntegerValue;
@@ -292,7 +293,7 @@ public class PassingGradeImpl extends MinimalEObjectImpl.Container implements Pa
 			 *     then true
 			 *     else
 			 *       let
-			 *         result : Boolean[?] = grade.oclIsUndefined() or
+			 *         result : Boolean[?] = grade.size() = 0 or
 			 *         grade.matches('([Aa][+]{0,1}){1}|[B-Db-d]{1}|(1[8-9]{1}|2[0-9]{1}|30[Ll]{0,1}){1}')
 			 *       in
 			 *         constraintName.logDiagnostic(self, null, diagnostics, context, null, severity, result, 0)
@@ -308,19 +309,31 @@ public class PassingGradeImpl extends MinimalEObjectImpl.Container implements Pa
 			else {
 				/*@Caught*/ Object CAUGHT_result;
 				try {
-					final /*@NonInvalid*/ String grade = this.getGrade();
-					final /*@NonInvalid*/ boolean oclIsUndefined = grade == null;
+					/*@Caught*/ Object CAUGHT_eq;
+					try {
+						final /*@NonInvalid*/ String grade = this.getGrade();
+						if (grade == null) {
+							throw new InvalidValueException("Null \'\'String\'\' rather than \'\'OclVoid\'\' value required");
+						}
+						final /*@Thrown*/ IntegerValue size = StringSizeOperation.INSTANCE.evaluate(grade);
+						final /*@Thrown*/ boolean eq = size.equals(DaGiMa_MDE_HW3Tables.INT_0);
+						CAUGHT_eq = eq;
+					}
+					catch (Exception e) {
+						CAUGHT_eq = ValueUtil.createInvalidValue(e);
+					}
 					final /*@Thrown*/ Boolean result;
-					if (oclIsUndefined) {
+					if (CAUGHT_eq == ValueUtil.TRUE_VALUE) {
 						result = ValueUtil.TRUE_VALUE;
 					}
 					else {
 						/*@Caught*/ Object CAUGHT_matches;
 						try {
-							if (grade == null) {
+							final /*@NonInvalid*/ String grade_0 = this.getGrade();
+							if (grade_0 == null) {
 								throw new InvalidValueException("Null \'\'String\'\' rather than \'\'OclVoid\'\' value required");
 							}
-							final /*@Thrown*/ boolean matches = StringMatchesOperation.INSTANCE.evaluate(executor, TypeId.BOOLEAN, grade, DaGiMa_MDE_HW3Tables.STR__o_91_Aa_93_91_p_93_123_0_44_1_125_e_123_1_125_124_91_B_m_Db_m_d_93_123_1_125_124_o_1_91_8_m_9_93_123_1_125_124_2_91_0_m_9_93_123_1_125_124_30_91_Ll_93_123_0_44_1_125_e_123).booleanValue();
+							final /*@Thrown*/ boolean matches = StringMatchesOperation.INSTANCE.evaluate(executor, TypeId.BOOLEAN, grade_0, DaGiMa_MDE_HW3Tables.STR__o_91_Aa_93_91_p_93_123_0_44_1_125_e_123_1_125_124_91_B_m_Db_m_d_93_123_1_125_124_o_1_91_8_m_9_93_123_1_125_124_2_91_0_m_9_93_123_1_125_124_30_91_Ll_93_123_0_44_1_125_e_123).booleanValue();
 							CAUGHT_matches = matches;
 						}
 						catch (Exception e) {
@@ -330,6 +343,9 @@ public class PassingGradeImpl extends MinimalEObjectImpl.Container implements Pa
 							result = ValueUtil.TRUE_VALUE;
 						}
 						else {
+							if (CAUGHT_eq instanceof InvalidValueException) {
+								throw (InvalidValueException)CAUGHT_eq;
+							}
 							if (CAUGHT_matches instanceof InvalidValueException) {
 								throw (InvalidValueException)CAUGHT_matches;
 							}

@@ -5,7 +5,7 @@
   <courses grade="30l">
     <course href="SE_course.dagima_mde_hw3#/"/>
   </courses>
-  <courses date="2023-12-05T00:00:00.000+0100" grade="30L">
+  <courses date="2023-12-05T00:00:00.000+0100" grade="30l">
     <course href="MDE_course.dagima_mde_hw3#/"/>
   </courses>
 </dagima_mde_hw3:Career>

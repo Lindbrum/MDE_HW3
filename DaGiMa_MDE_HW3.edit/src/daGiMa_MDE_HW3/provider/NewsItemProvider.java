@@ -63,7 +63,6 @@ public class NewsItemProvider
 			addTitlePropertyDescriptor(object);
 			addPublication_datePropertyDescriptor(object);
 			addDepartmentPropertyDescriptor(object);
-			addAuthorPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -126,28 +125,6 @@ public class NewsItemProvider
 				 getString("_UI_News_department_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_News_department_feature", "_UI_News_type"),
 				 DaGiMa_MDE_HW3Package.Literals.NEWS__DEPARTMENT,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Author feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addAuthorPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_News_author_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_News_author_feature", "_UI_News_type"),
-				 DaGiMa_MDE_HW3Package.Literals.NEWS__AUTHOR,
 				 true,
 				 false,
 				 true,

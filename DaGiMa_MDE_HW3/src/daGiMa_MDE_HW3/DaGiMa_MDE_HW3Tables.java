@@ -15,12 +15,14 @@ package daGiMa_MDE_HW3;
 // import daGiMa_MDE_HW3.DaGiMa_MDE_HW3Tables;
 import java.lang.String;
 import org.eclipse.emf.ecore.EcorePackage;
+import org.eclipse.ocl.pivot.TemplateParameters;
 import org.eclipse.ocl.pivot.ids.ClassId;
 import org.eclipse.ocl.pivot.ids.CollectionTypeId;
 import org.eclipse.ocl.pivot.ids.DataTypeId;
 import org.eclipse.ocl.pivot.ids.EnumerationId;
 import org.eclipse.ocl.pivot.ids.IdManager;
 import org.eclipse.ocl.pivot.ids.NsURIPackageId;
+import org.eclipse.ocl.pivot.ids.RootPackageId;
 import org.eclipse.ocl.pivot.ids.TypeId;
 import org.eclipse.ocl.pivot.internal.library.ecore.EcoreExecutorEnumeration;
 import org.eclipse.ocl.pivot.internal.library.ecore.EcoreExecutorEnumerationLiteral;
@@ -36,6 +38,7 @@ import org.eclipse.ocl.pivot.internal.library.executor.ExecutorStandardLibrary;
 import org.eclipse.ocl.pivot.internal.library.executor.ExecutorType;
 import org.eclipse.ocl.pivot.oclstdlib.OCLstdlibTables;
 import org.eclipse.ocl.pivot.utilities.AbstractTables;
+import org.eclipse.ocl.pivot.utilities.TypeUtil;
 import org.eclipse.ocl.pivot.utilities.ValueUtil;
 import org.eclipse.ocl.pivot.values.IntegerValue;
 
@@ -64,8 +67,10 @@ public class DaGiMa_MDE_HW3Tables extends AbstractTables
 	/**
 	 *	Constants used by auto-generated code.
 	 */
+	public static final /*@NonInvalid*/ RootPackageId PACKid_$metamodel$ = IdManager.getRootPackageId("$metamodel$");
 	public static final /*@NonInvalid*/ NsURIPackageId PACKid_http_c_s_s_www_eclipse_org_s_emf_s_2002_s_Ecore = IdManager.getNsURIPackageId("http://www.eclipse.org/emf/2002/Ecore", null, EcorePackage.eINSTANCE);
 	public static final /*@NonInvalid*/ NsURIPackageId PACKid_http_c_s_s_www_example_org_s_dagima_mde_hw3 = IdManager.getNsURIPackageId("http://www.example.org/dagima_mde_hw3", null, DaGiMa_MDE_HW3Package.eINSTANCE);
+	public static final /*@NonInvalid*/ ClassId CLSSid_BooleanType = DaGiMa_MDE_HW3Tables.PACKid_$metamodel$.getClassId("BooleanType", 0);
 	public static final /*@NonInvalid*/ ClassId CLSSid_Career = DaGiMa_MDE_HW3Tables.PACKid_http_c_s_s_www_example_org_s_dagima_mde_hw3.getClassId("Career", 0);
 	public static final /*@NonInvalid*/ ClassId CLSSid_Course = DaGiMa_MDE_HW3Tables.PACKid_http_c_s_s_www_example_org_s_dagima_mde_hw3.getClassId("Course", 0);
 	public static final /*@NonInvalid*/ ClassId CLSSid_CustomEnumeration = DaGiMa_MDE_HW3Tables.PACKid_http_c_s_s_www_example_org_s_dagima_mde_hw3.getClassId("CustomEnumeration", 0);
@@ -75,6 +80,7 @@ public class DaGiMa_MDE_HW3Tables extends AbstractTables
 	public static final /*@NonInvalid*/ ClassId CLSSid_ExtraInfo = DaGiMa_MDE_HW3Tables.PACKid_http_c_s_s_www_example_org_s_dagima_mde_hw3.getClassId("ExtraInfo", 0);
 	public static final /*@NonInvalid*/ ClassId CLSSid_News = DaGiMa_MDE_HW3Tables.PACKid_http_c_s_s_www_example_org_s_dagima_mde_hw3.getClassId("News", 0);
 	public static final /*@NonInvalid*/ ClassId CLSSid_PassingGrade = DaGiMa_MDE_HW3Tables.PACKid_http_c_s_s_www_example_org_s_dagima_mde_hw3.getClassId("PassingGrade", 0);
+	public static final /*@NonInvalid*/ ClassId CLSSid_PrimitiveType = DaGiMa_MDE_HW3Tables.PACKid_$metamodel$.getClassId("PrimitiveType", 0);
 	public static final /*@NonInvalid*/ ClassId CLSSid_Professor = DaGiMa_MDE_HW3Tables.PACKid_http_c_s_s_www_example_org_s_dagima_mde_hw3.getClassId("Professor", 0);
 	public static final /*@NonInvalid*/ ClassId CLSSid_Student = DaGiMa_MDE_HW3Tables.PACKid_http_c_s_s_www_example_org_s_dagima_mde_hw3.getClassId("Student", 0);
 	public static final /*@NonInvalid*/ ClassId CLSSid_Thesis = DaGiMa_MDE_HW3Tables.PACKid_http_c_s_s_www_example_org_s_dagima_mde_hw3.getClassId("Thesis", 0);
@@ -88,8 +94,15 @@ public class DaGiMa_MDE_HW3Tables extends AbstractTables
 	public static final /*@NonInvalid*/ EnumerationId ENUMid_MetadataType = DaGiMa_MDE_HW3Tables.PACKid_http_c_s_s_www_example_org_s_dagima_mde_hw3.getEnumerationId("MetadataType");
 	public static final /*@NonInvalid*/ EnumerationId ENUMid_ThesisType = DaGiMa_MDE_HW3Tables.PACKid_http_c_s_s_www_example_org_s_dagima_mde_hw3.getEnumerationId("ThesisType");
 	public static final /*@NonInvalid*/ IntegerValue INT_0 = ValueUtil.integerValueOf("0");
+	public static final /*@NonInvalid*/ IntegerValue INT_15 = ValueUtil.integerValueOf("15");
 	public static final /*@NonInvalid*/ IntegerValue INT_360 = ValueUtil.integerValueOf("360");
 	public static final /*@NonInvalid*/ CollectionTypeId ORD_PRIMid_String = TypeId.ORDERED_SET.getSpecializedId(TypeId.STRING, true, ValueUtil.ONE_VALUE, ValueUtil.UNLIMITED_VALUE);
+	public static final /*@NonInvalid*/ String STR_BOOLEAN = "BOOLEAN";
+	public static final /*@NonInvalid*/ String STR_DOUBLE = "DOUBLE";
+	public static final /*@NonInvalid*/ String STR_ENUMERATION = "ENUMERATION";
+	public static final /*@NonInvalid*/ String STR_FLOAT = "FLOAT";
+	public static final /*@NonInvalid*/ String STR_INTEGER = "INTEGER";
+	public static final /*@NonInvalid*/ String STR_STRING = "STRING";
 	public static final /*@NonInvalid*/ String STR__o_91_Aa_93_91_p_93_123_0_44_1_125_e_123_1_125_124_91_B_m_Db_m_d_93_123_1_125_124_o_1_91_8_m_9_93_123_1_125_124_2_91_0_m_9_93_123_1_125_124_30_91_Ll_93_123_0_44_1_125_e_123 = "([Aa][+]{0,1}){1}|[B-Db-d]{1}|(1[8-9]{1}|2[0-9]{1}|30[Ll]{0,1}){1}";
 	public static final /*@NonInvalid*/ CollectionTypeId BAG_CLSSid_Career = TypeId.BAG.getSpecializedId(DaGiMa_MDE_HW3Tables.CLSSid_Career, false, ValueUtil.ZERO_VALUE, ValueUtil.UNLIMITED_VALUE);
 	public static final /*@NonInvalid*/ CollectionTypeId BAG_CLSSid_Course = TypeId.BAG.getSpecializedId(DaGiMa_MDE_HW3Tables.CLSSid_Course, false, ValueUtil.ZERO_VALUE, ValueUtil.UNLIMITED_VALUE);
@@ -109,6 +122,7 @@ public class DaGiMa_MDE_HW3Tables extends AbstractTables
 	public static final /*@NonInvalid*/ CollectionTypeId ORD_CLSSid_Professor = TypeId.ORDERED_SET.getSpecializedId(DaGiMa_MDE_HW3Tables.CLSSid_Professor, true, ValueUtil.ONE_VALUE, ValueUtil.UNLIMITED_VALUE);
 	public static final /*@NonInvalid*/ CollectionTypeId ORD_CLSSid_Student = TypeId.ORDERED_SET.getSpecializedId(DaGiMa_MDE_HW3Tables.CLSSid_Student, true, ValueUtil.ZERO_VALUE, ValueUtil.UNLIMITED_VALUE);
 	public static final /*@NonInvalid*/ CollectionTypeId ORD_CLSSid_Thesis = TypeId.ORDERED_SET.getSpecializedId(DaGiMa_MDE_HW3Tables.CLSSid_Thesis, true, ValueUtil.ZERO_VALUE, ValueUtil.UNLIMITED_VALUE);
+	public static final /*@NonInvalid*/ CollectionTypeId SEQ_DATAid_EInt = TypeId.SEQUENCE.getSpecializedId(DaGiMa_MDE_HW3Tables.DATAid_EInt, true, ValueUtil.ZERO_VALUE, ValueUtil.UNLIMITED_VALUE);
 
 	/**
 	 *	The type parameters for templated types and operations.
@@ -336,6 +350,12 @@ public class DaGiMa_MDE_HW3Tables extends AbstractTables
 			Init.initStart();
 			Parameters.init();
 		}
+
+		public static final ExecutorOperation _Career__passedAllExams = new ExecutorOperation("passedAllExams", TypeUtil.EMPTY_PARAMETER_TYPES, Types._Career,
+			0, TemplateParameters.EMPTY_LIST, null);
+
+		public static final ExecutorOperation _Professor__totalCfuTaught = new ExecutorOperation("totalCfuTaught", TypeUtil.EMPTY_PARAMETER_TYPES, Types._Professor,
+			0, TemplateParameters.EMPTY_LIST, null);
 
 		static {
 			Init.initEnd();
@@ -680,7 +700,9 @@ public class DaGiMa_MDE_HW3Tables extends AbstractTables
 			TypeFragments.init();
 		}
 
-		private static final ExecutorOperation /*@NonNull*/ [] _Career__Career = {};
+		private static final ExecutorOperation /*@NonNull*/ [] _Career__Career = {
+			DaGiMa_MDE_HW3Tables.Operations._Career__passedAllExams /* passedAllExams() */
+		};
 		private static final ExecutorOperation /*@NonNull*/ [] _Career__OclAny = {
 			OCLstdlibTables.Operations._OclAny___lt__gt_ /* _'<>'(OclSelf[?]) */,
 			OCLstdlibTables.Operations._OclAny___eq_ /* _'='(OclSelf[?]) */,
@@ -1133,7 +1155,9 @@ public class DaGiMa_MDE_HW3Tables extends AbstractTables
 			OCLstdlibTables.Operations._OclElement__oclModelTypes /* oclModelTypes() */
 		};
 
-		private static final ExecutorOperation /*@NonNull*/ [] _Professor__Professor = {};
+		private static final ExecutorOperation /*@NonNull*/ [] _Professor__Professor = {
+			DaGiMa_MDE_HW3Tables.Operations._Professor__totalCfuTaught /* totalCfuTaught() */
+		};
 		private static final ExecutorOperation /*@NonNull*/ [] _Professor__OclAny = {
 			OCLstdlibTables.Operations._OclAny___lt__gt_ /* _'<>'(OclSelf[?]) */,
 			OCLstdlibTables.Operations._OclAny___eq_ /* _'='(OclSelf[?]) */,

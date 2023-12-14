@@ -4,16 +4,23 @@ package daGiMa_MDE_HW3.impl;
 
 import daGiMa_MDE_HW3.Course;
 import daGiMa_MDE_HW3.DaGiMa_MDE_HW3Package;
+import daGiMa_MDE_HW3.DaGiMa_MDE_HW3Tables;
 import daGiMa_MDE_HW3.DegreeCourse;
 import daGiMa_MDE_HW3.News;
 import daGiMa_MDE_HW3.Professor;
 import daGiMa_MDE_HW3.Thesis;
 
+import java.lang.reflect.InvocationTargetException;
+import java.math.BigInteger;
 import java.util.Collection;
 
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
+import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
@@ -23,6 +30,20 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+import org.eclipse.ocl.pivot.evaluation.Executor;
+import org.eclipse.ocl.pivot.ids.IdResolver;
+import org.eclipse.ocl.pivot.ids.TypeId;
+import org.eclipse.ocl.pivot.library.collection.CollectionSumOperation;
+import org.eclipse.ocl.pivot.library.oclany.OclComparableGreaterThanEqualOperation;
+import org.eclipse.ocl.pivot.library.oclany.OclComparableLessThanEqualOperation;
+import org.eclipse.ocl.pivot.library.string.CGStringGetSeverityOperation;
+import org.eclipse.ocl.pivot.library.string.CGStringLogDiagnosticOperation;
+import org.eclipse.ocl.pivot.utilities.PivotUtil;
+import org.eclipse.ocl.pivot.utilities.ValueUtil;
+import org.eclipse.ocl.pivot.values.IntegerValue;
+import org.eclipse.ocl.pivot.values.OrderedSetValue;
+import org.eclipse.ocl.pivot.values.SequenceValue;
+import org.eclipse.ocl.pivot.values.SequenceValue.Accumulator;
 
 /**
  * <!-- begin-user-doc -->
@@ -245,6 +266,85 @@ public class ProfessorImpl extends UserImpl implements Professor {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
+	public BigInteger totalCfuTaught() {
+		/**
+		 * taught_courses->collect(course | course.cfu)->sum()
+		 */
+		final /*@NonInvalid*/ Executor executor = PivotUtil.getExecutor(this);
+		final /*@NonInvalid*/ IdResolver idResolver = executor.getIdResolver();
+		final /*@NonInvalid*/ List<Course> taught_courses = this.getTaught_courses();
+		final /*@NonInvalid*/ OrderedSetValue BOXED_taught_courses = idResolver.createOrderedSetOfAll(DaGiMa_MDE_HW3Tables.ORD_CLSSid_Course, taught_courses);
+		/*@Thrown*/ Accumulator accumulator = ValueUtil.createSequenceAccumulatorValue(DaGiMa_MDE_HW3Tables.SEQ_DATAid_EInt);
+		Iterator<Object> ITERATOR_course = BOXED_taught_courses.iterator();
+		/*@NonInvalid*/ SequenceValue collect;
+		while (true) {
+			if (!ITERATOR_course.hasNext()) {
+				collect = accumulator;
+				break;
+			}
+			/*@NonInvalid*/ Course course = (Course)ITERATOR_course.next();
+			/**
+			 * course.cfu
+			 */
+			final /*@NonInvalid*/ int cfu = course.getCfu();
+			final /*@NonInvalid*/ IntegerValue BOXED_cfu = ValueUtil.integerValueOf(cfu);
+			//
+			accumulator.add(BOXED_cfu);
+		}
+		final /*@NonInvalid*/ IntegerValue sum = (IntegerValue)CollectionSumOperation.INSTANCE.evaluate(executor, DaGiMa_MDE_HW3Tables.DATAid_EInt, collect);
+		final BigInteger ECORE_sum = ValueUtil.bigIntegerValueOf(sum);
+		return ECORE_sum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean satisfyMinimalCfuRequirement(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+		final String constraintName = "Professor::satisfyMinimalCfuRequirement";
+		try {
+			/**
+			 *
+			 * inv satisfyMinimalCfuRequirement:
+			 *   let severity : Integer[1] = constraintName.getSeverity()
+			 *   in
+			 *     if severity <= 0
+			 *     then true
+			 *     else
+			 *       let result : Boolean[1] = totalCfuTaught() >= 15
+			 *       in
+			 *         constraintName.logDiagnostic(self, null, diagnostics, context, null, severity, result, 0)
+			 *     endif
+			 */
+			final /*@NonInvalid*/ Executor executor = PivotUtil.getExecutor(this);
+			final /*@NonInvalid*/ IntegerValue severity_0 = CGStringGetSeverityOperation.INSTANCE.evaluate(executor, DaGiMa_MDE_HW3Package.Literals.PROFESSOR___SATISFY_MINIMAL_CFU_REQUIREMENT__DIAGNOSTICCHAIN_MAP);
+			final /*@NonInvalid*/ boolean le = OclComparableLessThanEqualOperation.INSTANCE.evaluate(executor, severity_0, DaGiMa_MDE_HW3Tables.INT_0).booleanValue();
+			/*@NonInvalid*/ boolean IF_le;
+			if (le) {
+				IF_le = true;
+			}
+			else {
+				final /*@NonInvalid*/ BigInteger totalCfuTaught = this.totalCfuTaught();
+				final /*@NonInvalid*/ IntegerValue BOXED_totalCfuTaught = ValueUtil.integerValueOf(totalCfuTaught);
+				final /*@NonInvalid*/ boolean result = OclComparableGreaterThanEqualOperation.INSTANCE.evaluate(executor, BOXED_totalCfuTaught, DaGiMa_MDE_HW3Tables.INT_15).booleanValue();
+				final /*@NonInvalid*/ boolean logDiagnostic = CGStringLogDiagnosticOperation.INSTANCE.evaluate(executor, TypeId.BOOLEAN, constraintName, this, (Object)null, diagnostics, context, (Object)null, severity_0, result, DaGiMa_MDE_HW3Tables.INT_0).booleanValue();
+				IF_le = logDiagnostic;
+			}
+			return IF_le;
+		}
+		catch (Throwable e) {
+			return ValueUtil.validationFailedDiagnostic(constraintName, this, diagnostics, context, e);
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -392,6 +492,23 @@ public class ProfessorImpl extends UserImpl implements Professor {
 				return news_posted != null && !news_posted.isEmpty();
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	@SuppressWarnings("unchecked")
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case DaGiMa_MDE_HW3Package.PROFESSOR___TOTAL_CFU_TAUGHT:
+				return totalCfuTaught();
+			case DaGiMa_MDE_HW3Package.PROFESSOR___SATISFY_MINIMAL_CFU_REQUIREMENT__DIAGNOSTICCHAIN_MAP:
+				return satisfyMinimalCfuRequirement((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

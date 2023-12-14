@@ -362,6 +362,26 @@ public class DaGiMa_MDE_HW3PackageImpl extends EPackageImpl implements DaGiMa_MD
 	 * @generated
 	 */
 	@Override
+	public EOperation getProfessor__TotalCfuTaught() {
+		return professorEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getProfessor__SatisfyMinimalCfuRequirement__DiagnosticChain_Map() {
+		return professorEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getStudent() {
 		return studentEClass;
 	}
@@ -732,6 +752,16 @@ public class DaGiMa_MDE_HW3PackageImpl extends EPackageImpl implements DaGiMa_MD
 	 * @generated
 	 */
 	@Override
+	public EOperation getThesis__CheckIfEnoughCreditsToGraduate__DiagnosticChain_Map() {
+		return thesisEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getCourse() {
 		return courseEClass;
 	}
@@ -1042,6 +1072,16 @@ public class DaGiMa_MDE_HW3PackageImpl extends EPackageImpl implements DaGiMa_MD
 	 * @generated
 	 */
 	@Override
+	public EOperation getCareer__PassedAllExams() {
+		return careerEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getNews() {
 		return newsEClass;
 	}
@@ -1162,6 +1202,66 @@ public class DaGiMa_MDE_HW3PackageImpl extends EPackageImpl implements DaGiMa_MD
 	 * @generated
 	 */
 	@Override
+	public EOperation getExtraInfo__BooleanValueTypeCheck__DiagnosticChain_Map() {
+		return extraInfoEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getExtraInfo__FloatValueTypeCheck__DiagnosticChain_Map() {
+		return extraInfoEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getExtraInfo__StringValueTypeCheck__DiagnosticChain_Map() {
+		return extraInfoEClass.getEOperations().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getExtraInfo__EnumValueTypeCheck__DiagnosticChain_Map() {
+		return extraInfoEClass.getEOperations().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getExtraInfo__IntegerValueTypeCheck__DiagnosticChain_Map() {
+		return extraInfoEClass.getEOperations().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getExtraInfo__DoubleValueTypeCheck__DiagnosticChain_Map() {
+		return extraInfoEClass.getEOperations().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getCustomEnumeration() {
 		return customEnumerationEClass;
 	}
@@ -1267,6 +1367,8 @@ public class DaGiMa_MDE_HW3PackageImpl extends EPackageImpl implements DaGiMa_MD
 		createEReference(professorEClass, PROFESSOR__SUPERVISED_THESIS);
 		createEReference(professorEClass, PROFESSOR__TAUGHT_COURSES);
 		createEReference(professorEClass, PROFESSOR__NEWS_POSTED);
+		createEOperation(professorEClass, PROFESSOR___TOTAL_CFU_TAUGHT);
+		createEOperation(professorEClass, PROFESSOR___SATISFY_MINIMAL_CFU_REQUIREMENT__DIAGNOSTICCHAIN_MAP);
 
 		studentEClass = createEClass(STUDENT);
 		createEAttribute(studentEClass, STUDENT__MATRICULATION_NUMBER);
@@ -1309,6 +1411,7 @@ public class DaGiMa_MDE_HW3PackageImpl extends EPackageImpl implements DaGiMa_MD
 		createEReference(thesisEClass, THESIS__STUDENT);
 		createEReference(thesisEClass, THESIS__SUPERVISOR);
 		createEReference(thesisEClass, THESIS__DEGREE_COURSE);
+		createEOperation(thesisEClass, THESIS___CHECK_IF_ENOUGH_CREDITS_TO_GRADUATE__DIAGNOSTICCHAIN_MAP);
 
 		courseEClass = createEClass(COURSE);
 		createEAttribute(courseEClass, COURSE__CODE);
@@ -1344,6 +1447,7 @@ public class DaGiMa_MDE_HW3PackageImpl extends EPackageImpl implements DaGiMa_MD
 		createEReference(careerEClass, CAREER__STUDENT);
 		createEReference(careerEClass, CAREER__DEGREE_COURSE);
 		createEReference(careerEClass, CAREER__COURSES);
+		createEOperation(careerEClass, CAREER___PASSED_ALL_EXAMS);
 
 		newsEClass = createEClass(NEWS);
 		createEAttribute(newsEClass, NEWS__TITLE);
@@ -1358,6 +1462,12 @@ public class DaGiMa_MDE_HW3PackageImpl extends EPackageImpl implements DaGiMa_MD
 		createEAttribute(extraInfoEClass, EXTRA_INFO__LOWER_MULTIPLICITY);
 		createEAttribute(extraInfoEClass, EXTRA_INFO__HIGHER_MULTIPLICITY);
 		createEReference(extraInfoEClass, EXTRA_INFO__ENUM);
+		createEOperation(extraInfoEClass, EXTRA_INFO___BOOLEAN_VALUE_TYPE_CHECK__DIAGNOSTICCHAIN_MAP);
+		createEOperation(extraInfoEClass, EXTRA_INFO___FLOAT_VALUE_TYPE_CHECK__DIAGNOSTICCHAIN_MAP);
+		createEOperation(extraInfoEClass, EXTRA_INFO___STRING_VALUE_TYPE_CHECK__DIAGNOSTICCHAIN_MAP);
+		createEOperation(extraInfoEClass, EXTRA_INFO___ENUM_VALUE_TYPE_CHECK__DIAGNOSTICCHAIN_MAP);
+		createEOperation(extraInfoEClass, EXTRA_INFO___INTEGER_VALUE_TYPE_CHECK__DIAGNOSTICCHAIN_MAP);
+		createEOperation(extraInfoEClass, EXTRA_INFO___DOUBLE_VALUE_TYPE_CHECK__DIAGNOSTICCHAIN_MAP);
 
 		customEnumerationEClass = createEClass(CUSTOM_ENUMERATION);
 		createEAttribute(customEnumerationEClass, CUSTOM_ENUMERATION__VALUES);
@@ -1415,6 +1525,17 @@ public class DaGiMa_MDE_HW3PackageImpl extends EPackageImpl implements DaGiMa_MD
 		initEReference(getProfessor_Taught_courses(), this.getCourse(), this.getCourse_Teachers(), "taught_courses", null, 1, -1, Professor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getProfessor_News_posted(), this.getNews(), this.getNews_Author(), "news_posted", null, 0, -1, Professor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		initEOperation(getProfessor__TotalCfuTaught(), ecorePackage.getEBigInteger(), "totalCfuTaught", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		EOperation op = initEOperation(getProfessor__SatisfyMinimalCfuRequirement__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "satisfyMinimalCfuRequirement", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		EGenericType g1 = createEGenericType(ecorePackage.getEMap());
+		EGenericType g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		initEClass(studentEClass, Student.class, "Student", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getStudent_Matriculation_number(), ecorePackage.getELong(), "matriculation_number", null, 1, 1, Student.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getStudent_Thesis_defended(), this.getThesis(), this.getThesis_Student(), "thesis_defended", null, 0, -1, Student.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1449,10 +1570,10 @@ public class DaGiMa_MDE_HW3PackageImpl extends EPackageImpl implements DaGiMa_MD
 		initEReference(getDegreeCourse_Course_catalogue(), this.getCourse(), this.getCourse_Degree_courses(), "course_catalogue", null, 1, -1, DegreeCourse.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDegreeCourse_Extra_info(), this.getExtraInfo(), null, "extra_info", null, 0, -1, DegreeCourse.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		EOperation op = initEOperation(getDegreeCourse__CfuBetweenValues__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "cfuBetweenValues", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getDegreeCourse__CfuBetweenValues__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "cfuBetweenValues", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
-		EGenericType g1 = createEGenericType(ecorePackage.getEMap());
-		EGenericType g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
 		g1.getETypeArguments().add(g2);
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
 		g1.getETypeArguments().add(g2);
@@ -1464,6 +1585,15 @@ public class DaGiMa_MDE_HW3PackageImpl extends EPackageImpl implements DaGiMa_MD
 		initEReference(getThesis_Student(), this.getStudent(), this.getStudent_Thesis_defended(), "student", null, 1, 1, Thesis.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getThesis_Supervisor(), this.getProfessor(), this.getProfessor_Supervised_thesis(), "supervisor", null, 1, 1, Thesis.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getThesis_Degree_course(), this.getDegreeCourse(), null, "degree_course", null, 1, 1, Thesis.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		op = initEOperation(getThesis__CheckIfEnoughCreditsToGraduate__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "checkIfEnoughCreditsToGraduate", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(courseEClass, Course.class, "Course", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getCourse_Code(), ecorePackage.getEString(), "code", "F-1234", 1, 1, Course.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1516,6 +1646,8 @@ public class DaGiMa_MDE_HW3PackageImpl extends EPackageImpl implements DaGiMa_MD
 		initEReference(getCareer_Degree_course(), this.getDegreeCourse(), null, "degree_course", null, 1, 1, Career.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getCareer_Courses(), this.getPassingGrade(), this.getPassingGrade_Student(), "courses", null, 0, -1, Career.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		initEOperation(getCareer__PassedAllExams(), ecorePackage.getEBoolean(), "passedAllExams", 1, 1, IS_UNIQUE, IS_ORDERED);
+
 		initEClass(newsEClass, News.class, "News", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getNews_Title(), ecorePackage.getEString(), "title", "A news title", 1, 1, News.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getNews_Publication_date(), ecorePackage.getEDate(), "publication_date", "2023-12-18", 1, 1, News.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1529,6 +1661,60 @@ public class DaGiMa_MDE_HW3PackageImpl extends EPackageImpl implements DaGiMa_MD
 		initEAttribute(getExtraInfo_Lower_multiplicity(), ecorePackage.getEInt(), "lower_multiplicity", "0", 1, 1, ExtraInfo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getExtraInfo_Higher_multiplicity(), ecorePackage.getEInt(), "higher_multiplicity", null, 1, 1, ExtraInfo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getExtraInfo_Enum(), this.getCustomEnumeration(), null, "enum", null, 0, 1, ExtraInfo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		op = initEOperation(getExtraInfo__BooleanValueTypeCheck__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "BooleanValueTypeCheck", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getExtraInfo__FloatValueTypeCheck__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "FloatValueTypeCheck", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getExtraInfo__StringValueTypeCheck__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "StringValueTypeCheck", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getExtraInfo__EnumValueTypeCheck__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "EnumValueTypeCheck", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getExtraInfo__IntegerValueTypeCheck__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "IntegerValueTypeCheck", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getExtraInfo__DoubleValueTypeCheck__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "DoubleValueTypeCheck", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(customEnumerationEClass, CustomEnumeration.class, "CustomEnumeration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getCustomEnumeration_Values(), ecorePackage.getEString(), "values", null, 1, -1, CustomEnumeration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1587,10 +1773,22 @@ public class DaGiMa_MDE_HW3PackageImpl extends EPackageImpl implements DaGiMa_MD
 		   new String[] {
 		   });
 		addAnnotation
+		  (professorEClass,
+		   source,
+		   new String[] {
+			   "constraints", "satisfyMinimalCfuRequirement"
+		   });
+		addAnnotation
 		  (degreeCourseEClass,
 		   source,
 		   new String[] {
 			   "constraints", "cfuBetweenValues"
+		   });
+		addAnnotation
+		  (thesisEClass,
+		   source,
+		   new String[] {
+			   "constraints", "checkIfEnoughCreditsToGraduate"
 		   });
 		addAnnotation
 		  (courseEClass,
@@ -1604,6 +1802,12 @@ public class DaGiMa_MDE_HW3PackageImpl extends EPackageImpl implements DaGiMa_MD
 		   new String[] {
 			   "constraints", "mustBeSufficientIfDefined"
 		   });
+		addAnnotation
+		  (extraInfoEClass,
+		   source,
+		   new String[] {
+			   "constraints", "DoubleValueTypeCheck"
+		   });
 	}
 
 	/**
@@ -1615,10 +1819,28 @@ public class DaGiMa_MDE_HW3PackageImpl extends EPackageImpl implements DaGiMa_MD
 	protected void createPivotAnnotations() {
 		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot";
 		addAnnotation
+		  (getProfessor__TotalCfuTaught(),
+		   source,
+		   new String[] {
+			   "body", "taught_courses->collect(course|course.cfu)->sum()"
+		   });
+		addAnnotation
+		  (getProfessor__SatisfyMinimalCfuRequirement__DiagnosticChain_Map(),
+		   source,
+		   new String[] {
+			   "body", "\n\t\t\ttotalCfuTaught() >= 15"
+		   });
+		addAnnotation
 		  (getDegreeCourse__CfuBetweenValues__DiagnosticChain_Map(),
 		   source,
 		   new String[] {
 			   "body", "\n\t\t\tcfu > 0 and cfu <= 360"
+		   });
+		addAnnotation
+		  (getThesis__CheckIfEnoughCreditsToGraduate__DiagnosticChain_Map(),
+		   source,
+		   new String[] {
+			   "body", "\n\t\t\tstudent.transcripts->select(transcript|transcript.degree_course = self.degree_course)->forAll(e|e.passedAllExams())"
 		   });
 		addAnnotation
 		  (getCourse__CfuCourseGreaterThan__DiagnosticChain_Map(),
@@ -1630,7 +1852,49 @@ public class DaGiMa_MDE_HW3PackageImpl extends EPackageImpl implements DaGiMa_MD
 		  (getPassingGrade__MustBeSufficientIfDefined__DiagnosticChain_Map(),
 		   source,
 		   new String[] {
-			   "body", "\n\t\t\tgrade.oclIsUndefined() or (grade.matches(\'([Aa][+]{0,1}){1}|[B-Db-d]{1}|(1[8-9]{1}|2[0-9]{1}|30[Ll]{0,1}){1}\'))"
+			   "body", "\n\t\t\tgrade.size() = 0 or (grade.matches(\'([Aa][+]{0,1}){1}|[B-Db-d]{1}|(1[8-9]{1}|2[0-9]{1}|30[Ll]{0,1}){1}\'))"
+		   });
+		addAnnotation
+		  (getCareer__PassedAllExams(),
+		   source,
+		   new String[] {
+			   "body", "courses->forAll(course|course.grade.size() > 0)"
+		   });
+		addAnnotation
+		  (getExtraInfo__BooleanValueTypeCheck__DiagnosticChain_Map(),
+		   source,
+		   new String[] {
+			   "body", "\n\t\t\ttype <> \'BOOLEAN\' or value.oclIsTypeOf(Boolean)"
+		   });
+		addAnnotation
+		  (getExtraInfo__FloatValueTypeCheck__DiagnosticChain_Map(),
+		   source,
+		   new String[] {
+			   "body", "\n\t\t\ttype <> \'FLOAT\' or value.oclIsTypeOf(Real)"
+		   });
+		addAnnotation
+		  (getExtraInfo__StringValueTypeCheck__DiagnosticChain_Map(),
+		   source,
+		   new String[] {
+			   "body", "\n\t\t\ttype <> \'STRING\' or value.oclIsTypeOf(String)"
+		   });
+		addAnnotation
+		  (getExtraInfo__EnumValueTypeCheck__DiagnosticChain_Map(),
+		   source,
+		   new String[] {
+			   "body", "\n\t\t\ttype <> \'ENUMERATION\' or (enum?.values->exists(enumValue|enumValue = self.value))"
+		   });
+		addAnnotation
+		  (getExtraInfo__IntegerValueTypeCheck__DiagnosticChain_Map(),
+		   source,
+		   new String[] {
+			   "body", "\n\t\t\ttype <> \'INTEGER\' or value.oclIsTypeOf(Integer)"
+		   });
+		addAnnotation
+		  (getExtraInfo__DoubleValueTypeCheck__DiagnosticChain_Map(),
+		   source,
+		   new String[] {
+			   "body", "\n\t\t\ttype <> \'DOUBLE\' or value.oclIsTypeOf(Real)"
 		   });
 	}
 

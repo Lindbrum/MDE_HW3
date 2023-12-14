@@ -8,7 +8,7 @@ Bundle-ClassPath: .
 Bundle-Activator: daGiMa_MDE_HW3.presentation.DaGiMa_MDE_HW3EditorPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Bundle-RequiredExecutionEnvironment: JavaSE-20
+Bundle-RequiredExecutionEnvironment: JavaSE-18
 Export-Package: daGiMa_MDE_HW3.presentation
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.resources;visibility:=reexport,

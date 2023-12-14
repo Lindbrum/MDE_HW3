@@ -4,12 +4,16 @@ package daGiMa_MDE_HW3.impl;
 
 import daGiMa_MDE_HW3.Career;
 import daGiMa_MDE_HW3.DaGiMa_MDE_HW3Package;
+import daGiMa_MDE_HW3.DaGiMa_MDE_HW3Tables;
 import daGiMa_MDE_HW3.DegreeCourse;
 import daGiMa_MDE_HW3.PassingGrade;
 import daGiMa_MDE_HW3.Student;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
 
+import java.util.Iterator;
+import java.util.List;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
@@ -23,6 +27,16 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+import org.eclipse.ocl.pivot.evaluation.Executor;
+import org.eclipse.ocl.pivot.ids.IdResolver;
+import org.eclipse.ocl.pivot.library.oclany.OclComparableGreaterThanOperation;
+import org.eclipse.ocl.pivot.library.string.StringSizeOperation;
+import org.eclipse.ocl.pivot.messages.PivotMessages;
+import org.eclipse.ocl.pivot.utilities.PivotUtil;
+import org.eclipse.ocl.pivot.utilities.ValueUtil;
+import org.eclipse.ocl.pivot.values.IntegerValue;
+import org.eclipse.ocl.pivot.values.InvalidValueException;
+import org.eclipse.ocl.pivot.values.OrderedSetValue;
 
 /**
  * <!-- begin-user-doc -->
@@ -209,6 +223,72 @@ public class CareerImpl extends MinimalEObjectImpl.Container implements Career {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
+	public boolean passedAllExams() {
+		/**
+		 *
+		 * courses->forAll(course | course.grade.size() > 0)
+		 */
+		final /*@NonInvalid*/ Executor executor = PivotUtil.getExecutor(this);
+		final /*@NonInvalid*/ IdResolver idResolver = executor.getIdResolver();
+		final /*@NonInvalid*/ List<PassingGrade> courses = this.getCourses();
+		final /*@NonInvalid*/ OrderedSetValue BOXED_courses = idResolver.createOrderedSetOfAll(DaGiMa_MDE_HW3Tables.ORD_CLSSid_PassingGrade, courses);
+		/*@Thrown*/ Object accumulator = ValueUtil.TRUE_VALUE;
+		Iterator<Object> ITERATOR_course = BOXED_courses.iterator();
+		/*@Thrown*/ Boolean forAll;
+		while (true) {
+			if (!ITERATOR_course.hasNext()) {
+				if (accumulator == ValueUtil.TRUE_VALUE) {
+					forAll = ValueUtil.TRUE_VALUE;
+				}
+				else {
+					throw (InvalidValueException)accumulator;
+				}
+				break;
+			}
+			/*@NonInvalid*/ PassingGrade course = (PassingGrade)ITERATOR_course.next();
+			/**
+			 * course.grade.size() > 0
+			 */
+			/*@Caught*/ Object CAUGHT_gt;
+			try {
+				final /*@NonInvalid*/ String grade = course.getGrade();
+				if (grade == null) {
+					throw new InvalidValueException("Null \'\'String\'\' rather than \'\'OclVoid\'\' value required");
+				}
+				final /*@Thrown*/ IntegerValue size = StringSizeOperation.INSTANCE.evaluate(grade);
+				final /*@Thrown*/ boolean gt = OclComparableGreaterThanOperation.INSTANCE.evaluate(executor, size, DaGiMa_MDE_HW3Tables.INT_0).booleanValue();
+				CAUGHT_gt = gt;
+			}
+			catch (Exception e) {
+				CAUGHT_gt = ValueUtil.createInvalidValue(e);
+			}
+			//
+			if (CAUGHT_gt == ValueUtil.FALSE_VALUE) {					// Normal unsuccessful body evaluation result
+				forAll = ValueUtil.FALSE_VALUE;
+				break;														// Stop immediately
+			}
+			else if (CAUGHT_gt == ValueUtil.TRUE_VALUE) {				// Normal successful body evaluation result
+				;															// Carry on
+			}
+			else if (CAUGHT_gt instanceof InvalidValueException) {		// Abnormal exception evaluation result
+				accumulator = CAUGHT_gt;									// Cache an exception failure
+			}
+			else {															// Impossible badly typed result
+				accumulator = new InvalidValueException(PivotMessages.NonBooleanBody, "forAll");
+			}
+		}
+		if (forAll == null) {
+			throw new InvalidValueException("Null body for \'daGiMa_MDE_HW3::Career::passedAllExams() : Boolean[1]\'");
+		}
+		return forAll;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -319,6 +399,20 @@ public class CareerImpl extends MinimalEObjectImpl.Container implements Career {
 				return courses != null && !courses.isEmpty();
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case DaGiMa_MDE_HW3Package.CAREER___PASSED_ALL_EXAMS:
+				return passedAllExams();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 } //CareerImpl

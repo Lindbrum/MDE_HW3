@@ -3,6 +3,7 @@
 package daGiMa_MDE_HW3.provider;
 
 
+import daGiMa_MDE_HW3.DaGiMa_MDE_HW3Factory;
 import daGiMa_MDE_HW3.DaGiMa_MDE_HW3Package;
 import daGiMa_MDE_HW3.Professor;
 
@@ -12,6 +13,7 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
@@ -50,7 +52,6 @@ public class ProfessorItemProvider extends UserItemProvider {
 			addCoordinated_degree_coursesPropertyDescriptor(object);
 			addSupervised_thesisPropertyDescriptor(object);
 			addTaught_coursesPropertyDescriptor(object);
-			addNews_postedPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -166,25 +167,33 @@ public class ProfessorItemProvider extends UserItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the News posted feature.
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
+	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addNews_postedPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Professor_news_posted_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Professor_news_posted_feature", "_UI_Professor_type"),
-				 DaGiMa_MDE_HW3Package.Literals.PROFESSOR__NEWS_POSTED,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
+	@Override
+	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
+		if (childrenFeatures == null) {
+			super.getChildrenFeatures(object);
+			childrenFeatures.add(DaGiMa_MDE_HW3Package.Literals.PROFESSOR__NEWS_POSTED);
+		}
+		return childrenFeatures;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EStructuralFeature getChildFeature(Object object, Object child) {
+		// Check the type of the specified child object and return the proper feature to use for
+		// adding (see {@link AddCommand}) it as a child.
+
+		return super.getChildFeature(object, child);
 	}
 
 	/**
@@ -229,6 +238,9 @@ public class ProfessorItemProvider extends UserItemProvider {
 			case DaGiMa_MDE_HW3Package.PROFESSOR__ORCID:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
+			case DaGiMa_MDE_HW3Package.PROFESSOR__NEWS_POSTED:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+				return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -243,6 +255,11 @@ public class ProfessorItemProvider extends UserItemProvider {
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(DaGiMa_MDE_HW3Package.Literals.PROFESSOR__NEWS_POSTED,
+				 DaGiMa_MDE_HW3Factory.eINSTANCE.createNews()));
 	}
 
 }

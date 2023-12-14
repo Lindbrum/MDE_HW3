@@ -7,7 +7,7 @@ Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Bundle-RequiredExecutionEnvironment: JavaSE-20
+Bundle-RequiredExecutionEnvironment: JavaSE-18
 Export-Package: daGiMa_MDE_HW3.tests
 Require-Bundle: org.eclipse.core.runtime,
  DaGiMa_MDE_HW3;visibility:=reexport,

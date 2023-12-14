@@ -2,6 +2,9 @@
  */
 package daGiMa_MDE_HW3;
 
+import java.math.BigInteger;
+import java.util.Map;
+import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.EList;
 
 /**
@@ -22,7 +25,7 @@ import org.eclipse.emf.common.util.EList;
  * </ul>
  *
  * @see daGiMa_MDE_HW3.DaGiMa_MDE_HW3Package#getProfessor()
- * @model
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='satisfyMinimalCfuRequirement'"
  * @generated
  */
 public interface Professor extends User {
@@ -125,5 +128,22 @@ public interface Professor extends User {
 	 * @generated
 	 */
 	EList<News> getNews_posted();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot body='taught_courses-&gt;collect(course|course.cfu)-&gt;sum()'"
+	 * @generated
+	 */
+	BigInteger totalCfuTaught();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot body='\n\t\t\ttotalCfuTaught() &gt;= 15'"
+	 * @generated
+	 */
+	boolean satisfyMinimalCfuRequirement(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 } // Professor

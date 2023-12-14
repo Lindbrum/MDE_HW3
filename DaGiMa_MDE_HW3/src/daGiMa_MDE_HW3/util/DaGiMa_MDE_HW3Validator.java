@@ -40,12 +40,28 @@ public class DaGiMa_MDE_HW3Validator extends EObjectValidator {
 	public static final String DIAGNOSTIC_SOURCE = "daGiMa_MDE_HW3";
 
 	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Satisfy Minimal Cfu Requirement' of 'Professor'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int PROFESSOR__SATISFY_MINIMAL_CFU_REQUIREMENT = 1;
+
+	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Cfu Between Values' of 'Degree Course'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int DEGREE_COURSE__CFU_BETWEEN_VALUES = 1;
+	public static final int DEGREE_COURSE__CFU_BETWEEN_VALUES = 2;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Check If Enough Credits To Graduate' of 'Thesis'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int THESIS__CHECK_IF_ENOUGH_CREDITS_TO_GRADUATE = 3;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Cfu Course Greater Than' of 'Course'.
@@ -53,7 +69,7 @@ public class DaGiMa_MDE_HW3Validator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int COURSE__CFU_COURSE_GREATER_THAN = 2;
+	public static final int COURSE__CFU_COURSE_GREATER_THAN = 4;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Must Be Sufficient If Defined' of 'Passing Grade'.
@@ -61,7 +77,55 @@ public class DaGiMa_MDE_HW3Validator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PASSING_GRADE__MUST_BE_SUFFICIENT_IF_DEFINED = 3;
+	public static final int PASSING_GRADE__MUST_BE_SUFFICIENT_IF_DEFINED = 5;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Boolean Value Type Check' of 'Extra Info'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int EXTRA_INFO__BOOLEAN_VALUE_TYPE_CHECK = 6;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Float Value Type Check' of 'Extra Info'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int EXTRA_INFO__FLOAT_VALUE_TYPE_CHECK = 7;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'String Value Type Check' of 'Extra Info'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int EXTRA_INFO__STRING_VALUE_TYPE_CHECK = 8;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Enum Value Type Check' of 'Extra Info'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int EXTRA_INFO__ENUM_VALUE_TYPE_CHECK = 9;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Integer Value Type Check' of 'Extra Info'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int EXTRA_INFO__INTEGER_VALUE_TYPE_CHECK = 10;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Double Value Type Check' of 'Extra Info'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int EXTRA_INFO__DOUBLE_VALUE_TYPE_CHECK = 11;
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants.
@@ -69,7 +133,7 @@ public class DaGiMa_MDE_HW3Validator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 3;
+	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 11;
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants in a derived class.
@@ -167,7 +231,27 @@ public class DaGiMa_MDE_HW3Validator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateProfessor(Professor professor, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(professor, diagnostics, context);
+		if (!validate_NoCircularContainment(professor, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(professor, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(professor, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(professor, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(professor, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(professor, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(professor, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(professor, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(professor, diagnostics, context);
+		if (result || diagnostics != null) result &= validateProfessor_satisfyMinimalCfuRequirement(professor, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * Validates the satisfyMinimalCfuRequirement constraint of '<em>Professor</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateProfessor_satisfyMinimalCfuRequirement(Professor professor, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return professor.satisfyMinimalCfuRequirement(diagnostics, context);
 	}
 
 	/**
@@ -232,7 +316,27 @@ public class DaGiMa_MDE_HW3Validator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateThesis(Thesis thesis, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(thesis, diagnostics, context);
+		if (!validate_NoCircularContainment(thesis, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(thesis, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(thesis, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(thesis, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(thesis, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(thesis, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(thesis, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(thesis, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(thesis, diagnostics, context);
+		if (result || diagnostics != null) result &= validateThesis_checkIfEnoughCreditsToGraduate(thesis, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * Validates the checkIfEnoughCreditsToGraduate constraint of '<em>Thesis</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateThesis_checkIfEnoughCreditsToGraduate(Thesis thesis, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return thesis.checkIfEnoughCreditsToGraduate(diagnostics, context);
 	}
 
 	/**
@@ -326,7 +430,82 @@ public class DaGiMa_MDE_HW3Validator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateExtraInfo(ExtraInfo extraInfo, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(extraInfo, diagnostics, context);
+		if (!validate_NoCircularContainment(extraInfo, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(extraInfo, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(extraInfo, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(extraInfo, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(extraInfo, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(extraInfo, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(extraInfo, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(extraInfo, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(extraInfo, diagnostics, context);
+		if (result || diagnostics != null) result &= validateExtraInfo_DoubleValueTypeCheck(extraInfo, diagnostics, context);
+		if (result || diagnostics != null) result &= validateExtraInfo_BooleanValueTypeCheck(extraInfo, diagnostics, context);
+		if (result || diagnostics != null) result &= validateExtraInfo_FloatValueTypeCheck(extraInfo, diagnostics, context);
+		if (result || diagnostics != null) result &= validateExtraInfo_StringValueTypeCheck(extraInfo, diagnostics, context);
+		if (result || diagnostics != null) result &= validateExtraInfo_EnumValueTypeCheck(extraInfo, diagnostics, context);
+		if (result || diagnostics != null) result &= validateExtraInfo_IntegerValueTypeCheck(extraInfo, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * Validates the DoubleValueTypeCheck constraint of '<em>Extra Info</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateExtraInfo_DoubleValueTypeCheck(ExtraInfo extraInfo, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return extraInfo.DoubleValueTypeCheck(diagnostics, context);
+	}
+
+	/**
+	 * Validates the BooleanValueTypeCheck constraint of '<em>Extra Info</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateExtraInfo_BooleanValueTypeCheck(ExtraInfo extraInfo, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return extraInfo.BooleanValueTypeCheck(diagnostics, context);
+	}
+
+	/**
+	 * Validates the FloatValueTypeCheck constraint of '<em>Extra Info</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateExtraInfo_FloatValueTypeCheck(ExtraInfo extraInfo, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return extraInfo.FloatValueTypeCheck(diagnostics, context);
+	}
+
+	/**
+	 * Validates the StringValueTypeCheck constraint of '<em>Extra Info</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateExtraInfo_StringValueTypeCheck(ExtraInfo extraInfo, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return extraInfo.StringValueTypeCheck(diagnostics, context);
+	}
+
+	/**
+	 * Validates the EnumValueTypeCheck constraint of '<em>Extra Info</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateExtraInfo_EnumValueTypeCheck(ExtraInfo extraInfo, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return extraInfo.EnumValueTypeCheck(diagnostics, context);
+	}
+
+	/**
+	 * Validates the IntegerValueTypeCheck constraint of '<em>Extra Info</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateExtraInfo_IntegerValueTypeCheck(ExtraInfo extraInfo, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return extraInfo.IntegerValueTypeCheck(diagnostics, context);
 	}
 
 	/**

@@ -6,10 +6,12 @@
       <coordinator href="Teacher.dagima_mde_hw3#222222222222"/>
       <enrolled_students href="Student.dagima_mde_hw3#/"/>
       <course_catalogue href="SE_course.dagima_mde_hw3#/"/>
+      <course_catalogue href="MDE_course.dagima_mde_hw3#/"/>
     </offered_courses>
     <offered_courses code="L-41" name="ASE" cfu="120">
       <coordinator href="Teacher.dagima_mde_hw3#222222222222"/>
       <course_catalogue href="MDE_course.dagima_mde_hw3#/"/>
     </offered_courses>
+    <related_news href="Teacher.dagima_mde_hw3#//@news_posted.0"/>
   </departments>
 </dagima_mde_hw3:University>

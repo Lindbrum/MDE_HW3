@@ -85,4 +85,13 @@ public interface Career extends EObject {
 	 */
 	EList<PassingGrade> getCourses();
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot body='courses-&gt;forAll(course|course.grade.size() &gt; 0)'"
+	 * @generated
+	 */
+	boolean passedAllExams();
+
 } // Career

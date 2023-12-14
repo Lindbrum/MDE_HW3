@@ -2,22 +2,43 @@
  */
 package daGiMa_MDE_HW3.impl;
 
+import daGiMa_MDE_HW3.Career;
 import daGiMa_MDE_HW3.DaGiMa_MDE_HW3Package;
+import daGiMa_MDE_HW3.DaGiMa_MDE_HW3Tables;
 import daGiMa_MDE_HW3.DegreeCourse;
 import daGiMa_MDE_HW3.Professor;
 import daGiMa_MDE_HW3.Student;
 import daGiMa_MDE_HW3.Thesis;
 import daGiMa_MDE_HW3.ThesisType;
 
+import java.lang.reflect.InvocationTargetException;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
+import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.ocl.pivot.evaluation.Executor;
+import org.eclipse.ocl.pivot.ids.IdResolver;
+import org.eclipse.ocl.pivot.ids.TypeId;
+import org.eclipse.ocl.pivot.library.oclany.OclComparableLessThanEqualOperation;
+import org.eclipse.ocl.pivot.library.string.CGStringGetSeverityOperation;
+import org.eclipse.ocl.pivot.library.string.CGStringLogDiagnosticOperation;
+import org.eclipse.ocl.pivot.messages.PivotMessages;
+import org.eclipse.ocl.pivot.utilities.PivotUtil;
+import org.eclipse.ocl.pivot.utilities.ValueUtil;
+import org.eclipse.ocl.pivot.values.IntegerValue;
+import org.eclipse.ocl.pivot.values.InvalidValueException;
+import org.eclipse.ocl.pivot.values.OrderedSetValue;
+import org.eclipse.ocl.pivot.values.OrderedSetValue.Accumulator;
 
 /**
  * <!-- begin-user-doc -->
@@ -313,6 +334,102 @@ public class ThesisImpl extends MinimalEObjectImpl.Container implements Thesis {
 	 * @generated
 	 */
 	@Override
+	public boolean checkIfEnoughCreditsToGraduate(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+		final String constraintName = "Thesis::checkIfEnoughCreditsToGraduate";
+		try {
+			/**
+			 *
+			 * inv checkIfEnoughCreditsToGraduate:
+			 *   let severity : Integer[1] = constraintName.getSeverity()
+			 *   in
+			 *     if severity <= 0
+			 *     then true
+			 *     else
+			 *       let
+			 *         result : Boolean[?] = student.transcripts->select(transcript | transcript.degree_course = self.degree_course)
+			 *         ->forAll(e | e.passedAllExams())
+			 *       in
+			 *         constraintName.logDiagnostic(self, null, diagnostics, context, null, severity, result, 0)
+			 *     endif
+			 */
+			final /*@NonInvalid*/ Executor executor = PivotUtil.getExecutor(this);
+			final /*@NonInvalid*/ IdResolver idResolver = executor.getIdResolver();
+			final /*@NonInvalid*/ IntegerValue severity_0 = CGStringGetSeverityOperation.INSTANCE.evaluate(executor, DaGiMa_MDE_HW3Package.Literals.THESIS___CHECK_IF_ENOUGH_CREDITS_TO_GRADUATE__DIAGNOSTICCHAIN_MAP);
+			final /*@NonInvalid*/ boolean le = OclComparableLessThanEqualOperation.INSTANCE.evaluate(executor, severity_0, DaGiMa_MDE_HW3Tables.INT_0).booleanValue();
+			/*@NonInvalid*/ boolean IF_le;
+			if (le) {
+				IF_le = true;
+			}
+			else {
+				final /*@NonInvalid*/ Student student = this.getStudent();
+				final /*@NonInvalid*/ List<Career> transcripts = student.getTranscripts();
+				final /*@NonInvalid*/ OrderedSetValue BOXED_transcripts = idResolver.createOrderedSetOfAll(DaGiMa_MDE_HW3Tables.ORD_CLSSid_Career, transcripts);
+				/*@Thrown*/ Accumulator accumulator = ValueUtil.createOrderedSetAccumulatorValue(DaGiMa_MDE_HW3Tables.ORD_CLSSid_Career);
+				Iterator<Object> ITERATOR_transcript = BOXED_transcripts.iterator();
+				/*@NonInvalid*/ OrderedSetValue select;
+				while (true) {
+					if (!ITERATOR_transcript.hasNext()) {
+						select = accumulator;
+						break;
+					}
+					/*@NonInvalid*/ Career transcript = (Career)ITERATOR_transcript.next();
+					/**
+					 * transcript.degree_course = self.degree_course
+					 */
+					final /*@NonInvalid*/ DegreeCourse degree_course = transcript.getDegree_course();
+					final /*@NonInvalid*/ DegreeCourse degree_course_0 = this.getDegree_course();
+					final /*@NonInvalid*/ boolean eq = degree_course.equals(degree_course_0);
+					//
+					if (eq) {
+						accumulator.add(transcript);
+					}
+				}
+				/*@Thrown*/ Object accumulator_0 = ValueUtil.TRUE_VALUE;
+				Iterator<Object> ITERATOR_e_0 = select.iterator();
+				/*@NonInvalid*/ Boolean result;
+				while (true) {
+					if (!ITERATOR_e_0.hasNext()) {
+						if (accumulator_0 == ValueUtil.TRUE_VALUE) {
+							result = ValueUtil.TRUE_VALUE;
+						}
+						else {
+							throw (InvalidValueException)accumulator_0;
+						}
+						break;
+					}
+					/*@NonInvalid*/ Career e_0 = (Career)ITERATOR_e_0.next();
+					/**
+					 * e.passedAllExams()
+					 */
+					final /*@NonInvalid*/ boolean passedAllExams = e_0.passedAllExams();
+					//
+					if (!passedAllExams) {					// Normal unsuccessful body evaluation result
+						result = ValueUtil.FALSE_VALUE;
+						break;														// Stop immediately
+					}
+					else if (passedAllExams) {				// Normal successful body evaluation result
+						;															// Carry on
+					}
+					else {															// Impossible badly typed result
+						accumulator_0 = new InvalidValueException(PivotMessages.NonBooleanBody, "forAll");
+					}
+				}
+				final /*@NonInvalid*/ boolean logDiagnostic = CGStringLogDiagnosticOperation.INSTANCE.evaluate(executor, TypeId.BOOLEAN, constraintName, this, (Object)null, diagnostics, context, (Object)null, severity_0, result, DaGiMa_MDE_HW3Tables.INT_0).booleanValue();
+				IF_le = logDiagnostic;
+			}
+			return IF_le;
+		}
+		catch (Throwable e) {
+			return ValueUtil.validationFailedDiagnostic(constraintName, this, diagnostics, context, e);
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case DaGiMa_MDE_HW3Package.THESIS__STUDENT:
@@ -455,6 +572,21 @@ public class ThesisImpl extends MinimalEObjectImpl.Container implements Thesis {
 				return degree_course != null;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	@SuppressWarnings("unchecked")
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case DaGiMa_MDE_HW3Package.THESIS___CHECK_IF_ENOUGH_CREDITS_TO_GRADUATE__DIAGNOSTICCHAIN_MAP:
+				return checkIfEnoughCreditsToGraduate((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

@@ -2,6 +2,8 @@
  */
 package daGiMa_MDE_HW3;
 
+import java.util.Map;
+import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -22,7 +24,7 @@ import org.eclipse.emf.ecore.EObject;
  * </ul>
  *
  * @see daGiMa_MDE_HW3.DaGiMa_MDE_HW3Package#getExtraInfo()
- * @model
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='DoubleValueTypeCheck'"
  * @generated
  */
 public interface ExtraInfo extends EObject {
@@ -162,5 +164,53 @@ public interface ExtraInfo extends EObject {
 	 * @generated
 	 */
 	void setEnum(CustomEnumeration value);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot body='\n\t\t\ttype &lt;&gt; \'BOOLEAN\' or value.oclIsTypeOf(Boolean)'"
+	 * @generated
+	 */
+	boolean BooleanValueTypeCheck(DiagnosticChain diagnostics, Map<Object, Object> context);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot body='\n\t\t\ttype &lt;&gt; \'FLOAT\' or value.oclIsTypeOf(Real)'"
+	 * @generated
+	 */
+	boolean FloatValueTypeCheck(DiagnosticChain diagnostics, Map<Object, Object> context);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot body='\n\t\t\ttype &lt;&gt; \'STRING\' or value.oclIsTypeOf(String)'"
+	 * @generated
+	 */
+	boolean StringValueTypeCheck(DiagnosticChain diagnostics, Map<Object, Object> context);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot body='\n\t\t\ttype &lt;&gt; \'ENUMERATION\' or (enum?.values-&gt;exists(enumValue|enumValue = self.value))'"
+	 * @generated
+	 */
+	boolean EnumValueTypeCheck(DiagnosticChain diagnostics, Map<Object, Object> context);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot body='\n\t\t\ttype &lt;&gt; \'INTEGER\' or value.oclIsTypeOf(Integer)'"
+	 * @generated
+	 */
+	boolean IntegerValueTypeCheck(DiagnosticChain diagnostics, Map<Object, Object> context);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot body='\n\t\t\ttype &lt;&gt; \'DOUBLE\' or value.oclIsTypeOf(Real)'"
+	 * @generated
+	 */
+	boolean DoubleValueTypeCheck(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 } // ExtraInfo
