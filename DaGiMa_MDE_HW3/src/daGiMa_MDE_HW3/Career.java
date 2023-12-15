@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link daGiMa_MDE_HW3.Career#getId <em>Id</em>}</li>
  *   <li>{@link daGiMa_MDE_HW3.Career#getStudent <em>Student</em>}</li>
  *   <li>{@link daGiMa_MDE_HW3.Career#getDegree_course <em>Degree course</em>}</li>
  *   <li>{@link daGiMa_MDE_HW3.Career#getCourses <em>Courses</em>}</li>
@@ -25,6 +26,28 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface Career extends EObject {
+	/**
+	 * Returns the value of the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Id</em>' attribute.
+	 * @see #setId(String)
+	 * @see daGiMa_MDE_HW3.DaGiMa_MDE_HW3Package#getCareer_Id()
+	 * @model id="true" required="true" volatile="true" derived="true"
+	 * @generated
+	 */
+	String getId();
+
+	/**
+	 * Sets the value of the '{@link daGiMa_MDE_HW3.Career#getId <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Id</em>' attribute.
+	 * @see #getId()
+	 * @generated
+	 */
+	void setId(String value);
+
 	/**
 	 * Returns the value of the '<em><b>Student</b></em>' reference.
 	 * It is bidirectional and its opposite is '{@link daGiMa_MDE_HW3.Student#getTranscripts <em>Transcripts</em>}'.

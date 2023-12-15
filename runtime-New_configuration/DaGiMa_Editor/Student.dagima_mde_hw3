@@ -7,4 +7,5 @@
   <enrolled_courses href="University.dagima_mde_hw3#//@departments.0/@offered_courses.0"/>
   <booked_calls href="SE_course.dagima_mde_hw3#//@calls.0"/>
   <transcripts href="Carreer.dagima_mde_hw3#/"/>
+  <transcripts href="ASE_Carreer.dagima_mde_hw3#/"/>
 </dagima_mde_hw3:Student>

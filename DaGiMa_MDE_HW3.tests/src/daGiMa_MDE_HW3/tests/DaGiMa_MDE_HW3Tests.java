@@ -32,6 +32,7 @@ public class DaGiMa_MDE_HW3Tests extends TestSuite {
 	public static Test suite() {
 		TestSuite suite = new DaGiMa_MDE_HW3Tests("daGiMa_MDE_HW3 Tests");
 		suite.addTestSuite(ProfessorTest.class);
+		suite.addTestSuite(StudentTest.class);
 		suite.addTestSuite(DegreeCourseTest.class);
 		suite.addTestSuite(ThesisTest.class);
 		suite.addTestSuite(CourseTest.class);

@@ -442,6 +442,16 @@ public class DaGiMa_MDE_HW3PackageImpl extends EPackageImpl implements DaGiMa_MD
 	 * @generated
 	 */
 	@Override
+	public EReference getStudent_Student_exams() {
+		return (EReference)studentEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getUser() {
 		return userEClass;
 	}
@@ -1042,8 +1052,8 @@ public class DaGiMa_MDE_HW3PackageImpl extends EPackageImpl implements DaGiMa_MD
 	 * @generated
 	 */
 	@Override
-	public EReference getCareer_Student() {
-		return (EReference)careerEClass.getEStructuralFeatures().get(0);
+	public EAttribute getCareer_Id() {
+		return (EAttribute)careerEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1052,7 +1062,7 @@ public class DaGiMa_MDE_HW3PackageImpl extends EPackageImpl implements DaGiMa_MD
 	 * @generated
 	 */
 	@Override
-	public EReference getCareer_Degree_course() {
+	public EReference getCareer_Student() {
 		return (EReference)careerEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -1062,8 +1072,18 @@ public class DaGiMa_MDE_HW3PackageImpl extends EPackageImpl implements DaGiMa_MD
 	 * @generated
 	 */
 	@Override
-	public EReference getCareer_Courses() {
+	public EReference getCareer_Degree_course() {
 		return (EReference)careerEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getCareer_Courses() {
+		return (EReference)careerEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -1272,8 +1292,18 @@ public class DaGiMa_MDE_HW3PackageImpl extends EPackageImpl implements DaGiMa_MD
 	 * @generated
 	 */
 	@Override
-	public EAttribute getCustomEnumeration_Values() {
+	public EAttribute getCustomEnumeration_Name() {
 		return (EAttribute)customEnumerationEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getCustomEnumeration_Values() {
+		return (EAttribute)customEnumerationEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1376,6 +1406,7 @@ public class DaGiMa_MDE_HW3PackageImpl extends EPackageImpl implements DaGiMa_MD
 		createEReference(studentEClass, STUDENT__ENROLLED_COURSES);
 		createEReference(studentEClass, STUDENT__BOOKED_CALLS);
 		createEReference(studentEClass, STUDENT__TRANSCRIPTS);
+		createEReference(studentEClass, STUDENT__STUDENT_EXAMS);
 
 		userEClass = createEClass(USER);
 		createEAttribute(userEClass, USER__NAME);
@@ -1444,6 +1475,7 @@ public class DaGiMa_MDE_HW3PackageImpl extends EPackageImpl implements DaGiMa_MD
 		createEOperation(passingGradeEClass, PASSING_GRADE___MUST_BE_SUFFICIENT_IF_DEFINED__DIAGNOSTICCHAIN_MAP);
 
 		careerEClass = createEClass(CAREER);
+		createEAttribute(careerEClass, CAREER__ID);
 		createEReference(careerEClass, CAREER__STUDENT);
 		createEReference(careerEClass, CAREER__DEGREE_COURSE);
 		createEReference(careerEClass, CAREER__COURSES);
@@ -1470,6 +1502,7 @@ public class DaGiMa_MDE_HW3PackageImpl extends EPackageImpl implements DaGiMa_MD
 		createEOperation(extraInfoEClass, EXTRA_INFO___ENUM_TYPE_CHECK__DIAGNOSTICCHAIN_MAP);
 
 		customEnumerationEClass = createEClass(CUSTOM_ENUMERATION);
+		createEAttribute(customEnumerationEClass, CUSTOM_ENUMERATION__NAME);
 		createEAttribute(customEnumerationEClass, CUSTOM_ENUMERATION__VALUES);
 
 		// Create enums
@@ -1542,6 +1575,7 @@ public class DaGiMa_MDE_HW3PackageImpl extends EPackageImpl implements DaGiMa_MD
 		initEReference(getStudent_Enrolled_courses(), this.getDegreeCourse(), this.getDegreeCourse_Enrolled_students(), "enrolled_courses", null, 0, -1, Student.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getStudent_Booked_calls(), this.getExaminationCall(), this.getExaminationCall_Booked_students(), "booked_calls", null, 0, -1, Student.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getStudent_Transcripts(), this.getCareer(), this.getCareer_Student(), "transcripts", null, 0, -1, Student.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getStudent_Student_exams(), this.getCourse(), null, "student_exams", null, 0, -1, Student.class, !IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
 
 		initEClass(userEClass, User.class, "User", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getUser_Name(), ecorePackage.getEString(), "name", null, 1, 1, User.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1642,6 +1676,7 @@ public class DaGiMa_MDE_HW3PackageImpl extends EPackageImpl implements DaGiMa_MD
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(careerEClass, Career.class, "Career", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getCareer_Id(), ecorePackage.getEString(), "id", null, 1, 1, Career.class, !IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getCareer_Student(), this.getStudent(), this.getStudent_Transcripts(), "student", null, 1, 1, Career.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getCareer_Degree_course(), this.getDegreeCourse(), null, "degree_course", null, 1, 1, Career.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getCareer_Courses(), this.getPassingGrade(), this.getPassingGrade_Student(), "courses", null, 0, -1, Career.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1655,7 +1690,7 @@ public class DaGiMa_MDE_HW3PackageImpl extends EPackageImpl implements DaGiMa_MD
 		initEReference(getNews_Author(), this.getProfessor(), this.getProfessor_News_posted(), "author", null, 1, 1, News.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(extraInfoEClass, ExtraInfo.class, "ExtraInfo", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getExtraInfo_Name(), ecorePackage.getEString(), "name", null, 0, 1, ExtraInfo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getExtraInfo_Name(), ecorePackage.getEString(), "name", null, 1, 1, ExtraInfo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getExtraInfo_Value(), ecorePackage.getEString(), "value", null, 1, 1, ExtraInfo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getExtraInfo_Type(), this.getMetadataType(), "type", "STRING", 1, 1, ExtraInfo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getExtraInfo_Lower_multiplicity(), ecorePackage.getEInt(), "lower_multiplicity", "0", 1, 1, ExtraInfo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1717,6 +1752,7 @@ public class DaGiMa_MDE_HW3PackageImpl extends EPackageImpl implements DaGiMa_MD
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(customEnumerationEClass, CustomEnumeration.class, "CustomEnumeration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getCustomEnumeration_Name(), ecorePackage.getEString(), "name", null, 1, 1, CustomEnumeration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCustomEnumeration_Values(), ecorePackage.getEString(), "values", null, 1, -1, CustomEnumeration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
@@ -1757,6 +1793,8 @@ public class DaGiMa_MDE_HW3PackageImpl extends EPackageImpl implements DaGiMa_MD
 		createEcoreAnnotations();
 		// http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot
 		createPivotAnnotations();
+		// http://www.eclipse.org/OCL/Collection
+		createCollectionAnnotations();
 	}
 
 	/**
@@ -1895,6 +1933,22 @@ public class DaGiMa_MDE_HW3PackageImpl extends EPackageImpl implements DaGiMa_MD
 		   source,
 		   new String[] {
 			   "body", "\n\t\t\tenum?.values->one(enumValue | enumValue = value) or type <> MetadataType::ENUMERATION"
+		   });
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/OCL/Collection</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createCollectionAnnotations() {
+		String source = "http://www.eclipse.org/OCL/Collection";
+		addAnnotation
+		  (getStudent_Student_exams(),
+		   source,
+		   new String[] {
+			   "nullFree", "false"
 		   });
 	}
 

@@ -24,6 +24,7 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
@@ -62,10 +63,33 @@ public class CareerItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addIdPropertyDescriptor(object);
 			addStudentPropertyDescriptor(object);
 			addDegree_coursePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Id feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIdPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Career_id_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Career_id_feature", "_UI_Career_type"),
+				 DaGiMa_MDE_HW3Package.Literals.CAREER__ID,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -161,7 +185,10 @@ public class CareerItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_Career_type");
+		String label = ((Career)object).getId();
+		return label == null || label.length() == 0 ?
+			getString("_UI_Career_type") :
+			getString("_UI_Career_type") + " " + label;
 	}
 
 
@@ -177,6 +204,9 @@ public class CareerItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Career.class)) {
+			case DaGiMa_MDE_HW3Package.CAREER__ID:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
 			case DaGiMa_MDE_HW3Package.CAREER__COURSES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;

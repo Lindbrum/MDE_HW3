@@ -32,26 +32,10 @@ public interface ExtraInfo extends EObject {
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * operation matchWithTypeEnum(toMatch : String, enumValue : MetadataType) : Boolean[1]{
-	 * body:
-	 * let enumValues : Set(Tuple(s: String, d: MetadataType)) =
-	 * Set{
-	 * Tuple{s = 'STRING', d = MetadataType::STRING},
-	 * Tuple{s = 'INTEGER', d = MetadataType::INTEGER},
-	 * Tuple{s = 'FLOAT', d = MetadataType::FLOAT},
-	 * Tuple{s = 'DOUBLE', d = MetadataType::DOUBLE},
-	 * Tuple{s = 'BOOLEAN', d = MetadataType::BOOLEAN},
-	 * Tuple{s = 'ENUMERATION', d = MetadataType::ENUMERATION}
-	 * }
-	 * in
-	 * enumValues->select(value |value.s = toMatch)->one(value|value.d = enumValue);
-	 * }
-	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see daGiMa_MDE_HW3.DaGiMa_MDE_HW3Package#getExtraInfo_Name()
-	 * @model id="true"
+	 * @model id="true" required="true"
 	 * @generated
 	 */
 	String getName();

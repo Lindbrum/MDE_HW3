@@ -54,6 +54,15 @@
         eType="#//ExaminationCall" eOpposite="#//ExaminationCall/booked_students"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="transcripts" upperBound="-1"
         eType="#//Career" eOpposite="#//Career/student"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="student_exams" ordered="false"
+        upperBound="-1" eType="#//Course" volatile="true" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+        <details key="derivation" value="transcripts->collect(transcript|transcript.courses)->flatten()->collect(transcriptEntry|transcriptEntry.course)"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/OCL/Collection">
+        <details key="nullFree" value="false"/>
+      </eAnnotations>
+    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="User" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -215,6 +224,12 @@
         <details key="body" value="courses->forAll(course|course.grade.size() > 0)"/>
       </eAnnotations>
     </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        volatile="true" derived="true" iD="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+        <details key="derivation" value="student.matriculation_number.toString().concat(' - ').concat(degree_course.name)"/>
+      </eAnnotations>
+    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="student" lowerBound="1"
         eType="#//Student" eOpposite="#//Student/transcripts"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="degree_course" lowerBound="1"
@@ -244,7 +259,7 @@
       <details key="booleanTypeCheck" value="&#xA;&#x9;&#x9;&#x9;value.matches('^true|false$') or type &lt;> MetadataType::BOOLEAN"/>
       <details key="enumTypeCheck" value="&#xA;&#x9;&#x9;&#x9;enum?.values->one(enumValue | enumValue = value) or type &lt;> MetadataType::ENUMERATION"/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         iD="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1" eType="#//MetadataType"
@@ -264,6 +279,8 @@
     <eLiterals name="ENUMERATION" value="5"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CustomEnumeration">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        iD="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="values" lowerBound="1"
         upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>

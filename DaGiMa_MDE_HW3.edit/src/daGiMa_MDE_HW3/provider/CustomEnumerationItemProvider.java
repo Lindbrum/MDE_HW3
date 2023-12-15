@@ -60,9 +60,32 @@ public class CustomEnumerationItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addNamePropertyDescriptor(object);
 			addValuesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Name feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addNamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_CustomEnumeration_name_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CustomEnumeration_name_feature", "_UI_CustomEnumeration_type"),
+				 DaGiMa_MDE_HW3Package.Literals.CUSTOM_ENUMERATION__NAME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -106,7 +129,10 @@ public class CustomEnumerationItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_CustomEnumeration_type");
+		String label = ((CustomEnumeration)object).getName();
+		return label == null || label.length() == 0 ?
+			getString("_UI_CustomEnumeration_type") :
+			getString("_UI_CustomEnumeration_type") + " " + label;
 	}
 
 
@@ -122,6 +148,7 @@ public class CustomEnumerationItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(CustomEnumeration.class)) {
+			case DaGiMa_MDE_HW3Package.CUSTOM_ENUMERATION__NAME:
 			case DaGiMa_MDE_HW3Package.CUSTOM_ENUMERATION__VALUES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;

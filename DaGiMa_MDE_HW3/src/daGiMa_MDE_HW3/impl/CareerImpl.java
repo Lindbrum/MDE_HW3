@@ -29,7 +29,9 @@ import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.eclipse.ocl.pivot.evaluation.Executor;
 import org.eclipse.ocl.pivot.ids.IdResolver;
+import org.eclipse.ocl.pivot.library.oclany.OclAnyToStringOperation;
 import org.eclipse.ocl.pivot.library.oclany.OclComparableGreaterThanOperation;
+import org.eclipse.ocl.pivot.library.string.StringConcatOperation;
 import org.eclipse.ocl.pivot.library.string.StringSizeOperation;
 import org.eclipse.ocl.pivot.messages.PivotMessages;
 import org.eclipse.ocl.pivot.utilities.PivotUtil;
@@ -46,6 +48,7 @@ import org.eclipse.ocl.pivot.values.OrderedSetValue;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link daGiMa_MDE_HW3.impl.CareerImpl#getId <em>Id</em>}</li>
  *   <li>{@link daGiMa_MDE_HW3.impl.CareerImpl#getStudent <em>Student</em>}</li>
  *   <li>{@link daGiMa_MDE_HW3.impl.CareerImpl#getDegree_course <em>Degree course</em>}</li>
  *   <li>{@link daGiMa_MDE_HW3.impl.CareerImpl#getCourses <em>Courses</em>}</li>
@@ -54,6 +57,16 @@ import org.eclipse.ocl.pivot.values.OrderedSetValue;
  * @generated
  */
 public class CareerImpl extends MinimalEObjectImpl.Container implements Career {
+	/**
+	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getId()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String ID_EDEFAULT = null;
+
 	/**
 	 * The cached value of the '{@link #getStudent() <em>Student</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -101,6 +114,42 @@ public class CareerImpl extends MinimalEObjectImpl.Container implements Career {
 	@Override
 	protected EClass eStaticClass() {
 		return DaGiMa_MDE_HW3Package.Literals.CAREER;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getId() {
+		/**
+		 *
+		 * student.matriculation_number.toString()
+		 * .concat(' - ')
+		 * .concat(degree_course.name)
+		 */
+		final /*@NonInvalid*/ Student student = this.getStudent();
+		final /*@NonInvalid*/ long matriculation_number = student.getMatriculation_number();
+		final /*@NonInvalid*/ IntegerValue BOXED_matriculation_number = ValueUtil.integerValueOf(matriculation_number);
+		final /*@NonInvalid*/ String toString = OclAnyToStringOperation.INSTANCE.evaluate(BOXED_matriculation_number);
+		final /*@NonInvalid*/ String concat = StringConcatOperation.INSTANCE.evaluate(toString, DaGiMa_MDE_HW3Tables.STR__32_m_32);
+		final /*@NonInvalid*/ DegreeCourse degree_course = this.getDegree_course();
+		final /*@NonInvalid*/ String name = degree_course.getName();
+		final /*@NonInvalid*/ String concat_0 = StringConcatOperation.INSTANCE.evaluate(concat, name);
+		return concat_0;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setId(String newId) {
+		// TODO: implement this method to set the 'Id' attribute
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -327,6 +376,8 @@ public class CareerImpl extends MinimalEObjectImpl.Container implements Career {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case DaGiMa_MDE_HW3Package.CAREER__ID:
+				return getId();
 			case DaGiMa_MDE_HW3Package.CAREER__STUDENT:
 				if (resolve) return getStudent();
 				return basicGetStudent();
@@ -348,6 +399,9 @@ public class CareerImpl extends MinimalEObjectImpl.Container implements Career {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case DaGiMa_MDE_HW3Package.CAREER__ID:
+				setId((String)newValue);
+				return;
 			case DaGiMa_MDE_HW3Package.CAREER__STUDENT:
 				setStudent((Student)newValue);
 				return;
@@ -370,6 +424,9 @@ public class CareerImpl extends MinimalEObjectImpl.Container implements Career {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case DaGiMa_MDE_HW3Package.CAREER__ID:
+				setId(ID_EDEFAULT);
+				return;
 			case DaGiMa_MDE_HW3Package.CAREER__STUDENT:
 				setStudent((Student)null);
 				return;
@@ -391,6 +448,8 @@ public class CareerImpl extends MinimalEObjectImpl.Container implements Career {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case DaGiMa_MDE_HW3Package.CAREER__ID:
+				return ID_EDEFAULT == null ? getId() != null : !ID_EDEFAULT.equals(getId());
 			case DaGiMa_MDE_HW3Package.CAREER__STUDENT:
 				return student != null;
 			case DaGiMa_MDE_HW3Package.CAREER__DEGREE_COURSE:

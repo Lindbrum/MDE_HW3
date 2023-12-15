@@ -14,6 +14,12 @@ import junit.textui.TestRunner;
  * A test case for the model object '<em><b>Career</b></em>'.
  * <!-- end-user-doc -->
  * <p>
+ * The following features are tested:
+ * <ul>
+ *   <li>{@link daGiMa_MDE_HW3.Career#getId() <em>Id</em>}</li>
+ * </ul>
+ * </p>
+ * <p>
  * The following operations are tested:
  * <ul>
  *   <li>{@link daGiMa_MDE_HW3.Career#passedAllExams() <em>Passed All Exams</em>}</li>
@@ -90,6 +96,32 @@ public class CareerTest extends TestCase {
 	@Override
 	protected void tearDown() throws Exception {
 		setFixture(null);
+	}
+
+	/**
+	 * Tests the '{@link daGiMa_MDE_HW3.Career#getId() <em>Id</em>}' feature getter.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see daGiMa_MDE_HW3.Career#getId()
+	 * @generated
+	 */
+	public void testGetId() {
+		// TODO: implement this feature getter test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link daGiMa_MDE_HW3.Career#setId(java.lang.String) <em>Id</em>}' feature setter.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see daGiMa_MDE_HW3.Career#setId(java.lang.String)
+	 * @generated
+	 */
+	public void testSetId() {
+		// TODO: implement this feature setter test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
 	}
 
 	/**

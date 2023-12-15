@@ -55,6 +55,7 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference daGiMa_MDE_HW3.ecore#//Student/enrolled_courses"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference daGiMa_MDE_HW3.ecore#//Student/booked_calls"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference daGiMa_MDE_HW3.ecore#//Student/transcripts"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference daGiMa_MDE_HW3.ecore#//Student/student_exams"/>
     </genClasses>
     <genClasses image="false" ecoreClass="daGiMa_MDE_HW3.ecore#//User">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daGiMa_MDE_HW3.ecore#//User/name"/>
@@ -119,6 +120,7 @@
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference daGiMa_MDE_HW3.ecore#//PassingGrade/student"/>
     </genClasses>
     <genClasses ecoreClass="daGiMa_MDE_HW3.ecore#//Career">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daGiMa_MDE_HW3.ecore#//Career/id"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference daGiMa_MDE_HW3.ecore#//Career/student"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference daGiMa_MDE_HW3.ecore#//Career/degree_course"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference daGiMa_MDE_HW3.ecore#//Career/courses"/>
@@ -139,6 +141,7 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference daGiMa_MDE_HW3.ecore#//ExtraInfo/enum"/>
     </genClasses>
     <genClasses ecoreClass="daGiMa_MDE_HW3.ecore#//CustomEnumeration">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daGiMa_MDE_HW3.ecore#//CustomEnumeration/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daGiMa_MDE_HW3.ecore#//CustomEnumeration/values"/>
     </genClasses>
   </genPackages>

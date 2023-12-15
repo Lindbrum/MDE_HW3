@@ -97,6 +97,7 @@ public class DaGiMa_MDE_HW3Tables extends AbstractTables
 	public static final /*@NonInvalid*/ IntegerValue INT_15 = ValueUtil.integerValueOf("15");
 	public static final /*@NonInvalid*/ IntegerValue INT_360 = ValueUtil.integerValueOf("360");
 	public static final /*@NonInvalid*/ CollectionTypeId ORD_PRIMid_String = TypeId.ORDERED_SET.getSpecializedId(TypeId.STRING, true, ValueUtil.ONE_VALUE, ValueUtil.UNLIMITED_VALUE);
+	public static final /*@NonInvalid*/ String STR__32_m_32 = " - ";
 	public static final /*@NonInvalid*/ String STR__91_0_m_9_93_p = "[0-9]+";
 	public static final /*@NonInvalid*/ String STR__91_0_m_9_93_p_o_91__93_123_1_125_91_0_m_9_93_p_e_63_91_Dd_93 = "[0-9]+([.]{1}[0-9]+)?[Dd]";
 	public static final /*@NonInvalid*/ String STR__91_0_m_9_93_p_o_91__93_123_1_125_91_0_m_9_93_p_e_63_91_Ff_93 = "[0-9]+([.]{1}[0-9]+)?[Ff]";
@@ -106,6 +107,7 @@ public class DaGiMa_MDE_HW3Tables extends AbstractTables
 	public static final /*@NonInvalid*/ CollectionTypeId BAG_CLSSid_Course = TypeId.BAG.getSpecializedId(DaGiMa_MDE_HW3Tables.CLSSid_Course, false, ValueUtil.ZERO_VALUE, ValueUtil.UNLIMITED_VALUE);
 	public static final /*@NonInvalid*/ CollectionTypeId BAG_CLSSid_DegreeCourse = TypeId.BAG.getSpecializedId(DaGiMa_MDE_HW3Tables.CLSSid_DegreeCourse, false, ValueUtil.ZERO_VALUE, ValueUtil.UNLIMITED_VALUE);
 	public static final /*@NonInvalid*/ CollectionTypeId BAG_CLSSid_ExtraInfo = TypeId.BAG.getSpecializedId(DaGiMa_MDE_HW3Tables.CLSSid_ExtraInfo, false, ValueUtil.ZERO_VALUE, ValueUtil.UNLIMITED_VALUE);
+	public static final /*@NonInvalid*/ CollectionTypeId BAG_CLSSid_Student = TypeId.BAG.getSpecializedId(DaGiMa_MDE_HW3Tables.CLSSid_Student, false, ValueUtil.ZERO_VALUE, ValueUtil.UNLIMITED_VALUE);
 	public static final /*@NonInvalid*/ CollectionTypeId BAG_CLSSid_Thesis = TypeId.BAG.getSpecializedId(DaGiMa_MDE_HW3Tables.CLSSid_Thesis, false, ValueUtil.ZERO_VALUE, ValueUtil.UNLIMITED_VALUE);
 	public static final /*@NonInvalid*/ CollectionTypeId BAG_CLSSid_University = TypeId.BAG.getSpecializedId(DaGiMa_MDE_HW3Tables.CLSSid_University, false, ValueUtil.ZERO_VALUE, ValueUtil.UNLIMITED_VALUE);
 	public static final /*@NonInvalid*/ EnumerationLiteralId ELITid_BOOLEAN = DaGiMa_MDE_HW3Tables.ENUMid_MetadataType.getEnumerationLiteralId("BOOLEAN");
@@ -126,7 +128,10 @@ public class DaGiMa_MDE_HW3Tables extends AbstractTables
 	public static final /*@NonInvalid*/ CollectionTypeId ORD_CLSSid_Professor = TypeId.ORDERED_SET.getSpecializedId(DaGiMa_MDE_HW3Tables.CLSSid_Professor, true, ValueUtil.ONE_VALUE, ValueUtil.UNLIMITED_VALUE);
 	public static final /*@NonInvalid*/ CollectionTypeId ORD_CLSSid_Student = TypeId.ORDERED_SET.getSpecializedId(DaGiMa_MDE_HW3Tables.CLSSid_Student, true, ValueUtil.ZERO_VALUE, ValueUtil.UNLIMITED_VALUE);
 	public static final /*@NonInvalid*/ CollectionTypeId ORD_CLSSid_Thesis = TypeId.ORDERED_SET.getSpecializedId(DaGiMa_MDE_HW3Tables.CLSSid_Thesis, true, ValueUtil.ZERO_VALUE, ValueUtil.UNLIMITED_VALUE);
+	public static final /*@NonInvalid*/ CollectionTypeId SEQ_CLSSid_Course = TypeId.SEQUENCE.getSpecializedId(DaGiMa_MDE_HW3Tables.CLSSid_Course, true, ValueUtil.ZERO_VALUE, ValueUtil.UNLIMITED_VALUE);
+	public static final /*@NonInvalid*/ CollectionTypeId SEQ_CLSSid_PassingGrade = TypeId.SEQUENCE.getSpecializedId(DaGiMa_MDE_HW3Tables.CLSSid_PassingGrade, true, ValueUtil.ZERO_VALUE, ValueUtil.UNLIMITED_VALUE);
 	public static final /*@NonInvalid*/ CollectionTypeId SEQ_DATAid_EInt = TypeId.SEQUENCE.getSpecializedId(DaGiMa_MDE_HW3Tables.DATAid_EInt, true, ValueUtil.ZERO_VALUE, ValueUtil.UNLIMITED_VALUE);
+	public static final /*@NonInvalid*/ CollectionTypeId SET_CLSSid_Course = TypeId.SET.getSpecializedId(DaGiMa_MDE_HW3Tables.CLSSid_Course, false, ValueUtil.ZERO_VALUE, ValueUtil.UNLIMITED_VALUE);
 
 	/**
 	 *	The type parameters for templated types and operations.
@@ -386,7 +391,8 @@ public class DaGiMa_MDE_HW3Tables extends AbstractTables
 
 		public static final ExecutorProperty _Career__courses = new EcoreExecutorProperty(DaGiMa_MDE_HW3Package.Literals.CAREER__COURSES, Types._Career, 0);
 		public static final ExecutorProperty _Career__degree_course = new EcoreExecutorProperty(DaGiMa_MDE_HW3Package.Literals.CAREER__DEGREE_COURSE, Types._Career, 1);
-		public static final ExecutorProperty _Career__student = new EcoreExecutorProperty(DaGiMa_MDE_HW3Package.Literals.CAREER__STUDENT, Types._Career, 2);
+		public static final ExecutorProperty _Career__id = new EcoreExecutorProperty(DaGiMa_MDE_HW3Package.Literals.CAREER__ID, Types._Career, 2);
+		public static final ExecutorProperty _Career__student = new EcoreExecutorProperty(DaGiMa_MDE_HW3Package.Literals.CAREER__STUDENT, Types._Career, 3);
 
 		public static final ExecutorProperty _Course__calls = new EcoreExecutorProperty(DaGiMa_MDE_HW3Package.Literals.COURSE__CALLS, Types._Course, 0);
 		public static final ExecutorProperty _Course__cfu = new EcoreExecutorProperty(DaGiMa_MDE_HW3Package.Literals.COURSE__CFU, Types._Course, 1);
@@ -400,9 +406,11 @@ public class DaGiMa_MDE_HW3Tables extends AbstractTables
 		public static final ExecutorProperty _Course__students_grades = new EcoreExecutorProperty(DaGiMa_MDE_HW3Package.Literals.COURSE__STUDENTS_GRADES, Types._Course, 9);
 		public static final ExecutorProperty _Course__teachers = new EcoreExecutorProperty(DaGiMa_MDE_HW3Package.Literals.COURSE__TEACHERS, Types._Course, 10);
 		public static final ExecutorProperty _Course__year = new EcoreExecutorProperty(DaGiMa_MDE_HW3Package.Literals.COURSE__YEAR, Types._Course, 11);
+		public static final ExecutorProperty _Course__Student__student_exams = new ExecutorPropertyWithImplementation("Student", Types._Course, 12, new EcoreLibraryOppositeProperty(DaGiMa_MDE_HW3Package.Literals.STUDENT__STUDENT_EXAMS));
 
-		public static final ExecutorProperty _CustomEnumeration__values = new EcoreExecutorProperty(DaGiMa_MDE_HW3Package.Literals.CUSTOM_ENUMERATION__VALUES, Types._CustomEnumeration, 0);
-		public static final ExecutorProperty _CustomEnumeration__ExtraInfo__enum = new ExecutorPropertyWithImplementation("ExtraInfo", Types._CustomEnumeration, 1, new EcoreLibraryOppositeProperty(DaGiMa_MDE_HW3Package.Literals.EXTRA_INFO__ENUM));
+		public static final ExecutorProperty _CustomEnumeration__name = new EcoreExecutorProperty(DaGiMa_MDE_HW3Package.Literals.CUSTOM_ENUMERATION__NAME, Types._CustomEnumeration, 0);
+		public static final ExecutorProperty _CustomEnumeration__values = new EcoreExecutorProperty(DaGiMa_MDE_HW3Package.Literals.CUSTOM_ENUMERATION__VALUES, Types._CustomEnumeration, 1);
+		public static final ExecutorProperty _CustomEnumeration__ExtraInfo__enum = new ExecutorPropertyWithImplementation("ExtraInfo", Types._CustomEnumeration, 2, new EcoreLibraryOppositeProperty(DaGiMa_MDE_HW3Package.Literals.EXTRA_INFO__ENUM));
 
 		public static final ExecutorProperty _DegreeCourse__cfu = new EcoreExecutorProperty(DaGiMa_MDE_HW3Package.Literals.DEGREE_COURSE__CFU, Types._DegreeCourse, 0);
 		public static final ExecutorProperty _DegreeCourse__code = new EcoreExecutorProperty(DaGiMa_MDE_HW3Package.Literals.DEGREE_COURSE__CODE, Types._DegreeCourse, 1);
@@ -462,8 +470,9 @@ public class DaGiMa_MDE_HW3Tables extends AbstractTables
 		public static final ExecutorProperty _Student__booked_calls = new EcoreExecutorProperty(DaGiMa_MDE_HW3Package.Literals.STUDENT__BOOKED_CALLS, Types._Student, 0);
 		public static final ExecutorProperty _Student__enrolled_courses = new EcoreExecutorProperty(DaGiMa_MDE_HW3Package.Literals.STUDENT__ENROLLED_COURSES, Types._Student, 1);
 		public static final ExecutorProperty _Student__matriculation_number = new EcoreExecutorProperty(DaGiMa_MDE_HW3Package.Literals.STUDENT__MATRICULATION_NUMBER, Types._Student, 2);
-		public static final ExecutorProperty _Student__thesis_defended = new EcoreExecutorProperty(DaGiMa_MDE_HW3Package.Literals.STUDENT__THESIS_DEFENDED, Types._Student, 3);
-		public static final ExecutorProperty _Student__transcripts = new EcoreExecutorProperty(DaGiMa_MDE_HW3Package.Literals.STUDENT__TRANSCRIPTS, Types._Student, 4);
+		public static final ExecutorProperty _Student__student_exams = new EcoreExecutorProperty(DaGiMa_MDE_HW3Package.Literals.STUDENT__STUDENT_EXAMS, Types._Student, 3);
+		public static final ExecutorProperty _Student__thesis_defended = new EcoreExecutorProperty(DaGiMa_MDE_HW3Package.Literals.STUDENT__THESIS_DEFENDED, Types._Student, 4);
+		public static final ExecutorProperty _Student__transcripts = new EcoreExecutorProperty(DaGiMa_MDE_HW3Package.Literals.STUDENT__TRANSCRIPTS, Types._Student, 5);
 
 		public static final ExecutorProperty _Thesis__degree_course = new EcoreExecutorProperty(DaGiMa_MDE_HW3Package.Literals.THESIS__DEGREE_COURSE, Types._Thesis, 0);
 		public static final ExecutorProperty _Thesis__student = new EcoreExecutorProperty(DaGiMa_MDE_HW3Package.Literals.THESIS__STUDENT, Types._Thesis, 1);
@@ -1480,6 +1489,7 @@ public class DaGiMa_MDE_HW3Tables extends AbstractTables
 		private static final ExecutorProperty /*@NonNull*/ [] _Career = {
 			DaGiMa_MDE_HW3Tables.Properties._Career__courses,
 			DaGiMa_MDE_HW3Tables.Properties._Career__degree_course,
+			DaGiMa_MDE_HW3Tables.Properties._Career__id,
 			OCLstdlibTables.Properties._OclElement__oclContainer,
 			OCLstdlibTables.Properties._OclElement__oclContents,
 			DaGiMa_MDE_HW3Tables.Properties._Career__student
@@ -1513,6 +1523,7 @@ public class DaGiMa_MDE_HW3Tables extends AbstractTables
 		};
 
 		private static final ExecutorProperty /*@NonNull*/ [] _CustomEnumeration = {
+			DaGiMa_MDE_HW3Tables.Properties._CustomEnumeration__name,
 			OCLstdlibTables.Properties._OclElement__oclContainer,
 			OCLstdlibTables.Properties._OclElement__oclContents,
 			DaGiMa_MDE_HW3Tables.Properties._CustomEnumeration__values
@@ -1618,6 +1629,7 @@ public class DaGiMa_MDE_HW3Tables extends AbstractTables
 			DaGiMa_MDE_HW3Tables.Properties._User__name,
 			OCLstdlibTables.Properties._OclElement__oclContainer,
 			OCLstdlibTables.Properties._OclElement__oclContents,
+			DaGiMa_MDE_HW3Tables.Properties._Student__student_exams,
 			DaGiMa_MDE_HW3Tables.Properties._User__surname,
 			DaGiMa_MDE_HW3Tables.Properties._User__telephone,
 			DaGiMa_MDE_HW3Tables.Properties._Student__thesis_defended,

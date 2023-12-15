@@ -406,13 +406,22 @@ public interface DaGiMa_MDE_HW3Package extends EPackage {
 	int STUDENT__TRANSCRIPTS = USER_FEATURE_COUNT + 4;
 
 	/**
+	 * The feature id for the '<em><b>Student exams</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STUDENT__STUDENT_EXAMS = USER_FEATURE_COUNT + 5;
+
+	/**
 	 * The number of structural features of the '<em>Student</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STUDENT_FEATURE_COUNT = USER_FEATURE_COUNT + 5;
+	int STUDENT_FEATURE_COUNT = USER_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of operations of the '<em>Student</em>' class.
@@ -1034,13 +1043,22 @@ public interface DaGiMa_MDE_HW3Package extends EPackage {
 	int CAREER = 10;
 
 	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CAREER__ID = 0;
+
+	/**
 	 * The feature id for the '<em><b>Student</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CAREER__STUDENT = 0;
+	int CAREER__STUDENT = 1;
 
 	/**
 	 * The feature id for the '<em><b>Degree course</b></em>' reference.
@@ -1049,7 +1067,7 @@ public interface DaGiMa_MDE_HW3Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CAREER__DEGREE_COURSE = 1;
+	int CAREER__DEGREE_COURSE = 2;
 
 	/**
 	 * The feature id for the '<em><b>Courses</b></em>' containment reference list.
@@ -1058,7 +1076,7 @@ public interface DaGiMa_MDE_HW3Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CAREER__COURSES = 2;
+	int CAREER__COURSES = 3;
 
 	/**
 	 * The number of structural features of the '<em>Career</em>' class.
@@ -1067,7 +1085,7 @@ public interface DaGiMa_MDE_HW3Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CAREER_FEATURE_COUNT = 3;
+	int CAREER_FEATURE_COUNT = 4;
 
 	/**
 	 * The operation id for the '<em>Passed All Exams</em>' operation.
@@ -1298,13 +1316,22 @@ public interface DaGiMa_MDE_HW3Package extends EPackage {
 	int CUSTOM_ENUMERATION = 13;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CUSTOM_ENUMERATION__NAME = 0;
+
+	/**
 	 * The feature id for the '<em><b>Values</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CUSTOM_ENUMERATION__VALUES = 0;
+	int CUSTOM_ENUMERATION__VALUES = 1;
 
 	/**
 	 * The number of structural features of the '<em>Custom Enumeration</em>' class.
@@ -1313,7 +1340,7 @@ public interface DaGiMa_MDE_HW3Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CUSTOM_ENUMERATION_FEATURE_COUNT = 1;
+	int CUSTOM_ENUMERATION_FEATURE_COUNT = 2;
 
 	/**
 	 * The number of operations of the '<em>Custom Enumeration</em>' class.
@@ -1579,6 +1606,17 @@ public interface DaGiMa_MDE_HW3Package extends EPackage {
 	 * @generated
 	 */
 	EReference getStudent_Transcripts();
+
+	/**
+	 * Returns the meta object for the reference list '{@link daGiMa_MDE_HW3.Student#getStudent_exams <em>Student exams</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Student exams</em>'.
+	 * @see daGiMa_MDE_HW3.Student#getStudent_exams()
+	 * @see #getStudent()
+	 * @generated
+	 */
+	EReference getStudent_Student_exams();
 
 	/**
 	 * Returns the meta object for class '{@link daGiMa_MDE_HW3.User <em>User</em>}'.
@@ -2229,6 +2267,17 @@ public interface DaGiMa_MDE_HW3Package extends EPackage {
 	EClass getCareer();
 
 	/**
+	 * Returns the meta object for the attribute '{@link daGiMa_MDE_HW3.Career#getId <em>Id</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Id</em>'.
+	 * @see daGiMa_MDE_HW3.Career#getId()
+	 * @see #getCareer()
+	 * @generated
+	 */
+	EAttribute getCareer_Id();
+
+	/**
 	 * Returns the meta object for the reference '{@link daGiMa_MDE_HW3.Career#getStudent <em>Student</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2472,6 +2521,17 @@ public interface DaGiMa_MDE_HW3Package extends EPackage {
 	EClass getCustomEnumeration();
 
 	/**
+	 * Returns the meta object for the attribute '{@link daGiMa_MDE_HW3.CustomEnumeration#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see daGiMa_MDE_HW3.CustomEnumeration#getName()
+	 * @see #getCustomEnumeration()
+	 * @generated
+	 */
+	EAttribute getCustomEnumeration_Name();
+
+	/**
 	 * Returns the meta object for the attribute list '{@link daGiMa_MDE_HW3.CustomEnumeration#getValues <em>Values</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2712,6 +2772,14 @@ public interface DaGiMa_MDE_HW3Package extends EPackage {
 		 * @generated
 		 */
 		EReference STUDENT__TRANSCRIPTS = eINSTANCE.getStudent_Transcripts();
+
+		/**
+		 * The meta object literal for the '<em><b>Student exams</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference STUDENT__STUDENT_EXAMS = eINSTANCE.getStudent_Student_exams();
 
 		/**
 		 * The meta object literal for the '{@link daGiMa_MDE_HW3.impl.UserImpl <em>User</em>}' class.
@@ -3210,6 +3278,14 @@ public interface DaGiMa_MDE_HW3Package extends EPackage {
 		EClass CAREER = eINSTANCE.getCareer();
 
 		/**
+		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CAREER__ID = eINSTANCE.getCareer_Id();
+
+		/**
 		 * The meta object literal for the '<em><b>Student</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3398,6 +3474,14 @@ public interface DaGiMa_MDE_HW3Package extends EPackage {
 		 * @generated
 		 */
 		EClass CUSTOM_ENUMERATION = eINSTANCE.getCustomEnumeration();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CUSTOM_ENUMERATION__NAME = eINSTANCE.getCustomEnumeration_Name();
 
 		/**
 		 * The meta object literal for the '<em><b>Values</b></em>' attribute list feature.

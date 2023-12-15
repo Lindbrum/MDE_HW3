@@ -51,6 +51,7 @@ public class StudentItemProvider extends UserItemProvider {
 			addEnrolled_coursesPropertyDescriptor(object);
 			addBooked_callsPropertyDescriptor(object);
 			addTranscriptsPropertyDescriptor(object);
+			addStudent_examsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -135,6 +136,28 @@ public class StudentItemProvider extends UserItemProvider {
 				 getString("_UI_Student_transcripts_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Student_transcripts_feature", "_UI_Student_type"),
 				 DaGiMa_MDE_HW3Package.Literals.STUDENT__TRANSCRIPTS,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Student exams feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addStudent_examsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Student_student_exams_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Student_student_exams_feature", "_UI_Student_type"),
+				 DaGiMa_MDE_HW3Package.Literals.STUDENT__STUDENT_EXAMS,
 				 true,
 				 false,
 				 true,

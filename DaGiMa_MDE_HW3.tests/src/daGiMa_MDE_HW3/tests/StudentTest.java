@@ -11,6 +11,12 @@ import junit.textui.TestRunner;
  * <!-- begin-user-doc -->
  * A test case for the model object '<em><b>Student</b></em>'.
  * <!-- end-user-doc -->
+ * <p>
+ * The following features are tested:
+ * <ul>
+ *   <li>{@link daGiMa_MDE_HW3.Student#getStudent_exams() <em>Student exams</em>}</li>
+ * </ul>
+ * </p>
  * @generated
  */
 public class StudentTest extends UserTest {
@@ -65,6 +71,19 @@ public class StudentTest extends UserTest {
 	@Override
 	protected void tearDown() throws Exception {
 		setFixture(null);
+	}
+
+	/**
+	 * Tests the '{@link daGiMa_MDE_HW3.Student#getStudent_exams() <em>Student exams</em>}' feature getter.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see daGiMa_MDE_HW3.Student#getStudent_exams()
+	 * @generated
+	 */
+	public void testGetStudent_exams() {
+		// TODO: implement this feature getter test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
 	}
 
 } //StudentTest

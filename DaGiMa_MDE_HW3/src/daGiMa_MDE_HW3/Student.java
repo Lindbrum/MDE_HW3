@@ -18,6 +18,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link daGiMa_MDE_HW3.Student#getEnrolled_courses <em>Enrolled courses</em>}</li>
  *   <li>{@link daGiMa_MDE_HW3.Student#getBooked_calls <em>Booked calls</em>}</li>
  *   <li>{@link daGiMa_MDE_HW3.Student#getTranscripts <em>Transcripts</em>}</li>
+ *   <li>{@link daGiMa_MDE_HW3.Student#getStudent_exams <em>Student exams</em>}</li>
  * </ul>
  *
  * @see daGiMa_MDE_HW3.DaGiMa_MDE_HW3Package#getStudent()
@@ -102,5 +103,18 @@ public interface Student extends User {
 	 * @generated
 	 */
 	EList<Career> getTranscripts();
+
+	/**
+	 * Returns the value of the '<em><b>Student exams</b></em>' reference list.
+	 * The list contents are of type {@link daGiMa_MDE_HW3.Course}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Student exams</em>' reference list.
+	 * @see daGiMa_MDE_HW3.DaGiMa_MDE_HW3Package#getStudent_Student_exams()
+	 * @model volatile="true" derived="true" ordered="false"
+	 *        annotation="http://www.eclipse.org/OCL/Collection nullFree='false'"
+	 * @generated
+	 */
+	EList<Course> getStudent_exams();
 
 } // Student
