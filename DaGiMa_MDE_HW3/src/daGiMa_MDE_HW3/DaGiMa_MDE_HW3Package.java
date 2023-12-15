@@ -1225,58 +1225,58 @@ public interface DaGiMa_MDE_HW3Package extends EPackage {
 	int EXTRA_INFO_FEATURE_COUNT = 6;
 
 	/**
-	 * The operation id for the '<em>Boolean Value Type Check</em>' operation.
+	 * The operation id for the '<em>Float Type Check</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EXTRA_INFO___BOOLEAN_VALUE_TYPE_CHECK__DIAGNOSTICCHAIN_MAP = 0;
+	int EXTRA_INFO___FLOAT_TYPE_CHECK__DIAGNOSTICCHAIN_MAP = 0;
 
 	/**
-	 * The operation id for the '<em>Float Value Type Check</em>' operation.
+	 * The operation id for the '<em>Double Type Check</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EXTRA_INFO___FLOAT_VALUE_TYPE_CHECK__DIAGNOSTICCHAIN_MAP = 1;
+	int EXTRA_INFO___DOUBLE_TYPE_CHECK__DIAGNOSTICCHAIN_MAP = 1;
 
 	/**
-	 * The operation id for the '<em>String Value Type Check</em>' operation.
+	 * The operation id for the '<em>Integer Type Check</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EXTRA_INFO___STRING_VALUE_TYPE_CHECK__DIAGNOSTICCHAIN_MAP = 2;
+	int EXTRA_INFO___INTEGER_TYPE_CHECK__DIAGNOSTICCHAIN_MAP = 2;
 
 	/**
-	 * The operation id for the '<em>Enum Value Type Check</em>' operation.
+	 * The operation id for the '<em>Boolean Type Check</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EXTRA_INFO___ENUM_VALUE_TYPE_CHECK__DIAGNOSTICCHAIN_MAP = 3;
+	int EXTRA_INFO___BOOLEAN_TYPE_CHECK__DIAGNOSTICCHAIN_MAP = 3;
 
 	/**
-	 * The operation id for the '<em>Integer Value Type Check</em>' operation.
+	 * The operation id for the '<em>String Type Check</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EXTRA_INFO___INTEGER_VALUE_TYPE_CHECK__DIAGNOSTICCHAIN_MAP = 4;
+	int EXTRA_INFO___STRING_TYPE_CHECK__DIAGNOSTICCHAIN_MAP = 4;
 
 	/**
-	 * The operation id for the '<em>Double Value Type Check</em>' operation.
+	 * The operation id for the '<em>Enum Type Check</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EXTRA_INFO___DOUBLE_VALUE_TYPE_CHECK__DIAGNOSTICCHAIN_MAP = 5;
+	int EXTRA_INFO___ENUM_TYPE_CHECK__DIAGNOSTICCHAIN_MAP = 5;
 
 	/**
 	 * The number of operations of the '<em>Extra Info</em>' class.
@@ -2402,64 +2402,64 @@ public interface DaGiMa_MDE_HW3Package extends EPackage {
 	EReference getExtraInfo_Enum();
 
 	/**
-	 * Returns the meta object for the '{@link daGiMa_MDE_HW3.ExtraInfo#BooleanValueTypeCheck(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Boolean Value Type Check</em>}' operation.
+	 * Returns the meta object for the '{@link daGiMa_MDE_HW3.ExtraInfo#floatTypeCheck(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Float Type Check</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Boolean Value Type Check</em>' operation.
-	 * @see daGiMa_MDE_HW3.ExtraInfo#BooleanValueTypeCheck(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @return the meta object for the '<em>Float Type Check</em>' operation.
+	 * @see daGiMa_MDE_HW3.ExtraInfo#floatTypeCheck(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
-	EOperation getExtraInfo__BooleanValueTypeCheck__DiagnosticChain_Map();
+	EOperation getExtraInfo__FloatTypeCheck__DiagnosticChain_Map();
 
 	/**
-	 * Returns the meta object for the '{@link daGiMa_MDE_HW3.ExtraInfo#FloatValueTypeCheck(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Float Value Type Check</em>}' operation.
+	 * Returns the meta object for the '{@link daGiMa_MDE_HW3.ExtraInfo#doubleTypeCheck(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Double Type Check</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Float Value Type Check</em>' operation.
-	 * @see daGiMa_MDE_HW3.ExtraInfo#FloatValueTypeCheck(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @return the meta object for the '<em>Double Type Check</em>' operation.
+	 * @see daGiMa_MDE_HW3.ExtraInfo#doubleTypeCheck(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
-	EOperation getExtraInfo__FloatValueTypeCheck__DiagnosticChain_Map();
+	EOperation getExtraInfo__DoubleTypeCheck__DiagnosticChain_Map();
 
 	/**
-	 * Returns the meta object for the '{@link daGiMa_MDE_HW3.ExtraInfo#StringValueTypeCheck(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>String Value Type Check</em>}' operation.
+	 * Returns the meta object for the '{@link daGiMa_MDE_HW3.ExtraInfo#integerTypeCheck(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Integer Type Check</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>String Value Type Check</em>' operation.
-	 * @see daGiMa_MDE_HW3.ExtraInfo#StringValueTypeCheck(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @return the meta object for the '<em>Integer Type Check</em>' operation.
+	 * @see daGiMa_MDE_HW3.ExtraInfo#integerTypeCheck(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
-	EOperation getExtraInfo__StringValueTypeCheck__DiagnosticChain_Map();
+	EOperation getExtraInfo__IntegerTypeCheck__DiagnosticChain_Map();
 
 	/**
-	 * Returns the meta object for the '{@link daGiMa_MDE_HW3.ExtraInfo#EnumValueTypeCheck(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Enum Value Type Check</em>}' operation.
+	 * Returns the meta object for the '{@link daGiMa_MDE_HW3.ExtraInfo#booleanTypeCheck(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Boolean Type Check</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Enum Value Type Check</em>' operation.
-	 * @see daGiMa_MDE_HW3.ExtraInfo#EnumValueTypeCheck(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @return the meta object for the '<em>Boolean Type Check</em>' operation.
+	 * @see daGiMa_MDE_HW3.ExtraInfo#booleanTypeCheck(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
-	EOperation getExtraInfo__EnumValueTypeCheck__DiagnosticChain_Map();
+	EOperation getExtraInfo__BooleanTypeCheck__DiagnosticChain_Map();
 
 	/**
-	 * Returns the meta object for the '{@link daGiMa_MDE_HW3.ExtraInfo#IntegerValueTypeCheck(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Integer Value Type Check</em>}' operation.
+	 * Returns the meta object for the '{@link daGiMa_MDE_HW3.ExtraInfo#stringTypeCheck(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>String Type Check</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Integer Value Type Check</em>' operation.
-	 * @see daGiMa_MDE_HW3.ExtraInfo#IntegerValueTypeCheck(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @return the meta object for the '<em>String Type Check</em>' operation.
+	 * @see daGiMa_MDE_HW3.ExtraInfo#stringTypeCheck(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
-	EOperation getExtraInfo__IntegerValueTypeCheck__DiagnosticChain_Map();
+	EOperation getExtraInfo__StringTypeCheck__DiagnosticChain_Map();
 
 	/**
-	 * Returns the meta object for the '{@link daGiMa_MDE_HW3.ExtraInfo#DoubleValueTypeCheck(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Double Value Type Check</em>}' operation.
+	 * Returns the meta object for the '{@link daGiMa_MDE_HW3.ExtraInfo#enumTypeCheck(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Enum Type Check</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Double Value Type Check</em>' operation.
-	 * @see daGiMa_MDE_HW3.ExtraInfo#DoubleValueTypeCheck(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @return the meta object for the '<em>Enum Type Check</em>' operation.
+	 * @see daGiMa_MDE_HW3.ExtraInfo#enumTypeCheck(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
-	EOperation getExtraInfo__DoubleValueTypeCheck__DiagnosticChain_Map();
+	EOperation getExtraInfo__EnumTypeCheck__DiagnosticChain_Map();
 
 	/**
 	 * Returns the meta object for class '{@link daGiMa_MDE_HW3.CustomEnumeration <em>Custom Enumeration</em>}'.
@@ -3342,52 +3342,52 @@ public interface DaGiMa_MDE_HW3Package extends EPackage {
 		EReference EXTRA_INFO__ENUM = eINSTANCE.getExtraInfo_Enum();
 
 		/**
-		 * The meta object literal for the '<em><b>Boolean Value Type Check</b></em>' operation.
+		 * The meta object literal for the '<em><b>Float Type Check</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation EXTRA_INFO___BOOLEAN_VALUE_TYPE_CHECK__DIAGNOSTICCHAIN_MAP = eINSTANCE.getExtraInfo__BooleanValueTypeCheck__DiagnosticChain_Map();
+		EOperation EXTRA_INFO___FLOAT_TYPE_CHECK__DIAGNOSTICCHAIN_MAP = eINSTANCE.getExtraInfo__FloatTypeCheck__DiagnosticChain_Map();
 
 		/**
-		 * The meta object literal for the '<em><b>Float Value Type Check</b></em>' operation.
+		 * The meta object literal for the '<em><b>Double Type Check</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation EXTRA_INFO___FLOAT_VALUE_TYPE_CHECK__DIAGNOSTICCHAIN_MAP = eINSTANCE.getExtraInfo__FloatValueTypeCheck__DiagnosticChain_Map();
+		EOperation EXTRA_INFO___DOUBLE_TYPE_CHECK__DIAGNOSTICCHAIN_MAP = eINSTANCE.getExtraInfo__DoubleTypeCheck__DiagnosticChain_Map();
 
 		/**
-		 * The meta object literal for the '<em><b>String Value Type Check</b></em>' operation.
+		 * The meta object literal for the '<em><b>Integer Type Check</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation EXTRA_INFO___STRING_VALUE_TYPE_CHECK__DIAGNOSTICCHAIN_MAP = eINSTANCE.getExtraInfo__StringValueTypeCheck__DiagnosticChain_Map();
+		EOperation EXTRA_INFO___INTEGER_TYPE_CHECK__DIAGNOSTICCHAIN_MAP = eINSTANCE.getExtraInfo__IntegerTypeCheck__DiagnosticChain_Map();
 
 		/**
-		 * The meta object literal for the '<em><b>Enum Value Type Check</b></em>' operation.
+		 * The meta object literal for the '<em><b>Boolean Type Check</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation EXTRA_INFO___ENUM_VALUE_TYPE_CHECK__DIAGNOSTICCHAIN_MAP = eINSTANCE.getExtraInfo__EnumValueTypeCheck__DiagnosticChain_Map();
+		EOperation EXTRA_INFO___BOOLEAN_TYPE_CHECK__DIAGNOSTICCHAIN_MAP = eINSTANCE.getExtraInfo__BooleanTypeCheck__DiagnosticChain_Map();
 
 		/**
-		 * The meta object literal for the '<em><b>Integer Value Type Check</b></em>' operation.
+		 * The meta object literal for the '<em><b>String Type Check</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation EXTRA_INFO___INTEGER_VALUE_TYPE_CHECK__DIAGNOSTICCHAIN_MAP = eINSTANCE.getExtraInfo__IntegerValueTypeCheck__DiagnosticChain_Map();
+		EOperation EXTRA_INFO___STRING_TYPE_CHECK__DIAGNOSTICCHAIN_MAP = eINSTANCE.getExtraInfo__StringTypeCheck__DiagnosticChain_Map();
 
 		/**
-		 * The meta object literal for the '<em><b>Double Value Type Check</b></em>' operation.
+		 * The meta object literal for the '<em><b>Enum Type Check</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation EXTRA_INFO___DOUBLE_VALUE_TYPE_CHECK__DIAGNOSTICCHAIN_MAP = eINSTANCE.getExtraInfo__DoubleValueTypeCheck__DiagnosticChain_Map();
+		EOperation EXTRA_INFO___ENUM_TYPE_CHECK__DIAGNOSTICCHAIN_MAP = eINSTANCE.getExtraInfo__EnumTypeCheck__DiagnosticChain_Map();
 
 		/**
 		 * The meta object literal for the '{@link daGiMa_MDE_HW3.impl.CustomEnumerationImpl <em>Custom Enumeration</em>}' class.

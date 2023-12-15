@@ -80,52 +80,52 @@ public class DaGiMa_MDE_HW3Validator extends EObjectValidator {
 	public static final int PASSING_GRADE__MUST_BE_SUFFICIENT_IF_DEFINED = 5;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Boolean Value Type Check' of 'Extra Info'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Float Type Check' of 'Extra Info'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int EXTRA_INFO__BOOLEAN_VALUE_TYPE_CHECK = 6;
+	public static final int EXTRA_INFO__FLOAT_TYPE_CHECK = 6;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Float Value Type Check' of 'Extra Info'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Double Type Check' of 'Extra Info'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int EXTRA_INFO__FLOAT_VALUE_TYPE_CHECK = 7;
+	public static final int EXTRA_INFO__DOUBLE_TYPE_CHECK = 7;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'String Value Type Check' of 'Extra Info'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Integer Type Check' of 'Extra Info'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int EXTRA_INFO__STRING_VALUE_TYPE_CHECK = 8;
+	public static final int EXTRA_INFO__INTEGER_TYPE_CHECK = 8;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Enum Value Type Check' of 'Extra Info'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Boolean Type Check' of 'Extra Info'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int EXTRA_INFO__ENUM_VALUE_TYPE_CHECK = 9;
+	public static final int EXTRA_INFO__BOOLEAN_TYPE_CHECK = 9;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Integer Value Type Check' of 'Extra Info'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'String Type Check' of 'Extra Info'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int EXTRA_INFO__INTEGER_VALUE_TYPE_CHECK = 10;
+	public static final int EXTRA_INFO__STRING_TYPE_CHECK = 10;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Double Value Type Check' of 'Extra Info'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Enum Type Check' of 'Extra Info'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int EXTRA_INFO__DOUBLE_VALUE_TYPE_CHECK = 11;
+	public static final int EXTRA_INFO__ENUM_TYPE_CHECK = 11;
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants.
@@ -439,73 +439,73 @@ public class DaGiMa_MDE_HW3Validator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(extraInfo, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(extraInfo, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(extraInfo, diagnostics, context);
-		if (result || diagnostics != null) result &= validateExtraInfo_DoubleValueTypeCheck(extraInfo, diagnostics, context);
-		if (result || diagnostics != null) result &= validateExtraInfo_BooleanValueTypeCheck(extraInfo, diagnostics, context);
-		if (result || diagnostics != null) result &= validateExtraInfo_FloatValueTypeCheck(extraInfo, diagnostics, context);
-		if (result || diagnostics != null) result &= validateExtraInfo_StringValueTypeCheck(extraInfo, diagnostics, context);
-		if (result || diagnostics != null) result &= validateExtraInfo_EnumValueTypeCheck(extraInfo, diagnostics, context);
-		if (result || diagnostics != null) result &= validateExtraInfo_IntegerValueTypeCheck(extraInfo, diagnostics, context);
+		if (result || diagnostics != null) result &= validateExtraInfo_enumTypeCheck(extraInfo, diagnostics, context);
+		if (result || diagnostics != null) result &= validateExtraInfo_floatTypeCheck(extraInfo, diagnostics, context);
+		if (result || diagnostics != null) result &= validateExtraInfo_doubleTypeCheck(extraInfo, diagnostics, context);
+		if (result || diagnostics != null) result &= validateExtraInfo_integerTypeCheck(extraInfo, diagnostics, context);
+		if (result || diagnostics != null) result &= validateExtraInfo_booleanTypeCheck(extraInfo, diagnostics, context);
+		if (result || diagnostics != null) result &= validateExtraInfo_stringTypeCheck(extraInfo, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the DoubleValueTypeCheck constraint of '<em>Extra Info</em>'.
+	 * Validates the enumTypeCheck constraint of '<em>Extra Info</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateExtraInfo_DoubleValueTypeCheck(ExtraInfo extraInfo, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return extraInfo.DoubleValueTypeCheck(diagnostics, context);
+	public boolean validateExtraInfo_enumTypeCheck(ExtraInfo extraInfo, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return extraInfo.enumTypeCheck(diagnostics, context);
 	}
 
 	/**
-	 * Validates the BooleanValueTypeCheck constraint of '<em>Extra Info</em>'.
+	 * Validates the floatTypeCheck constraint of '<em>Extra Info</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateExtraInfo_BooleanValueTypeCheck(ExtraInfo extraInfo, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return extraInfo.BooleanValueTypeCheck(diagnostics, context);
+	public boolean validateExtraInfo_floatTypeCheck(ExtraInfo extraInfo, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return extraInfo.floatTypeCheck(diagnostics, context);
 	}
 
 	/**
-	 * Validates the FloatValueTypeCheck constraint of '<em>Extra Info</em>'.
+	 * Validates the doubleTypeCheck constraint of '<em>Extra Info</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateExtraInfo_FloatValueTypeCheck(ExtraInfo extraInfo, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return extraInfo.FloatValueTypeCheck(diagnostics, context);
+	public boolean validateExtraInfo_doubleTypeCheck(ExtraInfo extraInfo, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return extraInfo.doubleTypeCheck(diagnostics, context);
 	}
 
 	/**
-	 * Validates the StringValueTypeCheck constraint of '<em>Extra Info</em>'.
+	 * Validates the integerTypeCheck constraint of '<em>Extra Info</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateExtraInfo_StringValueTypeCheck(ExtraInfo extraInfo, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return extraInfo.StringValueTypeCheck(diagnostics, context);
+	public boolean validateExtraInfo_integerTypeCheck(ExtraInfo extraInfo, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return extraInfo.integerTypeCheck(diagnostics, context);
 	}
 
 	/**
-	 * Validates the EnumValueTypeCheck constraint of '<em>Extra Info</em>'.
+	 * Validates the booleanTypeCheck constraint of '<em>Extra Info</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateExtraInfo_EnumValueTypeCheck(ExtraInfo extraInfo, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return extraInfo.EnumValueTypeCheck(diagnostics, context);
+	public boolean validateExtraInfo_booleanTypeCheck(ExtraInfo extraInfo, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return extraInfo.booleanTypeCheck(diagnostics, context);
 	}
 
 	/**
-	 * Validates the IntegerValueTypeCheck constraint of '<em>Extra Info</em>'.
+	 * Validates the stringTypeCheck constraint of '<em>Extra Info</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateExtraInfo_IntegerValueTypeCheck(ExtraInfo extraInfo, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return extraInfo.IntegerValueTypeCheck(diagnostics, context);
+	public boolean validateExtraInfo_stringTypeCheck(ExtraInfo extraInfo, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return extraInfo.stringTypeCheck(diagnostics, context);
 	}
 
 	/**

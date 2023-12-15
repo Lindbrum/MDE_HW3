@@ -1202,7 +1202,7 @@ public class DaGiMa_MDE_HW3PackageImpl extends EPackageImpl implements DaGiMa_MD
 	 * @generated
 	 */
 	@Override
-	public EOperation getExtraInfo__BooleanValueTypeCheck__DiagnosticChain_Map() {
+	public EOperation getExtraInfo__FloatTypeCheck__DiagnosticChain_Map() {
 		return extraInfoEClass.getEOperations().get(0);
 	}
 
@@ -1212,7 +1212,7 @@ public class DaGiMa_MDE_HW3PackageImpl extends EPackageImpl implements DaGiMa_MD
 	 * @generated
 	 */
 	@Override
-	public EOperation getExtraInfo__FloatValueTypeCheck__DiagnosticChain_Map() {
+	public EOperation getExtraInfo__DoubleTypeCheck__DiagnosticChain_Map() {
 		return extraInfoEClass.getEOperations().get(1);
 	}
 
@@ -1222,7 +1222,7 @@ public class DaGiMa_MDE_HW3PackageImpl extends EPackageImpl implements DaGiMa_MD
 	 * @generated
 	 */
 	@Override
-	public EOperation getExtraInfo__StringValueTypeCheck__DiagnosticChain_Map() {
+	public EOperation getExtraInfo__IntegerTypeCheck__DiagnosticChain_Map() {
 		return extraInfoEClass.getEOperations().get(2);
 	}
 
@@ -1232,7 +1232,7 @@ public class DaGiMa_MDE_HW3PackageImpl extends EPackageImpl implements DaGiMa_MD
 	 * @generated
 	 */
 	@Override
-	public EOperation getExtraInfo__EnumValueTypeCheck__DiagnosticChain_Map() {
+	public EOperation getExtraInfo__BooleanTypeCheck__DiagnosticChain_Map() {
 		return extraInfoEClass.getEOperations().get(3);
 	}
 
@@ -1242,7 +1242,7 @@ public class DaGiMa_MDE_HW3PackageImpl extends EPackageImpl implements DaGiMa_MD
 	 * @generated
 	 */
 	@Override
-	public EOperation getExtraInfo__IntegerValueTypeCheck__DiagnosticChain_Map() {
+	public EOperation getExtraInfo__StringTypeCheck__DiagnosticChain_Map() {
 		return extraInfoEClass.getEOperations().get(4);
 	}
 
@@ -1252,7 +1252,7 @@ public class DaGiMa_MDE_HW3PackageImpl extends EPackageImpl implements DaGiMa_MD
 	 * @generated
 	 */
 	@Override
-	public EOperation getExtraInfo__DoubleValueTypeCheck__DiagnosticChain_Map() {
+	public EOperation getExtraInfo__EnumTypeCheck__DiagnosticChain_Map() {
 		return extraInfoEClass.getEOperations().get(5);
 	}
 
@@ -1462,12 +1462,12 @@ public class DaGiMa_MDE_HW3PackageImpl extends EPackageImpl implements DaGiMa_MD
 		createEAttribute(extraInfoEClass, EXTRA_INFO__LOWER_MULTIPLICITY);
 		createEAttribute(extraInfoEClass, EXTRA_INFO__HIGHER_MULTIPLICITY);
 		createEReference(extraInfoEClass, EXTRA_INFO__ENUM);
-		createEOperation(extraInfoEClass, EXTRA_INFO___BOOLEAN_VALUE_TYPE_CHECK__DIAGNOSTICCHAIN_MAP);
-		createEOperation(extraInfoEClass, EXTRA_INFO___FLOAT_VALUE_TYPE_CHECK__DIAGNOSTICCHAIN_MAP);
-		createEOperation(extraInfoEClass, EXTRA_INFO___STRING_VALUE_TYPE_CHECK__DIAGNOSTICCHAIN_MAP);
-		createEOperation(extraInfoEClass, EXTRA_INFO___ENUM_VALUE_TYPE_CHECK__DIAGNOSTICCHAIN_MAP);
-		createEOperation(extraInfoEClass, EXTRA_INFO___INTEGER_VALUE_TYPE_CHECK__DIAGNOSTICCHAIN_MAP);
-		createEOperation(extraInfoEClass, EXTRA_INFO___DOUBLE_VALUE_TYPE_CHECK__DIAGNOSTICCHAIN_MAP);
+		createEOperation(extraInfoEClass, EXTRA_INFO___FLOAT_TYPE_CHECK__DIAGNOSTICCHAIN_MAP);
+		createEOperation(extraInfoEClass, EXTRA_INFO___DOUBLE_TYPE_CHECK__DIAGNOSTICCHAIN_MAP);
+		createEOperation(extraInfoEClass, EXTRA_INFO___INTEGER_TYPE_CHECK__DIAGNOSTICCHAIN_MAP);
+		createEOperation(extraInfoEClass, EXTRA_INFO___BOOLEAN_TYPE_CHECK__DIAGNOSTICCHAIN_MAP);
+		createEOperation(extraInfoEClass, EXTRA_INFO___STRING_TYPE_CHECK__DIAGNOSTICCHAIN_MAP);
+		createEOperation(extraInfoEClass, EXTRA_INFO___ENUM_TYPE_CHECK__DIAGNOSTICCHAIN_MAP);
 
 		customEnumerationEClass = createEClass(CUSTOM_ENUMERATION);
 		createEAttribute(customEnumerationEClass, CUSTOM_ENUMERATION__VALUES);
@@ -1662,7 +1662,7 @@ public class DaGiMa_MDE_HW3PackageImpl extends EPackageImpl implements DaGiMa_MD
 		initEAttribute(getExtraInfo_Higher_multiplicity(), ecorePackage.getEInt(), "higher_multiplicity", null, 1, 1, ExtraInfo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getExtraInfo_Enum(), this.getCustomEnumeration(), null, "enum", null, 0, 1, ExtraInfo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		op = initEOperation(getExtraInfo__BooleanValueTypeCheck__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "BooleanValueTypeCheck", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getExtraInfo__FloatTypeCheck__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "floatTypeCheck", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -1671,7 +1671,7 @@ public class DaGiMa_MDE_HW3PackageImpl extends EPackageImpl implements DaGiMa_MD
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getExtraInfo__FloatValueTypeCheck__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "FloatValueTypeCheck", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getExtraInfo__DoubleTypeCheck__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "doubleTypeCheck", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -1680,7 +1680,7 @@ public class DaGiMa_MDE_HW3PackageImpl extends EPackageImpl implements DaGiMa_MD
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getExtraInfo__StringValueTypeCheck__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "StringValueTypeCheck", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getExtraInfo__IntegerTypeCheck__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "integerTypeCheck", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -1689,7 +1689,7 @@ public class DaGiMa_MDE_HW3PackageImpl extends EPackageImpl implements DaGiMa_MD
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getExtraInfo__EnumValueTypeCheck__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "EnumValueTypeCheck", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getExtraInfo__BooleanTypeCheck__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "booleanTypeCheck", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -1698,7 +1698,7 @@ public class DaGiMa_MDE_HW3PackageImpl extends EPackageImpl implements DaGiMa_MD
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getExtraInfo__IntegerValueTypeCheck__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "IntegerValueTypeCheck", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getExtraInfo__StringTypeCheck__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "stringTypeCheck", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -1707,7 +1707,7 @@ public class DaGiMa_MDE_HW3PackageImpl extends EPackageImpl implements DaGiMa_MD
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getExtraInfo__DoubleValueTypeCheck__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "DoubleValueTypeCheck", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getExtraInfo__EnumTypeCheck__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "enumTypeCheck", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -1806,7 +1806,7 @@ public class DaGiMa_MDE_HW3PackageImpl extends EPackageImpl implements DaGiMa_MD
 		  (extraInfoEClass,
 		   source,
 		   new String[] {
-			   "constraints", "DoubleValueTypeCheck"
+			   "constraints", "enumTypeCheck"
 		   });
 	}
 
@@ -1861,40 +1861,40 @@ public class DaGiMa_MDE_HW3PackageImpl extends EPackageImpl implements DaGiMa_MD
 			   "body", "courses->forAll(course|course.grade.size() > 0)"
 		   });
 		addAnnotation
-		  (getExtraInfo__BooleanValueTypeCheck__DiagnosticChain_Map(),
+		  (getExtraInfo__FloatTypeCheck__DiagnosticChain_Map(),
 		   source,
 		   new String[] {
-			   "body", "\n\t\t\ttype <> \'BOOLEAN\' or value.oclIsTypeOf(Boolean)"
+			   "body", "\n\t\t\tvalue.matches(\'[0-9]+([.]{1}[0-9]+)?[Ff]\') or type <> MetadataType::FLOAT"
 		   });
 		addAnnotation
-		  (getExtraInfo__FloatValueTypeCheck__DiagnosticChain_Map(),
+		  (getExtraInfo__DoubleTypeCheck__DiagnosticChain_Map(),
 		   source,
 		   new String[] {
-			   "body", "\n\t\t\ttype <> \'FLOAT\' or value.oclIsTypeOf(Real)"
+			   "body", "\n\t\t\tvalue.matches(\'[0-9]+([.]{1}[0-9]+)?[Dd]\') or type <> MetadataType::DOUBLE"
 		   });
 		addAnnotation
-		  (getExtraInfo__StringValueTypeCheck__DiagnosticChain_Map(),
+		  (getExtraInfo__IntegerTypeCheck__DiagnosticChain_Map(),
 		   source,
 		   new String[] {
-			   "body", "\n\t\t\ttype <> \'STRING\' or value.oclIsTypeOf(String)"
+			   "body", "\n\t\t\tvalue.matches(\'[0-9]+\') or type <> MetadataType::INTEGER"
 		   });
 		addAnnotation
-		  (getExtraInfo__EnumValueTypeCheck__DiagnosticChain_Map(),
+		  (getExtraInfo__BooleanTypeCheck__DiagnosticChain_Map(),
 		   source,
 		   new String[] {
-			   "body", "\n\t\t\ttype <> \'ENUMERATION\' or (enum?.values->exists(enumValue|enumValue = self.value))"
+			   "body", "\n\t\t\tvalue.matches(\'^true|false$\') or type <> MetadataType::BOOLEAN"
 		   });
 		addAnnotation
-		  (getExtraInfo__IntegerValueTypeCheck__DiagnosticChain_Map(),
+		  (getExtraInfo__StringTypeCheck__DiagnosticChain_Map(),
 		   source,
 		   new String[] {
-			   "body", "\n\t\t\ttype <> \'INTEGER\' or value.oclIsTypeOf(Integer)"
+			   "body", "\n\t\t\tvalue.oclIsTypeOf(String) or type <> MetadataType::STRING"
 		   });
 		addAnnotation
-		  (getExtraInfo__DoubleValueTypeCheck__DiagnosticChain_Map(),
+		  (getExtraInfo__EnumTypeCheck__DiagnosticChain_Map(),
 		   source,
 		   new String[] {
-			   "body", "\n\t\t\ttype <> \'DOUBLE\' or value.oclIsTypeOf(Real)"
+			   "body", "\n\t\t\tenum?.values->one(enumValue | enumValue = value) or type <> MetadataType::ENUMERATION"
 		   });
 	}
 

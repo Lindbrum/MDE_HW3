@@ -233,6 +233,17 @@
         eType="#//Professor" eOpposite="#//Professor/news_posted"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ExtraInfo">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="stringTypeCheck integerTypeCheck floatTypeCheck doubleTypeCheck booleanTypeCheck enumTypeCheck"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="stringTypeCheck" value="&#xA;&#x9;&#x9;&#x9;value.oclIsTypeOf(String) or type &lt;> MetadataType::STRING"/>
+      <details key="integerTypeCheck" value="&#xA;&#x9;&#x9;&#x9;value.matches('[0-9]+') or type &lt;> MetadataType::INTEGER"/>
+      <details key="floatTypeCheck" value="&#xA;&#x9;&#x9;&#x9;value.matches('[0-9]+([.]{1}[0-9]+)?[Ff]') or type &lt;> MetadataType::FLOAT"/>
+      <details key="doubleTypeCheck" value="&#xA;&#x9;&#x9;&#x9;value.matches('[0-9]+([.]{1}[0-9]+)?[Dd]') or type &lt;> MetadataType::DOUBLE"/>
+      <details key="booleanTypeCheck" value="&#xA;&#x9;&#x9;&#x9;value.matches('^true|false$') or type &lt;> MetadataType::BOOLEAN"/>
+      <details key="enumTypeCheck" value="&#xA;&#x9;&#x9;&#x9;enum?.values->one(enumValue | enumValue = value) or type &lt;> MetadataType::ENUMERATION"/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         iD="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -245,9 +256,6 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="enum" eType="#//CustomEnumeration"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="MetadataType">
-    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation"/>
-    </eAnnotations>
     <eLiterals name="STRING"/>
     <eLiterals name="INTEGER" value="1"/>
     <eLiterals name="BOOLEAN" value="2"/>

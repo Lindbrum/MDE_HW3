@@ -16,12 +16,12 @@ import junit.textui.TestRunner;
  * <p>
  * The following operations are tested:
  * <ul>
- *   <li>{@link daGiMa_MDE_HW3.ExtraInfo#BooleanValueTypeCheck(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Boolean Value Type Check</em>}</li>
- *   <li>{@link daGiMa_MDE_HW3.ExtraInfo#FloatValueTypeCheck(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Float Value Type Check</em>}</li>
- *   <li>{@link daGiMa_MDE_HW3.ExtraInfo#StringValueTypeCheck(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>String Value Type Check</em>}</li>
- *   <li>{@link daGiMa_MDE_HW3.ExtraInfo#EnumValueTypeCheck(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Enum Value Type Check</em>}</li>
- *   <li>{@link daGiMa_MDE_HW3.ExtraInfo#IntegerValueTypeCheck(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Integer Value Type Check</em>}</li>
- *   <li>{@link daGiMa_MDE_HW3.ExtraInfo#DoubleValueTypeCheck(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Double Value Type Check</em>}</li>
+ *   <li>{@link daGiMa_MDE_HW3.ExtraInfo#floatTypeCheck(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Float Type Check</em>}</li>
+ *   <li>{@link daGiMa_MDE_HW3.ExtraInfo#doubleTypeCheck(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Double Type Check</em>}</li>
+ *   <li>{@link daGiMa_MDE_HW3.ExtraInfo#integerTypeCheck(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Integer Type Check</em>}</li>
+ *   <li>{@link daGiMa_MDE_HW3.ExtraInfo#booleanTypeCheck(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Boolean Type Check</em>}</li>
+ *   <li>{@link daGiMa_MDE_HW3.ExtraInfo#stringTypeCheck(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>String Type Check</em>}</li>
+ *   <li>{@link daGiMa_MDE_HW3.ExtraInfo#enumTypeCheck(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Enum Type Check</em>}</li>
  * </ul>
  * </p>
  * @generated
@@ -98,78 +98,78 @@ public class ExtraInfoTest extends TestCase {
 	}
 
 	/**
-	 * Tests the '{@link daGiMa_MDE_HW3.ExtraInfo#BooleanValueTypeCheck(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Boolean Value Type Check</em>}' operation.
+	 * Tests the '{@link daGiMa_MDE_HW3.ExtraInfo#floatTypeCheck(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Float Type Check</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see daGiMa_MDE_HW3.ExtraInfo#BooleanValueTypeCheck(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see daGiMa_MDE_HW3.ExtraInfo#floatTypeCheck(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
-	public void testBooleanValueTypeCheck__DiagnosticChain_Map() {
+	public void testFloatTypeCheck__DiagnosticChain_Map() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
 	}
 
 	/**
-	 * Tests the '{@link daGiMa_MDE_HW3.ExtraInfo#FloatValueTypeCheck(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Float Value Type Check</em>}' operation.
+	 * Tests the '{@link daGiMa_MDE_HW3.ExtraInfo#doubleTypeCheck(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Double Type Check</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see daGiMa_MDE_HW3.ExtraInfo#FloatValueTypeCheck(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see daGiMa_MDE_HW3.ExtraInfo#doubleTypeCheck(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
-	public void testFloatValueTypeCheck__DiagnosticChain_Map() {
+	public void testDoubleTypeCheck__DiagnosticChain_Map() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
 	}
 
 	/**
-	 * Tests the '{@link daGiMa_MDE_HW3.ExtraInfo#StringValueTypeCheck(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>String Value Type Check</em>}' operation.
+	 * Tests the '{@link daGiMa_MDE_HW3.ExtraInfo#integerTypeCheck(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Integer Type Check</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see daGiMa_MDE_HW3.ExtraInfo#StringValueTypeCheck(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see daGiMa_MDE_HW3.ExtraInfo#integerTypeCheck(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
-	public void testStringValueTypeCheck__DiagnosticChain_Map() {
+	public void testIntegerTypeCheck__DiagnosticChain_Map() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
 	}
 
 	/**
-	 * Tests the '{@link daGiMa_MDE_HW3.ExtraInfo#EnumValueTypeCheck(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Enum Value Type Check</em>}' operation.
+	 * Tests the '{@link daGiMa_MDE_HW3.ExtraInfo#booleanTypeCheck(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Boolean Type Check</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see daGiMa_MDE_HW3.ExtraInfo#EnumValueTypeCheck(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see daGiMa_MDE_HW3.ExtraInfo#booleanTypeCheck(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
-	public void testEnumValueTypeCheck__DiagnosticChain_Map() {
+	public void testBooleanTypeCheck__DiagnosticChain_Map() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
 	}
 
 	/**
-	 * Tests the '{@link daGiMa_MDE_HW3.ExtraInfo#IntegerValueTypeCheck(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Integer Value Type Check</em>}' operation.
+	 * Tests the '{@link daGiMa_MDE_HW3.ExtraInfo#stringTypeCheck(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>String Type Check</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see daGiMa_MDE_HW3.ExtraInfo#IntegerValueTypeCheck(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see daGiMa_MDE_HW3.ExtraInfo#stringTypeCheck(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
-	public void testIntegerValueTypeCheck__DiagnosticChain_Map() {
+	public void testStringTypeCheck__DiagnosticChain_Map() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
 	}
 
 	/**
-	 * Tests the '{@link daGiMa_MDE_HW3.ExtraInfo#DoubleValueTypeCheck(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Double Value Type Check</em>}' operation.
+	 * Tests the '{@link daGiMa_MDE_HW3.ExtraInfo#enumTypeCheck(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Enum Type Check</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see daGiMa_MDE_HW3.ExtraInfo#DoubleValueTypeCheck(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see daGiMa_MDE_HW3.ExtraInfo#enumTypeCheck(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
-	public void testDoubleValueTypeCheck__DiagnosticChain_Map() {
+	public void testEnumTypeCheck__DiagnosticChain_Map() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

@@ -24,7 +24,7 @@ import org.eclipse.emf.ecore.EObject;
  * </ul>
  *
  * @see daGiMa_MDE_HW3.DaGiMa_MDE_HW3Package#getExtraInfo()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='DoubleValueTypeCheck'"
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='enumTypeCheck'"
  * @generated
  */
 public interface ExtraInfo extends EObject {
@@ -32,6 +32,22 @@ public interface ExtraInfo extends EObject {
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * operation matchWithTypeEnum(toMatch : String, enumValue : MetadataType) : Boolean[1]{
+	 * body:
+	 * let enumValues : Set(Tuple(s: String, d: MetadataType)) =
+	 * Set{
+	 * Tuple{s = 'STRING', d = MetadataType::STRING},
+	 * Tuple{s = 'INTEGER', d = MetadataType::INTEGER},
+	 * Tuple{s = 'FLOAT', d = MetadataType::FLOAT},
+	 * Tuple{s = 'DOUBLE', d = MetadataType::DOUBLE},
+	 * Tuple{s = 'BOOLEAN', d = MetadataType::BOOLEAN},
+	 * Tuple{s = 'ENUMERATION', d = MetadataType::ENUMERATION}
+	 * }
+	 * in
+	 * enumValues->select(value |value.s = toMatch)->one(value|value.d = enumValue);
+	 * }
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see daGiMa_MDE_HW3.DaGiMa_MDE_HW3Package#getExtraInfo_Name()
@@ -168,49 +184,49 @@ public interface ExtraInfo extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot body='\n\t\t\ttype &lt;&gt; \'BOOLEAN\' or value.oclIsTypeOf(Boolean)'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot body='\n\t\t\tvalue.matches(\'[0-9]+([.]{1}[0-9]+)?[Ff]\') or type &lt;&gt; MetadataType::FLOAT'"
 	 * @generated
 	 */
-	boolean BooleanValueTypeCheck(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean floatTypeCheck(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot body='\n\t\t\ttype &lt;&gt; \'FLOAT\' or value.oclIsTypeOf(Real)'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot body='\n\t\t\tvalue.matches(\'[0-9]+([.]{1}[0-9]+)?[Dd]\') or type &lt;&gt; MetadataType::DOUBLE'"
 	 * @generated
 	 */
-	boolean FloatValueTypeCheck(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean doubleTypeCheck(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot body='\n\t\t\ttype &lt;&gt; \'STRING\' or value.oclIsTypeOf(String)'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot body='\n\t\t\tvalue.matches(\'[0-9]+\') or type &lt;&gt; MetadataType::INTEGER'"
 	 * @generated
 	 */
-	boolean StringValueTypeCheck(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean integerTypeCheck(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot body='\n\t\t\ttype &lt;&gt; \'ENUMERATION\' or (enum?.values-&gt;exists(enumValue|enumValue = self.value))'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot body='\n\t\t\tvalue.matches(\'^true|false$\') or type &lt;&gt; MetadataType::BOOLEAN'"
 	 * @generated
 	 */
-	boolean EnumValueTypeCheck(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean booleanTypeCheck(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot body='\n\t\t\ttype &lt;&gt; \'INTEGER\' or value.oclIsTypeOf(Integer)'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot body='\n\t\t\tvalue.oclIsTypeOf(String) or type &lt;&gt; MetadataType::STRING'"
 	 * @generated
 	 */
-	boolean IntegerValueTypeCheck(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean stringTypeCheck(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot body='\n\t\t\ttype &lt;&gt; \'DOUBLE\' or value.oclIsTypeOf(Real)'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot body='\n\t\t\tenum?.values-&gt;one(enumValue | enumValue = value) or type &lt;&gt; MetadataType::ENUMERATION'"
 	 * @generated
 	 */
-	boolean DoubleValueTypeCheck(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean enumTypeCheck(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 } // ExtraInfo
