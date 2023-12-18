@@ -16,7 +16,7 @@ import junit.textui.TestRunner;
  * <p>
  * The following features are tested:
  * <ul>
- *   <li>{@link daGiMa_MDE_HW3.Career#getId() <em>Id</em>}</li>
+ *   <li>{@link daGiMa_MDE_HW3.Career#getTotalAcquiredCfu() <em>Total Acquired Cfu</em>}</li>
  * </ul>
  * </p>
  * <p>
@@ -99,26 +99,26 @@ public class CareerTest extends TestCase {
 	}
 
 	/**
-	 * Tests the '{@link daGiMa_MDE_HW3.Career#getId() <em>Id</em>}' feature getter.
+	 * Tests the '{@link daGiMa_MDE_HW3.Career#getTotalAcquiredCfu() <em>Total Acquired Cfu</em>}' feature getter.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see daGiMa_MDE_HW3.Career#getId()
+	 * @see daGiMa_MDE_HW3.Career#getTotalAcquiredCfu()
 	 * @generated
 	 */
-	public void testGetId() {
+	public void testGetTotalAcquiredCfu() {
 		// TODO: implement this feature getter test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
 	}
 
 	/**
-	 * Tests the '{@link daGiMa_MDE_HW3.Career#setId(java.lang.String) <em>Id</em>}' feature setter.
+	 * Tests the '{@link daGiMa_MDE_HW3.Career#setTotalAcquiredCfu(java.math.BigInteger) <em>Total Acquired Cfu</em>}' feature setter.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see daGiMa_MDE_HW3.Career#setId(java.lang.String)
+	 * @see daGiMa_MDE_HW3.Career#setTotalAcquiredCfu(java.math.BigInteger)
 	 * @generated
 	 */
-	public void testSetId() {
+	public void testSetTotalAcquiredCfu() {
 		// TODO: implement this feature setter test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

@@ -5,7 +5,7 @@ Bundle-SymbolicName: DaGiMa_MDE_HW3.editor;singleton:=true
 Automatic-Module-Name: DaGiMa_MDE_HW3.editor
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
-Bundle-Activator: daGiMa_MDE_HW3.presentation.DaGiMa_MDE_HW3EditorPlugin$Implementation
+Bundle-Activator: daGiMa_MDE_HW3.presentation.GenEditorPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-18

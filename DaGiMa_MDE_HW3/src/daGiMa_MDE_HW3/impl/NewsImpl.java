@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 import org.eclipse.emf.ecore.util.EcoreUtil;
 
 /**
@@ -33,6 +34,7 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  *   <li>{@link daGiMa_MDE_HW3.impl.NewsImpl#getPublication_date <em>Publication date</em>}</li>
  *   <li>{@link daGiMa_MDE_HW3.impl.NewsImpl#getDepartment <em>Department</em>}</li>
  *   <li>{@link daGiMa_MDE_HW3.impl.NewsImpl#getAuthor <em>Author</em>}</li>
+ *   <li>{@link daGiMa_MDE_HW3.impl.NewsImpl#getBody <em>Body</em>}</li>
  * </ul>
  *
  * @generated
@@ -87,6 +89,26 @@ public class NewsImpl extends MinimalEObjectImpl.Container implements News {
 	 * @ordered
 	 */
 	protected Department department;
+
+	/**
+	 * The default value of the '{@link #getBody() <em>Body</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getBody()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String BODY_EDEFAULT = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut porta ante id turpis faucibus pharetra non nec arcu. Morbi luctus, est at tincidunt scelerisque, eros purus posuere purus, in facilisis turpis lectus et neque. Phasellus euismod accumsan turpis faucibus lobortis. In eleifend ligula non iaculis pulvinar. Nulla malesuada ac massa vulputate molestie.";
+
+	/**
+	 * The cached value of the '{@link #getBody() <em>Body</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getBody()
+	 * @generated
+	 * @ordered
+	 */
+	protected String body = BODY_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -264,6 +286,29 @@ public class NewsImpl extends MinimalEObjectImpl.Container implements News {
 	 * @generated
 	 */
 	@Override
+	public String getBody() {
+		return body;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setBody(String newBody) {
+		String oldBody = body;
+		body = newBody;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DaGiMa_MDE_HW3Package.NEWS__BODY, oldBody, body));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case DaGiMa_MDE_HW3Package.NEWS__DEPARTMENT:
@@ -325,6 +370,8 @@ public class NewsImpl extends MinimalEObjectImpl.Container implements News {
 				return basicGetDepartment();
 			case DaGiMa_MDE_HW3Package.NEWS__AUTHOR:
 				return getAuthor();
+			case DaGiMa_MDE_HW3Package.NEWS__BODY:
+				return getBody();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -348,6 +395,9 @@ public class NewsImpl extends MinimalEObjectImpl.Container implements News {
 				return;
 			case DaGiMa_MDE_HW3Package.NEWS__AUTHOR:
 				setAuthor((Professor)newValue);
+				return;
+			case DaGiMa_MDE_HW3Package.NEWS__BODY:
+				setBody((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -373,6 +423,9 @@ public class NewsImpl extends MinimalEObjectImpl.Container implements News {
 			case DaGiMa_MDE_HW3Package.NEWS__AUTHOR:
 				setAuthor((Professor)null);
 				return;
+			case DaGiMa_MDE_HW3Package.NEWS__BODY:
+				setBody(BODY_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -393,6 +446,8 @@ public class NewsImpl extends MinimalEObjectImpl.Container implements News {
 				return department != null;
 			case DaGiMa_MDE_HW3Package.NEWS__AUTHOR:
 				return getAuthor() != null;
+			case DaGiMa_MDE_HW3Package.NEWS__BODY:
+				return BODY_EDEFAULT == null ? body != null : !BODY_EDEFAULT.equals(body);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -411,6 +466,8 @@ public class NewsImpl extends MinimalEObjectImpl.Container implements News {
 		result.append(title);
 		result.append(", publication_date: ");
 		result.append(publication_date);
+		result.append(", body: ");
+		result.append(body);
 		result.append(')');
 		return result.toString();
 	}

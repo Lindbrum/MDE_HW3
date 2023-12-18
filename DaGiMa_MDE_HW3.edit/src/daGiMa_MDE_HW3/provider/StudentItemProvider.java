@@ -14,6 +14,7 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
+
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
@@ -50,7 +51,6 @@ public class StudentItemProvider extends UserItemProvider {
 			addMatriculation_numberPropertyDescriptor(object);
 			addEnrolled_coursesPropertyDescriptor(object);
 			addBooked_callsPropertyDescriptor(object);
-			addTranscriptsPropertyDescriptor(object);
 			addStudent_examsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -123,28 +123,6 @@ public class StudentItemProvider extends UserItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Transcripts feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addTranscriptsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Student_transcripts_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Student_transcripts_feature", "_UI_Student_type"),
-				 DaGiMa_MDE_HW3Package.Literals.STUDENT__TRANSCRIPTS,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
 	 * This adds a property descriptor for the Student exams feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -179,6 +157,7 @@ public class StudentItemProvider extends UserItemProvider {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(DaGiMa_MDE_HW3Package.Literals.STUDENT__THESIS_DEFENDED);
+			childrenFeatures.add(DaGiMa_MDE_HW3Package.Literals.STUDENT__TRANSCRIPTS);
 		}
 		return childrenFeatures;
 	}
@@ -238,6 +217,7 @@ public class StudentItemProvider extends UserItemProvider {
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case DaGiMa_MDE_HW3Package.STUDENT__THESIS_DEFENDED:
+			case DaGiMa_MDE_HW3Package.STUDENT__TRANSCRIPTS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -259,6 +239,11 @@ public class StudentItemProvider extends UserItemProvider {
 			(createChildParameter
 				(DaGiMa_MDE_HW3Package.Literals.STUDENT__THESIS_DEFENDED,
 				 DaGiMa_MDE_HW3Factory.eINSTANCE.createThesis()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(DaGiMa_MDE_HW3Package.Literals.STUDENT__TRANSCRIPTS,
+				 DaGiMa_MDE_HW3Factory.eINSTANCE.createCareer()));
 	}
 
 }

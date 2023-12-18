@@ -9,11 +9,11 @@ import junit.textui.TestRunner;
 
 /**
  * <!-- begin-user-doc -->
- * A test suite for the '<em><b>DaGiMa_MDE_HW3</b></em>' model.
+ * A test suite for the '<em><b>Gen</b></em>' model.
  * <!-- end-user-doc -->
  * @generated
  */
-public class DaGiMa_MDE_HW3AllTests extends TestSuite {
+public class GenAllTests extends TestSuite {
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -30,7 +30,7 @@ public class DaGiMa_MDE_HW3AllTests extends TestSuite {
 	 * @generated
 	 */
 	public static Test suite() {
-		TestSuite suite = new DaGiMa_MDE_HW3AllTests("DaGiMa_MDE_HW3 Tests");
+		TestSuite suite = new GenAllTests("Gen Tests");
 		suite.addTest(DaGiMa_MDE_HW3Tests.suite());
 		return suite;
 	}
@@ -40,8 +40,8 @@ public class DaGiMa_MDE_HW3AllTests extends TestSuite {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DaGiMa_MDE_HW3AllTests(String name) {
+	public GenAllTests(String name) {
 		super(name);
 	}
 
-} //DaGiMa_MDE_HW3AllTests
+} //GenAllTests

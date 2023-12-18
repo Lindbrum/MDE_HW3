@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link daGiMa_MDE_HW3.Department#getUniversity <em>University</em>}</li>
  *   <li>{@link daGiMa_MDE_HW3.Department#getName <em>Name</em>}</li>
  *   <li>{@link daGiMa_MDE_HW3.Department#getRelated_news <em>Related news</em>}</li>
+ *   <li>{@link daGiMa_MDE_HW3.Department#getTeachers <em>Teachers</em>}</li>
  * </ul>
  *
  * @see daGiMa_MDE_HW3.DaGiMa_MDE_HW3Package#getDepartment()
@@ -123,5 +124,18 @@ public interface Department extends EObject {
 	 * @generated
 	 */
 	EList<News> getRelated_news();
+
+	/**
+	 * Returns the value of the '<em><b>Teachers</b></em>' reference list.
+	 * The list contents are of type {@link daGiMa_MDE_HW3.Professor}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Teachers</em>' reference list.
+	 * @see daGiMa_MDE_HW3.DaGiMa_MDE_HW3Package#getDepartment_Teachers()
+	 * @model volatile="true" derived="true"
+	 *        annotation="http://www.eclipse.org/OCL/Collection nullFree='false'"
+	 * @generated
+	 */
+	EList<Professor> getTeachers();
 
 } // Department

@@ -63,6 +63,7 @@ public class NewsItemProvider
 			addTitlePropertyDescriptor(object);
 			addPublication_datePropertyDescriptor(object);
 			addDepartmentPropertyDescriptor(object);
+			addBodyPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -134,6 +135,28 @@ public class NewsItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Body feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addBodyPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_News_body_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_News_body_feature", "_UI_News_type"),
+				 DaGiMa_MDE_HW3Package.Literals.NEWS__BODY,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This returns News.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -173,6 +196,7 @@ public class NewsItemProvider
 		switch (notification.getFeatureID(News.class)) {
 			case DaGiMa_MDE_HW3Package.NEWS__TITLE:
 			case DaGiMa_MDE_HW3Package.NEWS__PUBLICATION_DATE:
+			case DaGiMa_MDE_HW3Package.NEWS__BODY:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}
@@ -199,7 +223,7 @@ public class NewsItemProvider
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return DaGiMa_MDE_HW3EditPlugin.INSTANCE;
+		return GenEditPlugin.INSTANCE;
 	}
 
 }

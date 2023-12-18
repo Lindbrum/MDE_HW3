@@ -1,26 +1,28 @@
 /**
  */
-package daGiMa_MDE_HW3.provider;
+package daGiMa_MDE_HW3.presentation;
 
 import org.eclipse.emf.common.EMFPlugin;
+
+import org.eclipse.emf.common.ui.EclipseUIPlugin;
 
 import org.eclipse.emf.common.util.ResourceLocator;
 
 /**
- * This is the central singleton for the DaGiMa_MDE_HW3 edit plugin.
+ * This is the central singleton for the Gen editor plugin.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public final class DaGiMa_MDE_HW3EditPlugin extends EMFPlugin {
+public final class GenEditorPlugin extends EMFPlugin {
 	/**
 	 * Keep track of the singleton.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final DaGiMa_MDE_HW3EditPlugin INSTANCE = new DaGiMa_MDE_HW3EditPlugin();
-
+	public static final GenEditorPlugin INSTANCE = new GenEditorPlugin();
+	
 	/**
 	 * Keep track of the singleton.
 	 * <!-- begin-user-doc -->
@@ -35,10 +37,10 @@ public final class DaGiMa_MDE_HW3EditPlugin extends EMFPlugin {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DaGiMa_MDE_HW3EditPlugin() {
+	public GenEditorPlugin() {
 		super
-		  (new ResourceLocator [] {
-		   });
+			(new ResourceLocator [] {
+			});
 	}
 
 	/**
@@ -52,7 +54,7 @@ public final class DaGiMa_MDE_HW3EditPlugin extends EMFPlugin {
 	public ResourceLocator getPluginResourceLocator() {
 		return plugin;
 	}
-
+	
 	/**
 	 * Returns the singleton instance of the Eclipse plugin.
 	 * <!-- begin-user-doc -->
@@ -63,14 +65,14 @@ public final class DaGiMa_MDE_HW3EditPlugin extends EMFPlugin {
 	public static Implementation getPlugin() {
 		return plugin;
 	}
-
+	
 	/**
 	 * The actual implementation of the Eclipse <b>Plugin</b>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static class Implementation extends EclipsePlugin {
+	public static class Implementation extends EclipseUIPlugin {
 		/**
 		 * Creates an instance.
 		 * <!-- begin-user-doc -->
@@ -79,7 +81,7 @@ public final class DaGiMa_MDE_HW3EditPlugin extends EMFPlugin {
 		 */
 		public Implementation() {
 			super();
-
+	
 			// Remember the static instance.
 			//
 			plugin = this;

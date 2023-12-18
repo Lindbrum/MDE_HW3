@@ -2,6 +2,7 @@
  */
 package daGiMa_MDE_HW3;
 
+import java.math.BigInteger;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;
@@ -15,10 +16,11 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link daGiMa_MDE_HW3.Career#getId <em>Id</em>}</li>
+ *   <li>{@link daGiMa_MDE_HW3.Career#getName <em>Name</em>}</li>
  *   <li>{@link daGiMa_MDE_HW3.Career#getStudent <em>Student</em>}</li>
  *   <li>{@link daGiMa_MDE_HW3.Career#getDegree_course <em>Degree course</em>}</li>
  *   <li>{@link daGiMa_MDE_HW3.Career#getCourses <em>Courses</em>}</li>
+ *   <li>{@link daGiMa_MDE_HW3.Career#getTotalAcquiredCfu <em>Total Acquired Cfu</em>}</li>
  * </ul>
  *
  * @see daGiMa_MDE_HW3.DaGiMa_MDE_HW3Package#getCareer()
@@ -27,46 +29,47 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Career extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Name</b></em>' attribute.
+	 * The default value is <code>"New transcript"</code>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Id</em>' attribute.
-	 * @see #setId(String)
-	 * @see daGiMa_MDE_HW3.DaGiMa_MDE_HW3Package#getCareer_Id()
-	 * @model id="true" required="true" volatile="true" derived="true"
+	 * @return the value of the '<em>Name</em>' attribute.
+	 * @see #setName(String)
+	 * @see daGiMa_MDE_HW3.DaGiMa_MDE_HW3Package#getCareer_Name()
+	 * @model default="New transcript" required="true"
 	 * @generated
 	 */
-	String getId();
+	String getName();
 
 	/**
-	 * Sets the value of the '{@link daGiMa_MDE_HW3.Career#getId <em>Id</em>}' attribute.
+	 * Sets the value of the '{@link daGiMa_MDE_HW3.Career#getName <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Id</em>' attribute.
-	 * @see #getId()
+	 * @param value the new value of the '<em>Name</em>' attribute.
+	 * @see #getName()
 	 * @generated
 	 */
-	void setId(String value);
+	void setName(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Student</b></em>' reference.
+	 * Returns the value of the '<em><b>Student</b></em>' container reference.
 	 * It is bidirectional and its opposite is '{@link daGiMa_MDE_HW3.Student#getTranscripts <em>Transcripts</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Student</em>' reference.
+	 * @return the value of the '<em>Student</em>' container reference.
 	 * @see #setStudent(Student)
 	 * @see daGiMa_MDE_HW3.DaGiMa_MDE_HW3Package#getCareer_Student()
 	 * @see daGiMa_MDE_HW3.Student#getTranscripts
-	 * @model opposite="transcripts" required="true"
+	 * @model opposite="transcripts" required="true" transient="false"
 	 * @generated
 	 */
 	Student getStudent();
 
 	/**
-	 * Sets the value of the '{@link daGiMa_MDE_HW3.Career#getStudent <em>Student</em>}' reference.
+	 * Sets the value of the '{@link daGiMa_MDE_HW3.Career#getStudent <em>Student</em>}' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Student</em>' reference.
+	 * @param value the new value of the '<em>Student</em>' container reference.
 	 * @see #getStudent()
 	 * @generated
 	 */
@@ -107,6 +110,28 @@ public interface Career extends EObject {
 	 * @generated
 	 */
 	EList<PassingGrade> getCourses();
+
+	/**
+	 * Returns the value of the '<em><b>Total Acquired Cfu</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Total Acquired Cfu</em>' attribute.
+	 * @see #setTotalAcquiredCfu(BigInteger)
+	 * @see daGiMa_MDE_HW3.DaGiMa_MDE_HW3Package#getCareer_TotalAcquiredCfu()
+	 * @model required="true" volatile="true" derived="true"
+	 * @generated
+	 */
+	BigInteger getTotalAcquiredCfu();
+
+	/**
+	 * Sets the value of the '{@link daGiMa_MDE_HW3.Career#getTotalAcquiredCfu <em>Total Acquired Cfu</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Total Acquired Cfu</em>' attribute.
+	 * @see #getTotalAcquiredCfu()
+	 * @generated
+	 */
+	void setTotalAcquiredCfu(BigInteger value);
 
 	/**
 	 * <!-- begin-user-doc -->

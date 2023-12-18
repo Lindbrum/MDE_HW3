@@ -63,53 +63,31 @@ public class CareerItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addIdPropertyDescriptor(object);
-			addStudentPropertyDescriptor(object);
+			addNamePropertyDescriptor(object);
 			addDegree_coursePropertyDescriptor(object);
+			addTotalAcquiredCfuPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Id feature.
+	 * This adds a property descriptor for the Name feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addIdPropertyDescriptor(Object object) {
+	protected void addNamePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Career_id_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Career_id_feature", "_UI_Career_type"),
-				 DaGiMa_MDE_HW3Package.Literals.CAREER__ID,
+				 getString("_UI_Career_name_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Career_name_feature", "_UI_Career_type"),
+				 DaGiMa_MDE_HW3Package.Literals.CAREER__NAME,
 				 true,
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Student feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addStudentPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Career_student_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Career_student_feature", "_UI_Career_type"),
-				 DaGiMa_MDE_HW3Package.Literals.CAREER__STUDENT,
-				 true,
-				 false,
-				 true,
-				 null,
 				 null,
 				 null));
 	}
@@ -132,6 +110,28 @@ public class CareerItemProvider
 				 false,
 				 true,
 				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Total Acquired Cfu feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addTotalAcquiredCfuPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Career_totalAcquiredCfu_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Career_totalAcquiredCfu_feature", "_UI_Career_type"),
+				 DaGiMa_MDE_HW3Package.Literals.CAREER__TOTAL_ACQUIRED_CFU,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -185,7 +185,7 @@ public class CareerItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Career)object).getId();
+		String label = ((Career)object).getName();
 		return label == null || label.length() == 0 ?
 			getString("_UI_Career_type") :
 			getString("_UI_Career_type") + " " + label;
@@ -204,7 +204,8 @@ public class CareerItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Career.class)) {
-			case DaGiMa_MDE_HW3Package.CAREER__ID:
+			case DaGiMa_MDE_HW3Package.CAREER__NAME:
+			case DaGiMa_MDE_HW3Package.CAREER__TOTAL_ACQUIRED_CFU:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case DaGiMa_MDE_HW3Package.CAREER__COURSES:
@@ -239,7 +240,7 @@ public class CareerItemProvider
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return DaGiMa_MDE_HW3EditPlugin.INSTANCE;
+		return GenEditPlugin.INSTANCE;
 	}
 
 }

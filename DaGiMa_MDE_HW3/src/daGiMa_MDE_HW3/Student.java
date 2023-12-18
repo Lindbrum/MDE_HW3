@@ -91,15 +91,15 @@ public interface Student extends User {
 	EList<ExaminationCall> getBooked_calls();
 
 	/**
-	 * Returns the value of the '<em><b>Transcripts</b></em>' reference list.
+	 * Returns the value of the '<em><b>Transcripts</b></em>' containment reference list.
 	 * The list contents are of type {@link daGiMa_MDE_HW3.Career}.
 	 * It is bidirectional and its opposite is '{@link daGiMa_MDE_HW3.Career#getStudent <em>Student</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Transcripts</em>' reference list.
+	 * @return the value of the '<em>Transcripts</em>' containment reference list.
 	 * @see daGiMa_MDE_HW3.DaGiMa_MDE_HW3Package#getStudent_Transcripts()
 	 * @see daGiMa_MDE_HW3.Career#getStudent
-	 * @model opposite="student"
+	 * @model opposite="student" containment="true"
 	 * @generated
 	 */
 	EList<Career> getTranscripts();
@@ -111,7 +111,7 @@ public interface Student extends User {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Student exams</em>' reference list.
 	 * @see daGiMa_MDE_HW3.DaGiMa_MDE_HW3Package#getStudent_Student_exams()
-	 * @model volatile="true" derived="true" ordered="false"
+	 * @model volatile="true" derived="true"
 	 *        annotation="http://www.eclipse.org/OCL/Collection nullFree='false'"
 	 * @generated
 	 */

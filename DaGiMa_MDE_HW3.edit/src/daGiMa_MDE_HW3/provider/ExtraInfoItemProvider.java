@@ -271,7 +271,7 @@ public class ExtraInfoItemProvider
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return DaGiMa_MDE_HW3EditPlugin.INSTANCE;
+		return GenEditPlugin.INSTANCE;
 	}
 
 }

@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link daGiMa_MDE_HW3.News#getPublication_date <em>Publication date</em>}</li>
  *   <li>{@link daGiMa_MDE_HW3.News#getDepartment <em>Department</em>}</li>
  *   <li>{@link daGiMa_MDE_HW3.News#getAuthor <em>Author</em>}</li>
+ *   <li>{@link daGiMa_MDE_HW3.News#getBody <em>Body</em>}</li>
  * </ul>
  *
  * @see daGiMa_MDE_HW3.DaGiMa_MDE_HW3Package#getNews()
@@ -119,5 +120,28 @@ public interface News extends EObject {
 	 * @generated
 	 */
 	void setAuthor(Professor value);
+
+	/**
+	 * Returns the value of the '<em><b>Body</b></em>' attribute.
+	 * The default value is <code>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut porta ante id turpis faucibus pharetra non nec arcu. Morbi luctus, est at tincidunt scelerisque, eros purus posuere purus, in facilisis turpis lectus et neque. Phasellus euismod accumsan turpis faucibus lobortis. In eleifend ligula non iaculis pulvinar. Nulla malesuada ac massa vulputate molestie."</code>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Body</em>' attribute.
+	 * @see #setBody(String)
+	 * @see daGiMa_MDE_HW3.DaGiMa_MDE_HW3Package#getNews_Body()
+	 * @model default="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut porta ante id turpis faucibus pharetra non nec arcu. Morbi luctus, est at tincidunt scelerisque, eros purus posuere purus, in facilisis turpis lectus et neque. Phasellus euismod accumsan turpis faucibus lobortis. In eleifend ligula non iaculis pulvinar. Nulla malesuada ac massa vulputate molestie." required="true"
+	 * @generated
+	 */
+	String getBody();
+
+	/**
+	 * Sets the value of the '{@link daGiMa_MDE_HW3.News#getBody <em>Body</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Body</em>' attribute.
+	 * @see #getBody()
+	 * @generated
+	 */
+	void setBody(String value);
 
 } // News

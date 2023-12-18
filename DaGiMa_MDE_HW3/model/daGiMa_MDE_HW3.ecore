@@ -53,11 +53,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="booked_calls" upperBound="-1"
         eType="#//ExaminationCall" eOpposite="#//ExaminationCall/booked_students"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="transcripts" upperBound="-1"
-        eType="#//Career" eOpposite="#//Career/student"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="student_exams" ordered="false"
-        upperBound="-1" eType="#//Course" volatile="true" derived="true">
+        eType="#//Career" containment="true" eOpposite="#//Career/student"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="student_exams" upperBound="-1"
+        eType="#//Course" volatile="true" derived="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
-        <details key="derivation" value="transcripts->collect(transcript|transcript.courses)->flatten()->collect(transcriptEntry|transcriptEntry.course)"/>
+        <details key="derivation" value="transcripts->collect(transcript|transcript.courses.course)->asOrderedSet()"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/OCL/Collection">
         <details key="nullFree" value="false"/>
@@ -71,6 +71,13 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="email" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="telephone" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="all_contacts" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" volatile="true"
+        derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+        <details key="derivation" value="email.concat(' - ').concat(telephone).concat(if(self.oclIsTypeOf(Professor)) then ' - '.concat(self.oclAsType(Professor).office_telephone) else '' endif)"/>
+      </eAnnotations>
+    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Department">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="website" lowerBound="1"
@@ -83,6 +90,15 @@
         defaultValueLiteral="A department" iD="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="related_news" upperBound="-1"
         eType="#//News" eOpposite="#//News/department"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="teachers" upperBound="-1"
+        eType="#//Professor" volatile="true" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+        <details key="derivation" value="offered_courses->collect(degree_course|degree_course.course_catalogue.teachers)->asOrderedSet()"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/OCL/Collection">
+        <details key="nullFree" value="false"/>
+      </eAnnotations>
+    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DegreeCourse">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
@@ -224,18 +240,21 @@
         <details key="body" value="courses->forAll(course|course.grade.size() > 0)"/>
       </eAnnotations>
     </eOperations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        volatile="true" derived="true" iD="true">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
-        <details key="derivation" value="student.matriculation_number.toString().concat(' - ').concat(degree_course.name)"/>
-      </eAnnotations>
-    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral="New transcript"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="student" lowerBound="1"
         eType="#//Student" eOpposite="#//Student/transcripts"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="degree_course" lowerBound="1"
         eType="#//DegreeCourse"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="courses" upperBound="-1"
         eType="#//PassingGrade" containment="true" eOpposite="#//PassingGrade/student"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="totalAcquiredCfu" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBigInteger"
+        volatile="true" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+        <details key="derivation" value="courses->select(transcriptEntry | transcriptEntry.grade.size() > 0)->collect(passingGrade | passingGrade.course.cfu)->sum()"/>
+      </eAnnotations>
+    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="News">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
@@ -246,6 +265,8 @@
         eOpposite="#//Department/related_news"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="author" lowerBound="1"
         eType="#//Professor" eOpposite="#//Professor/news_posted"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="body" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut porta ante id turpis faucibus pharetra non nec arcu. Morbi luctus, est at tincidunt scelerisque, eros purus posuere purus, in facilisis turpis lectus et neque. Phasellus euismod accumsan turpis faucibus lobortis. In eleifend ligula non iaculis pulvinar. Nulla malesuada ac massa vulputate molestie."/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ExtraInfo">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
