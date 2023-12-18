@@ -170,13 +170,22 @@ public interface DaGiMa_MDE_HW3Package extends EPackage {
 	int USER__ALL_CONTACTS = 4;
 
 	/**
+	 * The feature id for the '<em><b>Birth date</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USER__BIRTH_DATE = 5;
+
+	/**
 	 * The number of structural features of the '<em>User</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int USER_FEATURE_COUNT = 5;
+	int USER_FEATURE_COUNT = 6;
 
 	/**
 	 * The number of operations of the '<em>User</em>' class.
@@ -241,6 +250,15 @@ public interface DaGiMa_MDE_HW3Package extends EPackage {
 	 * @ordered
 	 */
 	int PROFESSOR__ALL_CONTACTS = USER__ALL_CONTACTS;
+
+	/**
+	 * The feature id for the '<em><b>Birth date</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROFESSOR__BIRTH_DATE = USER__BIRTH_DATE;
 
 	/**
 	 * The feature id for the '<em><b>Office telephone</b></em>' attribute.
@@ -386,6 +404,15 @@ public interface DaGiMa_MDE_HW3Package extends EPackage {
 	 * @ordered
 	 */
 	int STUDENT__ALL_CONTACTS = USER__ALL_CONTACTS;
+
+	/**
+	 * The feature id for the '<em><b>Birth date</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STUDENT__BIRTH_DATE = USER__BIRTH_DATE;
 
 	/**
 	 * The feature id for the '<em><b>Matriculation number</b></em>' attribute.
@@ -1406,6 +1433,97 @@ public interface DaGiMa_MDE_HW3Package extends EPackage {
 	int CUSTOM_ENUMERATION_OPERATION_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link daGiMa_MDE_HW3.impl.ContainerImpl <em>Container</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see daGiMa_MDE_HW3.impl.ContainerImpl
+	 * @see daGiMa_MDE_HW3.impl.DaGiMa_MDE_HW3PackageImpl#getContainer()
+	 * @generated
+	 */
+	int CONTAINER = 14;
+
+	/**
+	 * The feature id for the '<em><b>Universities</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTAINER__UNIVERSITIES = 0;
+
+	/**
+	 * The feature id for the '<em><b>Professors</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTAINER__PROFESSORS = 1;
+
+	/**
+	 * The feature id for the '<em><b>Students</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTAINER__STUDENTS = 2;
+
+	/**
+	 * The feature id for the '<em><b>Courses</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTAINER__COURSES = 3;
+
+	/**
+	 * The feature id for the '<em><b>Custom enumerations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTAINER__CUSTOM_ENUMERATIONS = 4;
+
+	/**
+	 * The feature id for the '<em><b>Extra infos</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTAINER__EXTRA_INFOS = 5;
+
+	/**
+	 * The feature id for the '<em><b>Model name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTAINER__MODEL_NAME = 6;
+
+	/**
+	 * The number of structural features of the '<em>Container</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTAINER_FEATURE_COUNT = 7;
+
+	/**
+	 * The number of operations of the '<em>Container</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTAINER_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link daGiMa_MDE_HW3.ThesisType <em>Thesis Type</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1413,7 +1531,7 @@ public interface DaGiMa_MDE_HW3Package extends EPackage {
 	 * @see daGiMa_MDE_HW3.impl.DaGiMa_MDE_HW3PackageImpl#getThesisType()
 	 * @generated
 	 */
-	int THESIS_TYPE = 14;
+	int THESIS_TYPE = 15;
 
 	/**
 	 * The meta object id for the '{@link daGiMa_MDE_HW3.CreditType <em>Credit Type</em>}' enum.
@@ -1423,7 +1541,7 @@ public interface DaGiMa_MDE_HW3Package extends EPackage {
 	 * @see daGiMa_MDE_HW3.impl.DaGiMa_MDE_HW3PackageImpl#getCreditType()
 	 * @generated
 	 */
-	int CREDIT_TYPE = 15;
+	int CREDIT_TYPE = 16;
 
 	/**
 	 * The meta object id for the '{@link daGiMa_MDE_HW3.CoursePeriod <em>Course Period</em>}' enum.
@@ -1433,7 +1551,7 @@ public interface DaGiMa_MDE_HW3Package extends EPackage {
 	 * @see daGiMa_MDE_HW3.impl.DaGiMa_MDE_HW3PackageImpl#getCoursePeriod()
 	 * @generated
 	 */
-	int COURSE_PERIOD = 16;
+	int COURSE_PERIOD = 17;
 
 	/**
 	 * The meta object id for the '{@link daGiMa_MDE_HW3.ExamType <em>Exam Type</em>}' enum.
@@ -1443,7 +1561,7 @@ public interface DaGiMa_MDE_HW3Package extends EPackage {
 	 * @see daGiMa_MDE_HW3.impl.DaGiMa_MDE_HW3PackageImpl#getExamType()
 	 * @generated
 	 */
-	int EXAM_TYPE = 17;
+	int EXAM_TYPE = 18;
 
 	/**
 	 * The meta object id for the '{@link daGiMa_MDE_HW3.MetadataType <em>Metadata Type</em>}' enum.
@@ -1453,7 +1571,7 @@ public interface DaGiMa_MDE_HW3Package extends EPackage {
 	 * @see daGiMa_MDE_HW3.impl.DaGiMa_MDE_HW3PackageImpl#getMetadataType()
 	 * @generated
 	 */
-	int METADATA_TYPE = 18;
+	int METADATA_TYPE = 19;
 
 
 	/**
@@ -1735,6 +1853,17 @@ public interface DaGiMa_MDE_HW3Package extends EPackage {
 	 * @generated
 	 */
 	EAttribute getUser_All_contacts();
+
+	/**
+	 * Returns the meta object for the attribute '{@link daGiMa_MDE_HW3.User#getBirth_date <em>Birth date</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Birth date</em>'.
+	 * @see daGiMa_MDE_HW3.User#getBirth_date()
+	 * @see #getUser()
+	 * @generated
+	 */
+	EAttribute getUser_Birth_date();
 
 	/**
 	 * Returns the meta object for class '{@link daGiMa_MDE_HW3.Department <em>Department</em>}'.
@@ -2640,6 +2769,93 @@ public interface DaGiMa_MDE_HW3Package extends EPackage {
 	EAttribute getCustomEnumeration_Values();
 
 	/**
+	 * Returns the meta object for class '{@link daGiMa_MDE_HW3.Container <em>Container</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Container</em>'.
+	 * @see daGiMa_MDE_HW3.Container
+	 * @generated
+	 */
+	EClass getContainer();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link daGiMa_MDE_HW3.Container#getUniversities <em>Universities</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Universities</em>'.
+	 * @see daGiMa_MDE_HW3.Container#getUniversities()
+	 * @see #getContainer()
+	 * @generated
+	 */
+	EReference getContainer_Universities();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link daGiMa_MDE_HW3.Container#getProfessors <em>Professors</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Professors</em>'.
+	 * @see daGiMa_MDE_HW3.Container#getProfessors()
+	 * @see #getContainer()
+	 * @generated
+	 */
+	EReference getContainer_Professors();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link daGiMa_MDE_HW3.Container#getStudents <em>Students</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Students</em>'.
+	 * @see daGiMa_MDE_HW3.Container#getStudents()
+	 * @see #getContainer()
+	 * @generated
+	 */
+	EReference getContainer_Students();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link daGiMa_MDE_HW3.Container#getCourses <em>Courses</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Courses</em>'.
+	 * @see daGiMa_MDE_HW3.Container#getCourses()
+	 * @see #getContainer()
+	 * @generated
+	 */
+	EReference getContainer_Courses();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link daGiMa_MDE_HW3.Container#getCustom_enumerations <em>Custom enumerations</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Custom enumerations</em>'.
+	 * @see daGiMa_MDE_HW3.Container#getCustom_enumerations()
+	 * @see #getContainer()
+	 * @generated
+	 */
+	EReference getContainer_Custom_enumerations();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link daGiMa_MDE_HW3.Container#getExtra_infos <em>Extra infos</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Extra infos</em>'.
+	 * @see daGiMa_MDE_HW3.Container#getExtra_infos()
+	 * @see #getContainer()
+	 * @generated
+	 */
+	EReference getContainer_Extra_infos();
+
+	/**
+	 * Returns the meta object for the attribute '{@link daGiMa_MDE_HW3.Container#getModel_name <em>Model name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Model name</em>'.
+	 * @see daGiMa_MDE_HW3.Container#getModel_name()
+	 * @see #getContainer()
+	 * @generated
+	 */
+	EAttribute getContainer_Model_name();
+
+	/**
 	 * Returns the meta object for enum '{@link daGiMa_MDE_HW3.ThesisType <em>Thesis Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2927,6 +3143,14 @@ public interface DaGiMa_MDE_HW3Package extends EPackage {
 		 * @generated
 		 */
 		EAttribute USER__ALL_CONTACTS = eINSTANCE.getUser_All_contacts();
+
+		/**
+		 * The meta object literal for the '<em><b>Birth date</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute USER__BIRTH_DATE = eINSTANCE.getUser_Birth_date();
 
 		/**
 		 * The meta object literal for the '{@link daGiMa_MDE_HW3.impl.DepartmentImpl <em>Department</em>}' class.
@@ -3619,6 +3843,72 @@ public interface DaGiMa_MDE_HW3Package extends EPackage {
 		 * @generated
 		 */
 		EAttribute CUSTOM_ENUMERATION__VALUES = eINSTANCE.getCustomEnumeration_Values();
+
+		/**
+		 * The meta object literal for the '{@link daGiMa_MDE_HW3.impl.ContainerImpl <em>Container</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see daGiMa_MDE_HW3.impl.ContainerImpl
+		 * @see daGiMa_MDE_HW3.impl.DaGiMa_MDE_HW3PackageImpl#getContainer()
+		 * @generated
+		 */
+		EClass CONTAINER = eINSTANCE.getContainer();
+
+		/**
+		 * The meta object literal for the '<em><b>Universities</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONTAINER__UNIVERSITIES = eINSTANCE.getContainer_Universities();
+
+		/**
+		 * The meta object literal for the '<em><b>Professors</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONTAINER__PROFESSORS = eINSTANCE.getContainer_Professors();
+
+		/**
+		 * The meta object literal for the '<em><b>Students</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONTAINER__STUDENTS = eINSTANCE.getContainer_Students();
+
+		/**
+		 * The meta object literal for the '<em><b>Courses</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONTAINER__COURSES = eINSTANCE.getContainer_Courses();
+
+		/**
+		 * The meta object literal for the '<em><b>Custom enumerations</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONTAINER__CUSTOM_ENUMERATIONS = eINSTANCE.getContainer_Custom_enumerations();
+
+		/**
+		 * The meta object literal for the '<em><b>Extra infos</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONTAINER__EXTRA_INFOS = eINSTANCE.getContainer_Extra_infos();
+
+		/**
+		 * The meta object literal for the '<em><b>Model name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CONTAINER__MODEL_NAME = eINSTANCE.getContainer_Model_name();
 
 		/**
 		 * The meta object literal for the '{@link daGiMa_MDE_HW3.ThesisType <em>Thesis Type</em>}' enum.

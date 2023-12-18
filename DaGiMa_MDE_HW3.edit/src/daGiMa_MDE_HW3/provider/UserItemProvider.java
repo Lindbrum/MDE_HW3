@@ -65,6 +65,7 @@ public class UserItemProvider
 			addEmailPropertyDescriptor(object);
 			addTelephonePropertyDescriptor(object);
 			addAll_contactsPropertyDescriptor(object);
+			addBirth_datePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -180,6 +181,28 @@ public class UserItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Birth date feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addBirth_datePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_User_birth_date_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_User_birth_date_feature", "_UI_User_type"),
+				 DaGiMa_MDE_HW3Package.Literals.USER__BIRTH_DATE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -211,6 +234,7 @@ public class UserItemProvider
 			case DaGiMa_MDE_HW3Package.USER__EMAIL:
 			case DaGiMa_MDE_HW3Package.USER__TELEPHONE:
 			case DaGiMa_MDE_HW3Package.USER__ALL_CONTACTS:
+			case DaGiMa_MDE_HW3Package.USER__BIRTH_DATE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

@@ -147,6 +147,13 @@ public class DaGiMa_MDE_HW3PackageImpl extends EPackageImpl implements DaGiMa_MD
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass containerEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EEnum thesisTypeEEnum = null;
 
 	/**
@@ -505,6 +512,16 @@ public class DaGiMa_MDE_HW3PackageImpl extends EPackageImpl implements DaGiMa_MD
 	@Override
 	public EAttribute getUser_All_contacts() {
 		return (EAttribute)userEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getUser_Birth_date() {
+		return (EAttribute)userEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -1353,6 +1370,86 @@ public class DaGiMa_MDE_HW3PackageImpl extends EPackageImpl implements DaGiMa_MD
 	 * @generated
 	 */
 	@Override
+	public EClass getContainer() {
+		return containerEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getContainer_Universities() {
+		return (EReference)containerEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getContainer_Professors() {
+		return (EReference)containerEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getContainer_Students() {
+		return (EReference)containerEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getContainer_Courses() {
+		return (EReference)containerEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getContainer_Custom_enumerations() {
+		return (EReference)containerEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getContainer_Extra_infos() {
+		return (EReference)containerEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getContainer_Model_name() {
+		return (EAttribute)containerEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EEnum getThesisType() {
 		return thesisTypeEEnum;
 	}
@@ -1455,6 +1552,7 @@ public class DaGiMa_MDE_HW3PackageImpl extends EPackageImpl implements DaGiMa_MD
 		createEAttribute(userEClass, USER__EMAIL);
 		createEAttribute(userEClass, USER__TELEPHONE);
 		createEAttribute(userEClass, USER__ALL_CONTACTS);
+		createEAttribute(userEClass, USER__BIRTH_DATE);
 
 		departmentEClass = createEClass(DEPARTMENT);
 		createEAttribute(departmentEClass, DEPARTMENT__WEBSITE);
@@ -1550,6 +1648,15 @@ public class DaGiMa_MDE_HW3PackageImpl extends EPackageImpl implements DaGiMa_MD
 		createEAttribute(customEnumerationEClass, CUSTOM_ENUMERATION__NAME);
 		createEAttribute(customEnumerationEClass, CUSTOM_ENUMERATION__VALUES);
 
+		containerEClass = createEClass(CONTAINER);
+		createEReference(containerEClass, CONTAINER__UNIVERSITIES);
+		createEReference(containerEClass, CONTAINER__PROFESSORS);
+		createEReference(containerEClass, CONTAINER__STUDENTS);
+		createEReference(containerEClass, CONTAINER__COURSES);
+		createEReference(containerEClass, CONTAINER__CUSTOM_ENUMERATIONS);
+		createEReference(containerEClass, CONTAINER__EXTRA_INFOS);
+		createEAttribute(containerEClass, CONTAINER__MODEL_NAME);
+
 		// Create enums
 		thesisTypeEEnum = createEEnum(THESIS_TYPE);
 		creditTypeEEnum = createEEnum(CREDIT_TYPE);
@@ -1623,11 +1730,12 @@ public class DaGiMa_MDE_HW3PackageImpl extends EPackageImpl implements DaGiMa_MD
 		initEReference(getStudent_Student_exams(), this.getCourse(), null, "student_exams", null, 0, -1, Student.class, !IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(userEClass, User.class, "User", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getUser_Name(), ecorePackage.getEString(), "name", null, 1, 1, User.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getUser_Name(), ecorePackage.getEString(), "name", null, 0, 1, User.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getUser_Surname(), ecorePackage.getEString(), "surname", null, 1, 1, User.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getUser_Email(), ecorePackage.getEString(), "email", null, 0, 1, User.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getUser_Telephone(), ecorePackage.getEString(), "telephone", null, 1, 1, User.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getUser_All_contacts(), ecorePackage.getEString(), "all_contacts", null, 1, 1, User.class, !IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEAttribute(getUser_All_contacts(), ecorePackage.getEString(), "all_contacts", null, 0, 1, User.class, !IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEAttribute(getUser_Birth_date(), ecorePackage.getEDate(), "birth_date", null, 1, 1, User.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(departmentEClass, Department.class, "Department", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDepartment_Website(), ecorePackage.getEString(), "website", null, 1, 1, Department.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1803,6 +1911,15 @@ public class DaGiMa_MDE_HW3PackageImpl extends EPackageImpl implements DaGiMa_MD
 		initEClass(customEnumerationEClass, CustomEnumeration.class, "CustomEnumeration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getCustomEnumeration_Name(), ecorePackage.getEString(), "name", null, 1, 1, CustomEnumeration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCustomEnumeration_Values(), ecorePackage.getEString(), "values", null, 1, -1, CustomEnumeration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(containerEClass, daGiMa_MDE_HW3.Container.class, "Container", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getContainer_Universities(), this.getUniversity(), null, "universities", null, 0, -1, daGiMa_MDE_HW3.Container.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getContainer_Professors(), this.getProfessor(), null, "professors", null, 0, -1, daGiMa_MDE_HW3.Container.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getContainer_Students(), this.getStudent(), null, "students", null, 0, -1, daGiMa_MDE_HW3.Container.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getContainer_Courses(), this.getCourse(), null, "courses", null, 0, -1, daGiMa_MDE_HW3.Container.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getContainer_Custom_enumerations(), this.getCustomEnumeration(), null, "custom_enumerations", null, 0, -1, daGiMa_MDE_HW3.Container.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getContainer_Extra_infos(), this.getExtraInfo(), null, "extra_infos", null, 0, -1, daGiMa_MDE_HW3.Container.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getContainer_Model_name(), ecorePackage.getEString(), "model_name", "NewModel", 1, 1, daGiMa_MDE_HW3.Container.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(thesisTypeEEnum, ThesisType.class, "ThesisType");

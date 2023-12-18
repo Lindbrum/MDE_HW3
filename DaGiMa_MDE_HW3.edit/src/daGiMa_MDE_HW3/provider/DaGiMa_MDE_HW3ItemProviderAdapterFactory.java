@@ -371,6 +371,29 @@ public class DaGiMa_MDE_HW3ItemProviderAdapterFactory extends DaGiMa_MDE_HW3Adap
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link daGiMa_MDE_HW3.Container} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ContainerItemProvider containerItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link daGiMa_MDE_HW3.Container}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createContainerAdapter() {
+		if (containerItemProvider == null) {
+			containerItemProvider = new ContainerItemProvider(this);
+		}
+
+		return containerItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -488,6 +511,7 @@ public class DaGiMa_MDE_HW3ItemProviderAdapterFactory extends DaGiMa_MDE_HW3Adap
 		if (newsItemProvider != null) newsItemProvider.dispose();
 		if (extraInfoItemProvider != null) extraInfoItemProvider.dispose();
 		if (customEnumerationItemProvider != null) customEnumerationItemProvider.dispose();
+		if (containerItemProvider != null) containerItemProvider.dispose();
 	}
 
 }

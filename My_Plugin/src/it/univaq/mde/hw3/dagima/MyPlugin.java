@@ -1,19 +1,29 @@
 package it.univaq.mde.hw3.dagima;
 
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.Calendar;
-import java.util.HashMap;
+import java.util.Collections;
 import java.util.Map;
 
-import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.common.util.Diagnostic;
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.emf.ecore.util.Diagnostician;
+import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 
 import daGiMa_MDE_HW3.Career;
+import daGiMa_MDE_HW3.Container;
 import daGiMa_MDE_HW3.Course;
 import daGiMa_MDE_HW3.CoursePeriod;
 import daGiMa_MDE_HW3.CreditType;
 import daGiMa_MDE_HW3.CustomEnumeration;
 import daGiMa_MDE_HW3.DaGiMa_MDE_HW3Factory;
+import daGiMa_MDE_HW3.DaGiMa_MDE_HW3Package;
 import daGiMa_MDE_HW3.DegreeCourse;
 import daGiMa_MDE_HW3.Department;
 import daGiMa_MDE_HW3.ExamType;
@@ -24,17 +34,15 @@ import daGiMa_MDE_HW3.News;
 import daGiMa_MDE_HW3.PassingGrade;
 import daGiMa_MDE_HW3.Professor;
 import daGiMa_MDE_HW3.Student;
+import daGiMa_MDE_HW3.Thesis;
+import daGiMa_MDE_HW3.ThesisType;
 import daGiMa_MDE_HW3.University;
 
 public class MyPlugin {
 
-	protected enum Metaclass{
-		STUDENT, PROFESSOR, UNIVERSITY, 
-	}
-	protected Map<EClass,EObject> models = new HashMap<>();
-	
-	public static void create() {
+	public static Container create() {
 		
+		//Used to set date attributes
 		Calendar calendar = Calendar.getInstance();
 		
 		//Student - Dario
@@ -44,6 +52,7 @@ public class MyPlugin {
 		studentDario.setEmail("d.d@u.it");
 		studentDario.setMatriculation_number(288615);
 		studentDario.setTelephone("+393839082312");
+		
 		
 		
 		//Professor - Alesse
@@ -66,12 +75,12 @@ public class MyPlugin {
 		
 		//Professor - Pierantonio
 		Professor profPierantonio = DaGiMa_MDE_HW3Factory.eINSTANCE.createProfessor();
-		profMuccini.setName("Alfonso");
-		profMuccini.setSurname("Pierantonio");
-		profMuccini.setEmail("a.p@u.it");
-		profMuccini.setOffice_telephone("08622380322");
-		profMuccini.setOrcid("fo2022-dfanf3-2398283");
-		profMuccini.setTelephone("+39389328721");
+		profPierantonio.setName("Alfonso");
+		profPierantonio.setSurname("Pierantonio");
+		profPierantonio.setEmail("a.p@u.it");
+		profPierantonio.setOffice_telephone("08622380322");
+		profPierantonio.setOrcid("fo2022-dfanf3-2398283");
+		profPierantonio.setTelephone("+39389328721");
 		
 		//University - L'Aquila
 		University universityLaquila = DaGiMa_MDE_HW3Factory.eINSTANCE.createUniversity();
@@ -106,13 +115,17 @@ public class MyPlugin {
 		degreeCourseCS.getLanguage().addAll(Arrays.asList("Italian"));
 		degreeCourseCS.setReference_year(2020);
 		
+		
+		
 		//Custom Enumeration: Degree types
 		CustomEnumeration customEnumDegreeTypes = DaGiMa_MDE_HW3Factory.eINSTANCE.createCustomEnumeration();
+		
 		customEnumDegreeTypes.setName("DegreeType");
 		customEnumDegreeTypes.getValues().addAll(Arrays.asList("BACHELOR_DEGREE", "MASTER_DEGREE", "POST_GRADUATE", "PHD"));
 		
 		//Extra info - DegreeType: BACHELOR_DEGREE
 		ExtraInfo extraInfoDegreeTypeBachelor = DaGiMa_MDE_HW3Factory.eINSTANCE.createExtraInfo();
+		
 		extraInfoDegreeTypeBachelor.setEnum(customEnumDegreeTypes);
 		extraInfoDegreeTypeBachelor.setLower_multiplicity(1);
 		extraInfoDegreeTypeBachelor.setHigher_multiplicity(1);
@@ -137,6 +150,7 @@ public class MyPlugin {
 		
 		//Extra info - DegreeType: MASTER_DEGREE
 		ExtraInfo extraInfoDegreeTypeMaster = DaGiMa_MDE_HW3Factory.eINSTANCE.createExtraInfo();
+		
 		extraInfoDegreeTypeMaster.setEnum(customEnumDegreeTypes);
 		extraInfoDegreeTypeMaster.setLower_multiplicity(1);
 		extraInfoDegreeTypeMaster.setHigher_multiplicity(1);
@@ -161,6 +175,7 @@ public class MyPlugin {
 		
 		//Extra info - DegreeType: POST_GRADUATE
 		ExtraInfo extraInfoDegreeTypePostGraduate = DaGiMa_MDE_HW3Factory.eINSTANCE.createExtraInfo();
+		
 		extraInfoDegreeTypePostGraduate.setEnum(customEnumDegreeTypes);
 		extraInfoDegreeTypePostGraduate.setLower_multiplicity(1);
 		extraInfoDegreeTypePostGraduate.setHigher_multiplicity(1);
@@ -171,11 +186,13 @@ public class MyPlugin {
 		
 		//Custom Enumeration: post graduate level
 		CustomEnumeration customEnumPostGraduateLevels = DaGiMa_MDE_HW3Factory.eINSTANCE.createCustomEnumeration();
+		
 		customEnumPostGraduateLevels.setName("PostGraduateLevel");
 		customEnumPostGraduateLevels.getValues().addAll(Arrays.asList("FIRST", "SECOND"));
 		
 		//Extra info - PostGraduateLevel: FIRST
 		ExtraInfo extraInfoPostGraduateLevelFirst = DaGiMa_MDE_HW3Factory.eINSTANCE.createExtraInfo();
+		
 		extraInfoPostGraduateLevelFirst.setEnum(customEnumPostGraduateLevels);
 		extraInfoPostGraduateLevelFirst.setLower_multiplicity(1);
 		extraInfoPostGraduateLevelFirst.setHigher_multiplicity(1);
@@ -186,9 +203,21 @@ public class MyPlugin {
 		//Add the degree type info and the level to the post-graduate
 		degreeCourseWT.getExtra_info().addAll(Arrays.asList(extraInfoDegreeTypePostGraduate, extraInfoPostGraduateLevelFirst));
 		
+		//Add enrolled courses to student
+		studentDario.getEnrolled_courses().addAll(Arrays.asList(degreeCourseCS, degreeCourseASE));
+		
+		//Thesis - Dario -> Computer Science
+		Thesis thesisDarioCS = DaGiMa_MDE_HW3Factory.eINSTANCE.createThesis();
+		thesisDarioCS.setDegree_course(degreeCourseCS);
+		thesisDarioCS.setStudent(studentDario);
+		thesisDarioCS.setSupervisor(profPierantonio);
+		thesisDarioCS.setTitle("A thesis on lorem ipsum yadada");
+		thesisDarioCS.setType(ThesisType.COMPILATION);
+		
 		//Course - Software Engineering
 		Course courseSE = DaGiMa_MDE_HW3Factory.eINSTANCE.createCourse();
-		courseSE.setName("Software Engineering 20/21");
+		
+		courseSE.setName("Software Engineering 20-21");
 		courseSE.setCfu(15);
 		courseSE.setCode("F1000");
 		courseSE.setCredit_type(CreditType.B);
@@ -206,7 +235,7 @@ public class MyPlugin {
 		examCallSE1.setCourse(courseSE);
 		calendar.set(2021, 0, 14);
 		examCallSE1.setDate(calendar.getTime());
-		examCallSE1.setDescription("First winter call for Software Engineering 20/21");
+		examCallSE1.setDescription("First winter call for Software Engineering 20-21");
 		examCallSE1.setType(ExamType.PROJECT);
 		
 		//Examination call - Software Engineering #2
@@ -216,7 +245,7 @@ public class MyPlugin {
 		examCallSE2.setCourse(courseSE);
 		calendar.set(2021, 0, 28);
 		examCallSE2.setDate(calendar.getTime());
-		examCallSE2.setDescription("Second winter call for Software Engineering 20/21");
+		examCallSE2.setDescription("Second winter call for Software Engineering 20-21");
 		examCallSE2.setType(ExamType.PROJECT);
 		
 		//Examination call - Software Engineering #3
@@ -226,15 +255,15 @@ public class MyPlugin {
 		examCallSE3.setCourse(courseSE);
 		calendar.set(2021, 1, 11);
 		examCallSE3.setDate(calendar.getTime());
-		examCallSE3.setDescription("Third winter call for Software Engineering 20/21");
+		examCallSE3.setDescription("Third winter call for Software Engineering 20-21");
 		examCallSE3.setType(ExamType.PROJECT);
 		//Add student booking
 		examCallSE3.getBooked_students().addAll(Arrays.asList(studentDario));
 		
-		
 		//Course - Model-driven Engineering
 		Course courseMDE = DaGiMa_MDE_HW3Factory.eINSTANCE.createCourse();
-		courseMDE.setName("Model-driven Engineering 23/24");
+		
+		courseMDE.setName("Model-driven Engineering 23-24");
 		courseMDE.setCfu(15);
 		courseMDE.setCode("F1100");
 		courseMDE.setCredit_type(CreditType.B);
@@ -251,7 +280,7 @@ public class MyPlugin {
 		examCallMDE1.setCourse(courseMDE);
 		calendar.set(2024, 0, 18);
 		examCallMDE1.setDate(calendar.getTime());
-		examCallMDE1.setDescription("First winter call for Model-driven Engineering 23/24");
+		examCallMDE1.setDescription("First winter call for Model-driven Engineering 23-24");
 		examCallMDE1.setType(ExamType.PROJECT);
 		//Add student booking
 		examCallMDE1.getBooked_students().addAll(Arrays.asList(studentDario));
@@ -263,7 +292,7 @@ public class MyPlugin {
 		examCallMDE2.setCourse(courseMDE);
 		calendar.set(2024, 1, 1);
 		examCallMDE2.setDate(calendar.getTime());
-		examCallMDE2.setDescription("Second winter call for Model-driven Engineering 23/24");
+		examCallMDE2.setDescription("Second winter call for Model-driven Engineering 23-24");
 		examCallMDE2.setType(ExamType.PROJECT);
 		
 		//Examination call - Model-driven Engineering #3
@@ -273,8 +302,9 @@ public class MyPlugin {
 		examCallMDE3.setCourse(courseMDE);
 		calendar.set(2024, 1, 15);
 		examCallMDE3.setDate(calendar.getTime());
-		examCallMDE3.setDescription("Third winter call for Model-driven Engineering 23/24");
+		examCallMDE3.setDescription("Third winter call for Model-driven Engineering 23-24");
 		examCallMDE3.setType(ExamType.PROJECT);
+		
 		
 		//Career - Dario -> Computer Science
 		Career careerDarioCS = DaGiMa_MDE_HW3Factory.eINSTANCE.createCareer();
@@ -302,58 +332,71 @@ public class MyPlugin {
 		passingGradeDarioMDE.setGrade("");
 		passingGradeDarioMDE.setStudent(careerDarioASE);
 		
+		//Root
+		Container container = DaGiMa_MDE_HW3Factory.eINSTANCE.createContainer();
+		container.setModel_name(MODEL_1);
+		container.getCourses().addAll(Arrays.asList(courseSE, courseMDE));
+		container.getCustom_enumerations().addAll(Arrays.asList(customEnumDegreeTypes, customEnumPostGraduateLevels));
+		container.getExtra_infos().addAll(Arrays.asList(extraInfoDegreeTypeMaster, extraInfoDegreeTypePostGraduate, extraInfoPostGraduateLevelFirst));
+		container.getProfessors().addAll(Arrays.asList(profAlesse, profMuccini, profPierantonio));
+		container.getStudents().addAll(Arrays.asList(studentDario));
+		container.getUniversities().addAll(Arrays.asList(universityLaquila));
+		
+		return container;
 	}
+	
+	
+	public final static String FILENAME_TEMPLATE = "%s.xmi";
+	public final static String MODEL_1 = "Instance1";
+	public final static String MODEL_2 = "Instance2";
 
-//	public final static String FILENAME = "testLiveMDE.xmi";
-//
-//	public static Diagnostic validate(Library wm) {
-//		return Diagnostician.INSTANCE.validate(wm);
-//	}
+	public static Diagnostic validate(EObject model) {
+		return Diagnostician.INSTANCE.validate(model);
+	}
 
 	public static void main(String[] args) {
-		create();
-//		serializeModel(app, FILENAME);
-//		Library libl = load(FILENAME);
-//		
-//		Diagnostic d = validate(libl);
-//		if(d.getSeverity() != Diagnostic.ERROR)
-//			System.out.println("the model is valid");
-//		else
-//			System.out.println("The model is not invalid");
-//		System.out.println(app.getBooks().size());
-//		app.getBooks().forEach(z -> System.out.println(z.getName()));
+		Container root = create();
+		serializeModel(root, FILENAME_TEMPLATE);
+		Container importedModel = load(FILENAME_TEMPLATE.formatted(MODEL_1));
+		
+		Diagnostic d = validate(importedModel);
+		if(d.getSeverity() != Diagnostic.ERROR)
+			System.out.println("the model is valid.");
+		else
+			System.err.println("The model is not valid: /n/n"+ d.getMessage());
 	}
 
-//	public static Library load(String fileName) {
-//		EPackage.Registry.INSTANCE.put(JuriPackage.eNS_URI, JuriPackage.eINSTANCE);
-//		ResourceSet resSet = new ResourceSetImpl();
-//		Resource resource = resSet.getResource(URI.createURI(fileName), true);
-//		// Get the first model element and cast it to the right type, in my
-//		// example everything is hierarchical included in this first node
-//		Library myWeb = (Library) resource.getContents().get(0);
-//		System.out.println(myWeb);
-//		return myWeb;
-//	}
-//
-//	public static void serializeModel(Library wm, String fileName) {
-//		Resource.Factory.Registry reg = Resource.Factory.Registry.INSTANCE;
-//		Map<String, Object> m = reg.getExtensionToFactoryMap();
-//		m.put("xmi", new XMIResourceFactoryImpl());
-//
-//		// Obtain a new resource set
-//		ResourceSet resSet = new ResourceSetImpl();
-//
-//		// create a resource
-//		Resource resource = resSet.createResource(URI.createURI(fileName));
-//		resource.getContents().add(wm);
-//
-//		// now save the content.
-//		try {
-//			resource.save(Collections.EMPTY_MAP);
-//		} catch (IOException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-//	}
-
+	public static Container load(String fileName) {
+		EPackage.Registry.INSTANCE.put(DaGiMa_MDE_HW3Package.eNS_URI, DaGiMa_MDE_HW3Package.eINSTANCE);
+		ResourceSet resSet = new ResourceSetImpl();
+		Resource resource = resSet.getResource(URI.createURI(fileName), true);
+		// Get the first model element and cast it to the right type, in my
+		// example everything is hierarchical included in this first node
+		Container myModel = (Container) resource.getContents().get(0);
+		System.out.println(myModel);
+		return myModel;
+	}
+	
+	public static void serializeModel(Container wm, String fileNameTemplate) {
+		Resource.Factory.Registry reg = Resource.Factory.Registry.INSTANCE;
+		Map<String, Object> m = reg.getExtensionToFactoryMap();
+		m.put("xmi", new XMIResourceFactoryImpl());
+	
+		// Obtain a new resource set
+		ResourceSet resSet = new ResourceSetImpl();
+	
+		String fileName = fileNameTemplate.formatted(wm.getModel_name());
+		
+		// create a resource
+		Resource resource = resSet.createResource(URI.createURI(fileName));
+		resource.getContents().add(wm);
+	
+		// now save the content.
+		try {
+			resource.save(Collections.EMPTY_MAP);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 }

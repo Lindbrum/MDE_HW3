@@ -63,6 +63,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daGiMa_MDE_HW3.ecore#//User/email"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daGiMa_MDE_HW3.ecore#//User/telephone"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daGiMa_MDE_HW3.ecore#//User/all_contacts"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daGiMa_MDE_HW3.ecore#//User/birth_date"/>
     </genClasses>
     <genClasses ecoreClass="daGiMa_MDE_HW3.ecore#//Department">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daGiMa_MDE_HW3.ecore#//Department/website"/>
@@ -147,6 +148,15 @@
     <genClasses ecoreClass="daGiMa_MDE_HW3.ecore#//CustomEnumeration">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daGiMa_MDE_HW3.ecore#//CustomEnumeration/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daGiMa_MDE_HW3.ecore#//CustomEnumeration/values"/>
+    </genClasses>
+    <genClasses ecoreClass="daGiMa_MDE_HW3.ecore#//Container">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference daGiMa_MDE_HW3.ecore#//Container/universities"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference daGiMa_MDE_HW3.ecore#//Container/professors"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference daGiMa_MDE_HW3.ecore#//Container/students"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference daGiMa_MDE_HW3.ecore#//Container/courses"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference daGiMa_MDE_HW3.ecore#//Container/custom_enumerations"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference daGiMa_MDE_HW3.ecore#//Container/extra_infos"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daGiMa_MDE_HW3.ecore#//Container/model_name"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

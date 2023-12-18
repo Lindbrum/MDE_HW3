@@ -70,6 +70,7 @@ public class DaGiMa_MDE_HW3FactoryImpl extends EFactoryImpl implements DaGiMa_MD
 			case DaGiMa_MDE_HW3Package.NEWS: return createNews();
 			case DaGiMa_MDE_HW3Package.EXTRA_INFO: return createExtraInfo();
 			case DaGiMa_MDE_HW3Package.CUSTOM_ENUMERATION: return createCustomEnumeration();
+			case DaGiMa_MDE_HW3Package.CONTAINER: return createContainer();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -262,6 +263,17 @@ public class DaGiMa_MDE_HW3FactoryImpl extends EFactoryImpl implements DaGiMa_MD
 	public CustomEnumeration createCustomEnumeration() {
 		CustomEnumerationImpl customEnumeration = new CustomEnumerationImpl();
 		return customEnumeration;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public daGiMa_MDE_HW3.Container createContainer() {
+		ContainerImpl container = new ContainerImpl();
+		return container;
 	}
 
 	/**

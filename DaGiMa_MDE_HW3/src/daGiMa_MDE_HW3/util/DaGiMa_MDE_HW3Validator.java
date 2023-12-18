@@ -201,6 +201,8 @@ public class DaGiMa_MDE_HW3Validator extends EObjectValidator {
 				return validateExtraInfo((ExtraInfo)value, diagnostics, context);
 			case DaGiMa_MDE_HW3Package.CUSTOM_ENUMERATION:
 				return validateCustomEnumeration((CustomEnumeration)value, diagnostics, context);
+			case DaGiMa_MDE_HW3Package.CONTAINER:
+				return validateContainer((Container)value, diagnostics, context);
 			case DaGiMa_MDE_HW3Package.THESIS_TYPE:
 				return validateThesisType((ThesisType)value, diagnostics, context);
 			case DaGiMa_MDE_HW3Package.CREDIT_TYPE:
@@ -515,6 +517,15 @@ public class DaGiMa_MDE_HW3Validator extends EObjectValidator {
 	 */
 	public boolean validateCustomEnumeration(CustomEnumeration customEnumeration, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(customEnumeration, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateContainer(Container container, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(container, diagnostics, context);
 	}
 
 	/**

@@ -7,6 +7,7 @@ import daGiMa_MDE_HW3.DaGiMa_MDE_HW3Tables;
 import daGiMa_MDE_HW3.Professor;
 import daGiMa_MDE_HW3.User;
 
+import java.util.Date;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
@@ -33,6 +34,7 @@ import org.eclipse.ocl.pivot.utilities.PivotUtil;
  *   <li>{@link daGiMa_MDE_HW3.impl.UserImpl#getEmail <em>Email</em>}</li>
  *   <li>{@link daGiMa_MDE_HW3.impl.UserImpl#getTelephone <em>Telephone</em>}</li>
  *   <li>{@link daGiMa_MDE_HW3.impl.UserImpl#getAll_contacts <em>All contacts</em>}</li>
+ *   <li>{@link daGiMa_MDE_HW3.impl.UserImpl#getBirth_date <em>Birth date</em>}</li>
  * </ul>
  *
  * @generated
@@ -127,6 +129,26 @@ public abstract class UserImpl extends MinimalEObjectImpl.Container implements U
 	 * @ordered
 	 */
 	protected static final String ALL_CONTACTS_EDEFAULT = null;
+
+	/**
+	 * The default value of the '{@link #getBirth_date() <em>Birth date</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getBirth_date()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final Date BIRTH_DATE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getBirth_date() <em>Birth date</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getBirth_date()
+	 * @generated
+	 * @ordered
+	 */
+	protected Date birth_date = BIRTH_DATE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -297,6 +319,29 @@ public abstract class UserImpl extends MinimalEObjectImpl.Container implements U
 	 * @generated
 	 */
 	@Override
+	public Date getBirth_date() {
+		return birth_date;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setBirth_date(Date newBirth_date) {
+		Date oldBirth_date = birth_date;
+		birth_date = newBirth_date;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DaGiMa_MDE_HW3Package.USER__BIRTH_DATE, oldBirth_date, birth_date));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case DaGiMa_MDE_HW3Package.USER__NAME:
@@ -309,6 +354,8 @@ public abstract class UserImpl extends MinimalEObjectImpl.Container implements U
 				return getTelephone();
 			case DaGiMa_MDE_HW3Package.USER__ALL_CONTACTS:
 				return getAll_contacts();
+			case DaGiMa_MDE_HW3Package.USER__BIRTH_DATE:
+				return getBirth_date();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -335,6 +382,9 @@ public abstract class UserImpl extends MinimalEObjectImpl.Container implements U
 				return;
 			case DaGiMa_MDE_HW3Package.USER__ALL_CONTACTS:
 				setAll_contacts((String)newValue);
+				return;
+			case DaGiMa_MDE_HW3Package.USER__BIRTH_DATE:
+				setBirth_date((Date)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -363,6 +413,9 @@ public abstract class UserImpl extends MinimalEObjectImpl.Container implements U
 			case DaGiMa_MDE_HW3Package.USER__ALL_CONTACTS:
 				setAll_contacts(ALL_CONTACTS_EDEFAULT);
 				return;
+			case DaGiMa_MDE_HW3Package.USER__BIRTH_DATE:
+				setBirth_date(BIRTH_DATE_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -385,6 +438,8 @@ public abstract class UserImpl extends MinimalEObjectImpl.Container implements U
 				return TELEPHONE_EDEFAULT == null ? telephone != null : !TELEPHONE_EDEFAULT.equals(telephone);
 			case DaGiMa_MDE_HW3Package.USER__ALL_CONTACTS:
 				return ALL_CONTACTS_EDEFAULT == null ? getAll_contacts() != null : !ALL_CONTACTS_EDEFAULT.equals(getAll_contacts());
+			case DaGiMa_MDE_HW3Package.USER__BIRTH_DATE:
+				return BIRTH_DATE_EDEFAULT == null ? birth_date != null : !BIRTH_DATE_EDEFAULT.equals(birth_date);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -407,6 +462,8 @@ public abstract class UserImpl extends MinimalEObjectImpl.Container implements U
 		result.append(email);
 		result.append(", telephone: ");
 		result.append(telephone);
+		result.append(", birth_date: ");
+		result.append(birth_date);
 		result.append(')');
 		return result.toString();
 	}
