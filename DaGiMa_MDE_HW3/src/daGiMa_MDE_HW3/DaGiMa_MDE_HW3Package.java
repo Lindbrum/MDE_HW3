@@ -460,22 +460,13 @@ public interface DaGiMa_MDE_HW3Package extends EPackage {
 	int STUDENT__TRANSCRIPTS = USER_FEATURE_COUNT + 4;
 
 	/**
-	 * The feature id for the '<em><b>Student exams</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STUDENT__STUDENT_EXAMS = USER_FEATURE_COUNT + 5;
-
-	/**
 	 * The number of structural features of the '<em>Student</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STUDENT_FEATURE_COUNT = USER_FEATURE_COUNT + 6;
+	int STUDENT_FEATURE_COUNT = USER_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of operations of the '<em>Student</em>' class.
@@ -542,22 +533,13 @@ public interface DaGiMa_MDE_HW3Package extends EPackage {
 	int DEPARTMENT__RELATED_NEWS = 4;
 
 	/**
-	 * The feature id for the '<em><b>Teachers</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DEPARTMENT__TEACHERS = 5;
-
-	/**
 	 * The number of structural features of the '<em>Department</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DEPARTMENT_FEATURE_COUNT = 6;
+	int DEPARTMENT_FEATURE_COUNT = 5;
 
 	/**
 	 * The number of operations of the '<em>Department</em>' class.
@@ -1779,17 +1761,6 @@ public interface DaGiMa_MDE_HW3Package extends EPackage {
 	EReference getStudent_Transcripts();
 
 	/**
-	 * Returns the meta object for the reference list '{@link daGiMa_MDE_HW3.Student#getStudent_exams <em>Student exams</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Student exams</em>'.
-	 * @see daGiMa_MDE_HW3.Student#getStudent_exams()
-	 * @see #getStudent()
-	 * @generated
-	 */
-	EReference getStudent_Student_exams();
-
-	/**
 	 * Returns the meta object for class '{@link daGiMa_MDE_HW3.User <em>User</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1929,17 +1900,6 @@ public interface DaGiMa_MDE_HW3Package extends EPackage {
 	 * @generated
 	 */
 	EReference getDepartment_Related_news();
-
-	/**
-	 * Returns the meta object for the reference list '{@link daGiMa_MDE_HW3.Department#getTeachers <em>Teachers</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Teachers</em>'.
-	 * @see daGiMa_MDE_HW3.Department#getTeachers()
-	 * @see #getDepartment()
-	 * @generated
-	 */
-	EReference getDepartment_Teachers();
 
 	/**
 	 * Returns the meta object for class '{@link daGiMa_MDE_HW3.DegreeCourse <em>Degree Course</em>}'.
@@ -3087,14 +3047,6 @@ public interface DaGiMa_MDE_HW3Package extends EPackage {
 		EReference STUDENT__TRANSCRIPTS = eINSTANCE.getStudent_Transcripts();
 
 		/**
-		 * The meta object literal for the '<em><b>Student exams</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference STUDENT__STUDENT_EXAMS = eINSTANCE.getStudent_Student_exams();
-
-		/**
 		 * The meta object literal for the '{@link daGiMa_MDE_HW3.impl.UserImpl <em>User</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3201,14 +3153,6 @@ public interface DaGiMa_MDE_HW3Package extends EPackage {
 		 * @generated
 		 */
 		EReference DEPARTMENT__RELATED_NEWS = eINSTANCE.getDepartment_Related_news();
-
-		/**
-		 * The meta object literal for the '<em><b>Teachers</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference DEPARTMENT__TEACHERS = eINSTANCE.getDepartment_Teachers();
 
 		/**
 		 * The meta object literal for the '{@link daGiMa_MDE_HW3.impl.DegreeCourseImpl <em>Degree Course</em>}' class.

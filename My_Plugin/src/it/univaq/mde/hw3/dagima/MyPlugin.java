@@ -45,10 +45,13 @@ public class MyPlugin {
 		//Used to set date attributes
 		Calendar calendar = Calendar.getInstance();
 		
+		calendar.clear();
 		//Student - Dario
 		Student studentDario = DaGiMa_MDE_HW3Factory.eINSTANCE.createStudent();
 		studentDario.setName("Dario");
 		studentDario.setSurname("D'Ercole");
+		calendar.set(1995, 11, 26);
+		studentDario.setBirth_date(calendar.getTime());
 		studentDario.setEmail("d.d@u.it");
 		studentDario.setMatriculation_number(288615);
 		studentDario.setTelephone("+393839082312");
@@ -56,27 +59,36 @@ public class MyPlugin {
 		
 		
 		//Professor - Alesse
+		calendar.clear();
 		Professor profAlesse = DaGiMa_MDE_HW3Factory.eINSTANCE.createProfessor();
 		profAlesse.setName("Edoardo");
 		profAlesse.setSurname("Alesse");
+		calendar.set(1995, 11, 26);
+		profAlesse.setBirth_date(calendar.getTime());
 		profAlesse.setEmail("e.a@u.it");
 		profAlesse.setOffice_telephone("08622380320");
 		profAlesse.setOrcid("fo2030-dfidf3-2398293");
 		profAlesse.setTelephone("+3937478374423");
 		
+		calendar.clear();
 		//Professor - Muccini
 		Professor profMuccini = DaGiMa_MDE_HW3Factory.eINSTANCE.createProfessor();
 		profMuccini.setName("Henry");
 		profMuccini.setSurname("Muccini");
+		calendar.set(1995, 11, 26);
+		profMuccini.setBirth_date(calendar.getTime());
 		profMuccini.setEmail("h.m@u.it");
 		profMuccini.setOffice_telephone("08622380321");
 		profMuccini.setOrcid("fo2033-dfiaf3-2398283");
 		profMuccini.setTelephone("+39328278332");
 		
+		calendar.clear();
 		//Professor - Pierantonio
 		Professor profPierantonio = DaGiMa_MDE_HW3Factory.eINSTANCE.createProfessor();
 		profPierantonio.setName("Alfonso");
 		profPierantonio.setSurname("Pierantonio");
+		calendar.set(1995, 11, 26);
+		profPierantonio.setBirth_date(calendar.getTime());
 		profPierantonio.setEmail("a.p@u.it");
 		profPierantonio.setOffice_telephone("08622380322");
 		profPierantonio.setOrcid("fo2022-dfanf3-2398283");
@@ -95,7 +107,7 @@ public class MyPlugin {
 		
 		//News - for DISIM by Henry Muccini
 		News newsDisimMuccini = DaGiMa_MDE_HW3Factory.eINSTANCE.createNews();
-		newsDisimMuccini.setTitle("This is a title");
+		newsDisimMuccini.setTitle("This_is_a_title");
 		newsDisimMuccini.setAuthor(profMuccini);
 		newsDisimMuccini.setBody("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean rhoncus lacus metus, vel suscipit libero aliquam mattis. Mauris dignissim id lorem vitae rutrum. Donec nec ipsum ut metus aliquam placerat dapibus sed dui. Donec facilisis varius sollicitudin. Aenean sem nisl, posuere non tincidunt eget, viverra a neque.");
 		newsDisimMuccini.setDepartment(departmentDisim);
@@ -345,72 +357,96 @@ public class MyPlugin {
 		return container;
 	}
 
-	public static void create_2() {
+	public static Container create_2() {
 		
-		//Calendar calendar = Calendar.getInstance();
+		Calendar calendar = Calendar.getInstance();
 		
+		calendar.clear();
 		//Student - Giovanni
 		Student studentGiovanni = DaGiMa_MDE_HW3Factory.eINSTANCE.createStudent();
 		studentGiovanni.setName("Giovanni");
 		studentGiovanni.setSurname("Rossi");
+		calendar.set(1995, 11, 26);
+		studentGiovanni.setBirth_date(calendar.getTime());
 		studentGiovanni.setEmail("gr@u.it");
 		studentGiovanni.setMatriculation_number(100100);
 		studentGiovanni.setTelephone("+393348754120");
 		
+		calendar.clear();
 		//Student - Mattia
 		Student studentMattia = DaGiMa_MDE_HW3Factory.eINSTANCE.createStudent();
 		studentMattia.setName("Mattia");
 		studentMattia.setSurname("Pino");
+		calendar.set(1995, 11, 26);
+		studentMattia.setBirth_date(calendar.getTime());
 		studentMattia.setEmail("mp@u.it");
 		studentMattia.setMatriculation_number(100101);
 		studentMattia.setTelephone("+393458741102");
 		
+		calendar.clear();
 		//Student - Federica
 		Student studentFederica = DaGiMa_MDE_HW3Factory.eINSTANCE.createStudent();
 		studentFederica.setName("Federica");
 		studentFederica.setSurname("Verdi");
+		calendar.set(1995, 11, 26);
+		studentFederica.setBirth_date(calendar.getTime());
 		studentFederica.setEmail("fv@u.it");
 		studentFederica.setMatriculation_number(100102);
 		studentFederica.setTelephone("+393588741259");
-				
+		
+		calendar.clear();
 		//Student - Nicola
 		Student studentNicola = DaGiMa_MDE_HW3Factory.eINSTANCE.createStudent();
 		studentNicola.setName("Nicola");
 		studentNicola.setSurname("Klauss");
+		calendar.set(1995, 11, 26);
+		studentNicola.setBirth_date(calendar.getTime());
 		studentNicola.setEmail("nk@u.it");
 		studentNicola.setMatriculation_number(100103);
 		studentNicola.setTelephone("+393878744714");
 		
+		calendar.clear();
 		//Student - Giuseppe
 		Student studentGiuseppe = DaGiMa_MDE_HW3Factory.eINSTANCE.createStudent();
 		studentGiuseppe.setName("Giuseppe");
 		studentGiuseppe.setSurname("Bianchi");
+		calendar.set(1995, 11, 26);
+		studentGiuseppe.setBirth_date(calendar.getTime());
 		studentGiuseppe.setEmail("gb@u.it");
 		studentGiuseppe.setMatriculation_number(100104);
 		studentGiuseppe.setTelephone("+393214569874");
-
+	
+		calendar.clear();
 		//Professor - Davide
 		Professor profDavide = DaGiMa_MDE_HW3Factory.eINSTANCE.createProfessor();
 		profDavide.setName("Davide");
 		profDavide.setSurname("D'Ettore");
+		calendar.set(1995, 11, 26);
+		profDavide.setBirth_date(calendar.getTime());
 		profDavide.setEmail("dd@p.u.it");
 		profDavide.setOffice_telephone("08627896541");
 		profDavide.setOrcid("fo2077-perdf3-147852");
 		profDavide.setTelephone("+393654789541");
 		
+		calendar.clear();
 		//Professor - Vittorio
 		Professor profVittorio = DaGiMa_MDE_HW3Factory.eINSTANCE.createProfessor();
 		profVittorio.setName("Vittorio");
 		profVittorio.setSurname("Melassi");
+		calendar.set(1995, 11, 26);
+		profVittorio.setBirth_date(calendar.getTime());
 		profVittorio.setEmail("vm@p.u.it");
 		profVittorio.setOffice_telephone("08627896541");
 		profVittorio.setOrcid("er5877-aswef4-784757");
 		profVittorio.setTelephone("+393541414102");
 		
+		calendar.clear();
 		//Professor - Alesse
 		Professor profAlesse = DaGiMa_MDE_HW3Factory.eINSTANCE.createProfessor();
 		profAlesse.setName("Edoardo");
 		profAlesse.setSurname("Alesse");
+		calendar.set(1995, 11, 26);
+		profAlesse.setBirth_date(calendar.getTime());
 		profAlesse.setEmail("e.a@u.it");
 		profAlesse.setOffice_telephone("08622380320");
 		profAlesse.setOrcid("fo2030-dfidf3-2398293");
@@ -444,6 +480,7 @@ public class MyPlugin {
 		phdCS.getLanguage().addAll(Arrays.asList("English"));
 		phdCS.setReference_year(2023);
 		
+		
 		//PhD - PhD in Analysis
 		DegreeCourse phdAN = DaGiMa_MDE_HW3Factory.eINSTANCE.createDegreeCourse();
 		phdAN.setName("PhD in Analysis");
@@ -467,6 +504,12 @@ public class MyPlugin {
 		phdAI.setDuration(1);
 		phdAI.getLanguage().addAll(Arrays.asList("English"));
 		phdAI.setReference_year(2023);
+		
+		studentFederica.getEnrolled_courses().addAll(Arrays.asList(phdAI));
+		studentGiovanni.getEnrolled_courses().addAll(Arrays.asList(phdAN));
+		studentGiuseppe.getEnrolled_courses().addAll(Arrays.asList(phdCS));
+		studentMattia.getEnrolled_courses().addAll(Arrays.asList(phdAI));
+		studentNicola.getEnrolled_courses().addAll(Arrays.asList(phdCS));
 				
 		//Extra info - DegreeType: PHD
 		ExtraInfo extraInfoDegreeTypePhd = DaGiMa_MDE_HW3Factory.eINSTANCE.createExtraInfo();
@@ -477,6 +520,46 @@ public class MyPlugin {
 		extraInfoDegreeTypePhd.setValue("PHD");
 		extraInfoDegreeTypePhd.setName(extraInfoDegreeTypePhd.getEnum().getName()+"_"+extraInfoDegreeTypePhd.getValue());
 		
+		//Extra info - ResearchField: AI
+		ExtraInfo extraInfoResearchFieldAI = DaGiMa_MDE_HW3Factory.eINSTANCE.createExtraInfo();
+		extraInfoResearchFieldAI.setLower_multiplicity(1);
+		extraInfoResearchFieldAI.setHigher_multiplicity(1);
+		extraInfoResearchFieldAI.setType(MetadataType.STRING);
+		extraInfoResearchFieldAI.setValue("Artificial Intelligence");
+		extraInfoResearchFieldAI.setName("ResearchField_"+extraInfoResearchFieldAI.getValue());
+		
+		//Extra info - ResearchField: AN
+		ExtraInfo extraInfoResearchFieldAN = DaGiMa_MDE_HW3Factory.eINSTANCE.createExtraInfo();
+		extraInfoResearchFieldAN.setLower_multiplicity(1);
+		extraInfoResearchFieldAN.setHigher_multiplicity(1);
+		extraInfoResearchFieldAN.setType(MetadataType.STRING);
+		extraInfoResearchFieldAN.setValue("Analysis");
+		extraInfoResearchFieldAN.setName("ResearchField_"+extraInfoResearchFieldAN.getValue());
+		
+		//Extra info - ResearchField: CS
+		ExtraInfo extraInfoResearchFieldCS = DaGiMa_MDE_HW3Factory.eINSTANCE.createExtraInfo();
+		extraInfoResearchFieldCS.setLower_multiplicity(1);
+		extraInfoResearchFieldCS.setHigher_multiplicity(1);
+		extraInfoResearchFieldCS.setType(MetadataType.STRING);
+		extraInfoResearchFieldCS.setValue("Computer Science");
+		extraInfoResearchFieldCS.setName("ResearchField_"+extraInfoResearchFieldCS.getValue());
+		
+		//Add extra infos to phd
+		phdAI.getExtra_info().addAll(Arrays.asList(extraInfoDegreeTypePhd, extraInfoResearchFieldAI));
+		phdAN.getExtra_info().addAll(Arrays.asList(extraInfoDegreeTypePhd, extraInfoResearchFieldAN));
+		phdCS.getExtra_info().addAll(Arrays.asList(extraInfoDegreeTypePhd, extraInfoResearchFieldCS));
+		
+		//Root
+		Container container = DaGiMa_MDE_HW3Factory.eINSTANCE.createContainer();
+		container.setModel_name(MODEL_2);
+		//container.getCourses().addAll(Arrays.asList());
+		container.getCustom_enumerations().addAll(Arrays.asList(customEnumDegreeTypes));
+		container.getExtra_infos().addAll(Arrays.asList(extraInfoDegreeTypePhd, extraInfoResearchFieldAI, extraInfoResearchFieldAN, extraInfoResearchFieldCS));
+		container.getProfessors().addAll(Arrays.asList(profAlesse, profDavide, profVittorio));
+		container.getStudents().addAll(Arrays.asList(studentFederica, studentGiovanni, studentGiuseppe, studentMattia, studentNicola));
+		container.getUniversities().addAll(Arrays.asList(universityLaquila));
+		
+		return container;
 	}
 	
 	public final static String FILENAME_TEMPLATE = "%s.xmi";
@@ -488,15 +571,27 @@ public class MyPlugin {
 	}
 
 	public static void main(String[] args) {
+		//Instance 1
 		Container root = create();
 		serializeModel(root, FILENAME_TEMPLATE);
 		Container importedModel = load(FILENAME_TEMPLATE.formatted(MODEL_1));
 		
 		Diagnostic d = validate(importedModel);
 		if(d.getSeverity() != Diagnostic.ERROR)
-			System.out.println("the model is valid.");
+			System.out.println("the model is valid.".formatted(root.getModel_name()));
 		else
-			System.err.println("The model is not valid: /n/n"+ d.getMessage());
+			System.err.println("The model is not valid: /n/n".formatted(root.getModel_name()) + d.getMessage());
+		
+		//Instance 2
+		root = create_2();
+		serializeModel(root, FILENAME_TEMPLATE);
+		importedModel = load(FILENAME_TEMPLATE.formatted(MODEL_2));
+		
+		d = validate(importedModel);
+		if(d.getSeverity() != Diagnostic.ERROR)
+			System.out.println("the model %s is valid.".formatted(root.getModel_name()));
+		else
+			System.err.println("The model %s is not valid: /n/n".formatted(root.getModel_name()) + d.getMessage());
 	}
 
 	public static Container load(String fileName) {

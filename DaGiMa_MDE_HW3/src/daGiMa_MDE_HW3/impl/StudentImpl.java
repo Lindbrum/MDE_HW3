@@ -3,19 +3,13 @@
 package daGiMa_MDE_HW3.impl;
 
 import daGiMa_MDE_HW3.Career;
-import daGiMa_MDE_HW3.Course;
 import daGiMa_MDE_HW3.DaGiMa_MDE_HW3Package;
-import daGiMa_MDE_HW3.DaGiMa_MDE_HW3Tables;
 import daGiMa_MDE_HW3.DegreeCourse;
 import daGiMa_MDE_HW3.ExaminationCall;
-import daGiMa_MDE_HW3.PassingGrade;
 import daGiMa_MDE_HW3.Student;
 import daGiMa_MDE_HW3.Thesis;
 
 import java.util.Collection;
-import java.util.Iterator;
-import java.util.List;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
@@ -30,21 +24,6 @@ import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import org.eclipse.ocl.pivot.evaluation.Executor;
-
-import org.eclipse.ocl.pivot.ids.IdResolver;
-
-import org.eclipse.ocl.pivot.ids.IdResolver.IdResolverExtension;
-
-import org.eclipse.ocl.pivot.library.collection.CollectionAsOrderedSetOperation;
-import org.eclipse.ocl.pivot.utilities.PivotUtil;
-import org.eclipse.ocl.pivot.utilities.ValueUtil;
-
-import org.eclipse.ocl.pivot.values.OrderedSetValue;
-import org.eclipse.ocl.pivot.values.SequenceValue;
-
-import org.eclipse.ocl.pivot.values.SequenceValue.Accumulator;
-
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Student</b></em>'.
@@ -58,7 +37,6 @@ import org.eclipse.ocl.pivot.values.SequenceValue.Accumulator;
  *   <li>{@link daGiMa_MDE_HW3.impl.StudentImpl#getEnrolled_courses <em>Enrolled courses</em>}</li>
  *   <li>{@link daGiMa_MDE_HW3.impl.StudentImpl#getBooked_calls <em>Booked calls</em>}</li>
  *   <li>{@link daGiMa_MDE_HW3.impl.StudentImpl#getTranscripts <em>Transcripts</em>}</li>
- *   <li>{@link daGiMa_MDE_HW3.impl.StudentImpl#getStudent_exams <em>Student exams</em>}</li>
  * </ul>
  *
  * @generated
@@ -223,62 +201,6 @@ public class StudentImpl extends UserImpl implements Student {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public EList<Course> getStudent_exams() {
-		/**
-		 *
-		 * transcripts->collect(transcript | transcript.courses.course)
-		 * ->asOrderedSet()
-		 */
-		final /*@NonInvalid*/ Executor executor = PivotUtil.getExecutor(this);
-		final /*@NonInvalid*/ IdResolver idResolver = executor.getIdResolver();
-		final /*@NonInvalid*/ List<Career> transcripts = this.getTranscripts();
-		final /*@NonInvalid*/ OrderedSetValue BOXED_transcripts = idResolver.createOrderedSetOfAll(DaGiMa_MDE_HW3Tables.ORD_CLSSid_Career, transcripts);
-		/*@Thrown*/ Accumulator accumulator = ValueUtil.createSequenceAccumulatorValue(DaGiMa_MDE_HW3Tables.SEQ_CLSSid_Course);
-		Iterator<Object> ITERATOR_transcript = BOXED_transcripts.iterator();
-		/*@NonInvalid*/ SequenceValue collect;
-		while (true) {
-			if (!ITERATOR_transcript.hasNext()) {
-				collect = accumulator;
-				break;
-			}
-			/*@NonInvalid*/ Career transcript = (Career)ITERATOR_transcript.next();
-			/**
-			 * transcript.courses.course
-			 */
-			final /*@NonInvalid*/ List<PassingGrade> courses = transcript.getCourses();
-			final /*@NonInvalid*/ OrderedSetValue BOXED_courses = idResolver.createOrderedSetOfAll(DaGiMa_MDE_HW3Tables.ORD_CLSSid_PassingGrade, courses);
-			/*@Thrown*/ Accumulator accumulator_0 = ValueUtil.createSequenceAccumulatorValue(DaGiMa_MDE_HW3Tables.SEQ_CLSSid_Course);
-			Iterator<Object> ITERATOR__1 = BOXED_courses.iterator();
-			/*@NonInvalid*/ SequenceValue collect_0;
-			while (true) {
-				if (!ITERATOR__1.hasNext()) {
-					collect_0 = accumulator_0;
-					break;
-				}
-				/*@NonInvalid*/ PassingGrade _1 = (PassingGrade)ITERATOR__1.next();
-				/**
-				 * course
-				 */
-				final /*@NonInvalid*/ Course course = _1.getCourse();
-				//
-				accumulator_0.add(course);
-			}
-			//
-			for (Object value : collect_0.flatten().getElements()) {
-				accumulator.add(value);
-			}
-		}
-		final /*@NonInvalid*/ OrderedSetValue asOrderedSet = CollectionAsOrderedSetOperation.INSTANCE.evaluate(collect);
-		final /*@NonInvalid*/ List<Course> ECORE_asOrderedSet = ((IdResolverExtension)idResolver).ecoreValueOfAll(Course.class, asOrderedSet);
-		return (EList<Course>)ECORE_asOrderedSet;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -333,8 +255,6 @@ public class StudentImpl extends UserImpl implements Student {
 				return getBooked_calls();
 			case DaGiMa_MDE_HW3Package.STUDENT__TRANSCRIPTS:
 				return getTranscripts();
-			case DaGiMa_MDE_HW3Package.STUDENT__STUDENT_EXAMS:
-				return getStudent_exams();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -367,10 +287,6 @@ public class StudentImpl extends UserImpl implements Student {
 				getTranscripts().clear();
 				getTranscripts().addAll((Collection<? extends Career>)newValue);
 				return;
-			case DaGiMa_MDE_HW3Package.STUDENT__STUDENT_EXAMS:
-				getStudent_exams().clear();
-				getStudent_exams().addAll((Collection<? extends Course>)newValue);
-				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -398,9 +314,6 @@ public class StudentImpl extends UserImpl implements Student {
 			case DaGiMa_MDE_HW3Package.STUDENT__TRANSCRIPTS:
 				getTranscripts().clear();
 				return;
-			case DaGiMa_MDE_HW3Package.STUDENT__STUDENT_EXAMS:
-				getStudent_exams().clear();
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -423,8 +336,6 @@ public class StudentImpl extends UserImpl implements Student {
 				return booked_calls != null && !booked_calls.isEmpty();
 			case DaGiMa_MDE_HW3Package.STUDENT__TRANSCRIPTS:
 				return transcripts != null && !transcripts.isEmpty();
-			case DaGiMa_MDE_HW3Package.STUDENT__STUDENT_EXAMS:
-				return !getStudent_exams().isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

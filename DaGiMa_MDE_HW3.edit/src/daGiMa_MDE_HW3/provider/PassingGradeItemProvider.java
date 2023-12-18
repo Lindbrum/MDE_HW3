@@ -201,7 +201,7 @@ public class PassingGradeItemProvider
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return GenEditPlugin.INSTANCE;
+		return DaGiMa_MDE_HW3EditPlugin.INSTANCE;
 	}
 
 }

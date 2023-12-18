@@ -71,9 +71,7 @@ import org.eclipse.ui.part.ISetSelectionTarget;
 
 import daGiMa_MDE_HW3.DaGiMa_MDE_HW3Factory;
 import daGiMa_MDE_HW3.DaGiMa_MDE_HW3Package;
-import daGiMa_MDE_HW3.provider.GenEditPlugin;
-
-
+import daGiMa_MDE_HW3.provider.DaGiMa_MDE_HW3EditPlugin;
 import org.eclipse.core.runtime.Path;
 
 import org.eclipse.jface.viewers.ISelection;
@@ -99,7 +97,7 @@ public class DaGiMa_MDE_HW3ModelWizard extends Wizard implements INewWizard {
 	 * @generated
 	 */
 	public static final List<String> FILE_EXTENSIONS =
-		Collections.unmodifiableList(Arrays.asList(GenEditorPlugin.INSTANCE.getString("_UI_DaGiMa_MDE_HW3EditorFilenameExtensions").split("\\s*,\\s*")));
+		Collections.unmodifiableList(Arrays.asList(DaGiMa_MDE_HW3EditorPlugin.INSTANCE.getString("_UI_DaGiMa_MDE_HW3EditorFilenameExtensions").split("\\s*,\\s*")));
 
 	/**
 	 * A formatted list of supported file extensions, suitable for display.
@@ -108,7 +106,7 @@ public class DaGiMa_MDE_HW3ModelWizard extends Wizard implements INewWizard {
 	 * @generated
 	 */
 	public static final String FORMATTED_FILE_EXTENSIONS =
-		GenEditorPlugin.INSTANCE.getString("_UI_DaGiMa_MDE_HW3EditorFilenameExtensions").replaceAll("\\s*,\\s*", ", ");
+		DaGiMa_MDE_HW3EditorPlugin.INSTANCE.getString("_UI_DaGiMa_MDE_HW3EditorFilenameExtensions").replaceAll("\\s*,\\s*", ", ");
 
 	/**
 	 * This caches an instance of the model package.
@@ -176,8 +174,8 @@ public class DaGiMa_MDE_HW3ModelWizard extends Wizard implements INewWizard {
 	public void init(IWorkbench workbench, IStructuredSelection selection) {
 		this.workbench = workbench;
 		this.selection = selection;
-		setWindowTitle(GenEditorPlugin.INSTANCE.getString("_UI_Wizard_label"));
-		setDefaultPageImageDescriptor(ExtendedImageRegistry.INSTANCE.getImageDescriptor(GenEditorPlugin.INSTANCE.getImage("full/wizban/NewDaGiMa_MDE_HW3")));
+		setWindowTitle(DaGiMa_MDE_HW3EditorPlugin.INSTANCE.getString("_UI_Wizard_label"));
+		setDefaultPageImageDescriptor(ExtendedImageRegistry.INSTANCE.getImageDescriptor(DaGiMa_MDE_HW3EditorPlugin.INSTANCE.getImage("full/wizban/NewDaGiMa_MDE_HW3")));
 	}
 
 	/**
@@ -260,7 +258,7 @@ public class DaGiMa_MDE_HW3ModelWizard extends Wizard implements INewWizard {
 							resource.save(options);
 						}
 						catch (Exception exception) {
-							GenEditorPlugin.INSTANCE.log(exception);
+							DaGiMa_MDE_HW3EditorPlugin.INSTANCE.log(exception);
 						}
 						finally {
 							progressMonitor.done();
@@ -294,14 +292,14 @@ public class DaGiMa_MDE_HW3ModelWizard extends Wizard implements INewWizard {
 					 workbench.getEditorRegistry().getDefaultEditor(modelFile.getFullPath().toString()).getId());					 	 
 			}
 			catch (PartInitException exception) {
-				MessageDialog.openError(workbenchWindow.getShell(), GenEditorPlugin.INSTANCE.getString("_UI_OpenEditorError_label"), exception.getMessage());
+				MessageDialog.openError(workbenchWindow.getShell(), DaGiMa_MDE_HW3EditorPlugin.INSTANCE.getString("_UI_OpenEditorError_label"), exception.getMessage());
 				return false;
 			}
 
 			return true;
 		}
 		catch (Exception exception) {
-			GenEditorPlugin.INSTANCE.log(exception);
+			DaGiMa_MDE_HW3EditorPlugin.INSTANCE.log(exception);
 			return false;
 		}
 	}
@@ -335,7 +333,7 @@ public class DaGiMa_MDE_HW3ModelWizard extends Wizard implements INewWizard {
 				String extension = new Path(getFileName()).getFileExtension();
 				if (extension == null || !FILE_EXTENSIONS.contains(extension)) {
 					String key = FILE_EXTENSIONS.size() > 1 ? "_WARN_FilenameExtensions" : "_WARN_FilenameExtension";
-					setErrorMessage(GenEditorPlugin.INSTANCE.getString(key, new Object [] { FORMATTED_FILE_EXTENSIONS }));
+					setErrorMessage(DaGiMa_MDE_HW3EditorPlugin.INSTANCE.getString(key, new Object [] { FORMATTED_FILE_EXTENSIONS }));
 					return false;
 				}
 				return true;
@@ -413,7 +411,7 @@ public class DaGiMa_MDE_HW3ModelWizard extends Wizard implements INewWizard {
 
 			Label containerLabel = new Label(composite, SWT.LEFT);
 			{
-				containerLabel.setText(GenEditorPlugin.INSTANCE.getString("_UI_ModelObject"));
+				containerLabel.setText(DaGiMa_MDE_HW3EditorPlugin.INSTANCE.getString("_UI_ModelObject"));
 
 				GridData data = new GridData();
 				data.horizontalAlignment = GridData.FILL;
@@ -439,7 +437,7 @@ public class DaGiMa_MDE_HW3ModelWizard extends Wizard implements INewWizard {
 
 			Label encodingLabel = new Label(composite, SWT.LEFT);
 			{
-				encodingLabel.setText(GenEditorPlugin.INSTANCE.getString("_UI_XMLEncoding"));
+				encodingLabel.setText(DaGiMa_MDE_HW3EditorPlugin.INSTANCE.getString("_UI_XMLEncoding"));
 
 				GridData data = new GridData();
 				data.horizontalAlignment = GridData.FILL;
@@ -539,10 +537,10 @@ public class DaGiMa_MDE_HW3ModelWizard extends Wizard implements INewWizard {
 		 */
 		protected String getLabel(String typeName) {
 			try {
-				return GenEditPlugin.INSTANCE.getString("_UI_" + typeName + "_type");
+				return DaGiMa_MDE_HW3EditPlugin.INSTANCE.getString("_UI_" + typeName + "_type");
 			}
 			catch(MissingResourceException mre) {
-				GenEditorPlugin.INSTANCE.log(mre);
+				DaGiMa_MDE_HW3EditorPlugin.INSTANCE.log(mre);
 			}
 			return typeName;
 		}
@@ -555,7 +553,7 @@ public class DaGiMa_MDE_HW3ModelWizard extends Wizard implements INewWizard {
 		protected Collection<String> getEncodings() {
 			if (encodings == null) {
 				encodings = new ArrayList<String>();
-				for (StringTokenizer stringTokenizer = new StringTokenizer(GenEditorPlugin.INSTANCE.getString("_UI_XMLEncodingChoices")); stringTokenizer.hasMoreTokens(); ) {
+				for (StringTokenizer stringTokenizer = new StringTokenizer(DaGiMa_MDE_HW3EditorPlugin.INSTANCE.getString("_UI_XMLEncodingChoices")); stringTokenizer.hasMoreTokens(); ) {
 					encodings.add(stringTokenizer.nextToken());
 				}
 			}
@@ -574,9 +572,9 @@ public class DaGiMa_MDE_HW3ModelWizard extends Wizard implements INewWizard {
 		// Create a page, set the title, and the initial model file name.
 		//
 		newFileCreationPage = new DaGiMa_MDE_HW3ModelWizardNewFileCreationPage("Whatever", selection);
-		newFileCreationPage.setTitle(GenEditorPlugin.INSTANCE.getString("_UI_DaGiMa_MDE_HW3ModelWizard_label"));
-		newFileCreationPage.setDescription(GenEditorPlugin.INSTANCE.getString("_UI_DaGiMa_MDE_HW3ModelWizard_description"));
-		newFileCreationPage.setFileName(GenEditorPlugin.INSTANCE.getString("_UI_DaGiMa_MDE_HW3EditorFilenameDefaultBase") + "." + FILE_EXTENSIONS.get(0));
+		newFileCreationPage.setTitle(DaGiMa_MDE_HW3EditorPlugin.INSTANCE.getString("_UI_DaGiMa_MDE_HW3ModelWizard_label"));
+		newFileCreationPage.setDescription(DaGiMa_MDE_HW3EditorPlugin.INSTANCE.getString("_UI_DaGiMa_MDE_HW3ModelWizard_description"));
+		newFileCreationPage.setFileName(DaGiMa_MDE_HW3EditorPlugin.INSTANCE.getString("_UI_DaGiMa_MDE_HW3EditorFilenameDefaultBase") + "." + FILE_EXTENSIONS.get(0));
 		addPage(newFileCreationPage);
 
 		// Try and get the resource selection to determine a current directory for the file dialog.
@@ -602,7 +600,7 @@ public class DaGiMa_MDE_HW3ModelWizard extends Wizard implements INewWizard {
 
 					// Make up a unique new name here.
 					//
-					String defaultModelBaseFilename = GenEditorPlugin.INSTANCE.getString("_UI_DaGiMa_MDE_HW3EditorFilenameDefaultBase");
+					String defaultModelBaseFilename = DaGiMa_MDE_HW3EditorPlugin.INSTANCE.getString("_UI_DaGiMa_MDE_HW3EditorFilenameDefaultBase");
 					String defaultModelFilenameExtension = FILE_EXTENSIONS.get(0);
 					String modelFilename = defaultModelBaseFilename + "." + defaultModelFilenameExtension;
 					for (int i = 1; ((IContainer)selectedResource).findMember(modelFilename) != null; ++i) {
@@ -613,8 +611,8 @@ public class DaGiMa_MDE_HW3ModelWizard extends Wizard implements INewWizard {
 			}
 		}
 		initialObjectCreationPage = new DaGiMa_MDE_HW3ModelWizardInitialObjectCreationPage("Whatever2");
-		initialObjectCreationPage.setTitle(GenEditorPlugin.INSTANCE.getString("_UI_DaGiMa_MDE_HW3ModelWizard_label"));
-		initialObjectCreationPage.setDescription(GenEditorPlugin.INSTANCE.getString("_UI_Wizard_initial_object_description"));
+		initialObjectCreationPage.setTitle(DaGiMa_MDE_HW3EditorPlugin.INSTANCE.getString("_UI_DaGiMa_MDE_HW3ModelWizard_label"));
+		initialObjectCreationPage.setDescription(DaGiMa_MDE_HW3EditorPlugin.INSTANCE.getString("_UI_Wizard_initial_object_description"));
 		addPage(initialObjectCreationPage);
 	}
 

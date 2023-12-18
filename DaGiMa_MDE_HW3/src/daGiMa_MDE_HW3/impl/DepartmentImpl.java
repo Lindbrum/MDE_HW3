@@ -2,19 +2,13 @@
  */
 package daGiMa_MDE_HW3.impl;
 
-import daGiMa_MDE_HW3.Course;
 import daGiMa_MDE_HW3.DaGiMa_MDE_HW3Package;
-import daGiMa_MDE_HW3.DaGiMa_MDE_HW3Tables;
 import daGiMa_MDE_HW3.DegreeCourse;
 import daGiMa_MDE_HW3.Department;
 import daGiMa_MDE_HW3.News;
-import daGiMa_MDE_HW3.Professor;
 import daGiMa_MDE_HW3.University;
 
 import java.util.Collection;
-
-import java.util.Iterator;
-import java.util.List;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
@@ -30,15 +24,6 @@ import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
-import org.eclipse.ocl.pivot.evaluation.Executor;
-import org.eclipse.ocl.pivot.ids.IdResolver;
-import org.eclipse.ocl.pivot.ids.IdResolver.IdResolverExtension;
-import org.eclipse.ocl.pivot.library.collection.CollectionAsOrderedSetOperation;
-import org.eclipse.ocl.pivot.utilities.PivotUtil;
-import org.eclipse.ocl.pivot.utilities.ValueUtil;
-import org.eclipse.ocl.pivot.values.OrderedSetValue;
-import org.eclipse.ocl.pivot.values.SequenceValue;
-import org.eclipse.ocl.pivot.values.SequenceValue.Accumulator;
 
 /**
  * <!-- begin-user-doc -->
@@ -53,7 +38,6 @@ import org.eclipse.ocl.pivot.values.SequenceValue.Accumulator;
  *   <li>{@link daGiMa_MDE_HW3.impl.DepartmentImpl#getUniversity <em>University</em>}</li>
  *   <li>{@link daGiMa_MDE_HW3.impl.DepartmentImpl#getName <em>Name</em>}</li>
  *   <li>{@link daGiMa_MDE_HW3.impl.DepartmentImpl#getRelated_news <em>Related news</em>}</li>
- *   <li>{@link daGiMa_MDE_HW3.impl.DepartmentImpl#getTeachers <em>Teachers</em>}</li>
  * </ul>
  *
  * @generated
@@ -258,65 +242,6 @@ public class DepartmentImpl extends MinimalEObjectImpl.Container implements Depa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public EList<Professor> getTeachers() {
-		/**
-		 *
-		 * offered_courses->collect(degree_course | degree_course.course_catalogue.teachers)
-		 * ->asOrderedSet()
-		 */
-		final /*@NonInvalid*/ Executor executor = PivotUtil.getExecutor(this);
-		final /*@NonInvalid*/ IdResolver idResolver = executor.getIdResolver();
-		final /*@NonInvalid*/ List<DegreeCourse> offered_courses = this.getOffered_courses();
-		final /*@NonInvalid*/ OrderedSetValue BOXED_offered_courses = idResolver.createOrderedSetOfAll(DaGiMa_MDE_HW3Tables.ORD_CLSSid_DegreeCourse_0, offered_courses);
-		/*@Thrown*/ Accumulator accumulator = ValueUtil.createSequenceAccumulatorValue(DaGiMa_MDE_HW3Tables.SEQ_CLSSid_Professor);
-		Iterator<Object> ITERATOR_degree_course = BOXED_offered_courses.iterator();
-		/*@NonInvalid*/ SequenceValue collect;
-		while (true) {
-			if (!ITERATOR_degree_course.hasNext()) {
-				collect = accumulator;
-				break;
-			}
-			/*@NonInvalid*/ DegreeCourse degree_course = (DegreeCourse)ITERATOR_degree_course.next();
-			/**
-			 * degree_course.course_catalogue.teachers
-			 */
-			final /*@NonInvalid*/ List<Course> course_catalogue = degree_course.getCourse_catalogue();
-			final /*@NonInvalid*/ OrderedSetValue BOXED_course_catalogue = idResolver.createOrderedSetOfAll(DaGiMa_MDE_HW3Tables.ORD_CLSSid_Course, course_catalogue);
-			/*@Thrown*/ Accumulator accumulator_0 = ValueUtil.createSequenceAccumulatorValue(DaGiMa_MDE_HW3Tables.SEQ_CLSSid_Professor);
-			Iterator<Object> ITERATOR__1 = BOXED_course_catalogue.iterator();
-			/*@NonInvalid*/ SequenceValue collect_0;
-			while (true) {
-				if (!ITERATOR__1.hasNext()) {
-					collect_0 = accumulator_0;
-					break;
-				}
-				/*@NonInvalid*/ Course _1 = (Course)ITERATOR__1.next();
-				/**
-				 * teachers
-				 */
-				final /*@NonInvalid*/ List<Professor> teachers = _1.getTeachers();
-				final /*@NonInvalid*/ OrderedSetValue BOXED_teachers = idResolver.createOrderedSetOfAll(DaGiMa_MDE_HW3Tables.ORD_CLSSid_Professor_0, teachers);
-				//
-				for (Object value : BOXED_teachers.flatten().getElements()) {
-					accumulator_0.add(value);
-				}
-			}
-			//
-			for (Object value : collect_0.flatten().getElements()) {
-				accumulator.add(value);
-			}
-		}
-		final /*@NonInvalid*/ OrderedSetValue asOrderedSet = CollectionAsOrderedSetOperation.INSTANCE.evaluate(collect);
-		final /*@NonInvalid*/ List<Professor> ECORE_asOrderedSet = ((IdResolverExtension)idResolver).ecoreValueOfAll(Professor.class, asOrderedSet);
-		return (EList<Professor>)ECORE_asOrderedSet;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -383,8 +308,6 @@ public class DepartmentImpl extends MinimalEObjectImpl.Container implements Depa
 				return getName();
 			case DaGiMa_MDE_HW3Package.DEPARTMENT__RELATED_NEWS:
 				return getRelated_news();
-			case DaGiMa_MDE_HW3Package.DEPARTMENT__TEACHERS:
-				return getTeachers();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -415,10 +338,6 @@ public class DepartmentImpl extends MinimalEObjectImpl.Container implements Depa
 				getRelated_news().clear();
 				getRelated_news().addAll((Collection<? extends News>)newValue);
 				return;
-			case DaGiMa_MDE_HW3Package.DEPARTMENT__TEACHERS:
-				getTeachers().clear();
-				getTeachers().addAll((Collection<? extends Professor>)newValue);
-				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -446,9 +365,6 @@ public class DepartmentImpl extends MinimalEObjectImpl.Container implements Depa
 			case DaGiMa_MDE_HW3Package.DEPARTMENT__RELATED_NEWS:
 				getRelated_news().clear();
 				return;
-			case DaGiMa_MDE_HW3Package.DEPARTMENT__TEACHERS:
-				getTeachers().clear();
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -471,8 +387,6 @@ public class DepartmentImpl extends MinimalEObjectImpl.Container implements Depa
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case DaGiMa_MDE_HW3Package.DEPARTMENT__RELATED_NEWS:
 				return related_news != null && !related_news.isEmpty();
-			case DaGiMa_MDE_HW3Package.DEPARTMENT__TEACHERS:
-				return !getTeachers().isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

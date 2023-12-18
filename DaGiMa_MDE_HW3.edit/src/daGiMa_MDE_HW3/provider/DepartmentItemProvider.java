@@ -66,7 +66,6 @@ public class DepartmentItemProvider
 			addWebsitePropertyDescriptor(object);
 			addNamePropertyDescriptor(object);
 			addRelated_newsPropertyDescriptor(object);
-			addTeachersPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -129,28 +128,6 @@ public class DepartmentItemProvider
 				 getString("_UI_Department_related_news_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Department_related_news_feature", "_UI_Department_type"),
 				 DaGiMa_MDE_HW3Package.Literals.DEPARTMENT__RELATED_NEWS,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Teachers feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addTeachersPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Department_teachers_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Department_teachers_feature", "_UI_Department_type"),
-				 DaGiMa_MDE_HW3Package.Literals.DEPARTMENT__TEACHERS,
 				 true,
 				 false,
 				 true,
@@ -263,7 +240,7 @@ public class DepartmentItemProvider
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return GenEditPlugin.INSTANCE;
+		return DaGiMa_MDE_HW3EditPlugin.INSTANCE;
 	}
 
 }

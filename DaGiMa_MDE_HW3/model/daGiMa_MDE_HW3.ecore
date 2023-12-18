@@ -44,6 +44,9 @@
         eType="#//News" containment="true" eOpposite="#//News/author"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Student" eSuperTypes="#//User">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="property student_exams : Course[*] { ordered derived volatile } {&#xA;derivation : transcripts->collect(transcript|transcript.courses.course)->asOrderedSet();&#xA;}"/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="matriculation_number" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="thesis_defended" upperBound="-1"
@@ -54,15 +57,6 @@
         eType="#//ExaminationCall" eOpposite="#//ExaminationCall/booked_students"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="transcripts" upperBound="-1"
         eType="#//Career" containment="true" eOpposite="#//Career/student"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="student_exams" upperBound="-1"
-        eType="#//Course" volatile="true" derived="true">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
-        <details key="derivation" value="transcripts->collect(transcript|transcript.courses.course)->asOrderedSet()"/>
-      </eAnnotations>
-      <eAnnotations source="http://www.eclipse.org/OCL/Collection">
-        <details key="nullFree" value="false"/>
-      </eAnnotations>
-    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="User" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -81,6 +75,9 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Department">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="property teachers : Professor[*] { ordered derived volatile } {&#xA;derivation : offered_courses->collect(degree_course|degree_course.course_catalogue.teachers)->asOrderedSet();&#xA;}"/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="website" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="offered_courses" lowerBound="1"
@@ -91,15 +88,6 @@
         defaultValueLiteral="A department" iD="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="related_news" upperBound="-1"
         eType="#//News" eOpposite="#//News/department"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="teachers" upperBound="-1"
-        eType="#//Professor" volatile="true" derived="true">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
-        <details key="derivation" value="offered_courses->collect(degree_course|degree_course.course_catalogue.teachers)->asOrderedSet()"/>
-      </eAnnotations>
-      <eAnnotations source="http://www.eclipse.org/OCL/Collection">
-        <details key="nullFree" value="false"/>
-      </eAnnotations>
-    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DegreeCourse">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">

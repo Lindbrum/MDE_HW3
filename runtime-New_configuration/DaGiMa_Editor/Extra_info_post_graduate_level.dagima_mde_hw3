@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<dagima_mde_hw3:ExtraInfo xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:dagima_mde_hw3="http://www.example.org/dagima_mde_hw3" name="PostGraduateLevel" value="SECOND" type="ENUMERATION" lower_multiplicity="1" higher_multiplicity="1">
-  <enum href="Post_graduate_level_enum.dagima_mde_hw3#/"/>
-</dagima_mde_hw3:ExtraInfo>

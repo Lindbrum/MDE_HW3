@@ -304,13 +304,13 @@ public abstract class UserImpl extends MinimalEObjectImpl.Container implements U
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public void setAll_contacts(String newAll_contacts) {
 		// TODO: implement this method to set the 'All contacts' attribute
 		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		//throw new UnsupportedOperationException();
 	}
 
 	/**

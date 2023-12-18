@@ -541,7 +541,7 @@ public class DaGiMa_MDE_HW3Editor
 					}
 				}
 				catch (CoreException exception) {
-					GenEditorPlugin.INSTANCE.log(exception);
+					DaGiMa_MDE_HW3EditorPlugin.INSTANCE.log(exception);
 				}
 			}
 		};
@@ -658,7 +658,7 @@ public class DaGiMa_MDE_HW3Editor
 					showTabs();
 				}
 				catch (PartInitException exception) {
-					GenEditorPlugin.INSTANCE.log(exception);
+					DaGiMa_MDE_HW3EditorPlugin.INSTANCE.log(exception);
 				}
 			}
 
@@ -667,7 +667,7 @@ public class DaGiMa_MDE_HW3Editor
 					markerHelper.updateMarkers(diagnostic);
 				}
 				catch (CoreException exception) {
-					GenEditorPlugin.INSTANCE.log(exception);
+					DaGiMa_MDE_HW3EditorPlugin.INSTANCE.log(exception);
 				}
 			}
 		}
@@ -1546,7 +1546,7 @@ public class DaGiMa_MDE_HW3Editor
 		catch (Exception exception) {
 			// Something went wrong that shouldn't.
 			//
-			GenEditorPlugin.INSTANCE.log(exception);
+			DaGiMa_MDE_HW3EditorPlugin.INSTANCE.log(exception);
 		}
 		updateProblemIndication = true;
 		updateProblemIndication();
@@ -1755,7 +1755,7 @@ public class DaGiMa_MDE_HW3Editor
 	 * @generated
 	 */
 	private static String getString(String key) {
-		return GenEditorPlugin.INSTANCE.getString(key);
+		return DaGiMa_MDE_HW3EditorPlugin.INSTANCE.getString(key);
 	}
 
 	/**
@@ -1765,7 +1765,7 @@ public class DaGiMa_MDE_HW3Editor
 	 * @generated
 	 */
 	private static String getString(String key, Object s1) {
-		return GenEditorPlugin.INSTANCE.getString(key, new Object [] { s1 });
+		return DaGiMa_MDE_HW3EditorPlugin.INSTANCE.getString(key, new Object [] { s1 });
 	}
 
 	/**

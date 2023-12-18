@@ -323,13 +323,13 @@ public class CareerImpl extends MinimalEObjectImpl.Container implements Career {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public void setTotalAcquiredCfu(BigInteger newTotalAcquiredCfu) {
 		// TODO: implement this method to set the 'Total Acquired Cfu' attribute
 		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		//throw new UnsupportedOperationException();
 	}
 
 	/**
