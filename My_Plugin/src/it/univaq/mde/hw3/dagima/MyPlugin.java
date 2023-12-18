@@ -303,6 +303,140 @@ public class MyPlugin {
 		passingGradeDarioMDE.setStudent(careerDarioASE);
 		
 	}
+	
+	public static void create_2() {
+		
+		//Calendar calendar = Calendar.getInstance();
+		
+		//Student - Giovanni
+		Student studentGiovanni = DaGiMa_MDE_HW3Factory.eINSTANCE.createStudent();
+		studentGiovanni.setName("Giovanni");
+		studentGiovanni.setSurname("Rossi");
+		studentGiovanni.setEmail("gr@u.it");
+		studentGiovanni.setMatriculation_number(100100);
+		studentGiovanni.setTelephone("+393348754120");
+		
+		//Student - Mattia
+		Student studentMattia = DaGiMa_MDE_HW3Factory.eINSTANCE.createStudent();
+		studentMattia.setName("Mattia");
+		studentMattia.setSurname("Pino");
+		studentMattia.setEmail("mp@u.it");
+		studentMattia.setMatriculation_number(100101);
+		studentMattia.setTelephone("+393458741102");
+		
+		//Student - Federica
+		Student studentFederica = DaGiMa_MDE_HW3Factory.eINSTANCE.createStudent();
+		studentFederica.setName("Federica");
+		studentFederica.setSurname("Verdi");
+		studentFederica.setEmail("fv@u.it");
+		studentFederica.setMatriculation_number(100102);
+		studentFederica.setTelephone("+393588741259");
+				
+		//Student - Nicola
+		Student studentNicola = DaGiMa_MDE_HW3Factory.eINSTANCE.createStudent();
+		studentNicola.setName("Nicola");
+		studentNicola.setSurname("Klauss");
+		studentNicola.setEmail("nk@u.it");
+		studentNicola.setMatriculation_number(100103);
+		studentNicola.setTelephone("+393878744714");
+		
+		//Student - Giuseppe
+		Student studentGiuseppe = DaGiMa_MDE_HW3Factory.eINSTANCE.createStudent();
+		studentGiuseppe.setName("Giuseppe");
+		studentGiuseppe.setSurname("Bianchi");
+		studentGiuseppe.setEmail("gb@u.it");
+		studentGiuseppe.setMatriculation_number(100104);
+		studentGiuseppe.setTelephone("+393214569874");
+
+		//Professor - Davide
+		Professor profDavide = DaGiMa_MDE_HW3Factory.eINSTANCE.createProfessor();
+		profDavide.setName("Davide");
+		profDavide.setSurname("D'Ettore");
+		profDavide.setEmail("dd@p.u.it");
+		profDavide.setOffice_telephone("08627896541");
+		profDavide.setOrcid("fo2077-perdf3-147852");
+		profDavide.setTelephone("+393654789541");
+		
+		//Professor - Vittorio
+		Professor profVittorio = DaGiMa_MDE_HW3Factory.eINSTANCE.createProfessor();
+		profVittorio.setName("Vittorio");
+		profVittorio.setSurname("Melassi");
+		profVittorio.setEmail("vm@p.u.it");
+		profVittorio.setOffice_telephone("08627896541");
+		profVittorio.setOrcid("er5877-aswef4-784757");
+		profVittorio.setTelephone("+393541414102");
+		
+		//Professor - Alesse
+		Professor profAlesse = DaGiMa_MDE_HW3Factory.eINSTANCE.createProfessor();
+		profAlesse.setName("Edoardo");
+		profAlesse.setSurname("Alesse");
+		profAlesse.setEmail("e.a@u.it");
+		profAlesse.setOffice_telephone("08622380320");
+		profAlesse.setOrcid("fo2030-dfidf3-2398293");
+		profAlesse.setTelephone("+3937478374423");
+		
+		//University - L'Aquila
+		University universityLaquila = DaGiMa_MDE_HW3Factory.eINSTANCE.createUniversity();
+		universityLaquila.setName("University of L'Aquila");
+		universityLaquila.setRector(profAlesse);
+				
+		//Department - Disim
+		Department departmentDisim = DaGiMa_MDE_HW3Factory.eINSTANCE.createDepartment();
+		departmentDisim.setName("DISIM");
+		departmentDisim.setUniversity(universityLaquila);
+		departmentDisim.setWebsite("www.disim.it");
+		
+		//Custom Enumeration: Degree types
+		CustomEnumeration customEnumDegreeTypes = DaGiMa_MDE_HW3Factory.eINSTANCE.createCustomEnumeration();
+		customEnumDegreeTypes.setName("DegreeType");
+		customEnumDegreeTypes.getValues().addAll(Arrays.asList("BACHELOR_DEGREE", "MASTER_DEGREE", "POST_GRADUATE", "PHD"));
+		
+		//PhD - PhD in Computer Science
+		DegreeCourse phdCS = DaGiMa_MDE_HW3Factory.eINSTANCE.createDegreeCourse();
+		phdCS.setName("PhD in Computer Science");
+		phdCS.setCfu(11);
+		phdCS.setCode("P-01");
+		phdCS.setCoordinator(profDavide);
+		phdCS.setDepartment(departmentDisim);
+		phdCS.setDescription("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean rhoncus lacus metus, vel suscipit libero aliquam mattis. Mauris dignissim id lorem vitae rutrum. Donec nec ipsum ut metus aliquam placerat dapibus sed dui. Donec facilisis varius sollicitudin. Aenean sem nisl, posuere non tincidunt eget, viverra a neque.");
+		phdCS.setDuration(1);
+		phdCS.getLanguage().addAll(Arrays.asList("English"));
+		phdCS.setReference_year(2023);
+		
+		//PhD - PhD in Analysis
+		DegreeCourse phdAN = DaGiMa_MDE_HW3Factory.eINSTANCE.createDegreeCourse();
+		phdAN.setName("PhD in Analysis");
+		phdAN.setCfu(11);
+		phdAN.setCode("P-02");
+		phdAN.setCoordinator(profVittorio);
+		phdAN.setDepartment(departmentDisim);
+		phdAN.setDescription("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean rhoncus lacus metus, vel suscipit libero aliquam mattis. Mauris dignissim id lorem vitae rutrum. Donec nec ipsum ut metus aliquam placerat dapibus sed dui. Donec facilisis varius sollicitudin. Aenean sem nisl, posuere non tincidunt eget, viverra a neque.");
+		phdAN.setDuration(1);
+		phdAN.getLanguage().addAll(Arrays.asList("English"));
+		phdAN.setReference_year(2023);
+				
+		//PhD - PhD in Artificial Intelligence
+		DegreeCourse phdAI = DaGiMa_MDE_HW3Factory.eINSTANCE.createDegreeCourse();
+		phdAI.setName("PhD in Artificial Intelligence");
+		phdAI.setCfu(11);
+		phdAI.setCode("P-03");
+		phdAI.setCoordinator(profVittorio);
+		phdAI.setDepartment(departmentDisim);
+		phdAI.setDescription("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean rhoncus lacus metus, vel suscipit libero aliquam mattis. Mauris dignissim id lorem vitae rutrum. Donec nec ipsum ut metus aliquam placerat dapibus sed dui. Donec facilisis varius sollicitudin. Aenean sem nisl, posuere non tincidunt eget, viverra a neque.");
+		phdAI.setDuration(1);
+		phdAI.getLanguage().addAll(Arrays.asList("English"));
+		phdAI.setReference_year(2023);
+				
+		//Extra info - DegreeType: PHD
+		ExtraInfo extraInfoDegreeTypePhd = DaGiMa_MDE_HW3Factory.eINSTANCE.createExtraInfo();
+		extraInfoDegreeTypePhd.setEnum(customEnumDegreeTypes);
+		extraInfoDegreeTypePhd.setLower_multiplicity(1);
+		extraInfoDegreeTypePhd.setHigher_multiplicity(1);
+		extraInfoDegreeTypePhd.setType(MetadataType.ENUMERATION);
+		extraInfoDegreeTypePhd.setValue("PHD");
+		extraInfoDegreeTypePhd.setName(extraInfoDegreeTypePhd.getEnum().getName()+"_"+extraInfoDegreeTypePhd.getValue());
+		
+	}
 
 //	public final static String FILENAME = "testLiveMDE.xmi";
 //
