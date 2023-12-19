@@ -45,7 +45,7 @@ public interface Course extends EObject {
 	 * @return the value of the '<em>Code</em>' attribute.
 	 * @see #setCode(String)
 	 * @see daGiMa_MDE_HW3.DaGiMa_MDE_HW3Package#getCourse_Code()
-	 * @model default="F-1234" id="true" required="true"
+	 * @model default="F-1234" required="true"
 	 * @generated
 	 */
 	String getCode();

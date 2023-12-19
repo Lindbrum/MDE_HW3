@@ -11,16 +11,11 @@ import org.eclipse.emf.ecore.EObject;
  * A representation of the model object '<em><b>Department</b></em>'.
  * <!-- end-user-doc -->
  *
- * <!-- begin-model-doc -->
- * property teachers : Professor[*] { ordered derived volatile } {
- * derivation : offered_courses->collect(degree_course|degree_course.course_catalogue.teachers)->asOrderedSet();
- * }
- * <!-- end-model-doc -->
- *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link daGiMa_MDE_HW3.Department#getTeachers <em>Teachers</em>}</li>
  *   <li>{@link daGiMa_MDE_HW3.Department#getWebsite <em>Website</em>}</li>
  *   <li>{@link daGiMa_MDE_HW3.Department#getOffered_courses <em>Offered courses</em>}</li>
  *   <li>{@link daGiMa_MDE_HW3.Department#getUniversity <em>University</em>}</li>
@@ -33,6 +28,19 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface Department extends EObject {
+	/**
+	 * Returns the value of the '<em><b>Teachers</b></em>' reference list.
+	 * The list contents are of type {@link daGiMa_MDE_HW3.Professor}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Teachers</em>' reference list.
+	 * @see daGiMa_MDE_HW3.DaGiMa_MDE_HW3Package#getDepartment_Teachers()
+	 * @model volatile="true" derived="true"
+	 *        annotation="http://www.eclipse.org/OCL/Collection nullFree='false'"
+	 * @generated
+	 */
+	EList<Professor> getTeachers();
+
 	/**
 	 * Returns the value of the '<em><b>Website</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -101,7 +109,7 @@ public interface Department extends EObject {
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see daGiMa_MDE_HW3.DaGiMa_MDE_HW3Package#getDepartment_Name()
-	 * @model default="A department" id="true" required="true"
+	 * @model default="A department" required="true"
 	 * @generated
 	 */
 	String getName();

@@ -37,7 +37,7 @@ public interface PassingGrade extends EObject {
 	 * @return the value of the '<em>Date</em>' attribute.
 	 * @see #setDate(Date)
 	 * @see daGiMa_MDE_HW3.DaGiMa_MDE_HW3Package#getPassingGrade_Date()
-	 * @model default="2024-01-28" id="true"
+	 * @model default="2024-01-28"
 	 * @generated
 	 */
 	Date getDate();

@@ -37,7 +37,7 @@ public interface ExtraInfo extends EObject {
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see daGiMa_MDE_HW3.DaGiMa_MDE_HW3Package#getExtraInfo_Name()
-	 * @model id="true" required="true"
+	 * @model required="true"
 	 * @generated
 	 */
 	String getName();

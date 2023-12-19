@@ -1,39 +1,39 @@
 <?xml version="1.0" encoding="ASCII"?>
 <dagima_mde_hw3:Container xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:dagima_mde_hw3="http://www.example.org/dagima_mde_hw3" model_name="Instance1">
-  <universities rector="fo2030-dfidf3-2398293" name="University of L'Aquila">
-    <departments website="www.disim.it" name="DISIM" related_news="This_is_a_title" teachers="fo2033-dfiaf3-2398283 fo2022-dfanf3-2398283">
-      <offered_courses code="L-31" name="Computer Science" reference_year="2020" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean rhoncus lacus metus, vel suscipit libero aliquam mattis. Mauris dignissim id lorem vitae rutrum. Donec nec ipsum ut metus aliquam placerat dapibus sed dui. Donec facilisis varius sollicitudin. Aenean sem nisl, posuere non tincidunt eget, viverra a neque." coordinator="fo2033-dfiaf3-2398283" enrolled_students="//@students.0" course_catalogue="F1000" extra_info="DegreeType_BACHELOR_DEGREE">
+  <universities rector="//@professors.0" name="University of L'Aquila">
+    <departments teachers="//@professors.1 //@professors.2" website="www.disim.it" name="DISIM" related_news="//@professors.1/@news_posted.0">
+      <offered_courses code="L-31" name="Computer Science" reference_year="2020" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean rhoncus lacus metus, vel suscipit libero aliquam mattis. Mauris dignissim id lorem vitae rutrum. Donec nec ipsum ut metus aliquam placerat dapibus sed dui. Donec facilisis varius sollicitudin. Aenean sem nisl, posuere non tincidunt eget, viverra a neque." coordinator="//@professors.1" enrolled_students="//@students.0" course_catalogue="//@courses.0" extra_info="//@extra_infos.0">
         <language>Italian</language>
       </offered_courses>
-      <offered_courses code="L-32" name="Master degree in Computer Science (Advanced Software Engineering)" duration="2" cfu="120" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean rhoncus lacus metus, vel suscipit libero aliquam mattis. Mauris dignissim id lorem vitae rutrum. Donec nec ipsum ut metus aliquam placerat dapibus sed dui. Donec facilisis varius sollicitudin. Aenean sem nisl, posuere non tincidunt eget, viverra a neque." coordinator="fo2033-dfiaf3-2398283" enrolled_students="//@students.0" course_catalogue="F1100" extra_info="DegreeType_MASTER_DEGREE">
+      <offered_courses code="L-32" name="Master degree in Computer Science (Advanced Software Engineering)" duration="2" cfu="120" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean rhoncus lacus metus, vel suscipit libero aliquam mattis. Mauris dignissim id lorem vitae rutrum. Donec nec ipsum ut metus aliquam placerat dapibus sed dui. Donec facilisis varius sollicitudin. Aenean sem nisl, posuere non tincidunt eget, viverra a neque." coordinator="//@professors.1" enrolled_students="//@students.0" course_catalogue="//@courses.1" extra_info="//@extra_infos.1">
         <language>English</language>
       </offered_courses>
-      <offered_courses code="L-51" name="Master in Web Technologies" duration="1" cfu="60" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean rhoncus lacus metus, vel suscipit libero aliquam mattis. Mauris dignissim id lorem vitae rutrum. Donec nec ipsum ut metus aliquam placerat dapibus sed dui. Donec facilisis varius sollicitudin. Aenean sem nisl, posuere non tincidunt eget, viverra a neque." coordinator="fo2033-dfiaf3-2398283" extra_info="DegreeType_POST_GRADUATE PostGraduateLevel_FIRST">
+      <offered_courses code="L-51" name="Master in Web Technologies" duration="1" cfu="60" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean rhoncus lacus metus, vel suscipit libero aliquam mattis. Mauris dignissim id lorem vitae rutrum. Donec nec ipsum ut metus aliquam placerat dapibus sed dui. Donec facilisis varius sollicitudin. Aenean sem nisl, posuere non tincidunt eget, viverra a neque." coordinator="//@professors.1" extra_info="//@extra_infos.2 //@extra_infos.3">
         <language>Italian</language>
       </offered_courses>
     </departments>
   </universities>
   <professors name="Edoardo" surname="Alesse" email="e.a@u.it" telephone="+3937478374423" all_contacts="e.a@u.it - +3937478374423 - 08622380320" birth_date="1995-12-26T00:00:00.000+0100" office_telephone="08622380320" orcid="fo2030-dfidf3-2398293"/>
-  <professors name="Henry" surname="Muccini" email="h.m@u.it" telephone="+39328278332" all_contacts="h.m@u.it - +39328278332 - 08622380321" birth_date="1995-12-26T00:00:00.000+0100" office_telephone="08622380321" orcid="fo2033-dfiaf3-2398283" coordinated_degree_courses="L-31 L-32 L-51" taught_courses="F1000">
-    <news_posted title="This_is_a_title" publication_date="2023-12-10T00:00:00.000+0100" department="DISIM" body="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean rhoncus lacus metus, vel suscipit libero aliquam mattis. Mauris dignissim id lorem vitae rutrum. Donec nec ipsum ut metus aliquam placerat dapibus sed dui. Donec facilisis varius sollicitudin. Aenean sem nisl, posuere non tincidunt eget, viverra a neque."/>
+  <professors name="Henry" surname="Muccini" email="h.m@u.it" telephone="+39328278332" all_contacts="h.m@u.it - +39328278332 - 08622380321" birth_date="1995-12-26T00:00:00.000+0100" office_telephone="08622380321" orcid="fo2033-dfiaf3-2398283" coordinated_degree_courses="//@universities.0/@departments.0/@offered_courses.0 //@universities.0/@departments.0/@offered_courses.1 //@universities.0/@departments.0/@offered_courses.2" taught_courses="//@courses.0">
+    <news_posted title="This is a title" publication_date="2023-12-10T00:00:00.000+0100" department="//@universities.0/@departments.0" body="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean rhoncus lacus metus, vel suscipit libero aliquam mattis. Mauris dignissim id lorem vitae rutrum. Donec nec ipsum ut metus aliquam placerat dapibus sed dui. Donec facilisis varius sollicitudin. Aenean sem nisl, posuere non tincidunt eget, viverra a neque."/>
   </professors>
-  <professors name="Alfonso" surname="Pierantonio" email="a.p@u.it" telephone="+39389328721" all_contacts="a.p@u.it - +39389328721 - 08622380322" birth_date="1995-12-26T00:00:00.000+0100" office_telephone="08622380322" orcid="fo2022-dfanf3-2398283" supervised_thesis="A thesis on lorem ipsum yadada" taught_courses="F1100"/>
-  <students name="Dario" surname="D'Ercole" email="d.d@u.it" telephone="+393839082312" all_contacts="d.d@u.it - +393839082312" birth_date="1995-12-26T00:00:00.000+0100" matriculation_number="288615" enrolled_courses="L-31 L-32" booked_calls="//@courses.0/@calls.2 //@courses.1/@calls.0" student_exams="F1000 F1100">
-    <thesis_defended title="A thesis on lorem ipsum yadada" supervisor="fo2022-dfanf3-2398283" degree_course="L-31"/>
-    <transcripts name="Student Transcript [288615 - Computer Science]" degree_course="L-31" totalAcquiredCfu="15">
-      <courses date="2021-02-11T00:00:00.000+0100" grade="26" course="F1000"/>
+  <professors name="Alfonso" surname="Pierantonio" email="a.p@u.it" telephone="+39389328721" all_contacts="a.p@u.it - +39389328721 - 08622380322" birth_date="1995-12-26T00:00:00.000+0100" office_telephone="08622380322" orcid="fo2022-dfanf3-2398283" supervised_thesis="//@students.0/@thesis_defended.0" taught_courses="//@courses.1"/>
+  <students name="Dario" surname="D'Ercole" email="d.d@u.it" telephone="+393839082312" all_contacts="d.d@u.it - +393839082312" birth_date="1995-12-26T00:00:00.000+0100" student_exams="//@courses.0 //@courses.1" matriculation_number="288615" enrolled_courses="//@universities.0/@departments.0/@offered_courses.0 //@universities.0/@departments.0/@offered_courses.1" booked_calls="//@courses.0/@calls.2 //@courses.1/@calls.0">
+    <thesis_defended title="A thesis on lorem ipsum yadada" supervisor="//@professors.2" degree_course="//@universities.0/@departments.0/@offered_courses.0"/>
+    <transcripts name="Student Transcript [288615 - Computer Science]" degree_course="//@universities.0/@departments.0/@offered_courses.0" totalAcquiredCfu="15">
+      <courses date="2021-02-11T00:00:00.000+0100" grade="26" course="//@courses.0"/>
     </transcripts>
-    <transcripts name="Student Transcript [288615 - Master degree in Computer Science (Advanced Software Engineering)]" degree_course="L-32" totalAcquiredCfu="0">
-      <courses grade="" course="F1100"/>
+    <transcripts name="Student Transcript [288615 - Master degree in Computer Science (Advanced Software Engineering)]" degree_course="//@universities.0/@departments.0/@offered_courses.1" totalAcquiredCfu="0">
+      <courses grade="" course="//@courses.1"/>
     </transcripts>
   </students>
-  <courses code="F1000" name="Software Engineering 20-21" cfu="15" teachers="fo2033-dfiaf3-2398283" degree_courses="L-31" students_grades="2021-02-11T00:00:00.000+0100">
+  <courses code="F1000" name="Software Engineering 20-21" cfu="15" teachers="//@professors.1" degree_courses="//@universities.0/@departments.0/@offered_courses.0" students_grades="//@students.0/@transcripts.0/@courses.0">
     <language>Italian</language>
     <calls date="2021-01-14T00:00:00.000+0100" classroom="A1.6" type="PROJECT" description="First winter call for Software Engineering 20-21"/>
     <calls date="2021-01-28T00:00:00.000+0100" classroom="A1.6" type="PROJECT" description="Second winter call for Software Engineering 20-21"/>
     <calls date="2021-02-11T00:00:00.000+0100" classroom="A1.6" type="PROJECT" description="Third winter call for Software Engineering 20-21" booked_students="//@students.0"/>
   </courses>
-  <courses code="F1100" name="Model-driven Engineering 23-24" cfu="15" year="1" teachers="fo2022-dfanf3-2398283" degree_courses="L-32" students_grades="//@students.0/@transcripts.1/@courses.0">
+  <courses code="F1100" name="Model-driven Engineering 23-24" cfu="15" year="1" teachers="//@professors.2" degree_courses="//@universities.0/@departments.0/@offered_courses.1" students_grades="//@students.0/@transcripts.1/@courses.0">
     <language>English</language>
     <calls date="2024-01-18T00:00:00.000+0100" classroom="A1.6" type="PROJECT" description="First winter call for Model-driven Engineering 23-24" booked_students="//@students.0"/>
     <calls date="2024-02-01T00:00:00.000+0100" classroom="A1.6" type="PROJECT" description="Second winter call for Model-driven Engineering 23-24"/>
@@ -49,7 +49,8 @@
     <values>FIRST</values>
     <values>SECOND</values>
   </custom_enumerations>
-  <extra_infos name="DegreeType_MASTER_DEGREE" value="MASTER_DEGREE" type="ENUMERATION" lower_multiplicity="1" higher_multiplicity="1" enum="DegreeType"/>
-  <extra_infos name="DegreeType_POST_GRADUATE" value="POST_GRADUATE" type="ENUMERATION" lower_multiplicity="1" higher_multiplicity="1" enum="DegreeType"/>
-  <extra_infos name="PostGraduateLevel_FIRST" value="FIRST" type="ENUMERATION" lower_multiplicity="1" higher_multiplicity="1" enum="PostGraduateLevel"/>
+  <extra_infos name="DegreeType_BACHELOR_DEGREE" value="BACHELOR_DEGREE" type="ENUMERATION" lower_multiplicity="1" higher_multiplicity="1" enum="//@custom_enumerations.0"/>
+  <extra_infos name="DegreeType_MASTER_DEGREE" value="MASTER_DEGREE" type="ENUMERATION" lower_multiplicity="1" higher_multiplicity="1" enum="//@custom_enumerations.0"/>
+  <extra_infos name="DegreeType_POST_GRADUATE" value="POST_GRADUATE" type="ENUMERATION" lower_multiplicity="1" higher_multiplicity="1" enum="//@custom_enumerations.0"/>
+  <extra_infos name="PostGraduateLevel_FIRST" value="FIRST" type="ENUMERATION" lower_multiplicity="1" higher_multiplicity="1" enum="//@custom_enumerations.1"/>
 </dagima_mde_hw3:Container>

@@ -45,7 +45,7 @@ public interface DegreeCourse extends EObject {
 	 * @return the value of the '<em>Code</em>' attribute.
 	 * @see #setCode(String)
 	 * @see daGiMa_MDE_HW3.DaGiMa_MDE_HW3Package#getDegreeCourse_Code()
-	 * @model default="L-44" id="true" required="true"
+	 * @model default="L-44" required="true"
 	 * @generated
 	 */
 	String getCode();

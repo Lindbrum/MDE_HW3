@@ -107,9 +107,10 @@ public class MyPlugin {
 		
 		//News - for DISIM by Henry Muccini
 		News newsDisimMuccini = DaGiMa_MDE_HW3Factory.eINSTANCE.createNews();
-		newsDisimMuccini.setTitle("This_is_a_title");
+		newsDisimMuccini.setTitle("This is a title");
 		newsDisimMuccini.setAuthor(profMuccini);
-		newsDisimMuccini.setBody("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean rhoncus lacus metus, vel suscipit libero aliquam mattis. Mauris dignissim id lorem vitae rutrum. Donec nec ipsum ut metus aliquam placerat dapibus sed dui. Donec facilisis varius sollicitudin. Aenean sem nisl, posuere non tincidunt eget, viverra a neque.");
+		newsDisimMuccini.setBody("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean rhoncus lacus metus, vel suscipit libero aliquam mattis. Mauris dignissim id lorem vitae rutrum. Donec nec ipsum ut metus aliquam placerat dapibus sed dui. Donec facilisis varius sollicitudin. Aenean sem nisl, posuere non tincidunt eget, viverra a neque."
+				);
 		newsDisimMuccini.setDepartment(departmentDisim);
 		calendar.clear();
 		calendar.set(2023, 11, 10);
@@ -122,7 +123,8 @@ public class MyPlugin {
 		degreeCourseCS.setCode("L-31");
 		degreeCourseCS.setCoordinator(profMuccini);
 		degreeCourseCS.setDepartment(departmentDisim);
-		degreeCourseCS.setDescription("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean rhoncus lacus metus, vel suscipit libero aliquam mattis. Mauris dignissim id lorem vitae rutrum. Donec nec ipsum ut metus aliquam placerat dapibus sed dui. Donec facilisis varius sollicitudin. Aenean sem nisl, posuere non tincidunt eget, viverra a neque.");
+		degreeCourseCS.setDescription("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean rhoncus lacus metus, vel suscipit libero aliquam mattis. Mauris dignissim id lorem vitae rutrum. Donec nec ipsum ut metus aliquam placerat dapibus sed dui. Donec facilisis varius sollicitudin. Aenean sem nisl, posuere non tincidunt eget, viverra a neque."
+				);
 		degreeCourseCS.setDuration(3);
 		degreeCourseCS.getLanguage().addAll(Arrays.asList("Italian"));
 		degreeCourseCS.setReference_year(2020);
@@ -155,7 +157,8 @@ public class MyPlugin {
 		degreeCourseASE.setCode("L-32");
 		degreeCourseASE.setCoordinator(profMuccini);
 		degreeCourseASE.setDepartment(departmentDisim);
-		degreeCourseASE.setDescription("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean rhoncus lacus metus, vel suscipit libero aliquam mattis. Mauris dignissim id lorem vitae rutrum. Donec nec ipsum ut metus aliquam placerat dapibus sed dui. Donec facilisis varius sollicitudin. Aenean sem nisl, posuere non tincidunt eget, viverra a neque.");
+		degreeCourseASE.setDescription("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean rhoncus lacus metus, vel suscipit libero aliquam mattis. Mauris dignissim id lorem vitae rutrum. Donec nec ipsum ut metus aliquam placerat dapibus sed dui. Donec facilisis varius sollicitudin. Aenean sem nisl, posuere non tincidunt eget, viverra a neque."
+				);
 		degreeCourseASE.setDuration(2);
 		degreeCourseASE.getLanguage().addAll(Arrays.asList("English"));
 		degreeCourseASE.setReference_year(2023);
@@ -180,7 +183,8 @@ public class MyPlugin {
 		degreeCourseWT.setCode("L-51");
 		degreeCourseWT.setCoordinator(profMuccini);
 		degreeCourseWT.setDepartment(departmentDisim);
-		degreeCourseWT.setDescription("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean rhoncus lacus metus, vel suscipit libero aliquam mattis. Mauris dignissim id lorem vitae rutrum. Donec nec ipsum ut metus aliquam placerat dapibus sed dui. Donec facilisis varius sollicitudin. Aenean sem nisl, posuere non tincidunt eget, viverra a neque.");
+		degreeCourseWT.setDescription("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean rhoncus lacus metus, vel suscipit libero aliquam mattis. Mauris dignissim id lorem vitae rutrum. Donec nec ipsum ut metus aliquam placerat dapibus sed dui. Donec facilisis varius sollicitudin. Aenean sem nisl, posuere non tincidunt eget, viverra a neque."
+				);
 		degreeCourseWT.setDuration(1);
 		degreeCourseWT.getLanguage().addAll(Arrays.asList("Italian"));
 		degreeCourseWT.setReference_year(2023);
@@ -349,7 +353,7 @@ public class MyPlugin {
 		container.setModel_name(MODEL_1);
 		container.getCourses().addAll(Arrays.asList(courseSE, courseMDE));
 		container.getCustom_enumerations().addAll(Arrays.asList(customEnumDegreeTypes, customEnumPostGraduateLevels));
-		container.getExtra_infos().addAll(Arrays.asList(extraInfoDegreeTypeMaster, extraInfoDegreeTypePostGraduate, extraInfoPostGraduateLevelFirst));
+		container.getExtra_infos().addAll(Arrays.asList(extraInfoDegreeTypeBachelor, extraInfoDegreeTypeMaster, extraInfoDegreeTypePostGraduate, extraInfoPostGraduateLevelFirst));
 		container.getProfessors().addAll(Arrays.asList(profAlesse, profMuccini, profPierantonio));
 		container.getStudents().addAll(Arrays.asList(studentDario));
 		container.getUniversities().addAll(Arrays.asList(universityLaquila));
@@ -475,7 +479,8 @@ public class MyPlugin {
 		phdCS.setCode("P-01");
 		phdCS.setCoordinator(profDavide);
 		phdCS.setDepartment(departmentDisim);
-		phdCS.setDescription("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean rhoncus lacus metus, vel suscipit libero aliquam mattis. Mauris dignissim id lorem vitae rutrum. Donec nec ipsum ut metus aliquam placerat dapibus sed dui. Donec facilisis varius sollicitudin. Aenean sem nisl, posuere non tincidunt eget, viverra a neque.");
+		phdCS.setDescription("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean rhoncus lacus metus, vel suscipit libero aliquam mattis. Mauris dignissim id lorem vitae rutrum. Donec nec ipsum ut metus aliquam placerat dapibus sed dui. Donec facilisis varius sollicitudin. Aenean sem nisl, posuere non tincidunt eget, viverra a neque."
+				);
 		phdCS.setDuration(1);
 		phdCS.getLanguage().addAll(Arrays.asList("English"));
 		phdCS.setReference_year(2023);
@@ -488,7 +493,8 @@ public class MyPlugin {
 		phdAN.setCode("P-02");
 		phdAN.setCoordinator(profVittorio);
 		phdAN.setDepartment(departmentDisim);
-		phdAN.setDescription("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean rhoncus lacus metus, vel suscipit libero aliquam mattis. Mauris dignissim id lorem vitae rutrum. Donec nec ipsum ut metus aliquam placerat dapibus sed dui. Donec facilisis varius sollicitudin. Aenean sem nisl, posuere non tincidunt eget, viverra a neque.");
+		phdAN.setDescription("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean rhoncus lacus metus, vel suscipit libero aliquam mattis. Mauris dignissim id lorem vitae rutrum. Donec nec ipsum ut metus aliquam placerat dapibus sed dui. Donec facilisis varius sollicitudin. Aenean sem nisl, posuere non tincidunt eget, viverra a neque."
+				);
 		phdAN.setDuration(1);
 		phdAN.getLanguage().addAll(Arrays.asList("English"));
 		phdAN.setReference_year(2023);
@@ -500,7 +506,8 @@ public class MyPlugin {
 		phdAI.setCode("P-03");
 		phdAI.setCoordinator(profVittorio);
 		phdAI.setDepartment(departmentDisim);
-		phdAI.setDescription("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean rhoncus lacus metus, vel suscipit libero aliquam mattis. Mauris dignissim id lorem vitae rutrum. Donec nec ipsum ut metus aliquam placerat dapibus sed dui. Donec facilisis varius sollicitudin. Aenean sem nisl, posuere non tincidunt eget, viverra a neque.");
+		phdAI.setDescription("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean rhoncus lacus metus, vel suscipit libero aliquam mattis. Mauris dignissim id lorem vitae rutrum. Donec nec ipsum ut metus aliquam placerat dapibus sed dui. Donec facilisis varius sollicitudin. Aenean sem nisl, posuere non tincidunt eget, viverra a neque."
+				);
 		phdAI.setDuration(1);
 		phdAI.getLanguage().addAll(Arrays.asList("English"));
 		phdAI.setReference_year(2023);
@@ -562,36 +569,46 @@ public class MyPlugin {
 		return container;
 	}
 	
-	public final static String FILENAME_TEMPLATE = "%s.xmi";
-	public final static String MODEL_1 = "Instance1";
-	public final static String MODEL_2 = "Instance2";
 
 	public static Diagnostic validate(EObject model) {
 		return Diagnostician.INSTANCE.validate(model);
 	}
+	
+	public final static String FILENAME_TEMPLATE = "%s.xmi";
+	public final static String MODEL_1 = "Instance1";
+	public final static String MODEL_2 = "Instance2";
+	
+	public final static String SELECTED_MODEL = MODEL_2;
 
 	public static void main(String[] args) {
-		//Instance 1
-		Container root = create();
-		serializeModel(root, FILENAME_TEMPLATE);
-		Container importedModel = load(FILENAME_TEMPLATE.formatted(MODEL_1));
 		
-		Diagnostic d = validate(importedModel);
+		Container root;
+		Container loadedRoot;
+		Diagnostic d;
+		
+		switch(SELECTED_MODEL) {
+		default:
+			System.err.println("Invalid model selection, defaulting to %s".formatted(MODEL_1));
+			/*FALL-THROUGH*/
+		case MODEL_1:
+			root = create();
+			serializeModel(root, FILENAME_TEMPLATE);
+			loadedRoot = load(FILENAME_TEMPLATE.formatted(MODEL_1));
+			break;
+			
+		case MODEL_2:
+			root = create_2();
+			serializeModel(root, FILENAME_TEMPLATE);
+			loadedRoot = load(FILENAME_TEMPLATE.formatted(MODEL_2));
+			break;
+		}
+		
+		d = validate(loadedRoot);
 		if(d.getSeverity() != Diagnostic.ERROR)
 			System.out.println("the model is valid.".formatted(root.getModel_name()));
 		else
-			System.err.println("The model is not valid: /n/n".formatted(root.getModel_name()) + d.getMessage());
-		
-		//Instance 2
-		root = create_2();
-		serializeModel(root, FILENAME_TEMPLATE);
-		importedModel = load(FILENAME_TEMPLATE.formatted(MODEL_2));
-		
-		d = validate(importedModel);
-		if(d.getSeverity() != Diagnostic.ERROR)
-			System.out.println("the model %s is valid.".formatted(root.getModel_name()));
-		else
-			System.err.println("The model %s is not valid: /n/n".formatted(root.getModel_name()) + d.getMessage());
+			System.err.println("The model is not valid: \n\n".formatted(root.getModel_name()) + d.getMessage() + "\n\nDiagnosis source: " + d.getSource());
+			
 	}
 
 	public static Container load(String fileName) {

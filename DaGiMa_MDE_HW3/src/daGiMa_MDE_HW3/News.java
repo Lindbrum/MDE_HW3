@@ -35,7 +35,7 @@ public interface News extends EObject {
 	 * @return the value of the '<em>Title</em>' attribute.
 	 * @see #setTitle(String)
 	 * @see daGiMa_MDE_HW3.DaGiMa_MDE_HW3Package#getNews_Title()
-	 * @model default="A news title" id="true" required="true"
+	 * @model default="A news title" required="true"
 	 * @generated
 	 */
 	String getTitle();

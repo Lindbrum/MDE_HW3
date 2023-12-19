@@ -60,7 +60,7 @@ public interface Professor extends User {
 	 * @return the value of the '<em>Orcid</em>' attribute.
 	 * @see #setOrcid(String)
 	 * @see daGiMa_MDE_HW3.DaGiMa_MDE_HW3Package#getProfessor_Orcid()
-	 * @model id="true" required="true"
+	 * @model required="true"
 	 * @generated
 	 */
 	String getOrcid();

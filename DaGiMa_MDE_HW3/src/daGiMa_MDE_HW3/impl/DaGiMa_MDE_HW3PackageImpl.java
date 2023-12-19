@@ -400,8 +400,18 @@ public class DaGiMa_MDE_HW3PackageImpl extends EPackageImpl implements DaGiMa_MD
 	 * @generated
 	 */
 	@Override
+	public EReference getStudent_Student_exams() {
+		return (EReference)studentEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EAttribute getStudent_Matriculation_number() {
-		return (EAttribute)studentEClass.getEStructuralFeatures().get(0);
+		return (EAttribute)studentEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -411,16 +421,6 @@ public class DaGiMa_MDE_HW3PackageImpl extends EPackageImpl implements DaGiMa_MD
 	 */
 	@Override
 	public EReference getStudent_Thesis_defended() {
-		return (EReference)studentEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getStudent_Enrolled_courses() {
 		return (EReference)studentEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -430,7 +430,7 @@ public class DaGiMa_MDE_HW3PackageImpl extends EPackageImpl implements DaGiMa_MD
 	 * @generated
 	 */
 	@Override
-	public EReference getStudent_Booked_calls() {
+	public EReference getStudent_Enrolled_courses() {
 		return (EReference)studentEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -440,8 +440,18 @@ public class DaGiMa_MDE_HW3PackageImpl extends EPackageImpl implements DaGiMa_MD
 	 * @generated
 	 */
 	@Override
-	public EReference getStudent_Transcripts() {
+	public EReference getStudent_Booked_calls() {
 		return (EReference)studentEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getStudent_Transcripts() {
+		return (EReference)studentEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -530,8 +540,18 @@ public class DaGiMa_MDE_HW3PackageImpl extends EPackageImpl implements DaGiMa_MD
 	 * @generated
 	 */
 	@Override
+	public EReference getDepartment_Teachers() {
+		return (EReference)departmentEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EAttribute getDepartment_Website() {
-		return (EAttribute)departmentEClass.getEStructuralFeatures().get(0);
+		return (EAttribute)departmentEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -541,16 +561,6 @@ public class DaGiMa_MDE_HW3PackageImpl extends EPackageImpl implements DaGiMa_MD
 	 */
 	@Override
 	public EReference getDepartment_Offered_courses() {
-		return (EReference)departmentEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getDepartment_University() {
 		return (EReference)departmentEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -560,8 +570,18 @@ public class DaGiMa_MDE_HW3PackageImpl extends EPackageImpl implements DaGiMa_MD
 	 * @generated
 	 */
 	@Override
+	public EReference getDepartment_University() {
+		return (EReference)departmentEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EAttribute getDepartment_Name() {
-		return (EAttribute)departmentEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)departmentEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -571,7 +591,7 @@ public class DaGiMa_MDE_HW3PackageImpl extends EPackageImpl implements DaGiMa_MD
 	 */
 	@Override
 	public EReference getDepartment_Related_news() {
-		return (EReference)departmentEClass.getEStructuralFeatures().get(4);
+		return (EReference)departmentEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -1519,6 +1539,7 @@ public class DaGiMa_MDE_HW3PackageImpl extends EPackageImpl implements DaGiMa_MD
 		createEOperation(professorEClass, PROFESSOR___SATISFY_MINIMAL_CFU_REQUIREMENT__DIAGNOSTICCHAIN_MAP);
 
 		studentEClass = createEClass(STUDENT);
+		createEReference(studentEClass, STUDENT__STUDENT_EXAMS);
 		createEAttribute(studentEClass, STUDENT__MATRICULATION_NUMBER);
 		createEReference(studentEClass, STUDENT__THESIS_DEFENDED);
 		createEReference(studentEClass, STUDENT__ENROLLED_COURSES);
@@ -1534,6 +1555,7 @@ public class DaGiMa_MDE_HW3PackageImpl extends EPackageImpl implements DaGiMa_MD
 		createEAttribute(userEClass, USER__BIRTH_DATE);
 
 		departmentEClass = createEClass(DEPARTMENT);
+		createEReference(departmentEClass, DEPARTMENT__TEACHERS);
 		createEAttribute(departmentEClass, DEPARTMENT__WEBSITE);
 		createEReference(departmentEClass, DEPARTMENT__OFFERED_COURSES);
 		createEReference(departmentEClass, DEPARTMENT__UNIVERSITY);
@@ -1678,11 +1700,11 @@ public class DaGiMa_MDE_HW3PackageImpl extends EPackageImpl implements DaGiMa_MD
 		initEClass(universityEClass, University.class, "University", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getUniversity_Rector(), this.getProfessor(), null, "rector", null, 1, 1, University.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getUniversity_Departments(), this.getDepartment(), this.getDepartment_University(), "departments", null, 1, -1, University.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getUniversity_Name(), ecorePackage.getEString(), "name", "A university", 1, 1, University.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getUniversity_Name(), ecorePackage.getEString(), "name", "A university", 1, 1, University.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(professorEClass, Professor.class, "Professor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getProfessor_Office_telephone(), ecorePackage.getEString(), "office_telephone", null, 1, 1, Professor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getProfessor_Orcid(), ecorePackage.getEString(), "orcid", null, 1, 1, Professor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getProfessor_Orcid(), ecorePackage.getEString(), "orcid", null, 1, 1, Professor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getProfessor_Coordinated_degree_courses(), this.getDegreeCourse(), this.getDegreeCourse_Coordinator(), "coordinated_degree_courses", null, 0, -1, Professor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getProfessor_Supervised_thesis(), this.getThesis(), this.getThesis_Supervisor(), "supervised_thesis", null, 0, -1, Professor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getProfessor_Taught_courses(), this.getCourse(), this.getCourse_Teachers(), "taught_courses", null, 1, -1, Professor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1700,6 +1722,7 @@ public class DaGiMa_MDE_HW3PackageImpl extends EPackageImpl implements DaGiMa_MD
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(studentEClass, Student.class, "Student", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getStudent_Student_exams(), this.getCourse(), null, "student_exams", null, 0, -1, Student.class, !IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEAttribute(getStudent_Matriculation_number(), ecorePackage.getELong(), "matriculation_number", null, 1, 1, Student.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getStudent_Thesis_defended(), this.getThesis(), this.getThesis_Student(), "thesis_defended", null, 0, -1, Student.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getStudent_Enrolled_courses(), this.getDegreeCourse(), this.getDegreeCourse_Enrolled_students(), "enrolled_courses", null, 0, -1, Student.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1715,14 +1738,15 @@ public class DaGiMa_MDE_HW3PackageImpl extends EPackageImpl implements DaGiMa_MD
 		initEAttribute(getUser_Birth_date(), ecorePackage.getEDate(), "birth_date", null, 1, 1, User.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(departmentEClass, Department.class, "Department", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getDepartment_Teachers(), this.getProfessor(), null, "teachers", null, 0, -1, Department.class, !IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDepartment_Website(), ecorePackage.getEString(), "website", null, 1, 1, Department.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDepartment_Offered_courses(), this.getDegreeCourse(), this.getDegreeCourse_Department(), "offered_courses", null, 1, -1, Department.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDepartment_University(), this.getUniversity(), this.getUniversity_Departments(), "university", null, 0, 1, Department.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getDepartment_Name(), ecorePackage.getEString(), "name", "A department", 1, 1, Department.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDepartment_Name(), ecorePackage.getEString(), "name", "A department", 1, 1, Department.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDepartment_Related_news(), this.getNews(), this.getNews_Department(), "related_news", null, 0, -1, Department.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(degreeCourseEClass, DegreeCourse.class, "DegreeCourse", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getDegreeCourse_Code(), ecorePackage.getEString(), "code", "L-44", 1, 1, DegreeCourse.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDegreeCourse_Code(), ecorePackage.getEString(), "code", "L-44", 1, 1, DegreeCourse.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDegreeCourse_Name(), ecorePackage.getEString(), "name", "A degree course", 1, 1, DegreeCourse.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDegreeCourse_Reference_year(), ecorePackage.getEInt(), "reference_year", "2023", 1, 1, DegreeCourse.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDegreeCourse_Duration(), ecorePackage.getEInt(), "duration", "3", 1, 1, DegreeCourse.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1745,7 +1769,7 @@ public class DaGiMa_MDE_HW3PackageImpl extends EPackageImpl implements DaGiMa_MD
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(thesisEClass, Thesis.class, "Thesis", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getThesis_Title(), ecorePackage.getEString(), "title", "A thesis", 1, 1, Thesis.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getThesis_Title(), ecorePackage.getEString(), "title", "A thesis", 1, 1, Thesis.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getThesis_Type(), this.getThesisType(), "type", "COMPILATION", 1, 1, Thesis.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getThesis_Student(), this.getStudent(), this.getStudent_Thesis_defended(), "student", null, 1, 1, Thesis.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getThesis_Supervisor(), this.getProfessor(), this.getProfessor_Supervised_thesis(), "supervisor", null, 1, 1, Thesis.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1761,7 +1785,7 @@ public class DaGiMa_MDE_HW3PackageImpl extends EPackageImpl implements DaGiMa_MD
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(courseEClass, Course.class, "Course", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getCourse_Code(), ecorePackage.getEString(), "code", "F-1234", 1, 1, Course.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCourse_Code(), ecorePackage.getEString(), "code", "F-1234", 1, 1, Course.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCourse_Name(), ecorePackage.getEString(), "name", "A course", 1, 1, Course.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCourse_Language(), ecorePackage.getEString(), "language", "English", 1, -1, Course.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCourse_Cfu(), ecorePackage.getEInt(), "cfu", "6", 1, 1, Course.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1792,7 +1816,7 @@ public class DaGiMa_MDE_HW3PackageImpl extends EPackageImpl implements DaGiMa_MD
 		initEReference(getExaminationCall_Booked_students(), this.getStudent(), this.getStudent_Booked_calls(), "booked_students", null, 0, -1, ExaminationCall.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(passingGradeEClass, PassingGrade.class, "PassingGrade", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getPassingGrade_Date(), ecorePackage.getEDate(), "date", "2024-01-28", 0, 1, PassingGrade.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPassingGrade_Date(), ecorePackage.getEDate(), "date", "2024-01-28", 0, 1, PassingGrade.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPassingGrade_Grade(), ecorePackage.getEString(), "grade", "30", 0, 1, PassingGrade.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPassingGrade_Course(), this.getCourse(), this.getCourse_Students_grades(), "course", null, 1, 1, PassingGrade.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPassingGrade_Student(), this.getCareer(), this.getCareer_Courses(), "student", null, 1, 1, PassingGrade.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1816,14 +1840,14 @@ public class DaGiMa_MDE_HW3PackageImpl extends EPackageImpl implements DaGiMa_MD
 		initEOperation(getCareer__PassedAllExams(), ecorePackage.getEBoolean(), "passedAllExams", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(newsEClass, News.class, "News", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getNews_Title(), ecorePackage.getEString(), "title", "A news title", 1, 1, News.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getNews_Title(), ecorePackage.getEString(), "title", "A news title", 1, 1, News.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getNews_Publication_date(), ecorePackage.getEDate(), "publication_date", "2023-12-18", 1, 1, News.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getNews_Department(), this.getDepartment(), this.getDepartment_Related_news(), "department", null, 0, 1, News.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getNews_Author(), this.getProfessor(), this.getProfessor_News_posted(), "author", null, 1, 1, News.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getNews_Body(), ecorePackage.getEString(), "body", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut porta ante id turpis faucibus pharetra non nec arcu. Morbi luctus, est at tincidunt scelerisque, eros purus posuere purus, in facilisis turpis lectus et neque. Phasellus euismod accumsan turpis faucibus lobortis. In eleifend ligula non iaculis pulvinar. Nulla malesuada ac massa vulputate molestie.", 1, 1, News.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(extraInfoEClass, ExtraInfo.class, "ExtraInfo", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getExtraInfo_Name(), ecorePackage.getEString(), "name", null, 1, 1, ExtraInfo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getExtraInfo_Name(), ecorePackage.getEString(), "name", null, 1, 1, ExtraInfo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getExtraInfo_Value(), ecorePackage.getEString(), "value", null, 1, 1, ExtraInfo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getExtraInfo_Type(), this.getMetadataType(), "type", "STRING", 1, 1, ExtraInfo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getExtraInfo_Lower_multiplicity(), ecorePackage.getEInt(), "lower_multiplicity", "0", 1, 1, ExtraInfo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1885,7 +1909,7 @@ public class DaGiMa_MDE_HW3PackageImpl extends EPackageImpl implements DaGiMa_MD
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(customEnumerationEClass, CustomEnumeration.class, "CustomEnumeration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getCustomEnumeration_Name(), ecorePackage.getEString(), "name", null, 1, 1, CustomEnumeration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCustomEnumeration_Name(), ecorePackage.getEString(), "name", null, 1, 1, CustomEnumeration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCustomEnumeration_Values(), ecorePackage.getEString(), "values", null, 1, -1, CustomEnumeration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(containerEClass, daGiMa_MDE_HW3.Container.class, "Container", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1935,6 +1959,8 @@ public class DaGiMa_MDE_HW3PackageImpl extends EPackageImpl implements DaGiMa_MD
 		createEcoreAnnotations();
 		// http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot
 		createPivotAnnotations();
+		// http://www.eclipse.org/OCL/Collection
+		createCollectionAnnotations();
 	}
 
 	/**
@@ -2073,6 +2099,28 @@ public class DaGiMa_MDE_HW3PackageImpl extends EPackageImpl implements DaGiMa_MD
 		   source,
 		   new String[] {
 			   "body", "\n\t\t\tenum?.values->one(enumValue | enumValue = value) or type <> MetadataType::ENUMERATION"
+		   });
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/OCL/Collection</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createCollectionAnnotations() {
+		String source = "http://www.eclipse.org/OCL/Collection";
+		addAnnotation
+		  (getStudent_Student_exams(),
+		   source,
+		   new String[] {
+			   "nullFree", "false"
+		   });
+		addAnnotation
+		  (getDepartment_Teachers(),
+		   source,
+		   new String[] {
+			   "nullFree", "false"
 		   });
 	}
 
