@@ -1,2 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dagima_mde_hw3:Container xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:dagima_mde_hw3="http://www.example.org/dagima_mde_hw3"/>
+<dagima_mde_hw3:Container xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:dagima_mde_hw3="http://www.example.org/dagima_mde_hw3">
+  <universities rector="123415-124578-874521" name="Università degli studi dell'Aquila">
+    <departments website="www.disim.it" name="DISIM">
+      <offered_courses code="L-01" name="PhD1" duration="1" cfu="11" coordinator="365241-478596-145211" enrolled_students="//@students.2" course_catalogue="//@courses.0" extra_info="DegreeType_PHD ResearchField_AI">
+        <language>english</language>
+      </offered_courses>
+      <offered_courses code="L-02" name="PhD2" duration="1" cfu="11" coordinator="452147-787878-452103" enrolled_students="//@students.0 //@students.4" course_catalogue="//@courses.0" extra_info="DegreeType_PHD ResearchField_AN">
+        <language>english</language>
+      </offered_courses>
+      <offered_courses code="L-03" name="PhD3" duration="1" cfu="11" coordinator="452147-787878-452103" enrolled_students="//@students.1 //@students.3" course_catalogue="//@courses.0" extra_info="DegreeType_PHD ResearchField_CS">
+        <language>english</language>
+      </offered_courses>
+    </departments>
+  </universities>
+  <professors name="Edoardo" surname="Alesse" email="ea@u.it" telephone="+393214563241" all_contacts="ea@u.it - +393214563241 - 0862987414" birth_date="1963-12-12T00:00:00.000+0100" office_telephone="0862987414" orcid="123415-124578-874521" taught_courses="//@courses.0"/>
+  <professors name="Vittorio" surname="Melassi" email="vm@u.it" telephone="+393421232143" all_contacts="vm@u.it - +393421232143 - 0862458899" birth_date="1980-01-23T00:00:00.000+0100" office_telephone="0862458899" orcid="452147-787878-452103" coordinated_degree_courses="L-02 L-03" taught_courses="//@courses.0"/>
+  <professors name="Davide" surname="D'Ettore" email="dd@u.it" telephone="+393425678988" all_contacts="dd@u.it - +393425678988 - 0862558745" birth_date="1965-03-20T00:00:00.000+0100" office_telephone="0862558745" orcid="365241-478596-145211" coordinated_degree_courses="L-01" taught_courses="//@courses.0"/>
+  <students name="Giovanni" surname="Rossi" email="gr@s.u.it" telephone="+393456789012" all_contacts="gr@s.u.it - +393456789012" birth_date="1995-11-12T00:00:00.000+0100" matriculation_number="100100" enrolled_courses="L-02"/>
+  <students name="Mattia" surname="Pino" email="mp@s.u.it" telephone="+393241324355" all_contacts="mp@s.u.it - +393241324355" birth_date="1995-11-12T00:00:00.000+0100" matriculation_number="100101" enrolled_courses="L-03"/>
+  <students name="Federica" surname="Verdi" email="fv@s.u.it" telephone="+393211231211" all_contacts="fv@s.u.it - +393211231211" birth_date="1995-10-10T00:00:00.000+0100" matriculation_number="100102" enrolled_courses="L-01"/>
+  <students name="Nicola" surname="Klauss" email="nk@s.u.it" telephone="+393334321222" all_contacts="nk@s.u.it - +393334321222" birth_date="1997-09-09T00:00:00.000+0200" matriculation_number="100103" enrolled_courses="L-03"/>
+  <students name="Giuseppe" surname="Bianchi" email="gb@s.u.it" telephone="+393219870098" all_contacts="gb@s.u.it - +393219870098" birth_date="1993-11-28T00:00:00.000+0100" matriculation_number="100104" enrolled_courses="L-02"/>
+  <courses name="Computer Science" teachers="123415-124578-874521 452147-787878-452103 365241-478596-145211" degree_courses="L-01 L-02 L-03">
+    <language>italian</language>
+  </courses>
+  <custom_enumerations name="DegreeType">
+    <values>BACHELOR_DEGREE</values>
+    <values>MASTER_DEGREE</values>
+    <values>PHD</values>
+    <values>POST_GRADUATE</values>
+  </custom_enumerations>
+  <extra_infos name="DegreeType_PHD" value="PHD" type="ENUMERATION" lower_multiplicity="1" higher_multiplicity="1" enum="DegreeType"/>
+  <extra_infos name="ResearchField_AI" value="AI" lower_multiplicity="1" higher_multiplicity="1"/>
+  <extra_infos name="ResearchField_AN" value="ANALYSIS" lower_multiplicity="1" higher_multiplicity="1"/>
+  <extra_infos name="ResearchField_CS" value="COMPUTER SCIENCE" lower_multiplicity="1" higher_multiplicity="1"/>
+</dagima_mde_hw3:Container>
