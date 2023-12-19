@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<dagima_mde_hw3:Course xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:dagima_mde_hw3="http://www.example.org/dagima_mde_hw3" name="SE">
-  <students_grades href="Grade1.dagima_mde_hw3#/"/>
-</dagima_mde_hw3:Course>

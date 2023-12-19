@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename resource &apos;DaGiMa_Editor/My.dagima_mde_hw3&apos; to &apos;LAquila.dagima_mde_hw3&apos;" description="Rename resource &apos;My.dagima_mde_hw3&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="My.dagima_mde_hw3" name="LAquila.dagima_mde_hw3" stamp="1702419033520" updateReferences="true"/>
-</session>
