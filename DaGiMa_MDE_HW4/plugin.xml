@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated daGiMa_MDE_HW3 -->
+      <package
+            uri="http://www.example.org/dagima_mde_hw3"
+            class="daGiMa_MDE_HW3.DaGiMa_MDE_HW3Package"
+            genModel="model/daGiMa_MDE_HW3.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated daGiMa_MDE_HW4 -->
+      <package
+            uri="http://www.example.org/dagima_mde_hw4"
+            class="daGiMa_MDE_HW4.DaGiMa_MDE_HW4Package"
+            genModel="model/daGiMa_MDE_HW4.genmodel"/>
+   </extension>
+
+</plugin>

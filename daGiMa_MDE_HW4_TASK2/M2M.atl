@@ -1,0 +1,33 @@
+-- @path src=/daGiMa_MDE_HW4_TASK2/daGiMa_MDE_HW4_src.ecore
+-- @path dest=/daGiMa_MDE_HW4_TASK2/daGiMa_MDE_HW4_dest.ecore
+
+module M2M;
+create OUT : dest from IN : src;
+
+rule AddMatriculation2Career {
+	from
+		s : src!Career
+	to
+		t : dest!Career (
+			matriculation_number <- s.student.matriculation_number	
+		)
+}
+
+rule RemoveMatriculationFromStudent {
+	from
+		s : src!Student
+	to
+		t : dest!Student (
+			name <- s.name,
+			surname <- s.surname,
+			email <- s.email,
+			telephone <- s.telephone,
+			birth_date <- s.birthdate,
+			student_exams <- s.student_exams,
+			thesis_defended <- s.thesis_defended,
+			enrolled_courses <- s.enrolled_courses,
+			booked_calls <- s.booked_calls,
+			transcripts <- s.transcripts,
+			all_contacts <- s.all_contacts
+		)
+}
