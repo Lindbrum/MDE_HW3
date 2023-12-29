@@ -31,3 +31,17 @@ rule RemoveMatriculationFromStudent {
 			all_contacts <- s.all_contacts
 		)
 }
+
+rule ContainerTransform {
+	from
+		s : src!Container
+	to
+		t : dest!Container (
+			students <- s.students,
+			professors <- s.professors,
+			universities <- s.universities,
+			courses <- s.courses,
+			custom_enums <- s.custom_enums,
+			extra_infos <- s.extra_infos
+			)
+}
