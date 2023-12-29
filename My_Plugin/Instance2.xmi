@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ASCII"?>
-<dagima_mde_hw3:Container xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:dagima_mde_hw3="http://www.example.org/dagima_mde_hw3" model_name="Instance2">
+<dagima_mde_hw4:Container xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:dagima_mde_hw4="http://www.example.org/dagima_mde_hw4" model_name="Instance2">
   <universities rector="//@professors.0" name="University of L'Aquila">
     <departments website="www.disim.it" name="DISIM">
       <offered_courses code="P-01" name="PhD in Computer Science" duration="1" cfu="11" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean rhoncus lacus metus, vel suscipit libero aliquam mattis. Mauris dignissim id lorem vitae rutrum. Donec nec ipsum ut metus aliquam placerat dapibus sed dui. Donec facilisis varius sollicitudin. Aenean sem nisl, posuere non tincidunt eget, viverra a neque." coordinator="//@professors.1" enrolled_students="//@students.2 //@students.4" extra_info="//@extra_infos.0 //@extra_infos.3">
@@ -31,4 +31,4 @@
   <extra_infos name="ResearchField_Artificial Intelligence" value="Artificial Intelligence" lower_multiplicity="1" higher_multiplicity="1"/>
   <extra_infos name="ResearchField_Analysis" value="Analysis" lower_multiplicity="1" higher_multiplicity="1"/>
   <extra_infos name="ResearchField_Computer Science" value="Computer Science" lower_multiplicity="1" higher_multiplicity="1"/>
-</dagima_mde_hw3:Container>
+</dagima_mde_hw4:Container>

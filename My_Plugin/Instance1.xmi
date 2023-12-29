@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ASCII"?>
-<dagima_mde_hw3:Container xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:dagima_mde_hw3="http://www.example.org/dagima_mde_hw3" model_name="Instance1">
+<dagima_mde_hw4:Container xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:dagima_mde_hw4="http://www.example.org/dagima_mde_hw4" model_name="Instance1">
   <universities rector="//@professors.0" name="University of L'Aquila">
     <departments teachers="//@professors.1 //@professors.2" website="www.disim.it" name="DISIM" related_news="//@professors.1/@news_posted.0">
       <offered_courses code="L-31" name="Computer Science" reference_year="2020" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean rhoncus lacus metus, vel suscipit libero aliquam mattis. Mauris dignissim id lorem vitae rutrum. Donec nec ipsum ut metus aliquam placerat dapibus sed dui. Donec facilisis varius sollicitudin. Aenean sem nisl, posuere non tincidunt eget, viverra a neque." coordinator="//@professors.1" enrolled_students="//@students.0" course_catalogue="//@courses.0" extra_info="//@extra_infos.0">
@@ -53,4 +53,4 @@
   <extra_infos name="DegreeType_MASTER_DEGREE" value="MASTER_DEGREE" type="ENUMERATION" lower_multiplicity="1" higher_multiplicity="1" enum="//@custom_enumerations.0"/>
   <extra_infos name="DegreeType_POST_GRADUATE" value="POST_GRADUATE" type="ENUMERATION" lower_multiplicity="1" higher_multiplicity="1" enum="//@custom_enumerations.0"/>
   <extra_infos name="PostGraduateLevel_FIRST" value="FIRST" type="ENUMERATION" lower_multiplicity="1" higher_multiplicity="1" enum="//@custom_enumerations.1"/>
-</dagima_mde_hw3:Container>
+</dagima_mde_hw4:Container>

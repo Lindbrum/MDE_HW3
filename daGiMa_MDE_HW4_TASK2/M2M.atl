@@ -1,5 +1,5 @@
--- @path src=/daGiMa_MDE_HW4_TASK2/daGiMa_MDE_HW4_src.ecore
--- @path dest=/daGiMa_MDE_HW4_TASK2/daGiMa_MDE_HW4_dest.ecore
+-- @path src=/DaGiMa_MDE_HW4_TASK2/DaGiMa_MDE_HW4_src.ecore
+-- @path dest=/DaGiMa_MDE_HW4_TASK2/DaGiMa_MDE_HW4_dest.ecore
 
 module M2M;
 create OUT : dest from IN : src;

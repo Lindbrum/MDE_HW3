@@ -8,10 +8,7 @@ Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-20
-Export-Package: daGiMa_MDE_HW3,
- daGiMa_MDE_HW3.impl,
- daGiMa_MDE_HW3.util,
- daGiMa_MDE_HW4,
+Export-Package: daGiMa_MDE_HW4,
  daGiMa_MDE_HW4.impl,
  daGiMa_MDE_HW4.util
 Require-Bundle: org.eclipse.emf.ecore;visibility:=reexport,
