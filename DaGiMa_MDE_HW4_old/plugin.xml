@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated daGiMa_MDE_HW4_old -->
+      <package
+            uri="http://www.example.org/daGiMa_MDE_HW4_old"
+            class="daGiMa_MDE_HW4_old.DaGiMa_MDE_HW4_oldPackage"
+            genModel="model/daGiMa_MDE_HW4_old.genmodel"/>
+   </extension>
+
+</plugin>

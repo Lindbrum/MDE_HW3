@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: DaGiMa_MDE_HW4_old.tests;singleton:=true
+Automatic-Module-Name: DaGiMa_MDE_HW4_old.tests
+Bundle-Version: 1.0.0.qualifier
+Bundle-ClassPath: .
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
+Bundle-RequiredExecutionEnvironment: JavaSE-21
+Export-Package: daGiMa_MDE_HW4_old.tests
+Require-Bundle: org.eclipse.core.runtime,
+ DaGiMa_MDE_HW4_old;visibility:=reexport,
+ org.eclipse.emf.ecore.xmi;visibility:=reexport,
+ org.junit;visibility:=reexport
+Bundle-ActivationPolicy: lazy

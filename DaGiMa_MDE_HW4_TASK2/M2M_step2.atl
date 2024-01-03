@@ -1,7 +1,7 @@
--- @path src=/DaGiMa_MDE_HW4_TASK2/DaGiMa_MDE_HW4_src.ecore
+-- @path src=/DaGiMa_MDE_HW4_TASK2/DaGiMa_MDE_HW4_intermediate.ecore
 -- @path dest=/DaGiMa_MDE_HW4_TASK2/DaGiMa_MDE_HW4_dest.ecore
 
-module M2M;
+module M2M_step2;
 create OUT : dest from IN : src;
 
 rule AddMatriculation2Career {
@@ -22,13 +22,11 @@ rule RemoveMatriculationFromStudent {
 			surname <- s.surname,
 			email <- s.email,
 			telephone <- s.telephone,
-			birth_date <- s.birthdate,
-			student_exams <- s.student_exams,
+			birth_date <- s.birth_date,
 			thesis_defended <- s.thesis_defended,
 			enrolled_courses <- s.enrolled_courses,
 			booked_calls <- s.booked_calls,
-			transcripts <- s.transcripts,
-			all_contacts <- s.all_contacts
+			transcripts <- s.transcripts
 		)
 }
 
@@ -41,7 +39,7 @@ rule ContainerTransform {
 			professors <- s.professors,
 			universities <- s.universities,
 			courses <- s.courses,
-			custom_enums <- s.custom_enums,
+			custom_enumerations <- s.custom_enumerations,
 			extra_infos <- s.extra_infos
 			)
 }

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="ASCII"?>
+<daGiMa_MDE_HW4_old:Container xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:daGiMa_MDE_HW4_old="http://www.example.org/daGiMa_MDE_HW4_old" model_name="Instance2">
+  <universities rector="//@professors.0" name="University of L'Aquila">
+    <departments website="www.disim.it" name="DISIM">
+      <offered_courses code="P-01" name="PhD in Computer Science" duration="1" cfu="11" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean rhoncus lacus metus, vel suscipit libero aliquam mattis. Mauris dignissim id lorem vitae rutrum. Donec nec ipsum ut metus aliquam placerat dapibus sed dui. Donec facilisis varius sollicitudin. Aenean sem nisl, posuere non tincidunt eget, viverra a neque." coordinator="//@professors.1" enrolled_students="//@students.2 //@students.4" type="PHD">
+        <language>English</language>
+      </offered_courses>
+      <offered_courses code="P-02" name="PhD in Analysis" duration="1" cfu="11" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean rhoncus lacus metus, vel suscipit libero aliquam mattis. Mauris dignissim id lorem vitae rutrum. Donec nec ipsum ut metus aliquam placerat dapibus sed dui. Donec facilisis varius sollicitudin. Aenean sem nisl, posuere non tincidunt eget, viverra a neque." coordinator="//@professors.2" enrolled_students="//@students.1" type="PHD">
+        <language>English</language>
+      </offered_courses>
+      <offered_courses code="P-03" name="PhD in Artificial Intelligence" duration="1" cfu="11" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean rhoncus lacus metus, vel suscipit libero aliquam mattis. Mauris dignissim id lorem vitae rutrum. Donec nec ipsum ut metus aliquam placerat dapibus sed dui. Donec facilisis varius sollicitudin. Aenean sem nisl, posuere non tincidunt eget, viverra a neque." coordinator="//@professors.2" enrolled_students="//@students.0 //@students.3" type="PHD">
+        <language>English</language>
+      </offered_courses>
+    </departments>
+  </universities>
+  <professors name="Edoardo" surname="Alesse" email="e.a@u.it" telephone="+3937478374423" birth_date="1995-12-26T00:00:00.000+0100" office_telephone="08622380320" orcid="fo2030-dfidf3-2398293"/>
+  <professors name="Davide" surname="D'Ettore" email="dd@p.u.it" telephone="+393654789541" birth_date="1995-12-26T00:00:00.000+0100" office_telephone="08627896541" orcid="fo2077-perdf3-147852" coordinated_degree_courses="//@universities.0/@departments.0/@offered_courses.0"/>
+  <professors name="Vittorio" surname="Melassi" email="vm@p.u.it" telephone="+393541414102" birth_date="1995-12-26T00:00:00.000+0100" office_telephone="08627896541" orcid="er5877-aswef4-784757" coordinated_degree_courses="//@universities.0/@departments.0/@offered_courses.1 //@universities.0/@departments.0/@offered_courses.2"/>
+  <students name="Federica" surname="Verdi" email="fv@u.it" telephone="+393588741259" birth_date="1995-12-26T00:00:00.000+0100" matriculation_number="100102" enrolled_courses="//@universities.0/@departments.0/@offered_courses.2"/>
+  <students name="Giovanni" surname="Rossi" email="gr@u.it" telephone="+393348754120" birth_date="1995-12-26T00:00:00.000+0100" matriculation_number="100100" enrolled_courses="//@universities.0/@departments.0/@offered_courses.1"/>
+  <students name="Giuseppe" surname="Bianchi" email="gb@u.it" telephone="+393214569874" birth_date="1995-12-26T00:00:00.000+0100" matriculation_number="100104" enrolled_courses="//@universities.0/@departments.0/@offered_courses.0"/>
+  <students name="Mattia" surname="Pino" email="mp@u.it" telephone="+393458741102" birth_date="1995-12-26T00:00:00.000+0100" matriculation_number="100101" enrolled_courses="//@universities.0/@departments.0/@offered_courses.2"/>
+  <students name="Nicola" surname="Klauss" email="nk@u.it" telephone="+393878744714" birth_date="1995-12-26T00:00:00.000+0100" matriculation_number="100103" enrolled_courses="//@universities.0/@departments.0/@offered_courses.0"/>
+</daGiMa_MDE_HW4_old:Container>

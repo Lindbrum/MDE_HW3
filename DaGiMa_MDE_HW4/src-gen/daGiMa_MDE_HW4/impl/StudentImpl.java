@@ -3,19 +3,13 @@
 package daGiMa_MDE_HW4.impl;
 
 import daGiMa_MDE_HW4.Career;
-import daGiMa_MDE_HW4.Course;
 import daGiMa_MDE_HW4.DaGiMa_MDE_HW4Package;
-import daGiMa_MDE_HW4.DaGiMa_MDE_HW4Tables;
 import daGiMa_MDE_HW4.DegreeCourse;
 import daGiMa_MDE_HW4.ExaminationCall;
-import daGiMa_MDE_HW4.PassingGrade;
 import daGiMa_MDE_HW4.Student;
 import daGiMa_MDE_HW4.Thesis;
 
 import java.util.Collection;
-import java.util.Iterator;
-import java.util.List;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
@@ -30,22 +24,6 @@ import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import org.eclipse.ocl.pivot.evaluation.Executor;
-
-import org.eclipse.ocl.pivot.ids.IdResolver;
-
-import org.eclipse.ocl.pivot.ids.IdResolver.IdResolverExtension;
-
-import org.eclipse.ocl.pivot.library.collection.CollectionAsOrderedSetOperation;
-
-import org.eclipse.ocl.pivot.utilities.PivotUtil;
-import org.eclipse.ocl.pivot.utilities.ValueUtil;
-
-import org.eclipse.ocl.pivot.values.OrderedSetValue;
-import org.eclipse.ocl.pivot.values.SequenceValue;
-
-import org.eclipse.ocl.pivot.values.SequenceValue.Accumulator;
-
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Student</b></em>'.
@@ -54,7 +32,6 @@ import org.eclipse.ocl.pivot.values.SequenceValue.Accumulator;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link daGiMa_MDE_HW4.impl.StudentImpl#getStudent_exams <em>Student exams</em>}</li>
  *   <li>{@link daGiMa_MDE_HW4.impl.StudentImpl#getMatriculation_number <em>Matriculation number</em>}</li>
  *   <li>{@link daGiMa_MDE_HW4.impl.StudentImpl#getThesis_defended <em>Thesis defended</em>}</li>
  *   <li>{@link daGiMa_MDE_HW4.impl.StudentImpl#getEnrolled_courses <em>Enrolled courses</em>}</li>
@@ -142,67 +119,6 @@ public class StudentImpl extends UserImpl implements Student {
 	@Override
 	protected EClass eStaticClass() {
 		return DaGiMa_MDE_HW4Package.Literals.STUDENT;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EList<Course> getStudent_exams() {
-		/**
-		 *
-		 * transcripts->collect(transcript | transcript.courses.course)
-		 * ->asOrderedSet()
-		 */
-		final /*@NonInvalid*/ Executor executor = PivotUtil.getExecutor(this);
-		final /*@NonInvalid*/ IdResolver idResolver = executor.getIdResolver();
-		final /*@NonInvalid*/ List<Career> transcripts = this.getTranscripts();
-		final /*@NonInvalid*/ OrderedSetValue BOXED_transcripts = idResolver
-				.createOrderedSetOfAll(DaGiMa_MDE_HW4Tables.ORD_CLSSid_Career, transcripts);
-		/*@Thrown*/ Accumulator accumulator = ValueUtil
-				.createSequenceAccumulatorValue(DaGiMa_MDE_HW4Tables.SEQ_CLSSid_Course);
-		Iterator<Object> ITERATOR_transcript = BOXED_transcripts.iterator();
-		/*@NonInvalid*/ SequenceValue collect;
-		while (true) {
-			if (!ITERATOR_transcript.hasNext()) {
-				collect = accumulator;
-				break;
-			}
-			/*@NonInvalid*/ Career transcript = (Career) ITERATOR_transcript.next();
-			/**
-			 * transcript.courses.course
-			 */
-			final /*@NonInvalid*/ List<PassingGrade> courses = transcript.getCourses();
-			final /*@NonInvalid*/ OrderedSetValue BOXED_courses = idResolver
-					.createOrderedSetOfAll(DaGiMa_MDE_HW4Tables.ORD_CLSSid_PassingGrade, courses);
-			/*@Thrown*/ Accumulator accumulator_0 = ValueUtil
-					.createSequenceAccumulatorValue(DaGiMa_MDE_HW4Tables.SEQ_CLSSid_Course);
-			Iterator<Object> ITERATOR__1 = BOXED_courses.iterator();
-			/*@NonInvalid*/ SequenceValue collect_0;
-			while (true) {
-				if (!ITERATOR__1.hasNext()) {
-					collect_0 = accumulator_0;
-					break;
-				}
-				/*@NonInvalid*/ PassingGrade _1 = (PassingGrade) ITERATOR__1.next();
-				/**
-				 * course
-				 */
-				final /*@NonInvalid*/ Course course = _1.getCourse();
-				//
-				accumulator_0.add(course);
-			}
-			//
-			for (Object value : collect_0.flatten().getElements()) {
-				accumulator.add(value);
-			}
-		}
-		final /*@NonInvalid*/ OrderedSetValue asOrderedSet = CollectionAsOrderedSetOperation.INSTANCE.evaluate(collect);
-		final /*@NonInvalid*/ List<Course> ECORE_asOrderedSet = ((IdResolverExtension) idResolver)
-				.ecoreValueOfAll(Course.class, asOrderedSet);
-		return (EList<Course>) ECORE_asOrderedSet;
 	}
 
 	/**
@@ -336,8 +252,6 @@ public class StudentImpl extends UserImpl implements Student {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case DaGiMa_MDE_HW4Package.STUDENT__STUDENT_EXAMS:
-			return getStudent_exams();
 		case DaGiMa_MDE_HW4Package.STUDENT__MATRICULATION_NUMBER:
 			return getMatriculation_number();
 		case DaGiMa_MDE_HW4Package.STUDENT__THESIS_DEFENDED:
@@ -361,10 +275,6 @@ public class StudentImpl extends UserImpl implements Student {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case DaGiMa_MDE_HW4Package.STUDENT__STUDENT_EXAMS:
-			getStudent_exams().clear();
-			getStudent_exams().addAll((Collection<? extends Course>) newValue);
-			return;
 		case DaGiMa_MDE_HW4Package.STUDENT__MATRICULATION_NUMBER:
 			setMatriculation_number((Long) newValue);
 			return;
@@ -396,9 +306,6 @@ public class StudentImpl extends UserImpl implements Student {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case DaGiMa_MDE_HW4Package.STUDENT__STUDENT_EXAMS:
-			getStudent_exams().clear();
-			return;
 		case DaGiMa_MDE_HW4Package.STUDENT__MATRICULATION_NUMBER:
 			setMatriculation_number(MATRICULATION_NUMBER_EDEFAULT);
 			return;
@@ -426,8 +333,6 @@ public class StudentImpl extends UserImpl implements Student {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case DaGiMa_MDE_HW4Package.STUDENT__STUDENT_EXAMS:
-			return !getStudent_exams().isEmpty();
 		case DaGiMa_MDE_HW4Package.STUDENT__MATRICULATION_NUMBER:
 			return matriculation_number != MATRICULATION_NUMBER_EDEFAULT;
 		case DaGiMa_MDE_HW4Package.STUDENT__THESIS_DEFENDED:

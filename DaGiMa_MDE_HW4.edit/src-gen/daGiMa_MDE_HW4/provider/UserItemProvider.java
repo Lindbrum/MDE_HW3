@@ -57,7 +57,6 @@ public class UserItemProvider extends ItemProviderAdapter implements IEditingDom
 			addSurnamePropertyDescriptor(object);
 			addEmailPropertyDescriptor(object);
 			addTelephonePropertyDescriptor(object);
-			addAll_contactsPropertyDescriptor(object);
 			addBirth_datePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -124,22 +123,6 @@ public class UserItemProvider extends ItemProviderAdapter implements IEditingDom
 	}
 
 	/**
-	 * This adds a property descriptor for the All contacts feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addAll_contactsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_User_all_contacts_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_User_all_contacts_feature",
-								"_UI_User_type"),
-						DaGiMa_MDE_HW4Package.Literals.USER__ALL_CONTACTS, true, false, false,
-						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
-	}
-
-	/**
 	 * This adds a property descriptor for the Birth date feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -193,7 +176,6 @@ public class UserItemProvider extends ItemProviderAdapter implements IEditingDom
 		case DaGiMa_MDE_HW4Package.USER__SURNAME:
 		case DaGiMa_MDE_HW4Package.USER__EMAIL:
 		case DaGiMa_MDE_HW4Package.USER__TELEPHONE:
-		case DaGiMa_MDE_HW4Package.USER__ALL_CONTACTS:
 		case DaGiMa_MDE_HW4Package.USER__BIRTH_DATE:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;

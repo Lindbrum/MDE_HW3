@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: DaGiMa_MDE_HW4_old.edit;singleton:=true
+Automatic-Module-Name: DaGiMa_MDE_HW4_old.edit
+Bundle-Version: 1.0.0.qualifier
+Bundle-ClassPath: .
+Bundle-Activator: daGiMa_MDE_HW4_old.provider.DaGiMa_MDE_HW4_oldEditPlugin$Implementation
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
+Bundle-RequiredExecutionEnvironment: JavaSE-21
+Export-Package: daGiMa_MDE_HW4_old.provider
+Require-Bundle: org.eclipse.core.runtime,
+ DaGiMa_MDE_HW4_old;visibility:=reexport,
+ org.eclipse.emf.edit;visibility:=reexport
+Bundle-ActivationPolicy: lazy

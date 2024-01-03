@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated daGiMa_MDE_HW4_old -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="daGiMa_MDE_HW4_old.presentation.DaGiMa_MDE_HW4_oldModelWizardID"
+            name="%_UI_DaGiMa_MDE_HW4_oldModelWizard_label"
+            class="daGiMa_MDE_HW4_old.presentation.DaGiMa_MDE_HW4_oldModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/DaGiMa_MDE_HW4_oldModelFile.gif">
+         <description>%_UI_DaGiMa_MDE_HW4_oldModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated daGiMa_MDE_HW4_old -->
+      <editor
+            id="daGiMa_MDE_HW4_old.presentation.DaGiMa_MDE_HW4_oldEditorID"
+            name="%_UI_DaGiMa_MDE_HW4_oldEditor_label"
+            icon="icons/full/obj16/DaGiMa_MDE_HW4_oldModelFile.gif"
+            extensions="dagima_mde_hw4_old"
+            class="daGiMa_MDE_HW4_old.presentation.DaGiMa_MDE_HW4_oldEditor"
+            contributorClass="daGiMa_MDE_HW4_old.presentation.DaGiMa_MDE_HW4_oldActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

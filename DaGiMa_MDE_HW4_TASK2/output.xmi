@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<dagima_mde_hw4:Container xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:dagima_mde_hw4="http://www.example.org/dagima_mde_hw4">
+  <students name="Dario" surname="D'Ercole" email="d.d@u.it" telephone="+393839082312" birth_date="1995-12-26T00:00:00.000+0100">
+    <transcripts matriculation_number="288615"/>
+    <transcripts matriculation_number="288615"/>
+  </students>
+</dagima_mde_hw4:Container>

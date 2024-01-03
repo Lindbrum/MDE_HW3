@@ -19,7 +19,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link daGiMa_MDE_HW4.User#getSurname <em>Surname</em>}</li>
  *   <li>{@link daGiMa_MDE_HW4.User#getEmail <em>Email</em>}</li>
  *   <li>{@link daGiMa_MDE_HW4.User#getTelephone <em>Telephone</em>}</li>
- *   <li>{@link daGiMa_MDE_HW4.User#getAll_contacts <em>All contacts</em>}</li>
  *   <li>{@link daGiMa_MDE_HW4.User#getBirth_date <em>Birth date</em>}</li>
  * </ul>
  *
@@ -115,28 +114,6 @@ public interface User extends EObject {
 	 * @generated
 	 */
 	void setTelephone(String value);
-
-	/**
-	 * Returns the value of the '<em><b>All contacts</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>All contacts</em>' attribute.
-	 * @see #setAll_contacts(String)
-	 * @see daGiMa_MDE_HW4.DaGiMa_MDE_HW4Package#getUser_All_contacts()
-	 * @model volatile="true" derived="true"
-	 * @generated
-	 */
-	String getAll_contacts();
-
-	/**
-	 * Sets the value of the '{@link daGiMa_MDE_HW4.User#getAll_contacts <em>All contacts</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>All contacts</em>' attribute.
-	 * @see #getAll_contacts()
-	 * @generated
-	 */
-	void setAll_contacts(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Birth date</b></em>' attribute.

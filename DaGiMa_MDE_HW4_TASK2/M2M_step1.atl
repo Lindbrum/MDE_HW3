@@ -1,0 +1,17 @@
+-- @path src=/DaGiMa_MDE_HW4_TASK2/daGiMa_MDE_HW4_old.ecore
+-- @path dest=/DaGiMa_MDE_HW4_TASK2/DaGiMa_MDE_HW4_intermediate.ecore
+
+module M2M_step1;
+create OUT : dest from IN : src;
+
+rule PhDToDegreeCourse {
+	from
+		s : src!PhD
+	to
+		dc : dest!DegreeCourse (
+				
+		),
+		
+		dt : dest!ExtraInfo(
+			)
+}

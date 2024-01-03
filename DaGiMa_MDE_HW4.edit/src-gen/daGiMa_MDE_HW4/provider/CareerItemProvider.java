@@ -58,7 +58,6 @@ public class CareerItemProvider extends ItemProviderAdapter implements IEditingD
 
 			addNamePropertyDescriptor(object);
 			addDegree_coursePropertyDescriptor(object);
-			addTotalAcquiredCfuPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -91,22 +90,6 @@ public class CareerItemProvider extends ItemProviderAdapter implements IEditingD
 						getString("_UI_PropertyDescriptor_description", "_UI_Career_degree_course_feature",
 								"_UI_Career_type"),
 						DaGiMa_MDE_HW4Package.Literals.CAREER__DEGREE_COURSE, true, false, true, null, null, null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Total Acquired Cfu feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addTotalAcquiredCfuPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Career_totalAcquiredCfu_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Career_totalAcquiredCfu_feature",
-								"_UI_Career_type"),
-						DaGiMa_MDE_HW4Package.Literals.CAREER__TOTAL_ACQUIRED_CFU, true, false, false,
-						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -186,7 +169,6 @@ public class CareerItemProvider extends ItemProviderAdapter implements IEditingD
 
 		switch (notification.getFeatureID(Career.class)) {
 		case DaGiMa_MDE_HW4Package.CAREER__NAME:
-		case DaGiMa_MDE_HW4Package.CAREER__TOTAL_ACQUIRED_CFU:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		case DaGiMa_MDE_HW4Package.CAREER__COURSES:

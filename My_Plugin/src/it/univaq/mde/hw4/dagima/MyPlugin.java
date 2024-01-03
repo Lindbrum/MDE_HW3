@@ -578,7 +578,7 @@ public class MyPlugin {
 	public final static String MODEL_1 = "Instance1";
 	public final static String MODEL_2 = "Instance2";
 	
-	public final static String SELECTED_MODEL = MODEL_2;
+	public final static String SELECTED_MODEL = MODEL_1;
 
 	public static void main(String[] args) {
 		

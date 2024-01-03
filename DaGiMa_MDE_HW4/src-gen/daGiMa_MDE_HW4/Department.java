@@ -15,7 +15,6 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link daGiMa_MDE_HW4.Department#getTeachers <em>Teachers</em>}</li>
  *   <li>{@link daGiMa_MDE_HW4.Department#getWebsite <em>Website</em>}</li>
  *   <li>{@link daGiMa_MDE_HW4.Department#getOffered_courses <em>Offered courses</em>}</li>
  *   <li>{@link daGiMa_MDE_HW4.Department#getUniversity <em>University</em>}</li>
@@ -28,19 +27,6 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface Department extends EObject {
-	/**
-	 * Returns the value of the '<em><b>Teachers</b></em>' reference list.
-	 * The list contents are of type {@link daGiMa_MDE_HW4.Professor}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Teachers</em>' reference list.
-	 * @see daGiMa_MDE_HW4.DaGiMa_MDE_HW4Package#getDepartment_Teachers()
-	 * @model volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/OCL/Collection nullFree='false'"
-	 * @generated
-	 */
-	EList<Professor> getTeachers();
-
 	/**
 	 * Returns the value of the '<em><b>Website</b></em>' attribute.
 	 * <!-- begin-user-doc -->

@@ -53,7 +53,6 @@
       <genOperations ecoreOperation="daGiMa_MDE_HW4.ecore#//Professor/totalCfuTaught"/>
     </genClasses>
     <genClasses ecoreClass="daGiMa_MDE_HW4.ecore#//Student">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference daGiMa_MDE_HW4.ecore#//Student/student_exams"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daGiMa_MDE_HW4.ecore#//Student/matriculation_number"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference daGiMa_MDE_HW4.ecore#//Student/thesis_defended"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference daGiMa_MDE_HW4.ecore#//Student/enrolled_courses"/>
@@ -65,11 +64,9 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daGiMa_MDE_HW4.ecore#//User/surname"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daGiMa_MDE_HW4.ecore#//User/email"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daGiMa_MDE_HW4.ecore#//User/telephone"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daGiMa_MDE_HW4.ecore#//User/all_contacts"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daGiMa_MDE_HW4.ecore#//User/birth_date"/>
     </genClasses>
     <genClasses ecoreClass="daGiMa_MDE_HW4.ecore#//Department">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference daGiMa_MDE_HW4.ecore#//Department/teachers"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daGiMa_MDE_HW4.ecore#//Department/website"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference daGiMa_MDE_HW4.ecore#//Department/offered_courses"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference daGiMa_MDE_HW4.ecore#//Department/university"/>
@@ -130,7 +127,6 @@
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference daGiMa_MDE_HW4.ecore#//Career/student"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference daGiMa_MDE_HW4.ecore#//Career/degree_course"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference daGiMa_MDE_HW4.ecore#//Career/courses"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute daGiMa_MDE_HW4.ecore#//Career/totalAcquiredCfu"/>
       <genOperations ecoreOperation="daGiMa_MDE_HW4.ecore#//Career/passedAllExams"/>
     </genClasses>
     <genClasses ecoreClass="daGiMa_MDE_HW4.ecore#//News">

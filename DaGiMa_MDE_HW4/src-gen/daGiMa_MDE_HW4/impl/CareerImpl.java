@@ -3,7 +3,6 @@
 package daGiMa_MDE_HW4.impl;
 
 import daGiMa_MDE_HW4.Career;
-import daGiMa_MDE_HW4.Course;
 import daGiMa_MDE_HW4.DaGiMa_MDE_HW4Package;
 import daGiMa_MDE_HW4.DaGiMa_MDE_HW4Tables;
 import daGiMa_MDE_HW4.DegreeCourse;
@@ -11,9 +10,6 @@ import daGiMa_MDE_HW4.PassingGrade;
 import daGiMa_MDE_HW4.Student;
 
 import java.lang.reflect.InvocationTargetException;
-
-import java.math.BigInteger;
-
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
@@ -36,9 +32,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
 import org.eclipse.ocl.pivot.evaluation.Executor;
 
 import org.eclipse.ocl.pivot.ids.IdResolver;
-
-import org.eclipse.ocl.pivot.library.collection.CollectionSumOperation;
-
 import org.eclipse.ocl.pivot.library.oclany.OclComparableGreaterThanOperation;
 
 import org.eclipse.ocl.pivot.library.string.StringSizeOperation;
@@ -52,10 +45,6 @@ import org.eclipse.ocl.pivot.values.IntegerValue;
 import org.eclipse.ocl.pivot.values.InvalidValueException;
 import org.eclipse.ocl.pivot.values.OrderedSetValue;
 
-import org.eclipse.ocl.pivot.values.OrderedSetValue.Accumulator;
-
-import org.eclipse.ocl.pivot.values.SequenceValue;
-
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Career</b></em>'.
@@ -68,7 +57,6 @@ import org.eclipse.ocl.pivot.values.SequenceValue;
  *   <li>{@link daGiMa_MDE_HW4.impl.CareerImpl#getStudent <em>Student</em>}</li>
  *   <li>{@link daGiMa_MDE_HW4.impl.CareerImpl#getDegree_course <em>Degree course</em>}</li>
  *   <li>{@link daGiMa_MDE_HW4.impl.CareerImpl#getCourses <em>Courses</em>}</li>
- *   <li>{@link daGiMa_MDE_HW4.impl.CareerImpl#getTotalAcquiredCfu <em>Total Acquired Cfu</em>}</li>
  * </ul>
  *
  * @generated
@@ -113,16 +101,6 @@ public class CareerImpl extends MinimalEObjectImpl.Container implements Career {
 	 * @ordered
 	 */
 	protected EList<PassingGrade> courses;
-
-	/**
-	 * The default value of the '{@link #getTotalAcquiredCfu() <em>Total Acquired Cfu</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTotalAcquiredCfu()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final BigInteger TOTAL_ACQUIRED_CFU_EDEFAULT = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -275,87 +253,6 @@ public class CareerImpl extends MinimalEObjectImpl.Container implements Career {
 	 * @generated
 	 */
 	@Override
-	public BigInteger getTotalAcquiredCfu() {
-		/**
-		 *
-		 * courses->select(transcriptEntry |
-		 *   transcriptEntry.grade.size() > 0)
-		 * ->collect(passingGrade | passingGrade.course.cfu)
-		 * ->sum()
-		 */
-		final /*@NonInvalid*/ Executor executor = PivotUtil.getExecutor(this);
-		final /*@NonInvalid*/ IdResolver idResolver = executor.getIdResolver();
-		final /*@NonInvalid*/ List<PassingGrade> courses = this.getCourses();
-		final /*@NonInvalid*/ OrderedSetValue BOXED_courses = idResolver
-				.createOrderedSetOfAll(DaGiMa_MDE_HW4Tables.ORD_CLSSid_PassingGrade, courses);
-		/*@Thrown*/ Accumulator accumulator = ValueUtil
-				.createOrderedSetAccumulatorValue(DaGiMa_MDE_HW4Tables.ORD_CLSSid_PassingGrade);
-		Iterator<Object> ITERATOR_transcriptEntry = BOXED_courses.iterator();
-		/*@Thrown*/ OrderedSetValue select;
-		while (true) {
-			if (!ITERATOR_transcriptEntry.hasNext()) {
-				select = accumulator;
-				break;
-			}
-			/*@NonInvalid*/ PassingGrade transcriptEntry = (PassingGrade) ITERATOR_transcriptEntry.next();
-			/**
-			 * transcriptEntry.grade.size() > 0
-			 */
-			final /*@NonInvalid*/ String grade = transcriptEntry.getGrade();
-			if (grade == null) {
-				throw new InvalidValueException("Null \'\'String\'\' rather than \'\'OclVoid\'\' value required");
-			}
-			final /*@Thrown*/ IntegerValue size = StringSizeOperation.INSTANCE.evaluate(grade);
-			final /*@Thrown*/ boolean gt = OclComparableGreaterThanOperation.INSTANCE
-					.evaluate(executor, size, DaGiMa_MDE_HW4Tables.INT_0).booleanValue();
-			//
-			if (gt == ValueUtil.TRUE_VALUE) {
-				accumulator.add(transcriptEntry);
-			}
-		}
-		/*@Thrown*/ org.eclipse.ocl.pivot.values.SequenceValue.Accumulator accumulator_0 = ValueUtil
-				.createSequenceAccumulatorValue(DaGiMa_MDE_HW4Tables.SEQ_DATAid_EInt);
-		Iterator<Object> ITERATOR_passingGrade = select.iterator();
-		/*@Thrown*/ SequenceValue collect;
-		while (true) {
-			if (!ITERATOR_passingGrade.hasNext()) {
-				collect = accumulator_0;
-				break;
-			}
-			/*@NonInvalid*/ PassingGrade passingGrade = (PassingGrade) ITERATOR_passingGrade.next();
-			/**
-			 * passingGrade.course.cfu
-			 */
-			final /*@NonInvalid*/ Course course = passingGrade.getCourse();
-			final /*@NonInvalid*/ int cfu = course.getCfu();
-			final /*@NonInvalid*/ IntegerValue BOXED_cfu = ValueUtil.integerValueOf(cfu);
-			//
-			accumulator_0.add(BOXED_cfu);
-		}
-		final /*@Thrown*/ IntegerValue sum = (IntegerValue) CollectionSumOperation.INSTANCE.evaluate(executor,
-				DaGiMa_MDE_HW4Tables.DATAid_EInt, collect);
-		final BigInteger ECORE_sum = ValueUtil.bigIntegerValueOf(sum);
-		return ECORE_sum;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setTotalAcquiredCfu(BigInteger newTotalAcquiredCfu) {
-		// TODO: implement this method to set the 'Total Acquired Cfu' attribute
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public boolean passedAllExams() {
 		/**
 		 *
@@ -481,8 +378,6 @@ public class CareerImpl extends MinimalEObjectImpl.Container implements Career {
 			return basicGetDegree_course();
 		case DaGiMa_MDE_HW4Package.CAREER__COURSES:
 			return getCourses();
-		case DaGiMa_MDE_HW4Package.CAREER__TOTAL_ACQUIRED_CFU:
-			return getTotalAcquiredCfu();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -509,9 +404,6 @@ public class CareerImpl extends MinimalEObjectImpl.Container implements Career {
 			getCourses().clear();
 			getCourses().addAll((Collection<? extends PassingGrade>) newValue);
 			return;
-		case DaGiMa_MDE_HW4Package.CAREER__TOTAL_ACQUIRED_CFU:
-			setTotalAcquiredCfu((BigInteger) newValue);
-			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -536,9 +428,6 @@ public class CareerImpl extends MinimalEObjectImpl.Container implements Career {
 		case DaGiMa_MDE_HW4Package.CAREER__COURSES:
 			getCourses().clear();
 			return;
-		case DaGiMa_MDE_HW4Package.CAREER__TOTAL_ACQUIRED_CFU:
-			setTotalAcquiredCfu(TOTAL_ACQUIRED_CFU_EDEFAULT);
-			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -559,9 +448,6 @@ public class CareerImpl extends MinimalEObjectImpl.Container implements Career {
 			return degree_course != null;
 		case DaGiMa_MDE_HW4Package.CAREER__COURSES:
 			return courses != null && !courses.isEmpty();
-		case DaGiMa_MDE_HW4Package.CAREER__TOTAL_ACQUIRED_CFU:
-			return TOTAL_ACQUIRED_CFU_EDEFAULT == null ? getTotalAcquiredCfu() != null
-					: !TOTAL_ACQUIRED_CFU_EDEFAULT.equals(getTotalAcquiredCfu());
 		}
 		return super.eIsSet(featureID);
 	}

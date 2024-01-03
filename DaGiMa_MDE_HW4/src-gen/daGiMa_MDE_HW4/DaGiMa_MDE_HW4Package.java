@@ -161,22 +161,13 @@ public interface DaGiMa_MDE_HW4Package extends EPackage {
 	int USER__TELEPHONE = 3;
 
 	/**
-	 * The feature id for the '<em><b>All contacts</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int USER__ALL_CONTACTS = 4;
-
-	/**
 	 * The feature id for the '<em><b>Birth date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int USER__BIRTH_DATE = 5;
+	int USER__BIRTH_DATE = 4;
 
 	/**
 	 * The number of structural features of the '<em>User</em>' class.
@@ -185,7 +176,7 @@ public interface DaGiMa_MDE_HW4Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int USER_FEATURE_COUNT = 6;
+	int USER_FEATURE_COUNT = 5;
 
 	/**
 	 * The number of operations of the '<em>User</em>' class.
@@ -241,15 +232,6 @@ public interface DaGiMa_MDE_HW4Package extends EPackage {
 	 * @ordered
 	 */
 	int PROFESSOR__TELEPHONE = USER__TELEPHONE;
-
-	/**
-	 * The feature id for the '<em><b>All contacts</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROFESSOR__ALL_CONTACTS = USER__ALL_CONTACTS;
 
 	/**
 	 * The feature id for the '<em><b>Birth date</b></em>' attribute.
@@ -397,15 +379,6 @@ public interface DaGiMa_MDE_HW4Package extends EPackage {
 	int STUDENT__TELEPHONE = USER__TELEPHONE;
 
 	/**
-	 * The feature id for the '<em><b>All contacts</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STUDENT__ALL_CONTACTS = USER__ALL_CONTACTS;
-
-	/**
 	 * The feature id for the '<em><b>Birth date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -415,22 +388,13 @@ public interface DaGiMa_MDE_HW4Package extends EPackage {
 	int STUDENT__BIRTH_DATE = USER__BIRTH_DATE;
 
 	/**
-	 * The feature id for the '<em><b>Student exams</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STUDENT__STUDENT_EXAMS = USER_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Matriculation number</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STUDENT__MATRICULATION_NUMBER = USER_FEATURE_COUNT + 1;
+	int STUDENT__MATRICULATION_NUMBER = USER_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Thesis defended</b></em>' containment reference list.
@@ -439,7 +403,7 @@ public interface DaGiMa_MDE_HW4Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STUDENT__THESIS_DEFENDED = USER_FEATURE_COUNT + 2;
+	int STUDENT__THESIS_DEFENDED = USER_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Enrolled courses</b></em>' reference list.
@@ -448,7 +412,7 @@ public interface DaGiMa_MDE_HW4Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STUDENT__ENROLLED_COURSES = USER_FEATURE_COUNT + 3;
+	int STUDENT__ENROLLED_COURSES = USER_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Booked calls</b></em>' reference list.
@@ -457,7 +421,7 @@ public interface DaGiMa_MDE_HW4Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STUDENT__BOOKED_CALLS = USER_FEATURE_COUNT + 4;
+	int STUDENT__BOOKED_CALLS = USER_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Transcripts</b></em>' containment reference list.
@@ -466,7 +430,7 @@ public interface DaGiMa_MDE_HW4Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STUDENT__TRANSCRIPTS = USER_FEATURE_COUNT + 5;
+	int STUDENT__TRANSCRIPTS = USER_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Student</em>' class.
@@ -475,7 +439,7 @@ public interface DaGiMa_MDE_HW4Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STUDENT_FEATURE_COUNT = USER_FEATURE_COUNT + 6;
+	int STUDENT_FEATURE_COUNT = USER_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of operations of the '<em>Student</em>' class.
@@ -497,22 +461,13 @@ public interface DaGiMa_MDE_HW4Package extends EPackage {
 	int DEPARTMENT = 4;
 
 	/**
-	 * The feature id for the '<em><b>Teachers</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DEPARTMENT__TEACHERS = 0;
-
-	/**
 	 * The feature id for the '<em><b>Website</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DEPARTMENT__WEBSITE = 1;
+	int DEPARTMENT__WEBSITE = 0;
 
 	/**
 	 * The feature id for the '<em><b>Offered courses</b></em>' containment reference list.
@@ -521,7 +476,7 @@ public interface DaGiMa_MDE_HW4Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DEPARTMENT__OFFERED_COURSES = 2;
+	int DEPARTMENT__OFFERED_COURSES = 1;
 
 	/**
 	 * The feature id for the '<em><b>University</b></em>' container reference.
@@ -530,7 +485,7 @@ public interface DaGiMa_MDE_HW4Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DEPARTMENT__UNIVERSITY = 3;
+	int DEPARTMENT__UNIVERSITY = 2;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -539,7 +494,7 @@ public interface DaGiMa_MDE_HW4Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DEPARTMENT__NAME = 4;
+	int DEPARTMENT__NAME = 3;
 
 	/**
 	 * The feature id for the '<em><b>Related news</b></em>' reference list.
@@ -548,7 +503,7 @@ public interface DaGiMa_MDE_HW4Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DEPARTMENT__RELATED_NEWS = 5;
+	int DEPARTMENT__RELATED_NEWS = 4;
 
 	/**
 	 * The number of structural features of the '<em>Department</em>' class.
@@ -557,7 +512,7 @@ public interface DaGiMa_MDE_HW4Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DEPARTMENT_FEATURE_COUNT = 6;
+	int DEPARTMENT_FEATURE_COUNT = 5;
 
 	/**
 	 * The number of operations of the '<em>Department</em>' class.
@@ -1142,22 +1097,13 @@ public interface DaGiMa_MDE_HW4Package extends EPackage {
 	int CAREER__COURSES = 3;
 
 	/**
-	 * The feature id for the '<em><b>Total Acquired Cfu</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CAREER__TOTAL_ACQUIRED_CFU = 4;
-
-	/**
 	 * The number of structural features of the '<em>Career</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CAREER_FEATURE_COUNT = 5;
+	int CAREER_FEATURE_COUNT = 4;
 
 	/**
 	 * The operation id for the '<em>Passed All Exams</em>' operation.
@@ -1723,17 +1669,6 @@ public interface DaGiMa_MDE_HW4Package extends EPackage {
 	EClass getStudent();
 
 	/**
-	 * Returns the meta object for the reference list '{@link daGiMa_MDE_HW4.Student#getStudent_exams <em>Student exams</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Student exams</em>'.
-	 * @see daGiMa_MDE_HW4.Student#getStudent_exams()
-	 * @see #getStudent()
-	 * @generated
-	 */
-	EReference getStudent_Student_exams();
-
-	/**
 	 * Returns the meta object for the attribute '{@link daGiMa_MDE_HW4.Student#getMatriculation_number <em>Matriculation number</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1843,17 +1778,6 @@ public interface DaGiMa_MDE_HW4Package extends EPackage {
 	EAttribute getUser_Telephone();
 
 	/**
-	 * Returns the meta object for the attribute '{@link daGiMa_MDE_HW4.User#getAll_contacts <em>All contacts</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>All contacts</em>'.
-	 * @see daGiMa_MDE_HW4.User#getAll_contacts()
-	 * @see #getUser()
-	 * @generated
-	 */
-	EAttribute getUser_All_contacts();
-
-	/**
 	 * Returns the meta object for the attribute '{@link daGiMa_MDE_HW4.User#getBirth_date <em>Birth date</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1873,17 +1797,6 @@ public interface DaGiMa_MDE_HW4Package extends EPackage {
 	 * @generated
 	 */
 	EClass getDepartment();
-
-	/**
-	 * Returns the meta object for the reference list '{@link daGiMa_MDE_HW4.Department#getTeachers <em>Teachers</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Teachers</em>'.
-	 * @see daGiMa_MDE_HW4.Department#getTeachers()
-	 * @see #getDepartment()
-	 * @generated
-	 */
-	EReference getDepartment_Teachers();
 
 	/**
 	 * Returns the meta object for the attribute '{@link daGiMa_MDE_HW4.Department#getWebsite <em>Website</em>}'.
@@ -2514,17 +2427,6 @@ public interface DaGiMa_MDE_HW4Package extends EPackage {
 	EReference getCareer_Courses();
 
 	/**
-	 * Returns the meta object for the attribute '{@link daGiMa_MDE_HW4.Career#getTotalAcquiredCfu <em>Total Acquired Cfu</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Total Acquired Cfu</em>'.
-	 * @see daGiMa_MDE_HW4.Career#getTotalAcquiredCfu()
-	 * @see #getCareer()
-	 * @generated
-	 */
-	EAttribute getCareer_TotalAcquiredCfu();
-
-	/**
 	 * Returns the meta object for the '{@link daGiMa_MDE_HW4.Career#passedAllExams() <em>Passed All Exams</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3047,14 +2949,6 @@ public interface DaGiMa_MDE_HW4Package extends EPackage {
 		EClass STUDENT = eINSTANCE.getStudent();
 
 		/**
-		 * The meta object literal for the '<em><b>Student exams</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference STUDENT__STUDENT_EXAMS = eINSTANCE.getStudent_Student_exams();
-
-		/**
 		 * The meta object literal for the '<em><b>Matriculation number</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3137,14 +3031,6 @@ public interface DaGiMa_MDE_HW4Package extends EPackage {
 		EAttribute USER__TELEPHONE = eINSTANCE.getUser_Telephone();
 
 		/**
-		 * The meta object literal for the '<em><b>All contacts</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute USER__ALL_CONTACTS = eINSTANCE.getUser_All_contacts();
-
-		/**
 		 * The meta object literal for the '<em><b>Birth date</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3161,14 +3047,6 @@ public interface DaGiMa_MDE_HW4Package extends EPackage {
 		 * @generated
 		 */
 		EClass DEPARTMENT = eINSTANCE.getDepartment();
-
-		/**
-		 * The meta object literal for the '<em><b>Teachers</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference DEPARTMENT__TEACHERS = eINSTANCE.getDepartment_Teachers();
 
 		/**
 		 * The meta object literal for the '<em><b>Website</b></em>' attribute feature.
@@ -3649,14 +3527,6 @@ public interface DaGiMa_MDE_HW4Package extends EPackage {
 		 * @generated
 		 */
 		EReference CAREER__COURSES = eINSTANCE.getCareer_Courses();
-
-		/**
-		 * The meta object literal for the '<em><b>Total Acquired Cfu</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute CAREER__TOTAL_ACQUIRED_CFU = eINSTANCE.getCareer_TotalAcquiredCfu();
 
 		/**
 		 * The meta object literal for the '<em><b>Passed All Exams</b></em>' operation.

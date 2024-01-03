@@ -56,27 +56,11 @@ public class DepartmentItemProvider extends ItemProviderAdapter implements IEdit
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addTeachersPropertyDescriptor(object);
 			addWebsitePropertyDescriptor(object);
 			addNamePropertyDescriptor(object);
 			addRelated_newsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Teachers feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addTeachersPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Department_teachers_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Department_teachers_feature",
-								"_UI_Department_type"),
-						DaGiMa_MDE_HW4Package.Literals.DEPARTMENT__TEACHERS, true, false, true, null, null, null));
 	}
 
 	/**

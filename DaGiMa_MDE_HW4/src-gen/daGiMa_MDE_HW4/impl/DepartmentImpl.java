@@ -2,19 +2,13 @@
  */
 package daGiMa_MDE_HW4.impl;
 
-import daGiMa_MDE_HW4.Course;
 import daGiMa_MDE_HW4.DaGiMa_MDE_HW4Package;
-import daGiMa_MDE_HW4.DaGiMa_MDE_HW4Tables;
 import daGiMa_MDE_HW4.DegreeCourse;
 import daGiMa_MDE_HW4.Department;
 import daGiMa_MDE_HW4.News;
-import daGiMa_MDE_HW4.Professor;
 import daGiMa_MDE_HW4.University;
 
 import java.util.Collection;
-import java.util.Iterator;
-import java.util.List;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
@@ -31,22 +25,6 @@ import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import org.eclipse.ocl.pivot.evaluation.Executor;
-
-import org.eclipse.ocl.pivot.ids.IdResolver;
-
-import org.eclipse.ocl.pivot.ids.IdResolver.IdResolverExtension;
-
-import org.eclipse.ocl.pivot.library.collection.CollectionAsOrderedSetOperation;
-
-import org.eclipse.ocl.pivot.utilities.PivotUtil;
-import org.eclipse.ocl.pivot.utilities.ValueUtil;
-
-import org.eclipse.ocl.pivot.values.OrderedSetValue;
-import org.eclipse.ocl.pivot.values.SequenceValue;
-
-import org.eclipse.ocl.pivot.values.SequenceValue.Accumulator;
-
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Department</b></em>'.
@@ -55,7 +33,6 @@ import org.eclipse.ocl.pivot.values.SequenceValue.Accumulator;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link daGiMa_MDE_HW4.impl.DepartmentImpl#getTeachers <em>Teachers</em>}</li>
  *   <li>{@link daGiMa_MDE_HW4.impl.DepartmentImpl#getWebsite <em>Website</em>}</li>
  *   <li>{@link daGiMa_MDE_HW4.impl.DepartmentImpl#getOffered_courses <em>Offered courses</em>}</li>
  *   <li>{@link daGiMa_MDE_HW4.impl.DepartmentImpl#getUniversity <em>University</em>}</li>
@@ -143,71 +120,6 @@ public class DepartmentImpl extends MinimalEObjectImpl.Container implements Depa
 	@Override
 	protected EClass eStaticClass() {
 		return DaGiMa_MDE_HW4Package.Literals.DEPARTMENT;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EList<Professor> getTeachers() {
-		/**
-		 *
-		 * offered_courses->collect(degree_course | degree_course.course_catalogue.teachers)
-		 * ->asOrderedSet()
-		 */
-		final /*@NonInvalid*/ Executor executor = PivotUtil.getExecutor(this);
-		final /*@NonInvalid*/ IdResolver idResolver = executor.getIdResolver();
-		final /*@NonInvalid*/ List<DegreeCourse> offered_courses = this.getOffered_courses();
-		final /*@NonInvalid*/ OrderedSetValue BOXED_offered_courses = idResolver
-				.createOrderedSetOfAll(DaGiMa_MDE_HW4Tables.ORD_CLSSid_DegreeCourse_0, offered_courses);
-		/*@Thrown*/ Accumulator accumulator = ValueUtil
-				.createSequenceAccumulatorValue(DaGiMa_MDE_HW4Tables.SEQ_CLSSid_Professor);
-		Iterator<Object> ITERATOR_degree_course = BOXED_offered_courses.iterator();
-		/*@NonInvalid*/ SequenceValue collect;
-		while (true) {
-			if (!ITERATOR_degree_course.hasNext()) {
-				collect = accumulator;
-				break;
-			}
-			/*@NonInvalid*/ DegreeCourse degree_course = (DegreeCourse) ITERATOR_degree_course.next();
-			/**
-			 * degree_course.course_catalogue.teachers
-			 */
-			final /*@NonInvalid*/ List<Course> course_catalogue = degree_course.getCourse_catalogue();
-			final /*@NonInvalid*/ OrderedSetValue BOXED_course_catalogue = idResolver
-					.createOrderedSetOfAll(DaGiMa_MDE_HW4Tables.ORD_CLSSid_Course, course_catalogue);
-			/*@Thrown*/ Accumulator accumulator_0 = ValueUtil
-					.createSequenceAccumulatorValue(DaGiMa_MDE_HW4Tables.SEQ_CLSSid_Professor);
-			Iterator<Object> ITERATOR__1 = BOXED_course_catalogue.iterator();
-			/*@NonInvalid*/ SequenceValue collect_0;
-			while (true) {
-				if (!ITERATOR__1.hasNext()) {
-					collect_0 = accumulator_0;
-					break;
-				}
-				/*@NonInvalid*/ Course _1 = (Course) ITERATOR__1.next();
-				/**
-				 * teachers
-				 */
-				final /*@NonInvalid*/ List<Professor> teachers = _1.getTeachers();
-				final /*@NonInvalid*/ OrderedSetValue BOXED_teachers = idResolver
-						.createOrderedSetOfAll(DaGiMa_MDE_HW4Tables.ORD_CLSSid_Professor_0, teachers);
-				//
-				for (Object value : BOXED_teachers.flatten().getElements()) {
-					accumulator_0.add(value);
-				}
-			}
-			//
-			for (Object value : collect_0.flatten().getElements()) {
-				accumulator.add(value);
-			}
-		}
-		final /*@NonInvalid*/ OrderedSetValue asOrderedSet = CollectionAsOrderedSetOperation.INSTANCE.evaluate(collect);
-		final /*@NonInvalid*/ List<Professor> ECORE_asOrderedSet = ((IdResolverExtension) idResolver)
-				.ecoreValueOfAll(Professor.class, asOrderedSet);
-		return (EList<Professor>) ECORE_asOrderedSet;
 	}
 
 	/**
@@ -395,8 +307,6 @@ public class DepartmentImpl extends MinimalEObjectImpl.Container implements Depa
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case DaGiMa_MDE_HW4Package.DEPARTMENT__TEACHERS:
-			return getTeachers();
 		case DaGiMa_MDE_HW4Package.DEPARTMENT__WEBSITE:
 			return getWebsite();
 		case DaGiMa_MDE_HW4Package.DEPARTMENT__OFFERED_COURSES:
@@ -420,10 +330,6 @@ public class DepartmentImpl extends MinimalEObjectImpl.Container implements Depa
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case DaGiMa_MDE_HW4Package.DEPARTMENT__TEACHERS:
-			getTeachers().clear();
-			getTeachers().addAll((Collection<? extends Professor>) newValue);
-			return;
 		case DaGiMa_MDE_HW4Package.DEPARTMENT__WEBSITE:
 			setWebsite((String) newValue);
 			return;
@@ -453,9 +359,6 @@ public class DepartmentImpl extends MinimalEObjectImpl.Container implements Depa
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case DaGiMa_MDE_HW4Package.DEPARTMENT__TEACHERS:
-			getTeachers().clear();
-			return;
 		case DaGiMa_MDE_HW4Package.DEPARTMENT__WEBSITE:
 			setWebsite(WEBSITE_EDEFAULT);
 			return;
@@ -483,8 +386,6 @@ public class DepartmentImpl extends MinimalEObjectImpl.Container implements Depa
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case DaGiMa_MDE_HW4Package.DEPARTMENT__TEACHERS:
-			return !getTeachers().isEmpty();
 		case DaGiMa_MDE_HW4Package.DEPARTMENT__WEBSITE:
 			return WEBSITE_EDEFAULT == null ? website != null : !WEBSITE_EDEFAULT.equals(website);
 		case DaGiMa_MDE_HW4Package.DEPARTMENT__OFFERED_COURSES:

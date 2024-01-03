@@ -2,8 +2,6 @@
  */
 package daGiMa_MDE_HW4;
 
-import java.math.BigInteger;
-
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;
@@ -21,7 +19,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link daGiMa_MDE_HW4.Career#getStudent <em>Student</em>}</li>
  *   <li>{@link daGiMa_MDE_HW4.Career#getDegree_course <em>Degree course</em>}</li>
  *   <li>{@link daGiMa_MDE_HW4.Career#getCourses <em>Courses</em>}</li>
- *   <li>{@link daGiMa_MDE_HW4.Career#getTotalAcquiredCfu <em>Total Acquired Cfu</em>}</li>
  * </ul>
  *
  * @see daGiMa_MDE_HW4.DaGiMa_MDE_HW4Package#getCareer()
@@ -111,28 +108,6 @@ public interface Career extends EObject {
 	 * @generated
 	 */
 	EList<PassingGrade> getCourses();
-
-	/**
-	 * Returns the value of the '<em><b>Total Acquired Cfu</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Total Acquired Cfu</em>' attribute.
-	 * @see #setTotalAcquiredCfu(BigInteger)
-	 * @see daGiMa_MDE_HW4.DaGiMa_MDE_HW4Package#getCareer_TotalAcquiredCfu()
-	 * @model required="true" volatile="true" derived="true"
-	 * @generated
-	 */
-	BigInteger getTotalAcquiredCfu();
-
-	/**
-	 * Sets the value of the '{@link daGiMa_MDE_HW4.Career#getTotalAcquiredCfu <em>Total Acquired Cfu</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Total Acquired Cfu</em>' attribute.
-	 * @see #getTotalAcquiredCfu()
-	 * @generated
-	 */
-	void setTotalAcquiredCfu(BigInteger value);
 
 	/**
 	 * <!-- begin-user-doc -->

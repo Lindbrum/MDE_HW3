@@ -3,8 +3,6 @@
 package daGiMa_MDE_HW4.impl;
 
 import daGiMa_MDE_HW4.DaGiMa_MDE_HW4Package;
-import daGiMa_MDE_HW4.DaGiMa_MDE_HW4Tables;
-import daGiMa_MDE_HW4.Professor;
 import daGiMa_MDE_HW4.User;
 
 import java.util.Date;
@@ -15,17 +13,6 @@ import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.ocl.pivot.evaluation.Executor;
-
-import org.eclipse.ocl.pivot.ids.IdResolver;
-
-import org.eclipse.ocl.pivot.library.oclany.OclAnyOclAsTypeOperation;
-import org.eclipse.ocl.pivot.library.oclany.OclAnyOclIsTypeOfOperation;
-
-import org.eclipse.ocl.pivot.library.string.StringConcatOperation;
-
-import org.eclipse.ocl.pivot.utilities.PivotUtil;
 
 /**
  * <!-- begin-user-doc -->
@@ -39,7 +26,6 @@ import org.eclipse.ocl.pivot.utilities.PivotUtil;
  *   <li>{@link daGiMa_MDE_HW4.impl.UserImpl#getSurname <em>Surname</em>}</li>
  *   <li>{@link daGiMa_MDE_HW4.impl.UserImpl#getEmail <em>Email</em>}</li>
  *   <li>{@link daGiMa_MDE_HW4.impl.UserImpl#getTelephone <em>Telephone</em>}</li>
- *   <li>{@link daGiMa_MDE_HW4.impl.UserImpl#getAll_contacts <em>All contacts</em>}</li>
  *   <li>{@link daGiMa_MDE_HW4.impl.UserImpl#getBirth_date <em>Birth date</em>}</li>
  * </ul>
  *
@@ -125,16 +111,6 @@ public abstract class UserImpl extends MinimalEObjectImpl.Container implements U
 	 * @ordered
 	 */
 	protected String telephone = TELEPHONE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getAll_contacts() <em>All contacts</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAll_contacts()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ALL_CONTACTS_EDEFAULT = null;
 
 	/**
 	 * The default value of the '{@link #getBirth_date() <em>Birth date</em>}' attribute.
@@ -275,62 +251,6 @@ public abstract class UserImpl extends MinimalEObjectImpl.Container implements U
 	 * @generated
 	 */
 	@Override
-	public String getAll_contacts() {
-		/**
-		 *
-		 * email.concat(' - ')
-		 * .concat(telephone)
-		 * .concat(
-		 *   if self.oclIsTypeOf(Professor)
-		 *   then
-		 *     ' - '.concat(self.oclAsType(Professor).office_telephone)
-		 *   else ''
-		 *   endif)
-		 */
-		final /*@NonInvalid*/ Executor executor = PivotUtil.getExecutor(this);
-		final /*@NonInvalid*/ IdResolver idResolver = executor.getIdResolver();
-		final /*@NonInvalid*/ org.eclipse.ocl.pivot.Class TYP_daGiMa_MDE_HW4_c_c_Professor_0 = idResolver
-				.getClass(DaGiMa_MDE_HW4Tables.CLSSid_Professor, null);
-		final /*@NonInvalid*/ String email = this.getEmail();
-		final /*@Thrown*/ String concat = StringConcatOperation.INSTANCE.evaluate(email,
-				DaGiMa_MDE_HW4Tables.STR__32_m_32);
-		final /*@NonInvalid*/ String telephone = this.getTelephone();
-		final /*@Thrown*/ String concat_0 = StringConcatOperation.INSTANCE.evaluate(concat, telephone);
-		final /*@NonInvalid*/ boolean oclIsTypeOf = OclAnyOclIsTypeOfOperation.INSTANCE
-				.evaluate(executor, this, TYP_daGiMa_MDE_HW4_c_c_Professor_0).booleanValue();
-		/*@Thrown*/ String IF_oclIsTypeOf;
-		if (oclIsTypeOf) {
-			final /*@Thrown*/ Professor oclAsType = (Professor) OclAnyOclAsTypeOperation.INSTANCE.evaluate(executor,
-					this, TYP_daGiMa_MDE_HW4_c_c_Professor_0);
-			final /*@Thrown*/ String office_telephone = oclAsType.getOffice_telephone();
-			final /*@Thrown*/ String concat_1 = StringConcatOperation.INSTANCE
-					.evaluate(DaGiMa_MDE_HW4Tables.STR__32_m_32, office_telephone);
-			IF_oclIsTypeOf = concat_1;
-		} else {
-			IF_oclIsTypeOf = DaGiMa_MDE_HW4Tables.STR_;
-		}
-		final /*@Thrown*/ String concat_2 = StringConcatOperation.INSTANCE.evaluate(concat_0, IF_oclIsTypeOf);
-		return concat_2;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setAll_contacts(String newAll_contacts) {
-		// TODO: implement this method to set the 'All contacts' attribute
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public Date getBirth_date() {
 		return birth_date;
 	}
@@ -365,8 +285,6 @@ public abstract class UserImpl extends MinimalEObjectImpl.Container implements U
 			return getEmail();
 		case DaGiMa_MDE_HW4Package.USER__TELEPHONE:
 			return getTelephone();
-		case DaGiMa_MDE_HW4Package.USER__ALL_CONTACTS:
-			return getAll_contacts();
 		case DaGiMa_MDE_HW4Package.USER__BIRTH_DATE:
 			return getBirth_date();
 		}
@@ -392,9 +310,6 @@ public abstract class UserImpl extends MinimalEObjectImpl.Container implements U
 			return;
 		case DaGiMa_MDE_HW4Package.USER__TELEPHONE:
 			setTelephone((String) newValue);
-			return;
-		case DaGiMa_MDE_HW4Package.USER__ALL_CONTACTS:
-			setAll_contacts((String) newValue);
 			return;
 		case DaGiMa_MDE_HW4Package.USER__BIRTH_DATE:
 			setBirth_date((Date) newValue);
@@ -423,9 +338,6 @@ public abstract class UserImpl extends MinimalEObjectImpl.Container implements U
 		case DaGiMa_MDE_HW4Package.USER__TELEPHONE:
 			setTelephone(TELEPHONE_EDEFAULT);
 			return;
-		case DaGiMa_MDE_HW4Package.USER__ALL_CONTACTS:
-			setAll_contacts(ALL_CONTACTS_EDEFAULT);
-			return;
 		case DaGiMa_MDE_HW4Package.USER__BIRTH_DATE:
 			setBirth_date(BIRTH_DATE_EDEFAULT);
 			return;
@@ -449,9 +361,6 @@ public abstract class UserImpl extends MinimalEObjectImpl.Container implements U
 			return EMAIL_EDEFAULT == null ? email != null : !EMAIL_EDEFAULT.equals(email);
 		case DaGiMa_MDE_HW4Package.USER__TELEPHONE:
 			return TELEPHONE_EDEFAULT == null ? telephone != null : !TELEPHONE_EDEFAULT.equals(telephone);
-		case DaGiMa_MDE_HW4Package.USER__ALL_CONTACTS:
-			return ALL_CONTACTS_EDEFAULT == null ? getAll_contacts() != null
-					: !ALL_CONTACTS_EDEFAULT.equals(getAll_contacts());
 		case DaGiMa_MDE_HW4Package.USER__BIRTH_DATE:
 			return BIRTH_DATE_EDEFAULT == null ? birth_date != null : !BIRTH_DATE_EDEFAULT.equals(birth_date);
 		}

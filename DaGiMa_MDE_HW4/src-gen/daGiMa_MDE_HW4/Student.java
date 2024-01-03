@@ -9,11 +9,16 @@ import org.eclipse.emf.common.util.EList;
  * A representation of the model object '<em><b>Student</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * property student_exams : Course[*] { ordered derived volatile } {
+ * derivation : transcripts->collect(transcript|transcript.courses.course)->asOrderedSet();
+ * }
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link daGiMa_MDE_HW4.Student#getStudent_exams <em>Student exams</em>}</li>
  *   <li>{@link daGiMa_MDE_HW4.Student#getMatriculation_number <em>Matriculation number</em>}</li>
  *   <li>{@link daGiMa_MDE_HW4.Student#getThesis_defended <em>Thesis defended</em>}</li>
  *   <li>{@link daGiMa_MDE_HW4.Student#getEnrolled_courses <em>Enrolled courses</em>}</li>
@@ -26,19 +31,6 @@ import org.eclipse.emf.common.util.EList;
  * @generated
  */
 public interface Student extends User {
-	/**
-	 * Returns the value of the '<em><b>Student exams</b></em>' reference list.
-	 * The list contents are of type {@link daGiMa_MDE_HW4.Course}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Student exams</em>' reference list.
-	 * @see daGiMa_MDE_HW4.DaGiMa_MDE_HW4Package#getStudent_Student_exams()
-	 * @model volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/OCL/Collection nullFree='false'"
-	 * @generated
-	 */
-	EList<Course> getStudent_exams();
-
 	/**
 	 * Returns the value of the '<em><b>Matriculation number</b></em>' attribute.
 	 * <!-- begin-user-doc -->

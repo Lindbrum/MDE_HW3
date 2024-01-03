@@ -402,18 +402,8 @@ public class DaGiMa_MDE_HW4PackageImpl extends EPackageImpl implements DaGiMa_MD
 	 * @generated
 	 */
 	@Override
-	public EReference getStudent_Student_exams() {
-		return (EReference) studentEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EAttribute getStudent_Matriculation_number() {
-		return (EAttribute) studentEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) studentEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -423,7 +413,7 @@ public class DaGiMa_MDE_HW4PackageImpl extends EPackageImpl implements DaGiMa_MD
 	 */
 	@Override
 	public EReference getStudent_Thesis_defended() {
-		return (EReference) studentEClass.getEStructuralFeatures().get(2);
+		return (EReference) studentEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -433,7 +423,7 @@ public class DaGiMa_MDE_HW4PackageImpl extends EPackageImpl implements DaGiMa_MD
 	 */
 	@Override
 	public EReference getStudent_Enrolled_courses() {
-		return (EReference) studentEClass.getEStructuralFeatures().get(3);
+		return (EReference) studentEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -443,7 +433,7 @@ public class DaGiMa_MDE_HW4PackageImpl extends EPackageImpl implements DaGiMa_MD
 	 */
 	@Override
 	public EReference getStudent_Booked_calls() {
-		return (EReference) studentEClass.getEStructuralFeatures().get(4);
+		return (EReference) studentEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -453,7 +443,7 @@ public class DaGiMa_MDE_HW4PackageImpl extends EPackageImpl implements DaGiMa_MD
 	 */
 	@Override
 	public EReference getStudent_Transcripts() {
-		return (EReference) studentEClass.getEStructuralFeatures().get(5);
+		return (EReference) studentEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -512,18 +502,8 @@ public class DaGiMa_MDE_HW4PackageImpl extends EPackageImpl implements DaGiMa_MD
 	 * @generated
 	 */
 	@Override
-	public EAttribute getUser_All_contacts() {
-		return (EAttribute) userEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EAttribute getUser_Birth_date() {
-		return (EAttribute) userEClass.getEStructuralFeatures().get(5);
+		return (EAttribute) userEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -542,18 +522,8 @@ public class DaGiMa_MDE_HW4PackageImpl extends EPackageImpl implements DaGiMa_MD
 	 * @generated
 	 */
 	@Override
-	public EReference getDepartment_Teachers() {
-		return (EReference) departmentEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EAttribute getDepartment_Website() {
-		return (EAttribute) departmentEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) departmentEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -563,7 +533,7 @@ public class DaGiMa_MDE_HW4PackageImpl extends EPackageImpl implements DaGiMa_MD
 	 */
 	@Override
 	public EReference getDepartment_Offered_courses() {
-		return (EReference) departmentEClass.getEStructuralFeatures().get(2);
+		return (EReference) departmentEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -573,7 +543,7 @@ public class DaGiMa_MDE_HW4PackageImpl extends EPackageImpl implements DaGiMa_MD
 	 */
 	@Override
 	public EReference getDepartment_University() {
-		return (EReference) departmentEClass.getEStructuralFeatures().get(3);
+		return (EReference) departmentEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -583,7 +553,7 @@ public class DaGiMa_MDE_HW4PackageImpl extends EPackageImpl implements DaGiMa_MD
 	 */
 	@Override
 	public EAttribute getDepartment_Name() {
-		return (EAttribute) departmentEClass.getEStructuralFeatures().get(4);
+		return (EAttribute) departmentEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -593,7 +563,7 @@ public class DaGiMa_MDE_HW4PackageImpl extends EPackageImpl implements DaGiMa_MD
 	 */
 	@Override
 	public EReference getDepartment_Related_news() {
-		return (EReference) departmentEClass.getEStructuralFeatures().get(5);
+		return (EReference) departmentEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -1132,16 +1102,6 @@ public class DaGiMa_MDE_HW4PackageImpl extends EPackageImpl implements DaGiMa_MD
 	 * @generated
 	 */
 	@Override
-	public EAttribute getCareer_TotalAcquiredCfu() {
-		return (EAttribute) careerEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EOperation getCareer__PassedAllExams() {
 		return careerEClass.getEOperations().get(0);
 	}
@@ -1542,7 +1502,6 @@ public class DaGiMa_MDE_HW4PackageImpl extends EPackageImpl implements DaGiMa_MD
 		createEOperation(professorEClass, PROFESSOR___SATISFY_MINIMAL_CFU_REQUIREMENT__DIAGNOSTICCHAIN_MAP);
 
 		studentEClass = createEClass(STUDENT);
-		createEReference(studentEClass, STUDENT__STUDENT_EXAMS);
 		createEAttribute(studentEClass, STUDENT__MATRICULATION_NUMBER);
 		createEReference(studentEClass, STUDENT__THESIS_DEFENDED);
 		createEReference(studentEClass, STUDENT__ENROLLED_COURSES);
@@ -1554,11 +1513,9 @@ public class DaGiMa_MDE_HW4PackageImpl extends EPackageImpl implements DaGiMa_MD
 		createEAttribute(userEClass, USER__SURNAME);
 		createEAttribute(userEClass, USER__EMAIL);
 		createEAttribute(userEClass, USER__TELEPHONE);
-		createEAttribute(userEClass, USER__ALL_CONTACTS);
 		createEAttribute(userEClass, USER__BIRTH_DATE);
 
 		departmentEClass = createEClass(DEPARTMENT);
-		createEReference(departmentEClass, DEPARTMENT__TEACHERS);
 		createEAttribute(departmentEClass, DEPARTMENT__WEBSITE);
 		createEReference(departmentEClass, DEPARTMENT__OFFERED_COURSES);
 		createEReference(departmentEClass, DEPARTMENT__UNIVERSITY);
@@ -1623,7 +1580,6 @@ public class DaGiMa_MDE_HW4PackageImpl extends EPackageImpl implements DaGiMa_MD
 		createEReference(careerEClass, CAREER__STUDENT);
 		createEReference(careerEClass, CAREER__DEGREE_COURSE);
 		createEReference(careerEClass, CAREER__COURSES);
-		createEAttribute(careerEClass, CAREER__TOTAL_ACQUIRED_CFU);
 		createEOperation(careerEClass, CAREER___PASSED_ALL_EXAMS);
 
 		newsEClass = createEClass(NEWS);
@@ -1747,9 +1703,6 @@ public class DaGiMa_MDE_HW4PackageImpl extends EPackageImpl implements DaGiMa_MD
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(studentEClass, Student.class, "Student", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getStudent_Student_exams(), this.getCourse(), null, "student_exams", null, 0, -1, Student.class,
-				!IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
-				IS_DERIVED, IS_ORDERED);
 		initEAttribute(getStudent_Matriculation_number(), ecorePackage.getELong(), "matriculation_number", null, 1, 1,
 				Student.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
@@ -1775,16 +1728,11 @@ public class DaGiMa_MDE_HW4PackageImpl extends EPackageImpl implements DaGiMa_MD
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getUser_Telephone(), ecorePackage.getEString(), "telephone", null, 1, 1, User.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getUser_All_contacts(), ecorePackage.getEString(), "all_contacts", null, 0, 1, User.class,
-				!IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEAttribute(getUser_Birth_date(), ecorePackage.getEDate(), "birth_date", null, 1, 1, User.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(departmentEClass, Department.class, "Department", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getDepartment_Teachers(), this.getProfessor(), null, "teachers", null, 0, -1, Department.class,
-				!IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
-				IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDepartment_Website(), ecorePackage.getEString(), "website", null, 1, 1, Department.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDepartment_Offered_courses(), this.getDegreeCourse(), this.getDegreeCourse_Department(),
@@ -1967,9 +1915,6 @@ public class DaGiMa_MDE_HW4PackageImpl extends EPackageImpl implements DaGiMa_MD
 		initEReference(getCareer_Courses(), this.getPassingGrade(), this.getPassingGrade_Student(), "courses", null, 0,
 				-1, Career.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getCareer_TotalAcquiredCfu(), ecorePackage.getEBigInteger(), "totalAcquiredCfu", null, 1, 1,
-				Career.class, !IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED,
-				IS_ORDERED);
 
 		initEOperation(getCareer__PassedAllExams(), ecorePackage.getEBoolean(), "passedAllExams", 1, 1, IS_UNIQUE,
 				IS_ORDERED);
@@ -2140,8 +2085,6 @@ public class DaGiMa_MDE_HW4PackageImpl extends EPackageImpl implements DaGiMa_MD
 		createEcoreAnnotations();
 		// http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot
 		createPivotAnnotations();
-		// http://www.eclipse.org/OCL/Collection
-		createCollectionAnnotations();
 	}
 
 	/**
@@ -2195,18 +2138,6 @@ public class DaGiMa_MDE_HW4PackageImpl extends EPackageImpl implements DaGiMa_MD
 				new String[] { "body", "\n\t\t\tvalue.oclIsTypeOf(String) or type <> MetadataType::STRING" });
 		addAnnotation(getExtraInfo__EnumTypeCheck__DiagnosticChain_Map(), source, new String[] { "body",
 				"\n\t\t\tenum?.values->one(enumValue | enumValue = value) or type <> MetadataType::ENUMERATION" });
-	}
-
-	/**
-	 * Initializes the annotations for <b>http://www.eclipse.org/OCL/Collection</b>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void createCollectionAnnotations() {
-		String source = "http://www.eclipse.org/OCL/Collection";
-		addAnnotation(getStudent_Student_exams(), source, new String[] { "nullFree", "false" });
-		addAnnotation(getDepartment_Teachers(), source, new String[] { "nullFree", "false" });
 	}
 
 } //DaGiMa_MDE_HW4PackageImpl
