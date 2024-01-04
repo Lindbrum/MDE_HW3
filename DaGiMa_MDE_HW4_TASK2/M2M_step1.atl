@@ -4,6 +4,29 @@
 module M2M_step1;
 create OUT : dest from IN : src;
 
+helper def : toCustomEnumeration(enum : OclAny):String = enum.allLiterals->collect(literal|literal->toString())->sum();
+
+rule DegreeTypeToCustom {
+    from 
+        s : src!DegreeCourseType
+    to
+		t: dest!CustomEnumeration(
+	       name <- 'DegreeCourseType',
+		   values <- s.toCustomEnumeration(s)
+		)
+}
+rule Container {
+	from
+		s : src!Container
+	to
+		t : dest!Container(
+			model_name <- s.model_name,
+			courses <- s.courses,
+			students <- s.students,
+			professors <- s.professors,
+			universities <- s.universities
+		)
+}
 rule PhDToDegreeCourse {
 	from
 		s : src!PhD
@@ -12,6 +35,164 @@ rule PhDToDegreeCourse {
 				
 		),
 		
-		dt : dest!ExtraInfo(
+		ei : dest!ExtraInfo(
+			)
+}
+rule University {
+	from 
+		s : src!University
+	to
+		t : dest!University(
+			name <- s.name,
+			departments <- s.departments,
+			rector <- s.rector
+			)
+}
+abstract rule User {
+	from
+		s : src!User
+	to
+		t : dest!User(
+			name <- s.name,
+			surname <- s.surname,
+			email <- s.email,
+			telephone <- s.telephone,
+			birth_date <- s.birth_date
+		)
+}
+rule Professor extends User {
+	from
+		s : src!Professor
+	to
+		t : dest!Professor(
+			office_telephone <- s.office_telephone,
+			orcid <- s.orcid,
+			coordinated_degree_courses <- s.coordinated_degree_courses,
+			supervised_thesis <- s.supervised_thesis,
+			taught_courses <- s.taught_courses,
+			news_posted <- s.news_posted
+			)
+}
+rule Student extends User {
+	from
+		s : src!Student
+	to
+		t : dest!Student(
+			matriculation_number <- s.matriculation_number,
+			thesis_defended <- s.thesis_defended,
+			enrolled_courses <- s.enrolled_courses,
+			booked_calls <- s.booked_calls,
+			transcripts <- s.transcripts
+			)
+}
+rule Department {
+	from
+		s : src!Department
+	to
+		t : dest!Department(
+			website <- s.website,
+			offered_courses <-s.offered_courses,
+			university <- s.university,
+			name <- s.name,
+			related_news <- s.related_news
+			)
+}
+rule DegreeCourse {
+	from
+		s : src!DegreeCourse
+	to
+		t : dest!DegreeCourse(
+			code <- s.code,
+			name <- s.name,
+			reference_year <- s.reference_year,
+			duration <- s.duration,
+			cfu <- s.cfu,
+			description <- s.description,
+			language <- s.language,
+			department <- s.department,
+			coordinator <- s.coordinator,
+			enrolled_courses <- s.enrolled_courses,
+			course_catalogue <- s.course_catalogue,
+			type <- s.type
+			
+			
+			)
+}
+rule Thesis {
+	from
+		s : src!Thesis
+	to
+		t : dest!Thesis(
+			title <- s.title,
+			type <- s.type,
+			student <- s.student,
+			supervisor <- s.supervisor,
+			degree_course <- s.degree_course
+			)
+}
+rule Course {
+	from
+		s : src!Course
+	to
+		t : dest!Course(
+			code <- s.id_course,
+			name <- s.name,
+			language <- s.language,
+			cfu <- s.cfu,
+			credit_type <- s.credit_type,
+			year <- s.year,
+			period <- s.period,
+			teachers <- s.teachers,
+			degree_courses <- s.degree_courses,
+			calls <- s.calls,
+			student_grades <- s.student_grades
+			
+			)
+}
+rule ExaminationCall {
+	from
+		s : src!ExaminationCall
+	to
+		t : dest!ExaminationCall(
+			date <- s.date,
+			classroom <- s.classroom,
+			type <- s.type,
+			description <- s.description,
+			course <- s.course,
+			booked_students <- s.booked_students
+			)
+}
+rule PassingGrade {
+	from
+		s : src!PassingGrade
+	to
+		t : dest!PassingGrade(
+			date <- s.date,
+			grade <- s.grade,
+			course <- s.course,
+			student <- s.student
+			)
+}
+rule Career {
+	from
+		s : src!Career
+	to 
+		t : dest!Career(
+			name <- s.name,
+            student <- s.student,
+            degree_course <- s.degree_course,
+            courses <- s.courses
+			)
+}
+rule News {
+	from
+		s : src!News
+	to
+		t : dest!News(
+			title <- s.title,
+            publication_date <- s.publication_date,
+            department <- s.department,
+            author <- s.author,
+            body <- s.body
 			)
 }

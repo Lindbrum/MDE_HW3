@@ -1,2 +1,8 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI"/>
+<dagima_mde_hw4:Container xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:dagima_mde_hw4="http://www.example.org/dagima_mde_hw4" model_name="Instance1">
+  <universities rector="//@professors.0" name="University of L'Aquila"/>
+  <professors name="Edoardo" surname="Alesse" email="e.a@u.it" telephone="+3937478374423" birth_date="1995-12-26T00:00:00.000+0100" office_telephone="08622380320" orcid="fo2030-dfidf3-2398293"/>
+  <professors name="Henry" surname="Muccini" email="h.m@u.it" telephone="+39328278332" birth_date="1995-12-26T00:00:00.000+0100" office_telephone="08622380321" orcid="fo2033-dfiaf3-2398283"/>
+  <professors name="Alfonso" surname="Pierantonio" email="a.p@u.it" telephone="+39389328721" birth_date="1995-12-26T00:00:00.000+0100" office_telephone="08622380322" orcid="fo2022-dfanf3-2398283"/>
+  <students name="Dario" surname="D'Ercole" email="d.d@u.it" telephone="+393839082312" birth_date="1995-12-26T00:00:00.000+0100" matriculation_number="288615"/>
+</dagima_mde_hw4:Container>
