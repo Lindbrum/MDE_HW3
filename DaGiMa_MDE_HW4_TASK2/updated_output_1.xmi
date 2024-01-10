@@ -1,8 +1,8 @@
-<?xml version="1.0" encoding="ASCII"?>
-<daGiMa_MDE_HW4_old:Container
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<dagima_mde_hw4:Container
     xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI"
-    xmlns:daGiMa_MDE_HW4_old="http://www.example.org/daGiMa_MDE_HW4_old"
+    xmlns:dagima_mde_hw4="http://www.example.org/dagima_mde_hw4"
     model_name="Instance1">
   <universities
       rector="//@professors.0"
@@ -18,7 +18,8 @@
           description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean rhoncus lacus metus, vel suscipit libero aliquam mattis. Mauris dignissim id lorem vitae rutrum. Donec nec ipsum ut metus aliquam placerat dapibus sed dui. Donec facilisis varius sollicitudin. Aenean sem nisl, posuere non tincidunt eget, viverra a neque."
           coordinator="//@professors.1"
           enrolled_students="//@students.0"
-          course_catalogue="//@courses.0">
+          course_catalogue="//@courses.0"
+          extra_info="//@extra_infos.0">
         <language>Italian</language>
       </offered_courses>
       <offered_courses
@@ -30,7 +31,7 @@
           coordinator="//@professors.1"
           enrolled_students="//@students.0"
           course_catalogue="//@courses.1"
-          type="MASTER_DEGREE">
+          extra_info="//@extra_infos.1">
         <language>English</language>
       </offered_courses>
       <offered_courses
@@ -40,7 +41,7 @@
           cfu="60"
           description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean rhoncus lacus metus, vel suscipit libero aliquam mattis. Mauris dignissim id lorem vitae rutrum. Donec nec ipsum ut metus aliquam placerat dapibus sed dui. Donec facilisis varius sollicitudin. Aenean sem nisl, posuere non tincidunt eget, viverra a neque."
           coordinator="//@professors.1"
-          type="MASTER">
+          extra_info="//@extra_infos.2 //@extra_infos.3">
         <language>Italian</language>
       </offered_courses>
     </departments>
@@ -97,7 +98,7 @@
         degree_course="//@universities.0/@departments.0/@offered_courses.0">
       <courses
           date="2021-02-11T00:00:00.000+0100"
-          grade="B"
+          grade="30L"
           course="//@courses.0"/>
     </transcripts>
     <transcripts
@@ -108,7 +109,7 @@
           course="//@courses.1"/>
     </transcripts>
   </students>
-  <courses id_course="F1000"
+  <courses code="F1000"
       name="Software Engineering 20-21"
       cfu="15"
       teachers="//@professors.1"
@@ -129,7 +130,7 @@
         description="Third winter call for Software Engineering 20-21"
         booked_students="//@students.0"/>
   </courses>
-  <courses id_course="F1100"
+  <courses code="F1100"
       name="Model-driven Engineering 23-24"
       cfu="15"
       year="1"
@@ -150,5 +151,49 @@
         classroom="A1.6"
         type="PROJECT"
         description="Third winter call for Model-driven Engineering 23-24"/>
+    <calls date="2024-06-24T01:00:00.000+0200"
+        classroom="A1.6"
+        type="PROJECT"
+        description="First summer call for Model-driven Engineering 23-24"/>
   </courses>
-</daGiMa_MDE_HW4_old:Container>
+  <custom_enumerations
+      name="DegreeType">
+    <values>BACHELOR_DEGREE</values>
+    <values>MASTER_DEGREE</values>
+    <values>POST_GRADUATE</values>
+    <values>PHD</values>
+  </custom_enumerations>
+  <custom_enumerations
+      name="PostGraduateLevel">
+    <values>FIRST</values>
+    <values>SECOND</values>
+  </custom_enumerations>
+  <extra_infos
+      name="DegreeType_BACHELOR_DEGREE"
+      value="BACHELOR_DEGREE"
+      type="ENUMERATION"
+      lower_multiplicity="1"
+      higher_multiplicity="1"
+      enum="//@custom_enumerations.0"/>
+  <extra_infos
+      name="DegreeType_MASTER_DEGREE"
+      value="MASTER_DEGREE"
+      type="ENUMERATION"
+      lower_multiplicity="1"
+      higher_multiplicity="1"
+      enum="//@custom_enumerations.0"/>
+  <extra_infos
+      name="DegreeType_POST_GRADUATE"
+      value="POST_GRADUATE"
+      type="ENUMERATION"
+      lower_multiplicity="1"
+      higher_multiplicity="1"
+      enum="//@custom_enumerations.0"/>
+  <extra_infos
+      name="PostGraduateLevel_FIRST"
+      value="FIRST"
+      type="ENUMERATION"
+      lower_multiplicity="1"
+      higher_multiplicity="1"
+      enum="//@custom_enumerations.1"/>
+</dagima_mde_hw4:Container>

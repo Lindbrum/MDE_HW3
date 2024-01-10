@@ -4,17 +4,29 @@
 module M2M_step1;
 create OUT : dest from IN : src;
 
-helper def : toCustomEnumeration(enum : OclAny):String = enum.allLiterals->collect(literal|literal->toString())->sum();
+helper  def : convertLetterToGrade(gradeLetter : String) : String =
+	if(gradeLetter.size() > 0) then
+		if(gradeLetter.toLower() = 'a+') then
+			'30L'
+		else if(gradeLetter.toLower() = 'a') then
+			'28'
+		else if(gradeLetter.toLower() = 'b') then
+			'25'
+		else if(gradeLetter.toLower() = 'c') then
+			'22'
+		else if(gradeLetter.toLower() = 'd') then
+			'18'
+		else
+			'15'
+		endif
+		endif
+		endif
+		endif
+		endif
+	else
+		gradeLetter
+	endif;
 
-rule DegreeTypeToCustom {
-    from 
-        s : src!DegreeCourseType
-    to
-		t: dest!CustomEnumeration(
-	       name <- 'DegreeCourseType',
-		   values <- s.toCustomEnumeration(s)
-		)
-}
 rule Container {
 	from
 		s : src!Container
@@ -27,16 +39,62 @@ rule Container {
 			universities <- s.universities
 		)
 }
+rule TransformDegreeCourse {
+	from
+		s : src!DegreeCourse
+	to
+		dc : dest!DegreeCourse (
+			code <- s.code,
+			name <- s.name + ' (' + s.type + ')',
+			reference_year <- s.reference_year,
+			duration <- s.duration,
+			cfu <- s.cfu,
+			description <- s.description,
+			language <- s.language,
+			department <- s.department,
+			coordinator <- s.coordinator,
+			enrolled_students <- s.enrolled_students,
+			course_catalogue <- s.course_catalogue
+			
+		)
+}
+rule MasterToDegreeCourse {
+	from
+		s : src!Master
+	to
+		dc : dest!DegreeCourse (
+			code <- s.code,
+			name <- s.name + ' (Post graduate)',
+			reference_year <- s.reference_year,
+			duration <- s.duration,
+			cfu <- s.cfu,
+			description <- s.description,
+			language <- s.language,
+			department <- s.department,
+			coordinator <- s.coordinator,
+			enrolled_students <- s.enrolled_students,
+			course_catalogue <- s.course_catalogue
+			
+		)
+}
 rule PhDToDegreeCourse {
 	from
 		s : src!PhD
 	to
 		dc : dest!DegreeCourse (
-				
-		),
-		
-		ei : dest!ExtraInfo(
-			)
+			code <- s.code,
+			name <- s.name + ' (PhD)',
+			reference_year <- s.reference_year,
+			duration <- s.duration,
+			cfu <- s.cfu,
+			description <- s.description,
+			language <- s.language,
+			department <- s.department,
+			coordinator <- s.coordinator,
+			enrolled_students <- s.enrolled_students,
+			course_catalogue <- s.course_catalogue
+			
+		)
 }
 rule University {
 	from 
@@ -97,27 +155,6 @@ rule Department {
 			related_news <- s.related_news
 			)
 }
-rule DegreeCourse {
-	from
-		s : src!DegreeCourse
-	to
-		t : dest!DegreeCourse(
-			code <- s.code,
-			name <- s.name,
-			reference_year <- s.reference_year,
-			duration <- s.duration,
-			cfu <- s.cfu,
-			description <- s.description,
-			language <- s.language,
-			department <- s.department,
-			coordinator <- s.coordinator,
-			enrolled_courses <- s.enrolled_courses,
-			course_catalogue <- s.course_catalogue,
-			type <- s.type
-			
-			
-			)
-}
 rule Thesis {
 	from
 		s : src!Thesis
@@ -145,7 +182,7 @@ rule Course {
 			teachers <- s.teachers,
 			degree_courses <- s.degree_courses,
 			calls <- s.calls,
-			student_grades <- s.student_grades
+			students_grades <- s.students_grades
 			
 			)
 }
@@ -168,7 +205,7 @@ rule PassingGrade {
 	to
 		t : dest!PassingGrade(
 			date <- s.date,
-			grade <- s.grade,
+			grade <- thisModule.convertLetterToGrade(s.grade),
 			course <- s.course,
 			student <- s.student
 			)
