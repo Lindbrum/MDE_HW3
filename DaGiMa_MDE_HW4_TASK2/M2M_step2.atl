@@ -274,3 +274,25 @@ rule News {
             body <- s.body
 			)
 }
+rule ExtraInfo {
+	from 
+		s : src!ExtraInfo
+	to
+		t : dest!ExtraInfo(
+			name <- s.name,
+			value <- s.value,
+			type <- s.type,
+			lower_multiplicity <- s.lower_multiplicity,
+			higher_multiplicity <- s.higher_multiplicity,
+			enum <- s.enum
+		)
+}
+rule CustomEnumeration {
+	from 
+		s : src!CustomEnumeration
+	to
+		t : dest!CustomEnumeration(
+			name <- s.name,
+			values <- s.values
+		)
+}

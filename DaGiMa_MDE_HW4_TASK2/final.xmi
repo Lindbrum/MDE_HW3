@@ -40,4 +40,18 @@
     <calls date="2024-02-15T00:00:00.000+0100" classroom="A1.6" type="PROJECT" description="Third winter call for Model-driven Engineering 23-24 (Winter session)"/>
     <calls date="2024-06-24T01:00:00.000+0200" classroom="A1.6" type="PROJECT" description="First summer call for Model-driven Engineering 23-24 (Summer session)"/>
   </courses>
+  <custom_enumerations name="DegreeType">
+    <values>BACHELOR_DEGREE</values>
+    <values>MASTER_DEGREE</values>
+    <values>POST_GRADUATE</values>
+    <values>PHD</values>
+  </custom_enumerations>
+  <custom_enumerations name="PostGraduateLevel">
+    <values>FIRST</values>
+    <values>SECOND</values>
+  </custom_enumerations>
+  <extra_infos name="DegreeType_BACHELOR_DEGREE" value="BACHELOR_DEGREE" type="ENUMERATION" lower_multiplicity="1" higher_multiplicity="1" enum="//@custom_enumerations.0"/>
+  <extra_infos name="DegreeType_MASTER_DEGREE" value="MASTER_DEGREE" type="ENUMERATION" lower_multiplicity="1" higher_multiplicity="1" enum="//@custom_enumerations.0"/>
+  <extra_infos name="DegreeType_POST_GRADUATE" value="POST_GRADUATE" type="ENUMERATION" lower_multiplicity="1" higher_multiplicity="1" enum="//@custom_enumerations.0"/>
+  <extra_infos name="PostGraduateLevel_FIRST" value="FIRST" type="ENUMERATION" lower_multiplicity="1" higher_multiplicity="1" enum="//@custom_enumerations.1"/>
 </dagima_mde_hw4_dest:Container>

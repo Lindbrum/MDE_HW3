@@ -27,7 +27,6 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 
-import daGiMa_MDE_HW4.DaGiMa_MDE_HW4Package;
 import daGiMa_MDE_HW4_dest.DaGiMa_MDE_HW4_destPackage;
 
 /**
