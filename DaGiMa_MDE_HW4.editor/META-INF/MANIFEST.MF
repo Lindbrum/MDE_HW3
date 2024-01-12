@@ -5,11 +5,12 @@ Bundle-SymbolicName: DaGiMa_MDE_HW4.editor;singleton:=true
 Automatic-Module-Name: DaGiMa_MDE_HW4.editor
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
-Bundle-Activator: daGiMa_MDE_HW4.presentation.DaGiMa_MDE_HW4EditorPlugin$Implementation
+Bundle-Activator: daGiMa_MDE_HW4_dest.presentation.DaGiMa_MDE_HW4_destEditorPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-20
-Export-Package: daGiMa_MDE_HW4.presentation
+Export-Package: daGiMa_MDE_HW4.presentation,
+ daGiMa_MDE_HW4_dest.presentation
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.resources;visibility:=reexport,
  DaGiMa_MDE_HW4.edit;visibility:=reexport,

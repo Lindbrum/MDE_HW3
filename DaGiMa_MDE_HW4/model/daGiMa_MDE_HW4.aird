@@ -3,6 +3,8 @@
   <viewpoint:DAnalysis uid="_9PqyMKYyEe6SRYjVgNLWcw" selectedViews="_9QqQsKYyEe6SRYjVgNLWcw" version="15.2.0.202303281325">
     <semanticResources>daGiMa_MDE_HW4.ecore</semanticResources>
     <semanticResources>daGiMa_MDE_HW4.genmodel</semanticResources>
+    <semanticResources>DaGiMa_MDE_HW4_dest.ecore</semanticResources>
+    <semanticResources>DaGiMa_MDE_HW4_dest.genmodel</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_9QqQsKYyEe6SRYjVgNLWcw">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
       <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_9RsygKYyEe6SRYjVgNLWcw" name="daGiMa_MDE_HW4" repPath="#_9RO4cKYyEe6SRYjVgNLWcw" changeId="1703844977765">

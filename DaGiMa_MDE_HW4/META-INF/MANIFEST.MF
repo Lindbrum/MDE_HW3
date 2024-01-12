@@ -10,7 +10,10 @@ Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-20
 Export-Package: daGiMa_MDE_HW4,
  daGiMa_MDE_HW4.impl,
- daGiMa_MDE_HW4.util
+ daGiMa_MDE_HW4.util,
+ daGiMa_MDE_HW4_dest,
+ daGiMa_MDE_HW4_dest.impl,
+ daGiMa_MDE_HW4_dest.util
 Require-Bundle: org.eclipse.emf.ecore;visibility:=reexport,
  org.eclipse.ocl.pivot;visibility:=reexport,
  org.eclipse.ocl.examples.codegen;visibility:=reexport,

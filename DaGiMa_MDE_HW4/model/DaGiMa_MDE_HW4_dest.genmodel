@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/DaGiMa_MDE_HW4/src" modelPluginID="DaGiMa_MDE_HW4"
+    modelName="DaGiMa_MDE_HW4_dest" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="20.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>DaGiMa_MDE_HW4_dest.ecore</foreignModel>
+  <genPackages prefix="DaGiMa_MDE_HW4_dest" disposableProviderFactory="true" ecorePackage="DaGiMa_MDE_HW4_dest.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="DaGiMa_MDE_HW4_dest.ecore#//ThesisType">
+      <genEnumLiterals ecoreEnumLiteral="DaGiMa_MDE_HW4_dest.ecore#//ThesisType/COMPILATION"/>
+      <genEnumLiterals ecoreEnumLiteral="DaGiMa_MDE_HW4_dest.ecore#//ThesisType/EXPERIMENTAL"/>
+      <genEnumLiterals ecoreEnumLiteral="DaGiMa_MDE_HW4_dest.ecore#//ThesisType/PUBLICATION"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="DaGiMa_MDE_HW4_dest.ecore#//CreditType">
+      <genEnumLiterals ecoreEnumLiteral="DaGiMa_MDE_HW4_dest.ecore#//CreditType/B"/>
+      <genEnumLiterals ecoreEnumLiteral="DaGiMa_MDE_HW4_dest.ecore#//CreditType/C"/>
+      <genEnumLiterals ecoreEnumLiteral="DaGiMa_MDE_HW4_dest.ecore#//CreditType/D"/>
+      <genEnumLiterals ecoreEnumLiteral="DaGiMa_MDE_HW4_dest.ecore#//CreditType/E"/>
+      <genEnumLiterals ecoreEnumLiteral="DaGiMa_MDE_HW4_dest.ecore#//CreditType/F"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="DaGiMa_MDE_HW4_dest.ecore#//ExamType">
+      <genEnumLiterals ecoreEnumLiteral="DaGiMa_MDE_HW4_dest.ecore#//ExamType/WRITTEN"/>
+      <genEnumLiterals ecoreEnumLiteral="DaGiMa_MDE_HW4_dest.ecore#//ExamType/ORAL"/>
+      <genEnumLiterals ecoreEnumLiteral="DaGiMa_MDE_HW4_dest.ecore#//ExamType/PROJECT"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="DaGiMa_MDE_HW4_dest.ecore#//MetadataType">
+      <genEnumLiterals ecoreEnumLiteral="DaGiMa_MDE_HW4_dest.ecore#//MetadataType/STRING"/>
+      <genEnumLiterals ecoreEnumLiteral="DaGiMa_MDE_HW4_dest.ecore#//MetadataType/INTEGER"/>
+      <genEnumLiterals ecoreEnumLiteral="DaGiMa_MDE_HW4_dest.ecore#//MetadataType/BOOLEAN"/>
+      <genEnumLiterals ecoreEnumLiteral="DaGiMa_MDE_HW4_dest.ecore#//MetadataType/FLOAT"/>
+      <genEnumLiterals ecoreEnumLiteral="DaGiMa_MDE_HW4_dest.ecore#//MetadataType/DOUBLE"/>
+      <genEnumLiterals ecoreEnumLiteral="DaGiMa_MDE_HW4_dest.ecore#//MetadataType/ENUMERATION"/>
+    </genEnums>
+    <genClasses ecoreClass="DaGiMa_MDE_HW4_dest.ecore#//University">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DaGiMa_MDE_HW4_dest.ecore#//University/rector"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DaGiMa_MDE_HW4_dest.ecore#//University/departments"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DaGiMa_MDE_HW4_dest.ecore#//University/name"/>
+    </genClasses>
+    <genClasses ecoreClass="DaGiMa_MDE_HW4_dest.ecore#//Professor">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DaGiMa_MDE_HW4_dest.ecore#//Professor/office_telephone"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DaGiMa_MDE_HW4_dest.ecore#//Professor/orcid"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DaGiMa_MDE_HW4_dest.ecore#//Professor/coordinated_degree_courses"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DaGiMa_MDE_HW4_dest.ecore#//Professor/supervised_thesis"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DaGiMa_MDE_HW4_dest.ecore#//Professor/taught_courses"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DaGiMa_MDE_HW4_dest.ecore#//Professor/news_posted"/>
+      <genOperations ecoreOperation="DaGiMa_MDE_HW4_dest.ecore#//Professor/totalCfuTaught"/>
+    </genClasses>
+    <genClasses ecoreClass="DaGiMa_MDE_HW4_dest.ecore#//Student">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DaGiMa_MDE_HW4_dest.ecore#//Student/thesis_defended"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DaGiMa_MDE_HW4_dest.ecore#//Student/enrolled_courses"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DaGiMa_MDE_HW4_dest.ecore#//Student/booked_calls"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DaGiMa_MDE_HW4_dest.ecore#//Student/transcripts"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="DaGiMa_MDE_HW4_dest.ecore#//User">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DaGiMa_MDE_HW4_dest.ecore#//User/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DaGiMa_MDE_HW4_dest.ecore#//User/surname"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DaGiMa_MDE_HW4_dest.ecore#//User/email"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DaGiMa_MDE_HW4_dest.ecore#//User/telephone"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DaGiMa_MDE_HW4_dest.ecore#//User/birth_date"/>
+    </genClasses>
+    <genClasses ecoreClass="DaGiMa_MDE_HW4_dest.ecore#//Department">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DaGiMa_MDE_HW4_dest.ecore#//Department/website"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DaGiMa_MDE_HW4_dest.ecore#//Department/offered_courses"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference DaGiMa_MDE_HW4_dest.ecore#//Department/university"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DaGiMa_MDE_HW4_dest.ecore#//Department/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DaGiMa_MDE_HW4_dest.ecore#//Department/related_news"/>
+    </genClasses>
+    <genClasses ecoreClass="DaGiMa_MDE_HW4_dest.ecore#//DegreeCourse">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DaGiMa_MDE_HW4_dest.ecore#//DegreeCourse/code"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DaGiMa_MDE_HW4_dest.ecore#//DegreeCourse/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DaGiMa_MDE_HW4_dest.ecore#//DegreeCourse/reference_year"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DaGiMa_MDE_HW4_dest.ecore#//DegreeCourse/duration"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DaGiMa_MDE_HW4_dest.ecore#//DegreeCourse/cfu"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DaGiMa_MDE_HW4_dest.ecore#//DegreeCourse/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DaGiMa_MDE_HW4_dest.ecore#//DegreeCourse/language"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference DaGiMa_MDE_HW4_dest.ecore#//DegreeCourse/department"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DaGiMa_MDE_HW4_dest.ecore#//DegreeCourse/coordinator"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DaGiMa_MDE_HW4_dest.ecore#//DegreeCourse/enrolled_students"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DaGiMa_MDE_HW4_dest.ecore#//DegreeCourse/course_catalogue"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DaGiMa_MDE_HW4_dest.ecore#//DegreeCourse/extra_info"/>
+    </genClasses>
+    <genClasses ecoreClass="DaGiMa_MDE_HW4_dest.ecore#//Thesis">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DaGiMa_MDE_HW4_dest.ecore#//Thesis/title"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DaGiMa_MDE_HW4_dest.ecore#//Thesis/type"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference DaGiMa_MDE_HW4_dest.ecore#//Thesis/student"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DaGiMa_MDE_HW4_dest.ecore#//Thesis/supervisor"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DaGiMa_MDE_HW4_dest.ecore#//Thesis/degree_course"/>
+    </genClasses>
+    <genClasses ecoreClass="DaGiMa_MDE_HW4_dest.ecore#//Course">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DaGiMa_MDE_HW4_dest.ecore#//Course/code"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DaGiMa_MDE_HW4_dest.ecore#//Course/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DaGiMa_MDE_HW4_dest.ecore#//Course/language"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DaGiMa_MDE_HW4_dest.ecore#//Course/cfu"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DaGiMa_MDE_HW4_dest.ecore#//Course/credit_type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DaGiMa_MDE_HW4_dest.ecore#//Course/year"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DaGiMa_MDE_HW4_dest.ecore#//Course/teachers"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DaGiMa_MDE_HW4_dest.ecore#//Course/degree_courses"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DaGiMa_MDE_HW4_dest.ecore#//Course/calls"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DaGiMa_MDE_HW4_dest.ecore#//Course/students_grades"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DaGiMa_MDE_HW4_dest.ecore#//Course/extra_info"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DaGiMa_MDE_HW4_dest.ecore#//Course/teaching_period_start_day"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DaGiMa_MDE_HW4_dest.ecore#//Course/teaching_period_start_month"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DaGiMa_MDE_HW4_dest.ecore#//Course/teaching_period_start_year"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DaGiMa_MDE_HW4_dest.ecore#//Course/teaching_period_end_day"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DaGiMa_MDE_HW4_dest.ecore#//Course/teaching_period_end_month"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DaGiMa_MDE_HW4_dest.ecore#//Course/teaching_period_end_year"/>
+    </genClasses>
+    <genClasses ecoreClass="DaGiMa_MDE_HW4_dest.ecore#//ExaminationCall">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DaGiMa_MDE_HW4_dest.ecore#//ExaminationCall/date"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DaGiMa_MDE_HW4_dest.ecore#//ExaminationCall/classroom"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DaGiMa_MDE_HW4_dest.ecore#//ExaminationCall/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DaGiMa_MDE_HW4_dest.ecore#//ExaminationCall/description"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference DaGiMa_MDE_HW4_dest.ecore#//ExaminationCall/course"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DaGiMa_MDE_HW4_dest.ecore#//ExaminationCall/booked_students"/>
+    </genClasses>
+    <genClasses ecoreClass="DaGiMa_MDE_HW4_dest.ecore#//PassingGrade">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DaGiMa_MDE_HW4_dest.ecore#//PassingGrade/date"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DaGiMa_MDE_HW4_dest.ecore#//PassingGrade/grade"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DaGiMa_MDE_HW4_dest.ecore#//PassingGrade/course"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference DaGiMa_MDE_HW4_dest.ecore#//PassingGrade/student"/>
+    </genClasses>
+    <genClasses ecoreClass="DaGiMa_MDE_HW4_dest.ecore#//Career">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DaGiMa_MDE_HW4_dest.ecore#//Career/name"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference DaGiMa_MDE_HW4_dest.ecore#//Career/student"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DaGiMa_MDE_HW4_dest.ecore#//Career/degree_course"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DaGiMa_MDE_HW4_dest.ecore#//Career/courses"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DaGiMa_MDE_HW4_dest.ecore#//Career/matriculation_number"/>
+      <genOperations ecoreOperation="DaGiMa_MDE_HW4_dest.ecore#//Career/passedAllExams"/>
+    </genClasses>
+    <genClasses ecoreClass="DaGiMa_MDE_HW4_dest.ecore#//News">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DaGiMa_MDE_HW4_dest.ecore#//News/title"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DaGiMa_MDE_HW4_dest.ecore#//News/publication_date"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DaGiMa_MDE_HW4_dest.ecore#//News/department"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference DaGiMa_MDE_HW4_dest.ecore#//News/author"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DaGiMa_MDE_HW4_dest.ecore#//News/body"/>
+    </genClasses>
+    <genClasses ecoreClass="DaGiMa_MDE_HW4_dest.ecore#//ExtraInfo">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DaGiMa_MDE_HW4_dest.ecore#//ExtraInfo/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DaGiMa_MDE_HW4_dest.ecore#//ExtraInfo/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DaGiMa_MDE_HW4_dest.ecore#//ExtraInfo/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DaGiMa_MDE_HW4_dest.ecore#//ExtraInfo/lower_multiplicity"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DaGiMa_MDE_HW4_dest.ecore#//ExtraInfo/higher_multiplicity"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DaGiMa_MDE_HW4_dest.ecore#//ExtraInfo/enum"/>
+    </genClasses>
+    <genClasses ecoreClass="DaGiMa_MDE_HW4_dest.ecore#//CustomEnumeration">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DaGiMa_MDE_HW4_dest.ecore#//CustomEnumeration/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DaGiMa_MDE_HW4_dest.ecore#//CustomEnumeration/values"/>
+    </genClasses>
+    <genClasses ecoreClass="DaGiMa_MDE_HW4_dest.ecore#//Container">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DaGiMa_MDE_HW4_dest.ecore#//Container/universities"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DaGiMa_MDE_HW4_dest.ecore#//Container/professors"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DaGiMa_MDE_HW4_dest.ecore#//Container/students"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DaGiMa_MDE_HW4_dest.ecore#//Container/courses"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DaGiMa_MDE_HW4_dest.ecore#//Container/custom_enumerations"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DaGiMa_MDE_HW4_dest.ecore#//Container/extra_infos"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DaGiMa_MDE_HW4_dest.ecore#//Container/model_name"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

@@ -34,4 +34,31 @@
       </editor>
    </extension>
 
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated DaGiMa_MDE_HW4_dest -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="daGiMa_MDE_HW4_dest.presentation.DaGiMa_MDE_HW4_destModelWizardID"
+            name="%_UI_DaGiMa_MDE_HW4_destModelWizard_label"
+            class="daGiMa_MDE_HW4_dest.presentation.DaGiMa_MDE_HW4_destModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/DaGiMa_MDE_HW4_destModelFile.gif">
+         <description>%_UI_DaGiMa_MDE_HW4_destModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated DaGiMa_MDE_HW4_dest -->
+      <editor
+            id="daGiMa_MDE_HW4_dest.presentation.DaGiMa_MDE_HW4_destEditorID"
+            name="%_UI_DaGiMa_MDE_HW4_destEditor_label"
+            icon="icons/full/obj16/DaGiMa_MDE_HW4_destModelFile.gif"
+            extensions="dagima_mde_hw4_dest"
+            class="daGiMa_MDE_HW4_dest.presentation.DaGiMa_MDE_HW4_destEditor"
+            contributorClass="daGiMa_MDE_HW4_dest.presentation.DaGiMa_MDE_HW4_destActionBarContributor">
+      </editor>
+   </extension>
 </plugin>

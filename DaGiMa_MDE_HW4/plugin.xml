@@ -14,4 +14,12 @@
             genModel="model/daGiMa_MDE_HW4.genmodel"/>
    </extension>
 
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated DaGiMa_MDE_HW4_dest -->
+      <package
+            uri="http://www.example.org/dagima_mde_hw4_dest"
+            class="daGiMa_MDE_HW4_dest.DaGiMa_MDE_HW4_destPackage"
+            genModel="model/DaGiMa_MDE_HW4_dest.genmodel"/>
+   </extension>
+
 </plugin>
