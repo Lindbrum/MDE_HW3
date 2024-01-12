@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<dagima_mde_hw4:Container xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:dagima_mde_hw4="http://www.example.org/dagima_mde_hw4_3">
+<dagima_mde_hw4_dest:Container xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:dagima_mde_hw4_dest="http://www.example.org/dagima_mde_hw4_dest">
   <universities rector="//@professors.0" name="University of L'Aquila">
     <departments website="www.disim.it" name="DISIM" related_news="//@professors.1/@news_posted.0">
       <offered_courses code="L-31" name="Computer Science" reference_year="2020" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean rhoncus lacus metus, vel suscipit libero aliquam mattis. Mauris dignissim id lorem vitae rutrum. Donec nec ipsum ut metus aliquam placerat dapibus sed dui. Donec facilisis varius sollicitudin. Aenean sem nisl, posuere non tincidunt eget, viverra a neque." coordinator="//@professors.1" enrolled_students="//@students.0" course_catalogue="//@courses.0">
@@ -40,4 +40,4 @@
     <calls date="2024-02-15T00:00:00.000+0100" classroom="A1.6" type="PROJECT" description="Third winter call for Model-driven Engineering 23-24 (Winter session)"/>
     <calls date="2024-06-24T01:00:00.000+0200" classroom="A1.6" type="PROJECT" description="First summer call for Model-driven Engineering 23-24 (Summer session)"/>
   </courses>
-</dagima_mde_hw4:Container>
+</dagima_mde_hw4_dest:Container>

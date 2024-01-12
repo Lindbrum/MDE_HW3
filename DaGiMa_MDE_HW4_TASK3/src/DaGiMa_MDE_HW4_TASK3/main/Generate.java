@@ -28,6 +28,7 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 
 import daGiMa_MDE_HW4.DaGiMa_MDE_HW4Package;
+import daGiMa_MDE_HW4_dest.DaGiMa_MDE_HW4_destPackage;
 
 /**
  * Entry point of the 'Generate' generation module.
@@ -388,7 +389,7 @@ public class Generate extends AbstractAcceleoGenerator {
      */
     @Override
     public void registerResourceFactories(ResourceSet resourceSet) {
-        EPackage.Registry.INSTANCE.put(DaGiMa_MDE_HW4Package.eNS_URI, DaGiMa_MDE_HW4Package.eINSTANCE);
+        EPackage.Registry.INSTANCE.put(DaGiMa_MDE_HW4_destPackage.eNS_URI, DaGiMa_MDE_HW4_destPackage.eINSTANCE);
         Resource.Factory.Registry.INSTANCE.getExtensionToFactoryMap().put("*", new XMIResourceFactoryImpl());
         /*
          * If you want to change the content of this method, do NOT forget to change the "@generated"

@@ -5,6 +5,159 @@
 [template public generateIndex(aContainer : Container)]
 [comment @main/]
 [file ('index.html', false, 'UTF-8')]
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>[aContainer.model_name /]</title>
+</head>
+<body>
+[comment ------------------------------------  /]
+<p>
+<h2>List of Universities</h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>URL</th>
+</tr>
+</thead>
+<tbody>
+[for(uni : University | aContainer.universities)] 
+<tr>
+<td> 
+[uni.name/]
+</td>
+<td>
+<a href="[uni.name/].html">link</a>
+</td>
+</tr>
+[/for]
+</tbody>
+</table>
+</p>
+[comment ------------------------------------  /]
+<p>
+<h2>List of Courses</h2>
+<table>
+<thead>
+<tr>
+<th>Course name</th>
+<th>URL</th>
+</tr>
+</thead>
+<tbody>
+[for(cor : Course | aContainer.courses)] 
+<tr>
+<td> 
+[cor.name/]
+</td>
+<td>
+<a href="[cor.name/].html">link</a>
+</td>
+</tr>
+[/for]
+</tbody>
+</table>
+</p>
+[comment ------------------------------------  /]
+<p>
+<h2>List of Professors</h2>
+<table>
+<thead>
+<tr>
+<th>Professor name</th>
+<th>URL</th>
+</tr>
+</thead>
+<tbody>
+[for(pro :Professor | aContainer.professors)] 
+<tr>
+<td> 
+[pro.name/]
+</td>
+<td>
+<a href="[pro.name/].html">link</a>
+</td>
+</tr>
+[/for]
+</tbody>
+</table>
+</p>
+[comment ------------------------------------  /]
+<p>
+<h2>List of Students</h2>
+<table>
+<thead>
+<tr>
+<th>Student name</th>
+<th>URL</th>
+</tr>
+</thead>
+<tbody>
+[for(stu : Student | aContainer.students)] 
+<tr>
+<td> 
+[stu.name/]
+</td>
+<td>
+<a href="[stu.name/].html">link</a>
+</td>
+</tr>
+[/for]
+</tbody>
+</table>
+</p>
 
+[comment ------------------------------------  /]
+<p>
+<h2>List of CustomEnumeration</h2>
+<table>
+<thead>
+<tr>
+<th>Enum name</th>
+<th>URL</th>
+</tr>
+</thead>
+<tbody>
+[for(cus : CustomEnumeration | aContainer.custom_enumerations)] 
+<tr>
+<td> 
+[cus.name/]
+</td>
+<td>
+<a href="[cus.name/].html">link</a>
+</td>
+</tr>
+[/for]
+</tbody>
+</table>
+</p>
+
+[comment ------------------------------------  /]
+<p>
+<h2>List of ExtraInfo</h2>
+<table>
+<thead>
+<tr>
+<th>Info name</th>
+<th>URL</th>
+</tr>
+</thead>
+<tbody>
+[for(inf : ExtraInfo | aContainer.extra_infos)] 
+<tr>
+<td> 
+[inf.name/]
+</td>
+<td>
+<a href="[inf.name/].html">link</a>
+</td>
+</tr>
+[/for]
+</tbody>
+</table>
+</p>
+</body>
+</html>
 [/file]
 [/template]
