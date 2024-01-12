@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="daGiMa_MDE_HW4" nsURI="http://www.example.org/dagima_mde_hw4"
-    nsPrefix="dagima_mde_hw4">
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="daGiMa_MDE_HW4_dest" nsURI="http://www.example.org/dagima_mde_hw4_dest"
+    nsPrefix="dagima_mde_hw4_dest">
   <eAnnotations source="http://www.eclipse.org/OCL/Import">
     <details key="ecore" value="http://www.eclipse.org/emf/2002/Ecore"/>
   </eAnnotations>
@@ -150,8 +150,6 @@
         eType="#//CreditType" defaultValueLiteral="B"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="year" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
         defaultValueLiteral="2"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="period" lowerBound="1"
-        eType="#//CoursePeriod" defaultValueLiteral="FIRST_SEMESTER"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="teachers" lowerBound="1"
         upperBound="-1" eType="#//Professor" eOpposite="#//Professor/taught_courses"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="degree_courses" lowerBound="1"
@@ -162,6 +160,18 @@
         eType="#//PassingGrade" eOpposite="#//PassingGrade/course"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="extra_info" upperBound="-1"
         eType="#//ExtraInfo"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="teaching_period_start_day"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="teaching_period_start_month"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="teaching_period_start_year"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="teaching_period_end_day"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="teaching_period_end_month"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="teaching_period_end_year"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="CreditType">
     <eLiterals name="B" value="1"/>
@@ -169,10 +179,6 @@
     <eLiterals name="D" value="3"/>
     <eLiterals name="E" value="4"/>
     <eLiterals name="F" value="5" literal="F"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="CoursePeriod">
-    <eLiterals name="FIRST_SEMESTER"/>
-    <eLiterals name="SECOND_SEMESTER" value="1"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ExaminationCall">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="date" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"

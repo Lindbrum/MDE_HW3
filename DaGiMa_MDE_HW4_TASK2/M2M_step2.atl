@@ -4,10 +4,12 @@
 module M2M_step2;
 create OUT : dest from IN : src;
 
+--used to make matriculation numbers unique per transcript
 helper def: counter : Integer = 0;
 helper context Integer def : inc() : Integer = self + 1;
 helper context Integer def : reset() : Integer = 0;
 
+--Used to generate the call session in the examination call's description
 helper def : months : Map(String, Integer) = Map{('Jan', 1), ('Feb', 2), ('Mar', 3), ('Apr', 4), ('May', 5), ('Jun', 6), ('Jul', 7), ('Aug', 8), ('Sep', 9), ('Oct', 10), ('Nov', 11), ('Dec', 12)};
 helper def: get_call_group(date : String) : Boolean =
 	let date_components : Sequence(String) = date.split(' ') in
@@ -51,6 +53,49 @@ helper  def : convertGradeToLetter(grade : String) : String =
 		grade
 	endif;
 
+helper context src!Course def : getCoursePeriodElement(referringTo : String, element : String) : Integer =
+	
+	if(self.period = #FIRST_SEMESTER.toString()) then
+		if(referringTo.toLower() = 'start') then
+			if(element.toLower() = 'day') then
+				1
+			else if(element.toLower() = 'month') then
+				9
+			else
+				self.degree_courses.first().reference_year - 1 + self.year
+			endif
+			endif
+		else
+			if(element.toLower() = 'day') then
+				12
+			else if(element.toLower() = 'month') then
+				1
+			else
+				self.degree_courses.first().reference_year + self.year
+			endif
+			endif
+		endif
+	else -- second semester
+		if(referringTo.toLower() = 'start') then
+			if(element.toLower() = 'day') then
+				28
+			else if(element.toLower() = 'month') then
+				2
+			else
+				self.degree_courses.first().reference_year + self.year
+			endif
+			endif
+		else
+			if(element.toLower() = 'day') then
+				15
+			else if(element.toLower() = 'month') then
+				6
+			else
+				self.degree_courses.first().reference_year + self.year
+			endif
+			endif
+		endif
+	endif;
 
 rule AddMatriculation2Career {
 	from
@@ -180,14 +225,19 @@ rule Course {
 			cfu <- s.cfu,
 			credit_type <- s.credit_type,
 			year <- s.year,
-			period <- s.period,
 			teachers <- s.teachers,
 			degree_courses <- s.degree_courses,
 			calls <- s.calls,
-			students_grades <- s.students_grades
-			
-			)
+			students_grades <- s.students_grades,
+			teaching_period_start_day <- s.getCoursePeriodElement('start', 'day'),
+			teaching_period_start_month <- s.getCoursePeriodElement('start', 'month'),
+			teaching_period_start_year <- s.getCoursePeriodElement('start', 'year'),
+			teaching_period_end_day <- s.getCoursePeriodElement('end', 'day'),
+			teaching_period_end_month <- s.getCoursePeriodElement('end', 'month'),
+			teaching_period_end_year <- s.getCoursePeriodElement('end', 'year')
+		)
 }
+
 rule ExaminationCall {
 	from
 		s : src!ExaminationCall

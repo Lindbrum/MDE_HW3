@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dagima_mde_hw4:Container xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:dagima_mde_hw4="http://www.example.org/dagima_mde_hw4" model_name="Model2">
+  <universities rector="//@professors.0" name="Università degli studi dell'Aquila">
+    <departments website="www.disim.it" name="DISIM">
+      <offered_courses code="L-01" name="PhD1" duration="1" cfu="11" coordinator="//@professors.2" enrolled_students="//@students.0 //@students.3" course_catalogue="//@courses.0">
+        <language>english</language>
+      </offered_courses>
+      <offered_courses code="L-02" name="PhD2" duration="1" cfu="11" coordinator="//@professors.1" enrolled_students="//@students.1 //@students.4" course_catalogue="//@courses.0">
+        <language>english</language>
+      </offered_courses>
+      <offered_courses code="L-03" name="PhD3" duration="1" cfu="11" coordinator="//@professors.1" enrolled_students="//@students.2" course_catalogue="//@courses.0">
+        <language>english</language>
+      </offered_courses>
+    </departments>
+  </universities>
+  <professors name="Edoardo" surname="Alesse" email="ea@u.it" telephone="+393214563241" birth_date="1963-12-12T00:00:00.000+0100" office_telephone="0862987414" orcid="123415-124578-874521"/>
+  <professors name="Vittorio" surname="Melassi" email="vm@u.it" telephone="+393421232143" birth_date="1980-01-23T00:00:00.000+0100" office_telephone="0862458899" orcid="452147-787878-452103" coordinated_degree_courses="//@universities.0/@departments.0/@offered_courses.1 //@universities.0/@departments.0/@offered_courses.2" taught_courses="//@courses.0"/>
+  <professors name="Davide" surname="D'Ettore" email="dd@u.it" telephone="+393425678988" birth_date="1965-03-20T00:00:00.000+0100" office_telephone="0862558745" orcid="365241-478596-145211" coordinated_degree_courses="//@universities.0/@departments.0/@offered_courses.0" taught_courses="//@courses.0"/>
+  <students name="Giovanni" surname="Rossi" email="gr@s.u.it" telephone="+393456789012" enrolled_courses="//@universities.0/@departments.0/@offered_courses.0">
+    <transcripts name="Giovanni - PhD1" degree_course="//@universities.0/@departments.0/@offered_courses.0">
+      <courses grade="" course="//@courses.0"/>
+    </transcripts>
+  </students>
+  <students name="Mattia" surname="Pino" email="mp@s.u.it" telephone="+393241324355" matriculation_number="100101" enrolled_courses="//@universities.0/@departments.0/@offered_courses.1">
+    <transcripts name="Giovanni - PhD2" degree_course="//@universities.0/@departments.0/@offered_courses.1">
+      <courses grade="" course="//@courses.0"/>
+    </transcripts>
+  </students>
+  <students name="Federica" surname="Verdi" email="fv@s.u.it" telephone="+393211231211" birth_date="1995-10-10T00:00:00.000+0100" matriculation_number="100102" enrolled_courses="//@universities.0/@departments.0/@offered_courses.2">
+    <transcripts name="Giovanni - PhD3" degree_course="//@universities.0/@departments.0/@offered_courses.2">
+      <courses grade="" course="//@courses.0"/>
+    </transcripts>
+  </students>
+  <students name="Nicola" surname="Klauss" email="nk@s.u.it" telephone="+393334321222" matriculation_number="100103" enrolled_courses="//@universities.0/@departments.0/@offered_courses.0">
+    <transcripts name="Giovanni - PhD1" degree_course="//@universities.0/@departments.0/@offered_courses.0">
+      <courses grade="" course="//@courses.0"/>
+    </transcripts>
+  </students>
+  <students name="Giuseppe" surname="Bianchi" email="gb@s.u.it" telephone="+393219870098" matriculation_number="100104" enrolled_courses="//@universities.0/@departments.0/@offered_courses.1">
+    <transcripts name="Giovanni - PhD2" degree_course="//@universities.0/@departments.0/@offered_courses.1">
+      <courses grade="" course="//@courses.0"/>
+    </transcripts>
+  </students>
+  <courses name="Computer Science" cfu="20" teachers="//@professors.2 //@professors.1" degree_courses="//@universities.0/@departments.0/@offered_courses.0 //@universities.0/@departments.0/@offered_courses.1 //@universities.0/@departments.0/@offered_courses.2" students_grades="//@students.0/@transcripts.0/@courses.0 //@students.1/@transcripts.0/@courses.0 //@students.2/@transcripts.0/@courses.0 //@students.3/@transcripts.0/@courses.0 //@students.4/@transcripts.0/@courses.0">
+    <language>English</language>
+  </courses>
+  <custom_enumerations name="DegreeType">
+    <values>BACHELOR_DEGREE</values>
+    <values>MASTER_DEGREE</values>
+    <values>PHD</values>
+    <values>POST_GRADUATE</values>
+  </custom_enumerations>
+  <extra_infos name="DegreeType_PHD" value="PHD" type="ENUMERATION" lower_multiplicity="1" higher_multiplicity="1" enum="//@custom_enumerations.0"/>
+  <extra_infos name="ResearchField_AI" value="AI" lower_multiplicity="1" higher_multiplicity="1" enum="//@custom_enumerations.0"/>
+  <extra_infos name="ResearchField_AN" value="ANALYSIS" lower_multiplicity="1" higher_multiplicity="1" enum="//@custom_enumerations.0"/>
+  <extra_infos name="ResearchField_CS" value="COMPUTER SCIENCE" lower_multiplicity="1" higher_multiplicity="1"/>
+</dagima_mde_hw4:Container>
