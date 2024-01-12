@@ -1,0 +1,71 @@
+[comment encoding = UTF-8 /]
+[module university('http://www.example.org/dagima_mde_hw4_dest')]
+
+
+[template public generateUniversity(aUniversity : University)]
+
+[file (aUniversity.name + '.html', false, 'UTF-8')]
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>[aUniversity.name /]</title>
+</head>
+<body>
+<table>
+<p>
+<h2>List of features</h2>
+<table>
+<thead>
+<tr>
+<th>Feature Name</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 
+name
+</td>
+<td>
+[aUniversity.name /]
+</td>
+</tr>
+<tr>
+<td>
+Rector
+</td>
+<td>
+<a href="./professors/[aUniversity.rector.surname /]-[aUniversity.rector.name /].html"> [aUniversity.rector.surname /][aUniversity.rector.name /]</a>
+</td>
+</tr>
+
+</tbody>
+</table>
+
+
+<h2>Departments</h2>
+<table>
+<thead>
+<tr>
+<th>Department Name</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+[for(dep : Department | aUniversity.departments)]
+<tr>
+<td> 
+[dep.name/]
+</td>
+<td>
+<a href="./[dep.name/]-dep.html"> link </a>
+</td>
+</tr>
+[/for]
+</tbody>
+</table>
+</body>
+</html>
+
+[/file]
+[/template]

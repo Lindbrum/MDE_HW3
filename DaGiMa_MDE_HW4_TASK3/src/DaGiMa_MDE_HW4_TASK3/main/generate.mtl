@@ -1,6 +1,6 @@
 [comment encoding = UTF-8 /]
 [module generate('http://www.example.org/dagima_mde_hw4_dest')]
-
+[import DaGiMa_MDE_HW4_TASK3::files::university /]
 
 [template public generateIndex(aContainer : Container)]
 [comment @main/]
@@ -23,6 +23,7 @@
 </thead>
 <tbody>
 [for(uni : University | aContainer.universities)] 
+[uni.generateUniversity() /]
 <tr>
 <td> 
 [uni.name/]
@@ -35,6 +36,59 @@
 </tbody>
 </table>
 </p>
+[comment ------------------------------------  /]
+<p>
+<h2>List of Departments</h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>URL</th>
+</tr>
+</thead>
+<tbody>
+[for(uni : University | aContainer.universities)] 
+[for(dep : Department | uni.departments)]
+<tr>
+<td> 
+[dep.name/]
+</td>
+<td>
+<a href="[dep.name/]-dep.html"> link </a>
+</td>
+</tr>
+[/for]
+[/for]
+</tbody>
+</table>
+</p>
+[comment ------------------------------------  /]
+<p>
+<h2>List of DegreeCourses</h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>URL</th>
+</tr>
+</thead>
+<tbody>
+[for(uni : University | aContainer.universities)] 
+[for(dep : Department | uni.departments)]
+ 
+[for(deg : DegreeCourse     | dep.offered_courses)]
+<tr>
+<td> 
+[deg.name/]
+</td>
+</tr>
+[/for]
+[/for]
+[/for]
+</tbody>
+</table>
+</p>
+
 [comment ------------------------------------  /]
 <p>
 <h2>List of Courses</h2>
@@ -59,6 +113,36 @@
 </tbody>
 </table>
 </p>
+
+[comment ------------------------------------  /]
+<p>
+<h2>List of Courses</h2>
+<table>
+<thead>
+<tr>
+<th>Course code</th>
+<th>URL</th>
+</tr>
+</thead>
+<tbody>
+[for(cor : Course | aContainer.courses)] 
+[for(cal : ExaminationCall| cor.calls)]
+
+<tr>
+<td> 
+[cal.course.code/]
+</td>
+<td>
+[cal.date/]
+</td>
+</tr>
+
+[/for]
+[/for]
+</tbody>
+</table>
+</p>
+
 [comment ------------------------------------  /]
 <p>
 <h2>List of Professors</h2>
@@ -76,13 +160,40 @@
 [pro.name/]
 </td>
 <td>
-<a href="[pro.name/].html">link</a>
+<a href="professors/[pro.surname/]-[pro.name/].html">link</a>
 </td>
 </tr>
 [/for]
 </tbody>
 </table>
 </p>
+
+
+[comment ------------------------------------  /]
+<p>
+<h2>List of News</h2>
+<table>
+<thead>
+<tr>
+<th>News title</th>
+<th>URL</th>
+</tr>
+</thead>
+<tbody>
+[for(pro :Professor | aContainer.professors)] 
+[for(news:News      | pro.news_posted)]
+<tr>
+<td> 
+[news.title /]
+</td>
+</tr>
+[/for]
+[/for]
+</tbody>
+</table>
+</p>
+
+
 [comment ------------------------------------  /]
 <p>
 <h2>List of Students</h2>
@@ -157,6 +268,7 @@
 </tbody>
 </table>
 </p>
+
 </body>
 </html>
 [/file]
