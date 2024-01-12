@@ -1,0 +1,101 @@
+[comment encoding = UTF-8 /]
+[module department('http://www.example.org/dagima_mde_hw4_dest')]
+
+
+[template public generateDepartment(aDepartment : Department)]
+
+[file (aDepartment.name + '-dep.html', false, 'UTF-8')]
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>[aDepartment.name /]</title>
+</head>
+<body>
+<table>
+<p>
+<h2>List of features</h2>
+<table>
+<thead>
+<tr>
+<th>Feature Name</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 
+Name
+</td>
+<td>
+[aDepartment.name /]
+</td>
+</tr>
+<tr>
+<td> 
+Website
+</td>
+<td>
+[aDepartment.website /]
+</td>
+</tr>
+<tr>
+<td> 
+University
+</td>
+<td>
+<a href="[aDepartment.university.name/].html">[aDepartment.university.name/]</a>
+</td>
+</tr>
+</tbody>
+</table>
+</p>
+<p>
+<h2>Degree Courses</h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Link</th>
+</tr>
+</thead>
+<tbody>
+[for(deg : DegreeCourse | aDepartment.offered_courses)]
+<tr>
+<td> 
+[deg.name/]
+</td>
+<td>
+<a href="./[deg.name/]-deg.html"> link </a>
+</td>
+</tr>
+[/for]
+</tbody>
+</table>
+</p>
+<p>
+<h2>News</h2>
+<table>
+<thead>
+<tr>
+<th>Department Name</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+[for(news : News | aDepartment.related_news)]
+<tr>
+<td> 
+[news.title/]
+</td>
+<td>
+<a href="./[news.title/]-news.html"> link </a>
+</td>
+</tr>
+[/for]
+</tbody>
+</table>
+</p>
+</body>
+</html>
+[/file]
+[/template]

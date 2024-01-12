@@ -24,7 +24,7 @@
 <tbody>
 <tr>
 <td> 
-name
+Name
 </td>
 <td>
 [aUniversity.name /]
@@ -38,11 +38,9 @@ Rector
 <a href="./professors/[aUniversity.rector.surname /]-[aUniversity.rector.name /].html"> [aUniversity.rector.surname /][aUniversity.rector.name /]</a>
 </td>
 </tr>
-
 </tbody>
 </table>
-
-
+<p>
 <h2>Departments</h2>
 <table>
 <thead>
@@ -64,8 +62,8 @@ Rector
 [/for]
 </tbody>
 </table>
+</p>
 </body>
 </html>
-
 [/file]
 [/template]

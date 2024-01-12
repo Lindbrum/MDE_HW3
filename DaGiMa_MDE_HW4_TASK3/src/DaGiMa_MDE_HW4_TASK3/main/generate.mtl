@@ -1,6 +1,8 @@
 [comment encoding = UTF-8 /]
 [module generate('http://www.example.org/dagima_mde_hw4_dest')]
 [import DaGiMa_MDE_HW4_TASK3::files::university /]
+[import DaGiMa_MDE_HW4_TASK3::files::department /]
+[import DaGiMa_MDE_HW4_TASK3::files::degreeCourse /]
 
 [template public generateIndex(aContainer : Container)]
 [comment @main/]
@@ -49,6 +51,7 @@
 <tbody>
 [for(uni : University | aContainer.universities)] 
 [for(dep : Department | uni.departments)]
+[dep.generateDepartment() /]
 <tr>
 <td> 
 [dep.name/]
@@ -75,11 +78,14 @@
 <tbody>
 [for(uni : University | aContainer.universities)] 
 [for(dep : Department | uni.departments)]
- 
-[for(deg : DegreeCourse     | dep.offered_courses)]
+[for(deg : DegreeCourse | dep.offered_courses)]
+[deg.generateDegreeCourse() /]
 <tr>
 <td> 
 [deg.name/]
+</td>
+<td>
+<a href="[deg.name/]-deg.html"> link </a>
 </td>
 </tr>
 [/for]
@@ -106,7 +112,7 @@
 [cor.name/]
 </td>
 <td>
-<a href="[cor.name/].html">link</a>
+<a href="[cor.name/]-cor.html">link</a>
 </td>
 </tr>
 [/for]
@@ -116,7 +122,7 @@
 
 [comment ------------------------------------  /]
 <p>
-<h2>List of Courses</h2>
+<h2>List of Examination Calls</h2>
 <table>
 <thead>
 <tr>
@@ -167,8 +173,6 @@
 </tbody>
 </table>
 </p>
-
-
 [comment ------------------------------------  /]
 <p>
 <h2>List of News</h2>

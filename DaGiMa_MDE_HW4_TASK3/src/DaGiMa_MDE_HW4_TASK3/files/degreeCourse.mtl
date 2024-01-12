@@ -1,0 +1,178 @@
+[comment encoding = UTF-8 /]
+[module degreeCourse('http://www.example.org/dagima_mde_hw4_dest')]
+
+
+[template public generateDegreeCourse(aDegreeCourse : DegreeCourse)]
+
+[file (aDegreeCourse.name + '-deg.html', false, 'UTF-8')]
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>[aDegreeCourse.name /]</title>
+</head>
+<body>
+<table>
+<p>
+<h2>List of features</h2>
+<table>
+<thead>
+<tr>
+<th>Feature Name</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 
+Code
+</td>
+<td>
+[aDegreeCourse.code /]
+</td>
+</tr>
+<tr>
+<td>
+Name
+</td>
+<td>
+[aDegreeCourse.name /]
+</td>
+</tr>
+<tr>
+<td>
+Reference year
+</td>
+<td>
+[aDegreeCourse.reference_year /]
+</td>
+</tr>
+<tr>
+<td>
+Duration
+</td>
+<td>
+[aDegreeCourse.duration /]
+</td>
+</tr>
+<tr>
+<td>
+CFU
+</td>
+<td>
+[aDegreeCourse.cfu /]
+</td>
+</tr>
+<tr>
+<td>
+Description
+</td>
+<td>
+[aDegreeCourse.description /]
+</td>
+</tr>
+<tr>
+<td>
+Language
+</td>
+<td>
+[for(lan : String | aDegreeCourse.language) separator (',')]
+[lan /]
+[/for]
+</td>
+</tr>
+<tr>
+<td>
+Department
+</td>
+<td>
+<a href="[aDegreeCourse.department.name/]-dep.html">[aDegreeCourse.department.name/]</a>
+</td>
+</tr>
+<tr>
+<td>
+Coordinator
+</td>
+<td>
+<a href="./professors/[aDegreeCourse.coordinator.name/]-[aDegreeCourse.coordinator.surname/].html">[aDegreeCourse.department.name/] [aDegreeCourse.coordinator.surname/]</a>
+</td>
+</tr>
+</tbody>
+</table>
+</p>
+<p>
+<h2>Course Catalogue</h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Link</th>
+</tr>
+</thead>
+<tbody>
+[for(cor : Course | aDegreeCourse.course_catalogue)]
+<tr>
+<td> 
+[cor.name/]
+</td>
+<td>
+<a href="./[cor.name/]-cor.html"> link </a>
+</td>
+</tr>
+[/for]
+</tbody>
+</table>
+</p>
+<p>
+<h2>Extra Info</h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+<th>Link</th>
+</tr>
+</thead>
+<tbody>
+[for(inf : ExtraInfo | aDegreeCourse.extra_info)]
+<tr>
+<td> 
+[inf.name/]
+</td>
+<td>
+[inf.value/]
+</td>
+<td>
+<a href="./[inf.name/]-inf.html"> link </a>
+</td>
+</tr>
+[/for]
+</tbody>
+</table>
+</p>
+<p>
+<h2>Enrolled students</h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Link</th>
+</tr>
+</thead>
+<tbody>
+[for(stu : Student | aDegreeCourse.enrolled_students)]
+<tr>
+<td> 
+[stu.name/]
+</td>
+<td>
+<a href="./students/[stu.name/].html"> link </a>
+</td>
+</tr>
+[/for]
+</tbody>
+</table>
+</p>
+</body>
+</html>
+[/file]
+[/template]
