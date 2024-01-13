@@ -1,6 +1,6 @@
 [comment encoding = UTF-8 /]
 [module department('http://www.example.org/dagima_mde_hw4_dest')]
-
+[import DaGiMa_MDE_HW4_TASK3::common::htmlHead /]
 
 [template public generateDepartment(aDepartment : Department)]
 
@@ -8,13 +8,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>[aDepartment.name /]</title>
+[generateHead(aDepartment.name) /]
 </head>
-<body>
-<table>
+<body class="container">
+<table class="table table-bordered">
 <p>
 <h2>List of features</h2>
-<table>
+<table class="table table-bordered">
 <thead>
 <tr>
 <th>Feature Name</th>
@@ -51,7 +51,7 @@ University
 </p>
 <p>
 <h2>Degree Courses</h2>
-<table>
+<table class="table table-bordered">
 <thead>
 <tr>
 <th>Name</th>
@@ -74,7 +74,7 @@ University
 </p>
 <p>
 <h2>News</h2>
-<table>
+<table class="table table-bordered">
 <thead>
 <tr>
 <th>Department Name</th>

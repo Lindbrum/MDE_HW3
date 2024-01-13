@@ -1,0 +1,11 @@
+body{
+background-attachment: fixed;
+background-position: right 15% bottom 50%;
+background-image: url("./Background_mde.jpg");
+background-repeat: no-repeat;
+}
+
+table{
+width: auto !important;
+max-width: 70%;
+}

@@ -1,6 +1,6 @@
 [comment encoding = UTF-8 /]
 [module course('http://www.example.org/dagima_mde_hw4_dest')]
-
+[import DaGiMa_MDE_HW4_TASK3::common::htmlHead /]
 
 [template public generateCourse(aCourse : Course)]
 
@@ -8,17 +8,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>[aCourse.name /]</title>
+[generateHead(aCourse.name) /]
 </head>
-<body>
+<body class="container">
 <p>
-<table>
+<table class="table table-bordered">
 <h2>List of features</h2>
-<table>
+<table class="table table-bordered">
 <thead>
 <tr>
-<td>Feature Name</td>
-<td>Value</td>
+<th>Feature Name</th>
+<th>Value</th>
 </tr>
 </thead>
 <tbody>
@@ -69,7 +69,6 @@ Year:
 <td>
 Language:
 </td>
-[comment -è una lista ma non so come iterarla /]
 <td>
 [for(lan : String | aCourse.language) separator(', ')]
 [lan /]
@@ -100,11 +99,11 @@ Teaching end:
 </p>
 <p>
 <h2>Degree Courses</h2>
-<table>
+<table class="table table-bordered">
 <thead>
 <tr>
-<td>Name</td>
-<td>URL</td>
+<th>Name</th>
+<th>URL</th>
 </tr>
 </thead>
 <tbody>
@@ -121,14 +120,13 @@ Teaching end:
 </tbody>
 </table>
 </p>
-
 <p>
 <h2>Teachers</h2>
-<table>
+<table class="table table-bordered">
 <thead>
 <tr>
-<td>Name</td>
-<td>URL</td>
+<th>Name</th>
+<th>URL</th>
 </tr>
 </thead>
 <tbody>
@@ -138,21 +136,20 @@ Teaching end:
 [teac.surname /]
 </td>
 <td>
-<a href="./professors/[teac.surname /]-[teac.name/].html">link</a>
+<a href="./professors/[teac.name /]-[teac.surname/].html">link</a>
 </td>
 <tr>
 [/for]
 </tbody>
 </table>
 </p>
-
 <p>
 <h2>Extra info</h2>
-<table>
+<table class="table table-bordered">
 <thead>
 <tr>
-<td>Name</td>
-<td>URL</td>
+<th>Name</th>
+<th>URL</th>
 </tr>
 </thead>
 <tbody>
@@ -169,14 +166,13 @@ Teaching end:
 </tbody>
 </table>
 </p>
-
 <p>
 <h2>Examination Call</h2>
-<table>
+<table class="table table-bordered">
 <thead>
 <tr>
-<td>Name</td>
-<td>URL</td>
+<th>Name</th>
+<th>URL</th>
 </tr>
 </thead>
 <tbody>
@@ -195,7 +191,6 @@ Teaching end:
 </tbody>
 </table>
 </p>
-
 </body>
 </html>
 [/file]

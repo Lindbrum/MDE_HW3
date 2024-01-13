@@ -6,6 +6,7 @@
 [import DaGiMa_MDE_HW4_TASK3::files::professor /]
 [import DaGiMa_MDE_HW4_TASK3::files::news /]
 [import DaGiMa_MDE_HW4_TASK3::files::course /]
+[import DaGiMa_MDE_HW4_TASK3::common::htmlHead /]
 
 [template public generateIndex(aContainer : Container)]
 [comment @main/]
@@ -13,13 +14,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>[aContainer.model_name /]</title>
+[generateHead(aContainer.model_name) /]
 </head>
 <body>
+<main class="container">
 [comment ------------------------------------  /]
 <p>
 <h2>List of Universities</h2>
-<table>
+<table class="table table-bordered">
 <thead>
 <tr>
 <th>Name</th>
@@ -44,7 +46,7 @@
 [comment ------------------------------------  /]
 <p>
 <h2>List of Departments</h2>
-<table>
+<table class="table table-bordered">
 <thead>
 <tr>
 <th>Name</th>
@@ -71,7 +73,7 @@
 [comment ------------------------------------  /]
 <p>
 <h2>List of DegreeCourses</h2>
-<table>
+<table class="table table-bordered">
 <thead>
 <tr>
 <th>Name</th>
@@ -101,7 +103,7 @@
 [comment ------------------------------------  /]
 <p>
 <h2>List of Courses</h2>
-<table>
+<table class="table table-bordered">
 <thead>
 <tr>
 <th>Course name</th>
@@ -127,7 +129,7 @@
 [comment ------------------------------------  /]
 <p>
 <h2>List of Examination Calls</h2>
-<table>
+<table class="table table-bordered">
 <thead>
 <tr>
 <th>Course code</th>
@@ -156,7 +158,7 @@
 [comment ------------------------------------  /]
 <p>
 <h2>List of Professors</h2>
-<table>
+<table class="table table-bordered">
 <thead>
 <tr>
 <th>Professor name</th>
@@ -168,10 +170,10 @@
 [pro.generateProfessor()/]
 <tr>
 <td> 
-[pro.name/]
+[pro.name/] [pro.surname/]
 </td>
 <td>
-<a href="professors/[pro.surname/]-[pro.name/].html">link</a>
+<a href="professors/[pro.name/]-[pro.surname/].html">link</a>
 </td>
 </tr>
 [/for]
@@ -181,7 +183,7 @@
 [comment ------------------------------------  /]
 <p>
 <h2>List of News</h2>
-<table>
+<table class="table table-bordered">
 <thead>
 <tr>
 <th>News title</th>
@@ -207,7 +209,7 @@
 [comment ------------------------------------  /]
 <p>
 <h2>List of Students</h2>
-<table>
+<table class="table table-bordered">
 <thead>
 <tr>
 <th>Student name</th>
@@ -232,7 +234,7 @@
 [comment ------------------------------------  /]
 <p>
 <h2>List of CustomEnumeration</h2>
-<table>
+<table class="table table-bordered">
 <thead>
 <tr>
 <th>Enum name</th>
@@ -257,7 +259,7 @@
 [comment ------------------------------------  /]
 <p>
 <h2>List of ExtraInfo</h2>
-<table>
+<table class="table table-bordered">
 <thead>
 <tr>
 <th>Info name</th>
@@ -278,7 +280,7 @@
 </tbody>
 </table>
 </p>
-
+</main>
 </body>
 </html>
 [/file]

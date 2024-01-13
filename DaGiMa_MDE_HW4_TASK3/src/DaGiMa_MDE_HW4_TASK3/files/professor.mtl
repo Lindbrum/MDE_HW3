@@ -1,28 +1,26 @@
 [comment encoding = UTF-8 /]
 [module professor('http://www.example.org/dagima_mde_hw4_dest')]
-
+[import DaGiMa_MDE_HW4_TASK3::common::htmlHead /]
 
 [template public generateProfessor(aProfessor : Professor)]
 
-[file ('professors/' + aProfessor.surname + '-' + aProfessor.name + '.html', false, 'UTF-8')]
+[file ('professors/' + aProfessor.name + '-' + aProfessor.surname + '.html', false, 'UTF-8')]
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>[aProfessor.surname /]</title>
+[generateHead(aProfessor.name + ' ' + aProfessor.surname) /]
 </head>
-<body>
-
+<body class="container">
 <p>
-<table>
+<table class="table table-bordered">
 <h2>List of features</h2>
-<table>
+<table class="table table-bordered">
 <thead>
 <tr>
-<td>Feature Name</td>
-<td>Value</td>
+<th>Feature Name</th>
+<th>Value</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>
@@ -75,11 +73,9 @@ Orcid:
 </tbody>
 </table>
 </p>
-
-
 <p>
 <h2>List of news</h2>
-<table>
+<table class="table table-bordered">
 <thead>
 <tr>
 <th>News title</th>
@@ -101,17 +97,15 @@ Orcid:
 </tbody>
 </table>
 </p>
-
 <p>
 <h2>List of Course</h2>
-<table>
+<table class="table table-bordered">
 <thead>
 <tr>
 <th>Course name</th>
 <th>URL</th>
 </tr>
 </thead>
-
 <tbody>
 [for( course : Course | aProfessor.taught_courses)]
 <tr>
@@ -126,17 +120,15 @@ Orcid:
 </tbody>
 </table>
 </p>
-
 <p>
 <h2>List of thesis</h2>
-<table>
+<table class="table table-bordered">
 <thead>
 <tr>
 <th>Thesis title</th>
 <th>URL</th>
 </tr>
 </thead>
-
 <tbody>
 [for( thesis : Thesis | aProfessor.supervised_thesis)]
 <tr>
@@ -151,7 +143,6 @@ Orcid:
 </tbody>
 </table>
 </p>
-
 </body>
 [/file]
 [/template]

@@ -1,6 +1,6 @@
 [comment encoding = UTF-8 /]
 [module degreeCourse('http://www.example.org/dagima_mde_hw4_dest')]
-
+[import DaGiMa_MDE_HW4_TASK3::common::htmlHead /]
 
 [template public generateDegreeCourse(aDegreeCourse : DegreeCourse)]
 
@@ -8,13 +8,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>[aDegreeCourse.name /]</title>
+[generateHead(aDegreeCourse.name) /]
 </head>
-<body>
-<table>
+<body class="container">
+<table class="table table-bordered">
 <p>
 <h2>List of features</h2>
-<table>
+<table class="table table-bordered">
 <thead>
 <tr>
 <th>Feature Name</th>
@@ -101,7 +101,7 @@ Coordinator
 </p>
 <p>
 <h2>Course Catalogue</h2>
-<table>
+<table class="table table-bordered">
 <thead>
 <tr>
 <th>Name</th>
@@ -124,7 +124,7 @@ Coordinator
 </p>
 <p>
 <h2>Extra Info</h2>
-<table>
+<table class="table table-bordered">
 <thead>
 <tr>
 <th>Name</th>
@@ -151,7 +151,7 @@ Coordinator
 </p>
 <p>
 <h2>Enrolled students</h2>
-<table>
+<table class="table table-bordered">
 <thead>
 <tr>
 <th>Name</th>

@@ -1,6 +1,6 @@
 [comment encoding = UTF-8 /]
 [module news('http://www.example.org/dagima_mde_hw4_dest')]
-
+[import DaGiMa_MDE_HW4_TASK3::common::htmlHead /]
 
 [template public generateNews(aNews : News)]
 
@@ -8,12 +8,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>[aNews.title /]</title>
+[generateHead(aNews.title) /]
 </head>
-<body>
+<body class="container">
 <p>
 <h2>News details </h2>
-<table>
+<table class="table table-bordered">
 <thead>
 <tr>
 <th>Feature Name</th>
@@ -44,7 +44,7 @@ Department
 Author
 </td>
 <td>
-<a href="professors/[aNews.author.surname/]-[aNews.author.name/].html">[aNews.author.surname/]</a>
+<a href="professors/[aNews.author.name/]-[aNews.author.surname/].html">[aNews.author.name/] [aNews.author.surname/]</a>
 </td>
 </tr>
 <tr>
