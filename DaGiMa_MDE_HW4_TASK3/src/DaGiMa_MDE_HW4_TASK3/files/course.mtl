@@ -162,7 +162,7 @@ Teaching end:
 [inf.name /]
 </td>
 <td>
-<a href="./info/[inf.name /]">link</a>
+<a href="./info/[inf.name /].html">link</a>
 </td>
 <tr>
 [/for]
@@ -188,7 +188,7 @@ Teaching end:
 [i = i + 1/]
 </td>
 <td>
-<a href="./call/[ex.course.name /]-[ex.date /]">link</a>
+<a href="./call/[ex.course.name /].html">link</a>
 </td>
 <tr>
 [/for]

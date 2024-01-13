@@ -6,6 +6,7 @@
 [import DaGiMa_MDE_HW4_TASK3::files::professor /]
 [import DaGiMa_MDE_HW4_TASK3::files::news /]
 [import DaGiMa_MDE_HW4_TASK3::files::course /]
+[import DaGiMa_MDE_HW4_TASK3::files::student /]
 
 [template public generateIndex(aContainer : Container)]
 [comment @main/]
@@ -216,12 +217,13 @@
 </thead>
 <tbody>
 [for(stu : Student | aContainer.students)] 
+[stu.generateStudent() /]
 <tr>
 <td> 
 [stu.name/]
 </td>
 <td>
-<a href="[stu.name/].html">link</a>
+<a href="./students/[stu.email/].html">link</a>
 </td>
 </tr>
 [/for]
