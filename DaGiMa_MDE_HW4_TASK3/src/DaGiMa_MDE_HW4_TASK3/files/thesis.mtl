@@ -1,0 +1,74 @@
+[comment encoding = UTF-8 /]
+[module thesis('http://www.example.org/dagima_mde_hw4_dest')]
+[import DaGiMa_MDE_HW4_TASK3::common::htmlHead /]
+[import DaGiMa_MDE_HW4_TASK3::common::indexLink /]
+
+[template public generateThesis(aThesis : Thesis)]
+
+[file ('thesis/' + aThesis.title + '-the.html', false, 'UTF-8')]
+<!DOCTYPE html>
+<html lang="en">
+<head>
+[generateHead(aThesis.title) /]
+</head>
+<body>
+<main class="container">
+[generateIndexLink() /]
+<p>
+<h2>List of features</h2>
+<table class="table table-bordered">
+<thead>
+<tr>
+<th>Feature Name</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 
+Title
+</td>
+<td>
+[aThesis.title/]
+</td>
+</tr>
+<tr>
+<td> 
+Type
+</td>
+<td>
+[aThesis.type/]
+</td>
+</tr>
+<tr>
+<td> 
+Student
+</td>
+<td>
+<a href="../students/[aThesis.student.email/]-stu.html">[aThesis.student.name/] [aThesis.student.surname/]</a>
+</td>
+</tr>
+<tr>
+<td> 
+Supervisor
+</td>
+<td>
+<a href="../professors/[aThesis.supervisor.name/]-[aThesis.supervisor.surname/]-professor.html">[aThesis.supervisor.name/] [aThesis.supervisor.surname/]</a>
+</td>
+</tr>
+<tr>
+<td> 
+Degree Course
+</td>
+<td>
+<a href="../degree_courses/[aThesis.degree_course.name/]-deg.html">[aThesis.degree_course.name/]</a>
+</td>
+</tr>
+</tbody>
+</table>
+</p>
+</main>
+</body>
+</html>
+[/file]
+[/template]

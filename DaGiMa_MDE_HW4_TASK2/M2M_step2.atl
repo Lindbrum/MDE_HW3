@@ -1,5 +1,5 @@
 -- @path src=/DaGiMa_MDE_HW4_TASK2/DaGiMa_MDE_HW4_intermediate.ecore
--- @path dest=/DaGiMa_MDE_HW4_TASK2/DaGiMa_MDE_HW4_dest.ecore
+-- @path dest=/DaGiMa_MDE_HW4/model/DaGiMa_MDE_HW4_dest.ecore
 
 module M2M_step2;
 create OUT : dest from IN : src;
@@ -102,7 +102,10 @@ rule AddMatriculation2Career {
 		s : src!Career
 	to
 		t : dest!Career (
-			matriculation_number <- (s.student.matriculation_number->toString()	+ thisModule.counter->toString()).toInteger().longValue()
+			matriculation_number <- (s.student.matriculation_number->toString()	+ thisModule.counter->toString()).toInteger().longValue(),
+			degree_course <- s.degree_course,
+			name <- s.name,
+			student <- s.student
 		)
 	do{
 		thisModule.counter <- thisModule.counter.inc();

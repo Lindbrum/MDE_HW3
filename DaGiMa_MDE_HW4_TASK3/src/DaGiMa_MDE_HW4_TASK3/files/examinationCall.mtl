@@ -1,10 +1,97 @@
 [comment encoding = UTF-8 /]
 [module examinationCall('http://www.example.org/dagima_mde_hw4_dest')]
-
+[import DaGiMa_MDE_HW4_TASK3::common::htmlHead /]
+[import DaGiMa_MDE_HW4_TASK3::common::indexLink /]
 
 [template public generateExaminationCall(anExaminationCall : ExaminationCall)]
 
 [file ('calls/' + anExaminationCall.course.name + '-' + anExaminationCall.date.toString().replaceAll(':', '_') + '-call.html', false, 'UTF-8')]
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+[generateHead(anExaminationCall.course.name + '-' + anExaminationCall.date.toString()) /]
+</head>
+<body>
+<main class="container">
+[generateIndexLink() /]
+<p>
+<h2>List of features</h2>
+<table class="table table-bordered">
+<thead>
+<tr>
+<th>Feature Name</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 
+Course
+</td>
+<td>
+<a href="../courses/[anExaminationCall.course.name/]-cor.html">[anExaminationCall.course.name/]</a>
+</td>
+</tr>
+<tr>
+<td> 
+Date
+</td>
+<td>
+[anExaminationCall.date/]
+</td>
+</tr>
+<tr>
+<td> 
+Classroom
+</td>
+<td>
+[anExaminationCall.classroom/]
+</td>
+</tr>
+<tr>
+<td> 
+Type
+</td>
+<td>
+[anExaminationCall.type/]
+</td>
+</tr>
+<tr>
+<td> 
+Description
+</td>
+<td>
+[anExaminationCall.description/]
+</td>
+</tr>
+</tbody>
+</table>
+</p>
+<p>
+<h2>List of booked students</h2>
+<table class="table table-bordered">
+<thead>
+<tr>
+<th>Student</th>
+<th>URL</th>
+</tr>
+</thead>
+<tbody>
+[for(stu : Student | anExaminationCall.booked_students)]
+<tr>
+<td> 
+[stu.name/] [stu.surname/]
+</td>
+<td>
+<a href="../students/[stu.email/]-stu.html">link</a>
+</td>
+</tr>
+[/for]
+</tbody>
+</table>
+</p>
+</main>
+</body>
+</html>
 [/file]
 [/template]

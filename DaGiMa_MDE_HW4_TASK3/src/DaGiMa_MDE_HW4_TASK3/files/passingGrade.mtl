@@ -1,0 +1,67 @@
+[comment encoding = UTF-8 /]
+[module passingGrade('http://www.example.org/dagima_mde_hw4_dest')]
+[import DaGiMa_MDE_HW4_TASK3::common::htmlHead /]
+[import DaGiMa_MDE_HW4_TASK3::common::indexLink /]
+
+
+[template public generatePassingGrade(aPassingGrade : PassingGrade)]
+
+[file ('passing_grades/' + aPassingGrade.course.name + '-' + aPassingGrade.student.matriculation_number.toString() + '-pas.html', false, 'UTF-8')]
+<!DOCTYPE html>
+<html lang="en">
+<head>
+[generateHead(aPassingGrade.course.name + '-' + aPassingGrade.student.matriculation_number.toString()) /]
+</head>
+<body>
+<main class="container">
+[generateIndexLink() /]
+<p>
+<h2>List of features</h2>
+<table class="table table-bordered">
+<thead>
+<tr>
+<th>Feature Name</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 
+Course
+</td>
+<td>
+<a href="../courses/[aPassingGrade.course.name/]-cor.html">[aPassingGrade.course.name/]</a>
+</td>
+</tr>
+<tr>
+<td> 
+Student transcript
+</td>
+<td>
+<a href="../careers/[aPassingGrade.student.matriculation_number/]-car.html">[aPassingGrade.student.matriculation_number/]</a>
+</td>
+</tr>
+<tr>
+<td> 
+Date
+</td>
+<td>
+[aPassingGrade.date/]
+</td>
+</tr>
+<tr>
+<td> 
+Grade
+</td>
+<td>
+[aPassingGrade.grade/]
+</td>
+</tr>
+</tbody>
+</table>
+</p>
+</main>
+</body>
+</html>
+[/file]
+[/template]

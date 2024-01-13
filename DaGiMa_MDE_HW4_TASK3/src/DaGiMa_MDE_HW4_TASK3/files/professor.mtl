@@ -5,13 +5,14 @@
 
 [template public generateProfessor(aProfessor : Professor)]
 
-[file ('professors/' + aProfessor.name + '-' + aProfessor.surname + '.html', false, 'UTF-8')]
+[file ('professors/' + aProfessor.name + '-' + aProfessor.surname + '-professor.html', false, 'UTF-8')]
 <!DOCTYPE html>
 <html lang="en">
 <head>
 [generateHead(aProfessor.name + ' ' + aProfessor.surname) /]
 </head>
-<body class="container">
+<body>
+<main class="container">
 [generateIndexLink() /]
 <p>
 <table class="table table-bordered">
@@ -84,7 +85,6 @@ Orcid:
 <th>URL</th>
 </tr>
 </thead>
-
 <tbody>
 [for( news : News | aProfessor.news_posted)]
 <tr>
@@ -92,7 +92,7 @@ Orcid:
 [news.title /]
 </td>
 <td>
-<a href="../[news.title /]-news.html">link </a>
+<a href="../news/[aProfessor.name/]-[aProfessor.surname/]-[news.title.replaceAll(':', '_') /]-news.html">link </a>
 </td>
 </tr>
 [/for]
@@ -115,7 +115,7 @@ Orcid:
 [course.name /]
 </td>
 <td>
-<a href="../[course.name /]-cor.html">link </a>
+<a href="../courses/[course.name /]-cor.html">link </a>
 </td>
 </tr>
 [/for]
@@ -138,13 +138,14 @@ Orcid:
 [thesis.title /]
 </td>
 <td>
-<a href="[thesis.title /].html">link </a>
+<a href="../thesis/[thesis.title /]-the.html">link </a>
 </td>
 </tr>
 [/for]
 </tbody>
 </table>
 </p>
+</main>
 </body>
 [/file]
 [/template]

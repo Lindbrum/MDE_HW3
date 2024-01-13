@@ -8,6 +8,13 @@
 [import DaGiMa_MDE_HW4_TASK3::files::course /]
 [import DaGiMa_MDE_HW4_TASK3::common::htmlHead /]
 [import DaGiMa_MDE_HW4_TASK3::files::student /]
+[import DaGiMa_MDE_HW4_TASK3::files::thesis /]
+[import DaGiMa_MDE_HW4_TASK3::files::career /]
+[import DaGiMa_MDE_HW4_TASK3::files::passingGrade /]
+[import DaGiMa_MDE_HW4_TASK3::files::customEnumeration /]
+[import DaGiMa_MDE_HW4_TASK3::files::extraInfo /]
+[import DaGiMa_MDE_HW4_TASK3::files::examinationCall /]
+
 
 [template public generateIndex(aContainer : Container)]
 [comment @main/]
@@ -100,7 +107,6 @@
 </tbody>
 </table>
 </p>
-
 [comment ------------------------------------  /]
 <p>
 <h2>List of Courses</h2>
@@ -126,7 +132,6 @@
 </tbody>
 </table>
 </p>
-
 [comment ------------------------------------  /]
 <p>
 <h2>List of Examination Calls</h2>
@@ -140,6 +145,7 @@
 <tbody>
 [for(cor : Course | aContainer.courses)]
 [for(cal : ExaminationCall| cor.calls)]
+[cal.generateExaminationCall() /]
 <tr>
 <td> 
 [cal.course.name/] - [cal.date/]
@@ -153,7 +159,6 @@
 </tbody>
 </table>
 </p>
-
 [comment ------------------------------------  /]
 <p>
 <h2>List of Professors</h2>
@@ -172,7 +177,7 @@
 [pro.name/] [pro.surname/]
 </td>
 <td>
-<a href="professors/[pro.name/]-[pro.surname/].html">link</a>
+<a href="professors/[pro.name/]-[pro.surname/]-professor.html">link</a>
 </td>
 </tr>
 [/for]
@@ -198,7 +203,7 @@
 [news.title /]
 </td>
 <td> 
-<a href="news/[pro.name/]-[pro.surname/]-[news.title.replaceAll(':', '_') /].html">link</a>
+<a href="news/[pro.name/]-[pro.surname/]-[news.title.replaceAll(':', '_') /]-news.html">link</a>
 </td>
 </tr>
 [/for]
@@ -206,15 +211,13 @@
 </tbody>
 </table>
 </p>
-
-
 [comment ------------------------------------  /]
 <p>
 <h2>List of Students</h2>
 <table class="table table-bordered">
 <thead>
 <tr>
-<th>Student name</th>
+<th>Student</th>
 <th>URL</th>
 </tr>
 </thead>
@@ -223,17 +226,99 @@
 [stu.generateStudent() /]
 <tr>
 <td> 
-[stu.name/]
+[stu.name/] [stu.surname/]
 </td>
 <td>
-<a href="./students/[stu.email/].html">link</a>
+<a href="./students/[stu.email/]-stu.html">link</a>
 </td>
 </tr>
 [/for]
 </tbody>
 </table>
 </p>
-
+[comment ------------------------------------  /]
+<p>
+<h2>List of Thesis</h2>
+<table class="table table-bordered">
+<thead>
+<tr>
+<th>Thesis title</th>
+<th>URL</th>
+</tr>
+</thead>
+<tbody>
+[for(stu : Student | aContainer.students)]
+[for(the : Thesis | stu.thesis_defended)] 
+[the.generateThesis() /]
+<tr>
+<td> 
+[the.title/]
+</td>
+<td>
+<a href="./thesis/[the.title/]-the.html">link</a>
+</td>
+</tr>
+[/for]
+[/for]
+</tbody>
+</table>
+</p>
+[comment ------------------------------------  /]
+<p>
+<h2>List of Careers</h2>
+<table class="table table-bordered">
+<thead>
+<tr>
+<th>Student - Degree Course</th>
+<th>URL</th>
+</tr>
+</thead>
+<tbody>
+[for(stu : Student | aContainer.students)]
+[for(car : Career | stu.transcripts)] 
+[car.generateCareer() /]
+<tr>
+<td> 
+[stu.name/] [stu.surname/] - [car.degree_course.name/]
+</td>
+<td>
+<a href="careers/[car.matriculation_number/]-car.html">link</a>
+</td>
+</tr>
+[/for]
+[/for]
+</tbody>
+</table>
+</p>
+[comment ------------------------------------  /]
+<p>
+<h2>List of Passing Grades</h2>
+<table class="table table-bordered">
+<thead>
+<tr>
+<th>Course - Student (mat. number)</th>
+<th>URL</th>
+</tr>
+</thead>
+<tbody>
+[for(stu : Student | aContainer.students)]
+[for(car : Career | stu.transcripts)]
+[for(pas : PassingGrade | car.courses)]
+[pas.generatePassingGrade() /]
+<tr>
+<td> 
+[pas.course.name/] - [stu.name/] [stu.surname/] ([car.matriculation_number/])
+</td>
+<td>
+<a href="passing_grades/[pas.course.name/]-[car.matriculation_number/]-pas.html">link</a>
+</td>
+</tr>
+[/for]
+[/for]
+[/for]
+</tbody>
+</table>
+</p>
 [comment ------------------------------------  /]
 <p>
 <h2>List of CustomEnumeration</h2>
@@ -245,20 +330,20 @@
 </tr>
 </thead>
 <tbody>
-[for(cus : CustomEnumeration | aContainer.custom_enumerations)] 
+[for(cus : CustomEnumeration | aContainer.custom_enumerations)]
+[cus.generateCustomEnumeration() /]
 <tr>
 <td> 
 [cus.name/]
 </td>
 <td>
-<a href="custom_enumerations/[cus.name/].html">link</a>
+<a href="custom_enumerations/[cus.name/]-cus.html">link</a>
 </td>
 </tr>
 [/for]
 </tbody>
 </table>
 </p>
-
 [comment ------------------------------------  /]
 <p>
 <h2>List of ExtraInfo</h2>
@@ -270,13 +355,14 @@
 </tr>
 </thead>
 <tbody>
-[for(inf : ExtraInfo | aContainer.extra_infos)] 
+[for(ext : ExtraInfo | aContainer.extra_infos)]
+[ext.generateExtraInfo() /] 
 <tr>
 <td> 
-[inf.name/]
+[ext.name/]
 </td>
 <td>
-<a href="extra_info/[inf.name/].html">link</a>
+<a href="extra_infos/[ext.name/]-ext.html">link</a>
 </td>
 </tr>
 [/for]

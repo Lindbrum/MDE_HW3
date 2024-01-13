@@ -11,7 +11,8 @@
 <head>
 [generateHead(aDegreeCourse.name) /]
 </head>
-<body class="container">
+<body>
+<main class="container">
 [generateIndexLink() /]
 <table class="table table-bordered">
 <p>
@@ -87,7 +88,7 @@ Language
 Department
 </td>
 <td>
-<a href="[aDegreeCourse.department.name/]-dep.html">[aDegreeCourse.department.name/]</a>
+<a href="../departments/[aDegreeCourse.department.name/]-dep.html">[aDegreeCourse.department.name/]</a>
 </td>
 </tr>
 <tr>
@@ -95,7 +96,7 @@ Department
 Coordinator
 </td>
 <td>
-<a href="./professors/[aDegreeCourse.coordinator.name/]-[aDegreeCourse.coordinator.surname/].html">[aDegreeCourse.department.name/] [aDegreeCourse.coordinator.surname/]</a>
+<a href="../professors/[aDegreeCourse.coordinator.name/]-[aDegreeCourse.coordinator.surname/].html">[aDegreeCourse.coordinator.name/] [aDegreeCourse.coordinator.surname/]</a>
 </td>
 </tr>
 </tbody>
@@ -117,7 +118,7 @@ Coordinator
 [cor.name/]
 </td>
 <td>
-<a href="./[cor.name/]-cor.html"> link </a>
+<a href="../courses/[cor.name/]-cor.html"> link </a>
 </td>
 </tr>
 [/for]
@@ -144,7 +145,7 @@ Coordinator
 [inf.value/]
 </td>
 <td>
-<a href="./[inf.name/]-inf.html"> link </a>
+<a href="../extra_info/[inf.name/]-inf.html"> link </a>
 </td>
 </tr>
 [/for]
@@ -167,13 +168,14 @@ Coordinator
 [stu.name/]
 </td>
 <td>
-<a href="./students/[stu.email/].html"> link </a>
+<a href="../students/[stu.email/].html"> link </a>
 </td>
 </tr>
 [/for]
 </tbody>
 </table>
 </p>
+</main>
 </body>
 </html>
 [/file]

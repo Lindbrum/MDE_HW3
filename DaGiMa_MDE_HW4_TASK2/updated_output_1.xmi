@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<dagima_mde_hw4:Container
+<dagima_mde_hw4_intermediate:Container
     xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI"
-    xmlns:dagima_mde_hw4="http://www.example.org/dagima_mde_hw4_intermediate"
+    xmlns:dagima_mde_hw4_intermediate="http://www.example.org/dagima_mde_hw4_intermediate"
     model_name="Instance1">
   <universities
       rector="//@professors.0"
       name="University of L'Aquila">
     <departments
-        website="www.disim.it"
+        website="https://www.disim.univaq.it/"
         name="DISIM"
         related_news="//@professors.1/@news_posted.0">
       <offered_courses
@@ -196,4 +196,4 @@
       lower_multiplicity="1"
       higher_multiplicity="1"
       enum="//@custom_enumerations.1"/>
-</dagima_mde_hw4:Container>
+</dagima_mde_hw4_intermediate:Container>

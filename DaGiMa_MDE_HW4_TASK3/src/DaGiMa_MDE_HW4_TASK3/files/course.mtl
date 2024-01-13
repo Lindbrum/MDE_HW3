@@ -11,7 +11,8 @@
 <head>
 [generateHead(aCourse.name) /]
 </head>
-<body class="container">
+<body>
+<main class="container">
 [generateIndexLink() /]
 <p>
 <table class="table table-bordered">
@@ -34,7 +35,7 @@ Name:
 </tr>
 <tr>
 <td>
-Code:
+Code
 </td>
 <td>
 [aCourse.code/]
@@ -42,7 +43,7 @@ Code:
 </tr>
 <tr>
 <td>
-CFU:
+CFU
 </td>
 <td>
 [aCourse.cfu/]
@@ -51,7 +52,7 @@ CFU:
 <tr>
 <tr>
 <td>
-Credit type:
+Credit type
 </td>
 <td>
 [aCourse.credit_type/]
@@ -60,16 +61,15 @@ Credit type:
 <tr>
 <tr>
 <td>
-Year:
+Year
 </td>
 <td>
 [aCourse.year/]
 </td>
 </tr>
 <tr>
-<tr>
 <td>
-Language:
+Language
 </td>
 <td>
 [for(lan : String | aCourse.language) separator(', ')]
@@ -78,9 +78,8 @@ Language:
 </td>
 </tr>
 <tr>
-<tr>
 <td>
-Teaching start:
+Teaching start
 </td>
 <td>
 [aCourse.teaching_period_start_day/]/[aCourse.teaching_period_start_month/]/[aCourse.teaching_period_start_year/]
@@ -89,7 +88,7 @@ Teaching start:
 <tr>
 <tr>
 <td>
-Teaching end:
+Teaching end
 </td>
 <td>
 [aCourse.teaching_period_end_day/]/[aCourse.teaching_period_end_month/]/[aCourse.teaching_period_end_year/]
@@ -115,7 +114,7 @@ Teaching end:
 [deg.name /]
 </td>
 <td>
-<a href="[deg.name /]-deg.html">link</a>
+<a href="../degree_courses/[deg.name /]-deg.html">link</a>
 </td>
 <tr>
 [/for]
@@ -135,10 +134,10 @@ Teaching end:
 [for( teac : Professor | aCourse.teachers )]
 <tr>
 <td>
-[teac.surname /]
+[teac.name/] [teac.surname /]
 </td>
 <td>
-<a href="./professors/[teac.name /]-[teac.surname/].html">link</a>
+<a href="../professors/[teac.name /]-[teac.surname/].html">link</a>
 </td>
 <tr>
 [/for]
@@ -161,7 +160,7 @@ Teaching end:
 [inf.name /]
 </td>
 <td>
-<a href="./info/[inf.name /].html">link</a>
+<a href="../extra_info/[inf.name /].html">link</a>
 </td>
 <tr>
 [/for]
@@ -184,13 +183,14 @@ Teaching end:
 [ex.date /]
 </td>
 <td>
-<a href="./call/[ex.course.name /]-[ex.date.toString().replaceAll(':', '_') /]-call.html">link</a>
+<a href="../examination_calls/[ex.course.name /]-[ex.date.toString().replaceAll(':', '_') /]-call.html">link</a>
 </td>
 <tr>
 [/for]
 </tbody>
 </table>
 </p>
+</main>
 </body>
 </html>
 [/file]

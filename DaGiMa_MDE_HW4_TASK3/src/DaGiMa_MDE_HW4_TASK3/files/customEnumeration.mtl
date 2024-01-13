@@ -1,0 +1,52 @@
+[comment encoding = UTF-8 /]
+[module customEnumeration('http://www.example.org/dagima_mde_hw4_dest')]
+[import DaGiMa_MDE_HW4_TASK3::common::htmlHead /]
+[import DaGiMa_MDE_HW4_TASK3::common::indexLink /]
+
+[template public generateCustomEnumeration(aCustomEnumeration : CustomEnumeration)]
+
+[file ('custom_enumerations/' + aCustomEnumeration.name + '-cus.html', false, 'UTF-8')]
+<!DOCTYPE html>
+<html lang="en">
+<head>
+[generateHead(aCustomEnumeration.name) /]
+</head>
+<body>
+<main class="container">
+[generateIndexLink() /]
+<p>
+<h2>List of features</h2>
+<table class="table table-bordered">
+<thead>
+<tr>
+<th>Feature Name</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 
+Name
+</td>
+<td>
+[aCustomEnumeration.name/]
+</td>
+</tr>
+<tr>
+<td>
+Values
+</td>
+<td>
+[for(val : String | aCustomEnumeration.values) separator(', ')]
+[val /]
+[/for]
+</td>
+</tr>
+</tbody>
+</table>
+</p>
+</main>
+</body>
+</html>
+[/file]
+[/template]

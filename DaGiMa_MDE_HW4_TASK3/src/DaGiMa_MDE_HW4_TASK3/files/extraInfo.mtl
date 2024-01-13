@@ -1,0 +1,76 @@
+[comment encoding = UTF-8 /]
+[module extraInfo('http://www.example.org/dagima_mde_hw4_dest')]
+[import DaGiMa_MDE_HW4_TASK3::common::htmlHead /]
+[import DaGiMa_MDE_HW4_TASK3::common::indexLink /]
+
+[template public generateExtraInfo(anExtraInfo : ExtraInfo)]
+
+[file ('extra_infos/' + anExtraInfo.name + '-ext.html', false, 'UTF-8')]
+<!DOCTYPE html>
+<html lang="en">
+<head>
+[generateHead(anExtraInfo.name) /]
+</head>
+<body>
+<main class="container">
+[generateIndexLink() /]
+<p>
+<h2>List of features</h2>
+<table class="table table-bordered">
+<thead>
+<tr>
+<th>Feature Name</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 
+Name
+</td>
+<td>
+[anExtraInfo.name/]
+</td>
+</tr>
+<tr>
+<td>
+Value
+</td>
+<td>
+[anExtraInfo.value/]
+</td>
+</tr>
+<tr>
+<td>
+Type
+</td>
+<td>
+[anExtraInfo.type/]
+</td>
+</tr>
+[if(anExtraInfo.type = MetadataType::ENUMERATION)]
+<tr>
+<td>
+Enum
+</td>
+<td>
+<a href="../custom_enumerations/[anExtraInfo.enum.name/]-cus.html">[anExtraInfo.enum.name/]</a>
+</td>
+</tr>
+[/if]
+<tr>
+<td>
+Multiplicity
+</td>
+<td>
+(Lower: [anExtraInfo.lower_multiplicity/], Higher: [anExtraInfo.higher_multiplicity/])
+</td>
+</tr>
+</tbody>
+</table>
+</p>
+</main>
+</body>
+</html>
+[/file]
+[/template]

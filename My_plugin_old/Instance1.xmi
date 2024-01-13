@@ -8,7 +8,7 @@
       rector="//@professors.0"
       name="University of L'Aquila">
     <departments
-        website="www.disim.it"
+        website="https://www.disim.univaq.it/"
         name="DISIM"
         related_news="//@professors.1/@news_posted.0">
       <offered_courses

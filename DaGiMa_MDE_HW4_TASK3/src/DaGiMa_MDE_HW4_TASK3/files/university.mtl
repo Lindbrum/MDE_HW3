@@ -11,7 +11,8 @@
 <head>
 [generateHead(aUniversity.name) /]
 </head>
-<body class="container">
+<body>
+<main class="container">
 [generateIndexLink() /]
 <p>
 <h2>List of features</h2>
@@ -36,7 +37,7 @@ Name
 Rector
 </td>
 <td>
-<a href="./professors/[aUniversity.rector.name /]-[aUniversity.rector.surname /].html"> [aUniversity.rector.name /][aUniversity.rector.surname /]</a>
+<a href="../professors/[aUniversity.rector.name /]-[aUniversity.rector.surname /].html"> [aUniversity.rector.name /][aUniversity.rector.surname /]</a>
 </td>
 </tr>
 </tbody>
@@ -57,13 +58,14 @@ Rector
 [dep.name/]
 </td>
 <td>
-<a href="./[dep.name/]-dep.html"> link </a>
+<a href="../departments/[dep.name/]-dep.html"> link </a>
 </td>
 </tr>
 [/for]
 </tbody>
 </table>
 </p>
+</main>
 </body>
 </html>
 [/file]

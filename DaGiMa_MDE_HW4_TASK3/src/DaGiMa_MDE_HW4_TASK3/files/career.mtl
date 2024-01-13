@@ -1,0 +1,103 @@
+[comment encoding = UTF-8 /]
+[module career('http://www.example.org/dagima_mde_hw4_dest')]
+[import DaGiMa_MDE_HW4_TASK3::common::htmlHead /]
+[import DaGiMa_MDE_HW4_TASK3::common::indexLink /]
+
+[template public generateCareer(aCareer : Career)]
+
+[file ('careers/' + aCareer.matriculation_number.toString() + '-car.html', false, 'UTF-8')]
+<!DOCTYPE html>
+<html lang="en">
+<head>
+[generateHead(aCareer.matriculation_number.toString()) /]
+</head>
+<body>
+<main class="container">
+[generateIndexLink() /]
+<p>
+<h2>List of features</h2>
+<table class="table table-bordered">
+<thead>
+<tr>
+<th>Feature Name</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 
+Name
+</td>
+<td>
+[aCareer.name/]
+</td>
+</tr>
+<tr>
+<td> 
+Matriculation number
+</td>
+<td>
+[aCareer.matriculation_number/]
+</td>
+</tr>
+<tr>
+<td> 
+Student
+</td>
+<td>
+<a href="../students/[aCareer.student.email/]-stu.html">[aCareer.student.name/] [aCareer.student.surname/]</a>
+</td>
+</tr>
+<tr>
+<td> 
+Degree Course
+</td>
+<td>
+<a href="../degree_courses/[aCareer.degree_course.name/]-deg.html">[aCareer.degree_course.name/]</a>
+</td>
+</tr>
+</tbody>
+</table>
+</p>
+<p>
+<h2>List of passing grades</h2>
+<table class="table table-bordered">
+<thead>
+<tr>
+<th>Course</th>
+<th>Year</th>
+<th>CFU</th>
+<th>Grade</th>
+<th>URL</th>
+</tr>
+</thead>
+<tbody>
+[for(pas : PassingGrade | aCareer.courses)]
+<tr>
+<td> 
+[pas.course.code/] - [pas.course.name/]
+</td>
+<td> 
+[pas.course.year/]
+</td>
+<td> 
+[pas.course.cfu/]
+</td>
+<td>
+[if(pas.grade = '')]
+[pas.grade/] - [pas.date/]
+[/if]
+</td>
+<td>
+<a href="../passing_grades/[pas.course.name/]-[pas.student.matriculation_number/]-pas.html">link</a>
+</td>
+</tr>
+[/for]
+</tbody>
+</table>
+</p>
+</main>
+</body>
+</html>
+[/file]
+[/template]

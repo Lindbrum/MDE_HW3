@@ -11,7 +11,8 @@
 <head>
 [generateHead(aDepartment.name) /]
 </head>
-<body class="container">
+<body>
+<main class="container">
 [generateIndexLink() /]
 <table class="table table-bordered">
 <p>
@@ -37,7 +38,7 @@ Name
 Website
 </td>
 <td>
-[aDepartment.website /]
+<a href="[aDepartment.website/]">[aDepartment.website.replaceFirst('http://|https://', '')/]</a>
 </td>
 </tr>
 <tr>
@@ -45,7 +46,7 @@ Website
 University
 </td>
 <td>
-<a href="[aDepartment.university.name/].html">[aDepartment.university.name/]</a>
+<a href="../universities/[aDepartment.university.name/].html">[aDepartment.university.name/]</a>
 </td>
 </tr>
 </tbody>
@@ -67,7 +68,7 @@ University
 [deg.name/]
 </td>
 <td>
-<a href="./[deg.name/]-deg.html"> link </a>
+<a href="../degree_courses/[deg.name/]-deg.html"> link </a>
 </td>
 </tr>
 [/for]
@@ -90,13 +91,14 @@ University
 [news.title/]
 </td>
 <td>
-<a href="./[news.title/]-news.html"> link </a>
+<a href="../news/[news.title/]-news.html"> link </a>
 </td>
 </tr>
 [/for]
 </tbody>
 </table>
 </p>
+</main>
 </body>
 </html>
 [/file]

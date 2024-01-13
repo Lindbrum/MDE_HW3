@@ -5,22 +5,23 @@
 
 [template public generateStudent(aStudent : Student)]
 
-[file ('students/'+ aStudent.email +'.html', false, 'UTF-8')]
+[file ('students/'+ aStudent.email +'-stu.html', false, 'UTF-8')]
 <!DOCTYPE html>
 <html lang="en">
 <head>
 [generateHead(aStudent.name) /]
 </head>
-<body class="container">
+<body>
+<main class="container">
 [generateIndexLink() /]
 <p>
 <p>
-<h2>Info</h2>
-<table>
+<h2>List of features</h2>
+<table class="table table-bordered">
 <thead>
 <tr>
-<td>Info</td>
-<td>Value</td>
+<th>Info</th>
+<th>Value</th>
 </tr>
 </thead>
 <tbody>
@@ -29,12 +30,20 @@
 Name
 </td>
 <td>
-[aStudent.surname /] [aStudent.surname /]
+[aStudent.name /]
 </td>
-<tr>
+</tr>
 <tr>
 <td>
-Birth date:
+Surname
+</td>
+<td>
+[aStudent.surname /]
+</td>
+</tr>
+<tr>
+<td>
+Birth date
 </td>
 <td>
 [aStudent.birth_date /]
@@ -42,7 +51,7 @@ Birth date:
 <tr>
 <tr>
 <td>
-Email:
+Email
 </td>
 <td>
 [aStudent.email /]
@@ -50,7 +59,7 @@ Email:
 <tr>
 <tr>
 <td>
-telephone:
+Telephone
 </td>
 <td>
 [aStudent.telephone /]
@@ -61,7 +70,7 @@ telephone:
 </p>
 <p>
 <h2>List of DegreeCourse</h2>
-<table>
+<table class="table table-bordered">
 <thead>
 <tr>
 <th>Enrolled Courses</th>
@@ -75,7 +84,7 @@ telephone:
 [course.name /]
 </td>
 <td>
-<a href="../[course.name /]-deg.html">link </a>
+<a href="../degree_courses/[course.name /]-deg.html">link</a>
 </td>
 </tr>
 [/for]
@@ -84,7 +93,7 @@ telephone:
 </p>
 <p>
 <h2>List of Examinations Calls</h2>
-<table>
+<table class="table table-bordered">
 <thead>
 <tr>
 <th>ExaminationCalls</th>
@@ -98,7 +107,7 @@ telephone:
 [cal.course.name /]
 </td>
 <td>
-[comment link da creare /]
+<a href="../examination_calls/[cal.course.name /]-[cal.date.toString().replaceAll(':', '_') /]-call.html">link</a>
 </td>
 </tr>
 [/for]
@@ -107,7 +116,7 @@ telephone:
 </p>
 <p>
 <h2>List of Thesis</h2>
-<table>
+<table class="table table-bordered">
 <thead>
 <tr>
 <th>Thesis title</th>
@@ -121,7 +130,7 @@ telephone:
 [the.title /]
 </td>
 <td>
-[comment link da creare /]
+<a href="../thesis/[the.title/]-the.html">link</a>
 </td>
 </tr>
 [/for]
@@ -130,7 +139,7 @@ telephone:
 </p>
 <p>
 <h2>List of Career</h2>
-<table>
+<table class="table table-bordered">
 <thead>
 <tr>
 <th>Career</th>
@@ -144,13 +153,14 @@ telephone:
 [car.name /]
 </td>
 <td>
-[comment link da creare /]
+<a href="../thesis/[car.matriculation_number/]-car.html">link</a>
 </td>
 </tr>
 [/for]
 </tbody>
 </table>
 </p>
+</main>
 </body>
 </html>
 [/file]

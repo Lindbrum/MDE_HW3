@@ -5,16 +5,17 @@
 
 [template public generateNews(aNews : News)]
 
-[file ('news/' + aNews.title.replaceAll(':', '_') + '-news.html', false, 'UTF-8')]
+[file ('news/'+ aNews.author.name + '-' + aNews.author.surname + '-' + aNews.title.replaceAll(':', '_') + '-news.html', false, 'UTF-8')]
 <!DOCTYPE html>
 <html lang="en">
 <head>
 [generateHead(aNews.title) /]
 </head>
-<body class="container">
+<body>
+<main class="container">
 [generateIndexLink() /]
 <p>
-<h2>News details </h2>
+<h2>List of features</h2>
 <table class="table table-bordered">
 <thead>
 <tr>
@@ -22,7 +23,6 @@
 <th>Value</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td> 
@@ -33,12 +33,11 @@ Title
 </td>
 </tr>
 <tr>
-<tr>
 <td> 
 Department
 </td>
 <td>
-[aNews.department/]
+<a href="../departments/[aNews.department.name/]-dep.html">[aNews.department.name/]</a>
 </td>
 </tr>
 <tr>
@@ -46,7 +45,7 @@ Department
 Author
 </td>
 <td>
-<a href="professors/[aNews.author.name/]-[aNews.author.surname/].html">[aNews.author.name/] [aNews.author.surname/]</a>
+<a href="../professors/[aNews.author.name/]-[aNews.author.surname/]-professor.html">[aNews.author.name/] [aNews.author.surname/]</a>
 </td>
 </tr>
 <tr>
@@ -66,9 +65,9 @@ Body
 </td>
 </tr>
 </tbody>
-
 </table>
 </p>
+</main>
 </body>
 </html>
 [/file]
