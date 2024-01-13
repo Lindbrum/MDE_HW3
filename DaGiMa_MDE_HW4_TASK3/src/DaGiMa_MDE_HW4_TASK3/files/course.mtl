@@ -137,7 +137,7 @@ Teaching end
 [teac.name/] [teac.surname /]
 </td>
 <td>
-<a href="../professors/[teac.name /]-[teac.surname/].html">link</a>
+<a href="../professors/[teac.name /]-[teac.surname/]-professor.html">link</a>
 </td>
 <tr>
 [/for]
@@ -184,6 +184,33 @@ Teaching end
 </td>
 <td>
 <a href="../examination_calls/[ex.course.name /]-[ex.date.toString().replaceAll(':', '_') /]-call.html">link</a>
+</td>
+<tr>
+[/for]
+</tbody>
+</table>
+</p>
+<p>
+<h2>List of students' grades</h2>
+<table class="table table-bordered">
+<thead>
+<tr>
+<th>Student</th>
+<th>Grade</th>
+<th>URL</th>
+</tr>
+</thead>
+<tbody>
+[for( gra : PassingGrade | aCourse.students_grades )]
+<tr>
+<td>
+[gra.student.student.name /] [gra.student.student.surname /] ([gra.student.matriculation_number /])
+</td>
+<td>
+[gra.grade /]
+</td>
+<td>
+<a href="../passing_grades/[aCourse.name /]-[gra.student.matriculation_number /]-pas.html">link</a>
 </td>
 <tr>
 [/for]

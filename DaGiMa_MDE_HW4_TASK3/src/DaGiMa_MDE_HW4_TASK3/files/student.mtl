@@ -92,11 +92,11 @@ Telephone
 </table>
 </p>
 <p>
-<h2>List of Examinations Calls</h2>
+<h2>List of Booked Calls</h2>
 <table class="table table-bordered">
 <thead>
 <tr>
-<th>ExaminationCalls</th>
+<th>Call</th>
 <th>URL</th>
 </tr>
 </thead>
@@ -104,7 +104,7 @@ Telephone
 [for( cal : ExaminationCall | aStudent.booked_calls)]
 <tr>
 <td>
-[cal.course.name /]
+[cal.course.name /] - [cal.date/] ([cal.classroom/])
 </td>
 <td>
 <a href="../examination_calls/[cal.course.name /]-[cal.date.toString().replaceAll(':', '_') /]-call.html">link</a>

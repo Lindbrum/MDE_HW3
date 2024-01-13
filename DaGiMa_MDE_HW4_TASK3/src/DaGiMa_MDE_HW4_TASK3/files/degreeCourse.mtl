@@ -96,7 +96,7 @@ Department
 Coordinator
 </td>
 <td>
-<a href="../professors/[aDegreeCourse.coordinator.name/]-[aDegreeCourse.coordinator.surname/].html">[aDegreeCourse.coordinator.name/] [aDegreeCourse.coordinator.surname/]</a>
+<a href="../professors/[aDegreeCourse.coordinator.name/]-[aDegreeCourse.coordinator.surname/]-professor.html">[aDegreeCourse.coordinator.name/] [aDegreeCourse.coordinator.surname/]</a>
 </td>
 </tr>
 </tbody>

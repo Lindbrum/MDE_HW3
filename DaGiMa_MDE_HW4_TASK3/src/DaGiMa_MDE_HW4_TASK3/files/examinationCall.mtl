@@ -5,7 +5,7 @@
 
 [template public generateExaminationCall(anExaminationCall : ExaminationCall)]
 
-[file ('calls/' + anExaminationCall.course.name + '-' + anExaminationCall.date.toString().replaceAll(':', '_') + '-call.html', false, 'UTF-8')]
+[file ('examination_calls/' + anExaminationCall.course.name + '-' + anExaminationCall.date.toString().replaceAll(':', '_') + '-call.html', false, 'UTF-8')]
 <!DOCTYPE html>
 <html lang="en">
 <head>

@@ -151,7 +151,7 @@
 [cal.course.name/] - [cal.date/]
 </td>
 <td>
-<a href="calls/[cal.course.name/]-[cal.date.toString().replaceAll(':', '_') /]-call.html">link</a>
+<a href="examination_calls/[cal.course.name/]-[cal.date.toString().replaceAll(':', '_') /]-call.html">link</a>
 </td>
 </tr>
 [/for]

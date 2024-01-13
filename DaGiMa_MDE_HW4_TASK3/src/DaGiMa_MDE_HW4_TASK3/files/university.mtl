@@ -37,7 +37,7 @@ Name
 Rector
 </td>
 <td>
-<a href="../professors/[aUniversity.rector.name /]-[aUniversity.rector.surname /].html"> [aUniversity.rector.name /][aUniversity.rector.surname /]</a>
+<a href="../professors/[aUniversity.rector.name /]-[aUniversity.rector.surname /]-professor.html"> [aUniversity.rector.name /][aUniversity.rector.surname /]</a>
 </td>
 </tr>
 </tbody>

@@ -84,7 +84,7 @@ Degree Course
 [pas.course.cfu/]
 </td>
 <td>
-[if(pas.grade = '')]
+[if(pas.grade <> '')]
 [pas.grade/] - [pas.date/]
 [/if]
 </td>
