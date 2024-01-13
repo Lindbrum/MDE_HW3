@@ -3,6 +3,9 @@
 [import DaGiMa_MDE_HW4_TASK3::files::university /]
 [import DaGiMa_MDE_HW4_TASK3::files::department /]
 [import DaGiMa_MDE_HW4_TASK3::files::degreeCourse /]
+[import DaGiMa_MDE_HW4_TASK3::files::professor /]
+[import DaGiMa_MDE_HW4_TASK3::files::news /]
+[import DaGiMa_MDE_HW4_TASK3::files::course /]
 
 [template public generateIndex(aContainer : Container)]
 [comment @main/]
@@ -107,6 +110,7 @@
 </thead>
 <tbody>
 [for(cor : Course | aContainer.courses)] 
+[cor.generateCourse() /]
 <tr>
 <td> 
 [cor.name/]
@@ -161,6 +165,7 @@
 </thead>
 <tbody>
 [for(pro :Professor | aContainer.professors)] 
+[pro.generateProfessor()/]
 <tr>
 <td> 
 [pro.name/]
@@ -186,6 +191,7 @@
 <tbody>
 [for(pro :Professor | aContainer.professors)] 
 [for(news:News      | pro.news_posted)]
+[news.generateNews() /]
 <tr>
 <td> 
 [news.title /]

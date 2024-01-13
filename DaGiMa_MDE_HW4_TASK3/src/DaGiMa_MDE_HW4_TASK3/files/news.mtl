@@ -1,0 +1,73 @@
+[comment encoding = UTF-8 /]
+[module news('http://www.example.org/dagima_mde_hw4_dest')]
+
+
+[template public generateNews(aNews : News)]
+
+[file (aNews.title + '-news.html', false, 'UTF-8')]
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>[aNews.title /]</title>
+</head>
+<body>
+<p>
+<h2>News details </h2>
+<table>
+<thead>
+<tr>
+<th>Feature Name</th>
+<th>Value</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td> 
+Title
+</td>
+<td>
+[aNews.title/]
+</td>
+</tr>
+<tr>
+<tr>
+<td> 
+Department
+</td>
+<td>
+[aNews.department/]
+</td>
+</tr>
+<tr>
+<td> 
+Author
+</td>
+<td>
+<a href="professors/[aNews.author.surname/]-[aNews.author.name/].html">[aNews.author.surname/]</a>
+</td>
+</tr>
+<tr>
+<td> 
+Publication Date
+</td>
+<td>
+[aNews.publication_date/]
+</td>
+</tr>
+<tr>
+<td> 
+Body
+</td>
+<td>
+[aNews._body/]
+</td>
+</tr>
+</tbody>
+
+</table>
+</p>
+</body>
+</html>
+[/file]
+[/template]

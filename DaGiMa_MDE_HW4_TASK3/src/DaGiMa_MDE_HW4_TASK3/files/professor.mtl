@@ -1,0 +1,157 @@
+[comment encoding = UTF-8 /]
+[module professor('http://www.example.org/dagima_mde_hw4_dest')]
+
+
+[template public generateProfessor(aProfessor : Professor)]
+
+[file ('professors/' + aProfessor.surname + '-' + aProfessor.name + '.html', false, 'UTF-8')]
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>[aProfessor.surname /]</title>
+</head>
+<body>
+
+<p>
+<table>
+<h2>List of features</h2>
+<table>
+<thead>
+<tr>
+<td>Feature Name</td>
+<td>Value</td>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>
+Name:
+</td>
+<td>
+[aProfessor.name/]
+</td>
+</tr>
+<tr>
+<td>
+Surname:
+</td>
+<td>
+[aProfessor.surname/]
+</td>
+</tr>
+<tr>
+<td>
+Email:
+</td>
+<td>
+[aProfessor.email/]
+</td>
+</tr>
+<tr>
+<td>
+Telephone:
+</td>
+<td>
+[aProfessor.telephone/]
+</td>
+</tr>
+<tr>
+<td>
+Birth Date:
+</td>
+<td>
+[aProfessor.birth_date/]
+</td>
+</tr>
+<tr>
+<td>
+Orcid:
+</td>
+<td>
+[aProfessor.orcid/]
+</td>
+</tr>
+</tbody>
+</table>
+</p>
+
+
+<p>
+<h2>List of news</h2>
+<table>
+<thead>
+<tr>
+<th>News title</th>
+<th>URL</th>
+</tr>
+</thead>
+
+<tbody>
+[for( news : News | aProfessor.news_posted)]
+<tr>
+<td>
+[news.title /]
+</td>
+<td>
+<a href="../[news.title /]-news.html">link </a>
+</td>
+</tr>
+[/for]
+</tbody>
+</table>
+</p>
+
+<p>
+<h2>List of Course</h2>
+<table>
+<thead>
+<tr>
+<th>Course name</th>
+<th>URL</th>
+</tr>
+</thead>
+
+<tbody>
+[for( course : Course | aProfessor.taught_courses)]
+<tr>
+<td>
+[course.name /]
+</td>
+<td>
+<a href="../[course.name /]-cor.html">link </a>
+</td>
+</tr>
+[/for]
+</tbody>
+</table>
+</p>
+
+<p>
+<h2>List of thesis</h2>
+<table>
+<thead>
+<tr>
+<th>Thesis title</th>
+<th>URL</th>
+</tr>
+</thead>
+
+<tbody>
+[for( thesis : Thesis | aProfessor.supervised_thesis)]
+<tr>
+<td>
+[thesis.title /]
+</td>
+<td>
+<a href="[thesis.title /].html">link </a>
+</td>
+</tr>
+[/for]
+</tbody>
+</table>
+</p>
+
+</body>
+[/file]
+[/template]

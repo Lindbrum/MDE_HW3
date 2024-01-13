@@ -1,0 +1,202 @@
+[comment encoding = UTF-8 /]
+[module course('http://www.example.org/dagima_mde_hw4_dest')]
+
+
+[template public generateCourse(aCourse : Course)]
+
+[file (aCourse.name + '-cor.html', false, 'UTF-8')]
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>[aCourse.name /]</title>
+</head>
+<body>
+<p>
+<table>
+<h2>List of features</h2>
+<table>
+<thead>
+<tr>
+<td>Feature Name</td>
+<td>Value</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+Name:
+</td>
+<td>
+[aCourse.name/]
+</td>
+</tr>
+<tr>
+<td>
+Code:
+</td>
+<td>
+[aCourse.code/]
+</td>
+</tr>
+<tr>
+<td>
+CFU:
+</td>
+<td>
+[aCourse.cfu/]
+</td>
+</tr>
+<tr>
+<tr>
+<td>
+Credit type:
+</td>
+<td>
+[aCourse.credit_type/]
+</td>
+</tr>
+<tr>
+<tr>
+<td>
+Year:
+</td>
+<td>
+[aCourse.year/]
+</td>
+</tr>
+<tr>
+<tr>
+<td>
+Language:
+</td>
+[comment -è una lista ma non so come iterarla /]
+<td>
+[for(lan : String | aCourse.language) separator(', ')]
+[lan /]
+[/for]
+</td>
+</tr>
+<tr>
+<tr>
+<td>
+Teaching start:
+</td>
+<td>
+[aCourse.teaching_period_start_day/]/[aCourse.teaching_period_start_month/]/[aCourse.teaching_period_start_year/]
+</td>
+</tr>
+<tr>
+<tr>
+<td>
+Teaching end:
+</td>
+<td>
+[aCourse.teaching_period_end_day/]/[aCourse.teaching_period_end_month/]/[aCourse.teaching_period_end_year/]
+</td>
+</tr>
+<tr>
+</tbody>
+</table>
+</p>
+<p>
+<h2>Degree Courses</h2>
+<table>
+<thead>
+<tr>
+<td>Name</td>
+<td>URL</td>
+</tr>
+</thead>
+<tbody>
+[for( deg : DegreeCourse | aCourse.degree_courses )]
+<tr>
+<td>
+[deg.name /]
+</td>
+<td>
+<a href="[deg.name /]-deg.html">link</a>
+</td>
+<tr>
+[/for]
+</tbody>
+</table>
+</p>
+
+<p>
+<h2>Teachers</h2>
+<table>
+<thead>
+<tr>
+<td>Name</td>
+<td>URL</td>
+</tr>
+</thead>
+<tbody>
+[for( teac : Professor | aCourse.teachers )]
+<tr>
+<td>
+[teac.surname /]
+</td>
+<td>
+<a href="./professors/[teac.surname /]-[teac.name/].html">link</a>
+</td>
+<tr>
+[/for]
+</tbody>
+</table>
+</p>
+
+<p>
+<h2>Extra info</h2>
+<table>
+<thead>
+<tr>
+<td>Name</td>
+<td>URL</td>
+</tr>
+</thead>
+<tbody>
+[for( inf : ExtraInfo | aCourse.extra_info )]
+<tr>
+<td>
+[inf.name /]
+</td>
+<td>
+<a href="./info/[inf.name /]">link</a>
+</td>
+<tr>
+[/for]
+</tbody>
+</table>
+</p>
+
+<p>
+<h2>Examination Call</h2>
+<table>
+<thead>
+<tr>
+<td>Name</td>
+<td>URL</td>
+</tr>
+</thead>
+<tbody>
+[let i:Integer = 1/]
+[for( ex : ExaminationCall | aCourse.calls )]
+<tr>
+<td>
+[i /].[ex.date /]
+[i = i + 1/]
+</td>
+<td>
+<a href="./call/[i /].[ex.course.name /]">link</a>
+</td>
+<tr>
+[/for]
+</tbody>
+</table>
+</p>
+
+</body>
+</html>
+[/file]
+[/template]

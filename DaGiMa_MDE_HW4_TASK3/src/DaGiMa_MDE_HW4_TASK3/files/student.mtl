@@ -1,0 +1,19 @@
+[comment encoding = UTF-8 /]
+[module student('http://www.example.org/dagima_mde_hw4_dest')]
+
+
+[template public generateStudent(aStudent : Student)]
+
+[file (aStudent.name, false, 'UTF-8')]
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>[aStudent.name /]</title>
+</head>
+<body>
+<p>
+</body>
+</html>
+[/file]
+[/template]
