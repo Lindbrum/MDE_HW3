@@ -165,7 +165,7 @@ Coordinator
 [stu.name/]
 </td>
 <td>
-<a href="./students/[stu.name/].html"> link </a>
+<a href="./students/[stu.email/].html"> link </a>
 </td>
 </tr>
 [/for]

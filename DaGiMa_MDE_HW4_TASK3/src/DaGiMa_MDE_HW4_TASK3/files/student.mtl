@@ -4,7 +4,7 @@
 
 [template public generateStudent(aStudent : Student)]
 
-[file (aStudent.name, false, 'UTF-8')]
+[file ('./students/'+ aStudent.email +'.html', false, 'UTF-8')]
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,6 +12,143 @@
 </head>
 <body class="container">
 <p>
+<p>
+<h2>Info</h2>
+<table>
+<thead>
+<tr>
+<td>Info</td>
+<td>Value</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+Name
+</td>
+<td>
+[aStudent.surname /] [aStudent.surname /]
+</td>
+<tr>
+<tr>
+<td>
+Birth date:
+</td>
+<td>
+[aStudent.birth_date /]
+</td>
+<tr>
+<tr>
+<td>
+Email:
+</td>
+<td>
+[aStudent.email /]
+</td>
+<tr>
+<tr>
+<td>
+telephone:
+</td>
+<td>
+[aStudent.telephone /]
+</td>
+</tr>
+</tbody>
+</table>
+</p>
+<p>
+<h2>List of DegreeCourse</h2>
+<table>
+<thead>
+<tr>
+<th>Enrolled Courses</th>
+<th>URL</th>
+</tr>
+</thead>
+<tbody>
+[for( course : DegreeCourse | aStudent.enrolled_courses)]
+<tr>
+<td>
+[course.name /]
+</td>
+<td>
+<a href="../[course.name /]-deg.html">link </a>
+</td>
+</tr>
+[/for]
+</tbody>
+</table>
+</p>
+<p>
+<h2>List of Examinations Calls</h2>
+<table>
+<thead>
+<tr>
+<th>ExaminationCalls</th>
+<th>URL</th>
+</tr>
+</thead>
+<tbody>
+[for( cal : ExaminationCall | aStudent.booked_calls)]
+<tr>
+<td>
+[cal.course.name /]
+</td>
+<td>
+[comment link da creare /]
+</td>
+</tr>
+[/for]
+</tbody>
+</table>
+</p>
+<p>
+<h2>List of Thesis</h2>
+<table>
+<thead>
+<tr>
+<th>Thesis title</th>
+<th>URL</th>
+</tr>
+</thead>
+<tbody>
+[for( the : Thesis | aStudent.thesis_defended)]
+<tr>
+<td>
+[the.title /]
+</td>
+<td>
+[comment link da creare /]
+</td>
+</tr>
+[/for]
+</tbody>
+</table>
+</p>
+<p>
+<h2>List of Career</h2>
+<table>
+<thead>
+<tr>
+<th>Career</th>
+<th>URL</th>
+</tr>
+</thead>
+<tbody>
+[for( car : Career | aStudent.transcripts)]
+<tr>
+<td>
+[car.name /]
+</td>
+<td>
+[comment link da creare /]
+</td>
+</tr>
+[/for]
+</tbody>
+</table>
+</p>
 </body>
 </html>
 [/file]
