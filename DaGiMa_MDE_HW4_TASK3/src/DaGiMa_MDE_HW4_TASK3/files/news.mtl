@@ -1,16 +1,18 @@
 [comment encoding = UTF-8 /]
 [module news('http://www.example.org/dagima_mde_hw4_dest')]
 [import DaGiMa_MDE_HW4_TASK3::common::htmlHead /]
+[import DaGiMa_MDE_HW4_TASK3::common::indexLink /]
 
 [template public generateNews(aNews : News)]
 
-[file (aNews.title + '-news.html', false, 'UTF-8')]
+[file ('news/' + aNews.title.replaceAll(':', '_') + '-news.html', false, 'UTF-8')]
 <!DOCTYPE html>
 <html lang="en">
 <head>
 [generateHead(aNews.title) /]
 </head>
 <body class="container">
+[generateIndexLink() /]
 <p>
 <h2>News details </h2>
 <table class="table table-bordered">

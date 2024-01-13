@@ -1,0 +1,7 @@
+[comment encoding = UTF-8 /]
+[module indexLink('http://www.example.org/dagima_mde_hw4_dest')]
+
+
+[template public generateIndexLink(anOclAny : OclAny)]
+<a href="../index.html">Return to the index</a>
+[/template]

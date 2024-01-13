@@ -1,16 +1,18 @@
 [comment encoding = UTF-8 /]
 [module degreeCourse('http://www.example.org/dagima_mde_hw4_dest')]
 [import DaGiMa_MDE_HW4_TASK3::common::htmlHead /]
+[import DaGiMa_MDE_HW4_TASK3::common::indexLink /]
 
 [template public generateDegreeCourse(aDegreeCourse : DegreeCourse)]
 
-[file (aDegreeCourse.name + '-deg.html', false, 'UTF-8')]
+[file ('degree_courses/' + aDegreeCourse.name + '-deg.html', false, 'UTF-8')]
 <!DOCTYPE html>
 <html lang="en">
 <head>
 [generateHead(aDegreeCourse.name) /]
 </head>
 <body class="container">
+[generateIndexLink() /]
 <table class="table table-bordered">
 <p>
 <h2>List of features</h2>

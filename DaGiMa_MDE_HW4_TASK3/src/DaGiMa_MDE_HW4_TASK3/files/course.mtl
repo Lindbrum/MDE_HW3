@@ -1,16 +1,18 @@
 [comment encoding = UTF-8 /]
 [module course('http://www.example.org/dagima_mde_hw4_dest')]
 [import DaGiMa_MDE_HW4_TASK3::common::htmlHead /]
+[import DaGiMa_MDE_HW4_TASK3::common::indexLink /]
 
 [template public generateCourse(aCourse : Course)]
 
-[file (aCourse.name + '-cor.html', false, 'UTF-8')]
+[file ('courses/' + aCourse.name + '-cor.html', false, 'UTF-8')]
 <!DOCTYPE html>
 <html lang="en">
 <head>
 [generateHead(aCourse.name) /]
 </head>
 <body class="container">
+[generateIndexLink() /]
 <p>
 <table class="table table-bordered">
 <h2>List of features</h2>
@@ -176,15 +178,13 @@ Teaching end:
 </tr>
 </thead>
 <tbody>
-[let i:Integer = 1/]
 [for( ex : ExaminationCall | aCourse.calls )]
 <tr>
 <td>
-[i /].[ex.date /]
-[i = i + 1/]
+[ex.date /]
 </td>
 <td>
-<a href="./call/[ex.course.name /].html">link</a>
+<a href="./call/[ex.course.name /]-[ex.date.toString().replaceAll(':', '_') /]-call.html">link</a>
 </td>
 <tr>
 [/for]

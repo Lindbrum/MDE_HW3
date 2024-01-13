@@ -1,0 +1,10 @@
+[comment encoding = UTF-8 /]
+[module examinationCall('http://www.example.org/dagima_mde_hw4_dest')]
+
+
+[template public generateExaminationCall(anExaminationCall : ExaminationCall)]
+
+[file ('calls/' + anExaminationCall.course.name + '-' + anExaminationCall.date.toString().replaceAll(':', '_') + '-call.html', false, 'UTF-8')]
+
+[/file]
+[/template]

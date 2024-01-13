@@ -37,7 +37,7 @@
 [uni.name/]
 </td>
 <td>
-<a href="[uni.name/].html">link</a>
+<a href="universities/[uni.name/].html">link</a>
 </td>
 </tr>
 [/for]
@@ -63,7 +63,7 @@
 [dep.name/]
 </td>
 <td>
-<a href="[dep.name/]-dep.html"> link </a>
+<a href="departments/[dep.name/]-dep.html"> link </a>
 </td>
 </tr>
 [/for]
@@ -91,7 +91,7 @@
 [deg.name/]
 </td>
 <td>
-<a href="[deg.name/]-deg.html"> link </a>
+<a href="degree_courses/[deg.name/]-deg.html"> link </a>
 </td>
 </tr>
 [/for]
@@ -119,7 +119,7 @@
 [cor.name/]
 </td>
 <td>
-<a href="[cor.name/]-cor.html">link</a>
+<a href="courses/[cor.name/]-cor.html">link</a>
 </td>
 </tr>
 [/for]
@@ -138,18 +138,16 @@
 </tr>
 </thead>
 <tbody>
-[for(cor : Course | aContainer.courses)] 
+[for(cor : Course | aContainer.courses)]
 [for(cal : ExaminationCall| cor.calls)]
-
 <tr>
 <td> 
-[cal.course.code/]
+[cal.course.name/] - [cal.date/]
 </td>
 <td>
-[cal.date/]
+<a href="calls/[cal.course.name/]-[cal.date.toString().replaceAll(':', '_') /]-call.html">link</a>
 </td>
 </tr>
-
 [/for]
 [/for]
 </tbody>
@@ -192,12 +190,15 @@
 </tr>
 </thead>
 <tbody>
-[for(pro :Professor | aContainer.professors)] 
-[for(news:News      | pro.news_posted)]
+[for(pro : Professor | aContainer.professors)]
+[for(news: News | pro.news_posted)]
 [news.generateNews() /]
 <tr>
 <td> 
 [news.title /]
+</td>
+<td> 
+<a href="news/[pro.name/]-[pro.surname/]-[news.title.replaceAll(':', '_') /].html">link</a>
 </td>
 </tr>
 [/for]
@@ -250,7 +251,7 @@
 [cus.name/]
 </td>
 <td>
-<a href="[cus.name/].html">link</a>
+<a href="custom_enumerations/[cus.name/].html">link</a>
 </td>
 </tr>
 [/for]
@@ -275,7 +276,7 @@
 [inf.name/]
 </td>
 <td>
-<a href="[inf.name/].html">link</a>
+<a href="extra_info/[inf.name/].html">link</a>
 </td>
 </tr>
 [/for]
