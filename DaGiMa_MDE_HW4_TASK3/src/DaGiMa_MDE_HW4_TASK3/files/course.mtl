@@ -188,7 +188,7 @@ Teaching end:
 [i = i + 1/]
 </td>
 <td>
-<a href="./call/[i /].[ex.course.name /]">link</a>
+<a href="./call/[ex.course.name /]-[ex.date /]">link</a>
 </td>
 <tr>
 [/for]
